@@ -4,6 +4,11 @@ Validated locally on Python 3.9.6. Production target Python 3.11+ remains unveri
 
 ## Results
 
+Latest draft-adapter update: 44 non-network test methods passed. Seven new tests
+cover D-style profiles, typed requirements, hard/preferred separation, unknown
+empty arrays, trusted confirmed empties, explicit status selection and ambiguous
+requirement arrays. This adapter is not enabled on any public route.
+
 Latest block 8 validation: 37 test methods passed, including five complete
 HTTP-handler flow scenarios over in-memory streams. Gemini transport is mocked;
 confirmation is simulated. This adds current handler coverage without sockets,

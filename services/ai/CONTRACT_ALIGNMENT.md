@@ -61,6 +61,24 @@ unknown-state rendering. Confirm all product copy is English.
 
 ## Can proceed now versus blocked
 
+An opt-in draft adapter is now implemented in
+`services/matching/contract_adapter.py`. `match_contract_draft` requires the caller
+to pass `pending_status` explicitly. It accepts D-shaped records and emits a
+draft D-shaped result without changing the demo, worker or public routes.
+It does not convert skill/course lists into all-of or any-of rules without an
+agreement. Empty arrays are unknown unless the trusted caller supplies their
+field names through `confirmed_fields`. Trusted review IDs are a separate
+internal argument, never a client-provided authorization claim.
+Nullable descriptions become empty ranking text only. No graduation day or
+experience skill is invented. Current draft relevance scores can be null when
+no profile signals exist; D must agree how to represent this rather than using
+a misleading zero. Evidence and hard/preferred flags are retained in checks.
+The adapter's extra evidence fields and null-score behavior need team approval.
+
+Validation: 44 non-network tests passed, including seven adapter tests. This is
+synthetic contract validation, not a live backend integration. No shared files
+or other members' modules were changed.
+
 B's standalone parser, rules, ranking, worker and synthetic flow tests are usable.
 Production adapters must wait for the conflicting public semantics to be resolved.
 No private student data is required. No database access or new account permission
