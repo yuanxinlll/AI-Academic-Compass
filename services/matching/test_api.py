@@ -86,8 +86,21 @@ class APITests(unittest.TestCase):
         self.assertEqual(status, 200)
         self.assertEqual(len(json.loads(body)["conflicts"]), 1)
 
-    def test_unimplemented_parser_and_unknown_route_are_explicit(self):
-        self.assertEqual(self.request("/api/resume/parse", {})[0], 501)
+    def test_pdf_upload_returns_reviewable_draft(self):
+        from test_resume import fictional_pdf
+        body = (b'--testboundary\r\nContent-Disposition: form-data; name="file"; filename="fictional.pdf"\r\n'
+                b'Content-Type: application/pdf\r\n\r\n' + fictional_pdf()
+                + b'\r\n--testboundary--\r\n')
+        request = Request(self.base + '/api/resume/parse', data=body,
+                          headers={'Content-Type': 'multipart/form-data; boundary=testboundary'})
+        with urlopen(request, timeout=3) as response:
+            result = json.load(response)
+            self.assertEqual(response.status, 200)
+        self.assertEqual(result['profile_draft']['skills'], ['Python', 'SQL'])
+        self.assertTrue(result['requires_confirmation'])
+
+    def test_parser_requires_multipart_and_unknown_route_is_explicit(self):
+        self.assertEqual(self.request("/api/resume/parse", {})[0], 415)
         self.assertEqual(self.request("/api/missing", {})[0], 404)
 
 

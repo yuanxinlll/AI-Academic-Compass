@@ -5,11 +5,17 @@ This server is local-only and is not the production Next.js API.
 """
 
 import json
+import sys
+from email.parser import BytesParser
+from email.policy import default
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
 from demo import OPPORTUNITIES, PROFILES
 from engine import match, validate_profile
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "ai"))
+from resume import parse_pdf, ResumeError
 
 
 def merge_profile(confirmed, draft):
@@ -55,8 +61,7 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_POST(self):
         if self.path == "/api/resume/parse":
-            self.respond(501, {"error": {"code": "NOT_IMPLEMENTED", "message":
-                "PDF and Gemini parsing are not configured in this local prototype."}})
+            self.parse_resume()
             return
         if self.path not in ("/api/match", "/api/profile/merge"):
             self.respond(404, {"error": {"code": "NOT_FOUND", "message": "Route not found."}})
@@ -87,6 +92,27 @@ class Handler(BaseHTTPRequestHandler):
             self.respond(200, result)
         except (ValueError, TypeError, UnicodeError) as error:
             self.respond(400, {"error": {"code": "INVALID_INPUT", "message": str(error)}})
+
+    def parse_resume(self):
+        try:
+            length = int(self.headers.get("Content-Length", "0"))
+            if not 0 < length <= 2 * 1024 * 1024 + 16384:
+                raise ResumeError("FILE_TOO_LARGE", "The local demo upload limit is 2 MB.", 413)
+            content_type = self.headers.get("Content-Type", "")
+            if not content_type.startswith("multipart/form-data"):
+                raise ResumeError("UNSUPPORTED_MEDIA_TYPE", "Use multipart/form-data with one file field.", 415)
+            message = BytesParser(policy=default).parsebytes(
+                ("Content-Type: " + content_type + "\r\nMIME-Version: 1.0\r\n\r\n").encode()
+                + self.rfile.read(length))
+            files = [part for part in message.iter_parts()
+                     if part.get_param("name", header="content-disposition") == "file"]
+            if len(files) != 1:
+                raise ResumeError("INVALID_UPLOAD", "Provide exactly one file field.", 400)
+            self.respond(200, parse_pdf(files[0].get_payload(decode=True) or b""))
+        except ResumeError as error:
+            self.respond(error.status, {"error": {"code": error.code, "message": str(error), "field": "file"}})
+        except (ValueError, TypeError):
+            self.respond(400, {"error": {"code": "INVALID_UPLOAD", "message": "Invalid upload request."}})
 
     def log_message(self, format, *args):
         # Do not log profile contents or request bodies.
