@@ -2,12 +2,12 @@ import { NextRequest, NextResponse } from "next/server";
 import { getSql } from "@/lib/database/db";
 import { apiError } from "@/lib/api";
 import { OPPORTUNITY_COLUMNS } from "@/lib/database/columns";
+import { CATEGORIES as CATEGORY_LIST, OPPORTUNITY_STATUSES } from "@/lib/validation";
 
 // GET /api/opportunities — see docs/contracts.md §4.1
-const CATEGORIES = ["research", "internship", "event", "competition", "program", "course"];
-const STATUSES = ["verified", "needs_verification", "expired"];
 const SORTS = ["deadline", "newest", "relevance"];
-
+const CATEGORIES: readonly string[] = CATEGORY_LIST;
+const STATUSES: readonly string[] = OPPORTUNITY_STATUSES;
 
 export async function GET(req: NextRequest) {
   const p = req.nextUrl.searchParams;
@@ -15,7 +15,7 @@ export async function GET(req: NextRequest) {
   const categories = (p.get("category") ?? "").split(",").map((s) => s.trim()).filter(Boolean);
   const university = p.get("university") ?? "UCSD";
   const status = p.get("status");
-  const q = p.get("q")?.trim();
+  const q = p.get("q")?.trim().slice(0, 200);
   const sort = p.get("sort") ?? "deadline";
   const page = Math.max(1, Number(p.get("page") ?? 1) || 1);
   const limit = Math.min(100, Math.max(1, Number(p.get("limit") ?? 20) || 20));
@@ -36,7 +36,12 @@ export async function GET(req: NextRequest) {
 
   add("university = $?", university);
   if (status) add("status = $?", status);
-  else where.push("status <> 'expired'");
+  else {
+    // Default view: hide expired records AND anything whose deadline has already passed
+    // (the collector may not have re-checked the page yet).
+    where.push("status <> 'expired'");
+    where.push("(deadline IS NULL OR deadline >= CURRENT_DATE)");
+  }
   if (categories.length) add("category = ANY($?::text[])", categories);
   if (q) add("(title ILIKE $? OR description ILIKE $?)", `%${q}%`);
 

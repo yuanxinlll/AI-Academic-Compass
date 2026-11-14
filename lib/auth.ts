@@ -15,9 +15,15 @@ export async function requireUser(
     return { error: apiError(401, "UNAUTHORIZED", "x-demo-user must be 1-32 chars of a-z, 0-9, _ or -") };
   }
   const rows = await getSql().query(
-    `INSERT INTO users (email, name) VALUES ($1, $2)
-     ON CONFLICT (email) DO UPDATE SET email = EXCLUDED.email
-     RETURNING user_id`,
+    `WITH ins AS (
+       INSERT INTO users (email, name) VALUES ($1, $2)
+       ON CONFLICT (email) DO NOTHING
+       RETURNING user_id
+     )
+     SELECT user_id FROM ins
+     UNION ALL
+     SELECT user_id FROM users WHERE email = $1
+     LIMIT 1`,
     [`${name}@demo.academic-compass.local`, name],
   );
   return { userId: rows[0].user_id as string };
