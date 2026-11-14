@@ -1,0 +1,1254 @@
+{
+  "reviewed_at": "2026-11-14T22:14:55.501317+00:00",
+  "contract": "docs/contracts.md v1.1 Opportunity",
+  "requirements_request": "origin/feature/personalization:services/ai/CONTRACT_ALIGNMENT.md - Exact handoff requests / Member A",
+  "inspected_pages": 32,
+  "added_records": 24,
+  "ready_for_admin_verification": 9,
+  "records": [
+    {
+      "title": "Pelham Lab - Undergraduate Research Assistant",
+      "university": "UCSD",
+      "organization": "Pelham Lab",
+      "description": "Unpaid research training for UCSD undergraduates of all years, with no prior lab experience required.",
+      "deadline_text": null,
+      "application_method": "fill out this google form: https://forms.gle/LcM1bGZDAvucLUaY9",
+      "category": "research",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "academic_year",
+          "value": [
+            "freshman",
+            "sophomore",
+            "junior",
+            "senior"
+          ],
+          "raw_text": "undergraduates at UCSD",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": "UCSD enrollment",
+          "raw_text": "undergraduates at UCSD",
+          "is_hard_requirement": true
+        }
+      ],
+      "source_url": "https://pelham-lab.ucsd.edu/join-the-team/undergraduates",
+      "source_id": "948bc636-7b4c-42c8-8d60-dc7823c56c65",
+      "first_collected_at": "2026-11-14T21:51:37.726510+00:00",
+      "last_verified_at": "2026-11-14T22:06:20.857040+00:00",
+      "status": "needs_verification",
+      "opportunity_id": "fa39cdf0-c11c-4b79-85e6-324c4890e985"
+    },
+    {
+      "title": "Winkielman Lab - Undergraduate/Volunteer Research Assistant",
+      "university": "UCSD",
+      "organization": "Winkielman Lab",
+      "description": "Social and cognitive psychology research; volunteer or optional PSYC 199 credit.",
+      "deadline_text": null,
+      "application_method": "forward your application to Zaiyao Zhang <zazhang@ucsd.edu>. Please include information about: – You current year, major, and GPA – Your availability for future quarters – A screenshot of your academic history (the page which shows your GPA and classes taken). – Your interest and focus. – Resume and cover letter are preferred but not required.",
+      "category": "research",
+      "deadline": null,
+      "required_skills": [
+        "communication skills"
+      ],
+      "eligibility": [
+        {
+          "type": "hours_per_week",
+          "value": 6,
+          "raw_text": "A minimum of 6hr/wk commitment to lab work",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "skill",
+          "value": "communication skills",
+          "raw_text": "Excellent communication skills",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": "Prior laboratory experience",
+          "raw_text": "Prior lab experience is preferred but not required",
+          "is_hard_requirement": false
+        }
+      ],
+      "source_url": "https://winkielmanlab.ucsd.edu/joinus/",
+      "source_id": "87bba243-0dac-4091-b3d1-733f8fc98adc",
+      "first_collected_at": "2026-11-14T21:51:47.565099+00:00",
+      "last_verified_at": "2026-11-14T22:06:20.857093+00:00",
+      "status": "needs_verification",
+      "opportunity_id": "824c6a54-15a8-4778-81b3-1c7126d57309"
+    },
+    {
+      "title": "Rickard Lab - Undergraduate Research Assistant",
+      "university": "UCSD",
+      "organization": "Cognition and Cognitive Neuroscience Laboratory",
+      "description": "Cognition and memory research including participant testing and data coding. Confirm the next opening with the lab.",
+      "deadline_text": null,
+      "application_method": "fill out the google form",
+      "category": "research",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "gpa",
+          "value": 3.0,
+          "raw_text": "Minimum GPA of 3.0",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "hours_per_week",
+          "value": 12,
+          "raw_text": "12 hours per week, 2 quarters minimum commitment",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "duration",
+          "value": "2 quarters",
+          "raw_text": "2 quarters minimum",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "academic_year",
+          "value": ">= 1 year remaining",
+          "raw_text": "Should be UCSD undergrad, ≥ 1 academic yr remaining",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": null,
+          "raw_text": "Flexible hours and schedule preferred",
+          "is_hard_requirement": false
+        }
+      ],
+      "source_url": "https://rickardlab.ucsd.edu/join.html",
+      "source_id": "98356d43-3043-4c2e-b6f6-251c3416dd3f",
+      "first_collected_at": "2026-11-14T21:51:50.746450+00:00",
+      "last_verified_at": "2026-11-14T22:06:20.857173+00:00",
+      "status": "needs_verification",
+      "opportunity_id": "82246069-b3e5-4546-bed2-6d46f2478d8a"
+    },
+    {
+      "title": "Eating Disorders Center - Volunteer Research Assistant",
+      "university": "UCSD",
+      "organization": "Eating Disorders Center for Treatment and Research",
+      "description": "In-person undergraduate research volunteering in participant recruitment, study visits and data collection.",
+      "deadline_text": null,
+      "application_method": "Complete the Volunteer Form linked on the source; contact edresearch@health.ucsd.edu for recruitment questions.",
+      "category": "research",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "academic_year",
+          "value": [
+            "freshman",
+            "sophomore",
+            "junior",
+            "senior"
+          ],
+          "raw_text": "We are seeking undergraduate students to join our research volunteer team.",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": "Local to San Diego and available beyond summer",
+          "raw_text": "PSYC 199 course credit is available for UC San Diego undergraduate students. Non-UC San Diego undergraduates local to San Diego are also encouraged to apply. Please note that most of our work takes place in-person, and we are typically unable to accept research assistants who are not local to San Diego and/or are only in San Diego during the summer. Ideal candidates are able to commit to at least one year as an RA in the lab.",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "duration",
+          "value": "at least one year",
+          "raw_text": "Ideal candidates are able to commit to at least one year as an RA in the lab.",
+          "is_hard_requirement": false
+        }
+      ],
+      "source_url": "https://eatingdisorders.ucsd.edu/node/121",
+      "source_id": "8364947f-fcfd-4b32-92c2-6dbea7383a9e",
+      "first_collected_at": "2026-11-14T21:51:54.026574+00:00",
+      "last_verified_at": "2026-11-14T22:06:20.857306+00:00",
+      "status": "needs_verification",
+      "opportunity_id": "faf9d67d-0d68-4844-b61b-39baeeed8a71"
+    },
+    {
+      "title": "Cherqui Lab - Spring 2027 Undergraduate/Postbacc Research Volunteer Interest",
+      "university": "UCSD",
+      "organization": "Cherqui Lab",
+      "description": "Spring 2027 volunteer interest registration; Fall 2026 applications are closed.",
+      "deadline_text": null,
+      "application_method": "Complete the interest form for Spring 2027.",
+      "category": "research",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "other",
+          "value": "undergraduate or postbacc",
+          "raw_text": "Undergraduate/Postbacc Research Volunteer Application",
+          "is_hard_requirement": true
+        }
+      ],
+      "source_url": "https://pediatrics.ucsd.edu/research/faculty-labs/cherqui-lab/career.html",
+      "source_id": "4534d165-e5ab-42ae-aa63-bf884c1ec1d3",
+      "first_collected_at": "2026-11-14T21:55:28.527920+00:00",
+      "last_verified_at": "2026-11-14T22:06:20.857435+00:00",
+      "status": "needs_verification",
+      "opportunity_id": "7bb1fefc-656c-4db6-9f7b-8129eb9ce5d4"
+    },
+    {
+      "title": "Winzeler Lab - Undergraduate Research Assistant Inquiries",
+      "university": "UCSD",
+      "organization": "Winzeler Lab",
+      "description": "Drug-discovery research; check Handshake for currently advertised undergraduate vacancies.",
+      "deadline_text": null,
+      "application_method": "Available positions will be posted on handshake.",
+      "category": "research",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [],
+      "source_url": "https://winzeler.ucsd.edu/jobs/",
+      "source_id": "e964407f-feb1-42be-bc57-1a4c4d92fdb4",
+      "first_collected_at": "2026-11-14T21:55:33.527661+00:00",
+      "last_verified_at": "2026-11-14T22:06:20.857490+00:00",
+      "status": "needs_verification",
+      "opportunity_id": "db6f0a87-c45b-406f-86fe-186c8312b059"
+    },
+    {
+      "title": "HXI Lab - Undergraduate Research Participation",
+      "university": "UCSD",
+      "organization": "HXI Lab",
+      "description": "Undergraduate participation in human-centered computing projects through volunteering or optional course credit.",
+      "deadline_text": null,
+      "application_method": "Look at current projects and engage with the students or postdocs working on projects of interest. For 198/199 credits, submit a request via EASy.",
+      "category": "research",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "academic_year",
+          "value": [
+            "freshman",
+            "sophomore",
+            "junior",
+            "senior"
+          ],
+          "raw_text": "Undergraduate students can typically join the HXI Lab:",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "duration",
+          "value": "2-3 quarters or more",
+          "raw_text": "We encourage undergraduate students who fit within the scope of the HXI lab to extend their engagement to 2-3 quarters or more.",
+          "is_hard_requirement": false
+        },
+        {
+          "type": "other",
+          "value": "Project fit and course approval where applicable",
+          "raw_text": "After having discussed fit and specifics of the project, including the number of units (2 for engagement < 10hr/week, or 4 for ≥ 10hr/week), undergraduate students interested in engaging in 198/199 courses should submit a request for a 199 independent research project or a 198 directed study group via EASy. Submitted requests will be reviewed and if approved by Prof. Weibel and the Department, the registrar will create a new 199 or 198 section and students will be able to enroll.",
+          "is_hard_requirement": true
+        }
+      ],
+      "source_url": "https://hxi.ucsd.edu/faq/join-us/",
+      "source_id": "b7358b83-eacc-4511-9d94-e169a8f8824b",
+      "first_collected_at": "2026-11-14T21:53:02.444278+00:00",
+      "last_verified_at": "2026-11-14T22:06:20.857501+00:00",
+      "status": "needs_verification",
+      "opportunity_id": "422310d9-03ed-48c6-a1a3-48debe8c9a50"
+    },
+    {
+      "title": "Xiong Group - Undergraduate Research Opportunities",
+      "university": "UCSD",
+      "organization": "Xiong Group",
+      "description": "Undergraduate research training in spectroscopy and ultrafast optics; MATLAB/LabVIEW are tools to be learned, not stated prerequisites.",
+      "deadline_text": null,
+      "application_method": "Contact Dr. Xiong at w2xiong@ucsd.edu for undergraduate research inquiries.",
+      "category": "research",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "academic_year",
+          "value": [
+            "freshman",
+            "sophomore",
+            "junior",
+            "senior"
+          ],
+          "raw_text": "The Xiong group welcome motivated postdoc researchers, graduate and undergraduate students to join the group.",
+          "is_hard_requirement": true
+        }
+      ],
+      "source_url": "https://ultrafast.ucsd.edu/jobs/",
+      "source_id": "9cd4c3b2-cd2f-4c82-ac18-0528270b0819",
+      "first_collected_at": "2026-11-14T21:53:11.642854+00:00",
+      "last_verified_at": "2026-11-14T22:06:20.857895+00:00",
+      "status": "needs_verification",
+      "opportunity_id": "6049a3cf-8be8-48e9-83a3-a49818cd6e9c"
+    },
+    {
+      "title": "Winter 2027 Psychology PSYC 099/199 Common Application",
+      "university": "UCSD",
+      "organization": "Department of Psychology",
+      "description": "Common application for matching students to psychology labs. PSYC 099 and 199 enrollment criteria are alternative branches.",
+      "deadline_text": "The Winter 2027 PSYC-099/199 Common Application is now live. The deadline to complete the Winter 2027 PSYC-099/199 Common Application is midnight on Friday, November 20, 2026.",
+      "application_method": "Fill out the PSYC 099/199 Common Application or contact individual labs.",
+      "category": "program",
+      "deadline": "2026-11-20",
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "other",
+          "value": null,
+          "raw_text": "Prerequisites for PSYC-099: Lower division standing, completion of at least 30 units of undergraduate studies at UCSD with a minimum UCSD GPA of 3.0; completed and approvedTriton Enrollment Authorization (TEA) request. May be taken for P/NP credit three times.",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": null,
+          "raw_text": "Prerequisites for PSYC-199: Upper-division standing, completion of at least 90 units of undergraduate studies at UCSD with a minimum UCSD GPA of 2.5; completed and approved Triton Enrollment Authorization (TEA) request. May be taken for P/NP credit nine times.",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": "Possible college-approved exceptions",
+          "raw_text": "Please note: Students who do not meet these minimum University requirements for booking may obtain additional approval from their college.",
+          "is_hard_requirement": false
+        }
+      ],
+      "source_url": "https://psychology.ucsd.edu/undergraduate-program/research/index.html",
+      "source_id": "d3b15716-6876-42c5-97e5-98a4f38bb05e",
+      "first_collected_at": "2026-11-14T21:53:15.105149+00:00",
+      "last_verified_at": "2026-11-14T22:06:20.857923+00:00",
+      "status": "needs_verification",
+      "opportunity_id": "02ea51bb-029c-460b-8453-fa1501193f78"
+    },
+    {
+      "title": "Biology Summer 2027 Research for Academic Credit",
+      "university": "UCSD",
+      "organization": "School of Biological Sciences",
+      "description": "Summer research credit with session-dependent work hours and TEA approvals.",
+      "deadline_text": "The recommended application submission deadline for Summer 2027 participation is Friday, June 4, 2027. A separate application must be completed for each session in which you intend to receive academic credit.",
+      "application_method": "Beginning Fall 2026, special studies applications will be submitted through Triton Enrollment Authorization (TEA) tool in Triton Student System (TSS).",
+      "category": "research",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "other",
+          "value": null,
+          "raw_text": "All approvals must be completed, and the application must be submitted to the Registrar by Friday of Week 1, which is the campus summer session add deadline. Students are encouraged to submit their applications by the deadlines listed below to allow sufficient time for processing.",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": null,
+          "raw_text": "Students may participate in any one Session (I, II or Special) or in both Session I and II. Students may NOT participate in Special Session and Session I or Session II.",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": null,
+          "raw_text": "4 units = 120 hours of work; average of 24 hours per week",
+          "is_hard_requirement": true
+        }
+      ],
+      "source_url": "https://biology.ucsd.edu/education/undergrad/research/research-acad-cred/summer.html",
+      "source_id": "f8ee767e-183c-43eb-8b7a-9fffec010545",
+      "first_collected_at": "2026-11-14T21:53:18.158012+00:00",
+      "last_verified_at": "2026-11-14T22:06:20.861507+00:00",
+      "status": "needs_verification",
+      "opportunity_id": "0514e67e-0d2e-4e0c-afd7-91b0d6e2fa08"
+    },
+    {
+      "title": "Regents Scholars Research Initiative (RSRI)",
+      "university": "UCSD",
+      "organization": null,
+      "description": "Research matching for incoming UCSD Regents Scholars, with participation for up to three quarters.",
+      "deadline_text": null,
+      "application_method": "Incoming Regents Scholars are emailed an application link in June-July prior to enrolling at UC San Diego.",
+      "category": "program",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "other",
+          "value": "Incoming UCSD Regents Scholar",
+          "raw_text": "Only Regents Scholars are eligible for this program during their incoming year at UC San Diego.",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "hours_per_week",
+          "value": 3,
+          "raw_text": "Commit to research activities for at least 3 hours/week during the quarters in which you are in the program",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": "Quarterly mentor plan and 99H enrollment",
+          "raw_text": "Register for 99H class (either for your department or your college).",
+          "is_hard_requirement": true
+        }
+      ],
+      "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/rsri/index.html",
+      "source_id": "c8d53bee-b27c-4efd-b3e2-3145107a177c",
+      "first_collected_at": "2026-11-14T21:53:26.130628+00:00",
+      "last_verified_at": "2026-11-14T22:06:20.861736+00:00",
+      "status": "needs_verification",
+      "opportunity_id": "e9b41422-3a7f-447f-9bf2-ee5df72c5a40"
+    },
+    {
+      "title": "STARTneuro Transfer Neuroscience Research Program",
+      "university": "UCSD",
+      "organization": "School of Biological Sciences and the Undergraduate Research Hub",
+      "description": "Neuroscience research training for incoming UCSD transfer students; initial application has no minimum GPA or research-experience requirement.",
+      "deadline_text": null,
+      "application_method": "General Application and Undergraduate Application via UCSD SSO, followed by the STARTneuro application and a reference questionnaire.",
+      "category": "program",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "other",
+          "value": "Incoming UCSD transfer pursuing neuroscience",
+          "raw_text": "Must be an incoming transfer UC San Diego student who is interested in pursuing neuroscience research as a career path.",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "work_authorization",
+          "value": "US citizen or permanent resident",
+          "raw_text": "Must be a US Citizen or a permanent resident.",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": "Summer training",
+          "raw_text": "Participate in the summer research training program",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": "Annual ENDURE meeting",
+          "raw_text": "Attend annual ENDURE meeting with scholars from across the country",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": "Program meetings",
+          "raw_text": "Attend 1-2 per quarter STARTneuro meetings and workshops during the school year",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": "Quarterly mentoring",
+          "raw_text": "Meet quarterly with their mentoring pod",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": "Neuroscience laboratory research",
+          "raw_text": "Conduct research in a neuroscience lab",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": "No concurrent structured academic-year research program",
+          "raw_text": "Exclusion: Do not participate in another structured research program during the academic year",
+          "is_hard_requirement": true
+        }
+      ],
+      "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/start-neuro/index.html",
+      "source_id": "4dbaa828-f7cf-4507-951f-d7971bc9e37a",
+      "first_collected_at": "2026-11-14T21:53:29.233817+00:00",
+      "last_verified_at": "2026-11-14T22:06:20.862024+00:00",
+      "status": "needs_verification",
+      "opportunity_id": "512822c4-3c1d-4472-b400-1a3b84db3322"
+    },
+    {
+      "title": "ProtoLab - Undergraduate Research Collaborator Applications",
+      "university": "UCSD",
+      "organization": "ProtoLab",
+      "description": "Rolling applications across software, design, data-science, writing and user-research roles; requirements depend on the chosen role.",
+      "deadline_text": null,
+      "application_method": "Use the Apply here link on the official source; provide the resume/portfolio for the chosen role.",
+      "category": "research",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "other",
+          "value": null,
+          "raw_text": "Apply to the lab! Protolab frequently recruits undergraduates or master’s students to support research projects with roles for developers, UI designers, visual designers, data scientists, and user researchers. We review applications on a rolling basis. If interested, apply here.",
+          "is_hard_requirement": true
+        }
+      ],
+      "source_url": "https://protolab.ucsd.edu/get-involved/",
+      "source_id": "a16d2b58-2359-4a28-b11e-4248b8e8632d",
+      "first_collected_at": "2026-11-14T21:54:18.147871+00:00",
+      "last_verified_at": "2026-11-14T22:06:20.862990+00:00",
+      "status": "needs_verification",
+      "opportunity_id": "cae0895f-27ab-4e97-a08f-6a3e69cf0a57"
+    },
+    {
+      "title": "Chu Laboratory - Undergraduate Research Opportunities",
+      "university": "UCSD",
+      "organization": "Chu Laboratory",
+      "description": "Undergraduate research; joining by sophomore year is preferred but all candidates are considered.",
+      "deadline_text": null,
+      "application_method": "Please contact Hiu with your prior experience, relevant coursework, and an estimate of how much time you plan to spend in lab (hours/week).",
+      "category": "research",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "academic_year",
+          "value": [
+            "freshman",
+            "sophomore",
+            "junior",
+            "senior"
+          ],
+          "raw_text": "Outstanding and inquisitive undergraduate students are welcome in the lab.",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "academic_year",
+          "value": [
+            "freshman",
+            "sophomore"
+          ],
+          "raw_text": "Undergraduate students: Outstanding and inquisitive undergraduate students are welcome in the lab. Ideally, students interested in research should join the lab no later than their sophomore year, but all candidates will be considered. Please contact Hiu with your prior experience, relevant coursework, and an estimate of how much time you plan to spend in lab (hours/week).",
+          "is_hard_requirement": false
+        }
+      ],
+      "source_url": "https://chulab.ucsd.edu/join/",
+      "source_id": "a7fcf956-fbc6-463b-9aed-eb8507835aa8",
+      "first_collected_at": "2026-11-14T21:59:16.349581+00:00",
+      "last_verified_at": "2026-11-14T22:06:20.863076+00:00",
+      "status": "needs_verification",
+      "opportunity_id": "5623a489-7e43-40a7-a9fa-4f8d639accce"
+    },
+    {
+      "title": "Poulikakos Lab - Undergraduate Research Projects",
+      "university": "UCSD",
+      "organization": "Poulikakos Lab",
+      "description": "Undergraduate research during the academic year or summer; contact the lab about projects and fit.",
+      "deadline_text": null,
+      "application_method": "Please visit our Research page and email Prof. Poulikakos to learn about current projects.",
+      "category": "research",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "academic_year",
+          "value": [
+            "freshman",
+            "sophomore",
+            "junior",
+            "senior"
+          ],
+          "raw_text": "We welcome undergraduate students to participate in research projects in the Poulikakos Lab",
+          "is_hard_requirement": true
+        }
+      ],
+      "source_url": "https://poulikakos.ucsd.edu/join-us/",
+      "source_id": "a9b2db41-34c0-4df9-b6d4-f2057449a539",
+      "first_collected_at": "2026-11-14T21:59:28.134451+00:00",
+      "last_verified_at": "2026-11-14T22:06:20.863141+00:00",
+      "status": "needs_verification",
+      "opportunity_id": "3d1e6859-f9fd-450b-8bb3-6a47b34bf874"
+    },
+    {
+      "title": "Mind and Development Lab - Undergraduate Researcher",
+      "university": "UCSD",
+      "organization": "Mind and Development Lab",
+      "description": "Developmental research with a three-quarter, twelve-hour weekly commitment, including lab and mentor meetings.",
+      "deadline_text": null,
+      "application_method": "Complete our online application at: goo.gl/pz3Q9x. We also sometimes post positions on the UCSD REAL portal, and we look at applications sent via the UCSD Psychology Common Application as well.",
+      "category": "research",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "academic_year",
+          "value": [
+            "freshman",
+            "sophomore",
+            "junior",
+            "senior"
+          ],
+          "raw_text": "Undergraduate researchers play a crucial role in our research",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "duration",
+          "value": "3 quarters",
+          "raw_text": "We require a three quarter minimum commitment",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "hours_per_week",
+          "value": 12,
+          "raw_text": "of at least 12 hours a week.",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": "Weekly lab and mentor/group meetings",
+          "raw_text": "We require a three quarter minimum commitment of at least 12 hours a week. This includes attendance at our weekly lab meeting, as well as a smaller meeting with your mentor or research group. For most research projects in the lab, experience working with children and families is a big plus.",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": "Experience with children/families",
+          "raw_text": "experience working with children and families is a big plus.",
+          "is_hard_requirement": false
+        }
+      ],
+      "source_url": "https://madlab.ucsd.edu/join",
+      "source_id": "ed485dad-950b-4503-b266-55eaab27d5f7",
+      "first_collected_at": "2026-11-14T21:59:31.777458+00:00",
+      "last_verified_at": "2026-11-14T22:06:20.863202+00:00",
+      "status": "needs_verification",
+      "opportunity_id": "1ae64e02-9522-4971-934c-dddf2adc59dc"
+    },
+    {
+      "title": "Griffith Lab - Undergraduate Research Positions",
+      "university": "UCSD",
+      "organization": "Griffith Lab",
+      "description": "Apply by emailing a cover letter about interests, availability and background, plus a CV, to Professor Griffith.",
+      "deadline_text": null,
+      "application_method": "Email Professor Griffith at k3griffith@ucsd.edu with a cover letter and CV.",
+      "category": "research",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "academic_year",
+          "value": [
+            "freshman",
+            "sophomore",
+            "junior",
+            "senior"
+          ],
+          "raw_text": "Undergraduate research positions:",
+          "is_hard_requirement": true
+        }
+      ],
+      "source_url": "https://griffithlab.ucsd.edu/team",
+      "source_id": "a2d59b5c-f56c-4a14-ab78-02b9fa84baa6",
+      "first_collected_at": "2026-11-14T21:59:35.376330+00:00",
+      "last_verified_at": "2026-11-14T22:06:20.863366+00:00",
+      "status": "needs_verification",
+      "opportunity_id": "52b14e9e-6600-4ffe-b842-174dcdc738b8"
+    },
+    {
+      "title": "Biering Lab - Undergraduate Research Inquiries",
+      "university": "UCSD",
+      "organization": "Biering Lab",
+      "description": "UCSD undergraduate molecular-biology research; contact the lab to confirm available positions.",
+      "deadline_text": null,
+      "application_method": "please reach out to Scott and inquire about open positions.",
+      "category": "research",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "academic_year",
+          "value": [
+            "freshman",
+            "sophomore",
+            "junior",
+            "senior"
+          ],
+          "raw_text": "If you are a UCSD undergraduate student looking for research experience",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": "UCSD enrollment",
+          "raw_text": "If you are a UCSD undergraduate student looking for research experience",
+          "is_hard_requirement": true
+        }
+      ],
+      "source_url": "https://bieringlab.biosci.ucsd.edu/people/",
+      "source_id": "5e6cf20c-f72c-4c96-923b-45bbf616d099",
+      "first_collected_at": "2026-11-14T21:59:39.220690+00:00",
+      "last_verified_at": "2026-11-14T22:06:20.863488+00:00",
+      "status": "needs_verification",
+      "opportunity_id": "7dae6a62-3b77-4b08-a87e-66f1135b08fe"
+    },
+    {
+      "title": "Chen Lab - Undergraduate Student Researchers",
+      "university": "UCSD",
+      "organization": "Chen Lab",
+      "description": "Research in bioengineering, materials, biology, 3D bioprinting and AI/ML; apply by emailing a CV.",
+      "deadline_text": null,
+      "application_method": "e-mail your CV to Prof. Chen at: shc064@ucsd.edu",
+      "category": "research",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "academic_year",
+          "value": [
+            "freshman",
+            "sophomore",
+            "junior",
+            "senior"
+          ],
+          "raw_text": "We always welcome outstanding undergraduate researchers to join our lab.",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": null,
+          "raw_text": "We are looking for undergraduate researchers in:",
+          "is_hard_requirement": true
+        }
+      ],
+      "source_url": "https://schen.ucsd.edu/lab/positions.html",
+      "source_id": "6373b91a-9081-40e7-b80b-ae0aa316ad0c",
+      "first_collected_at": "2026-11-14T21:59:42.581108+00:00",
+      "last_verified_at": "2026-11-14T22:06:20.863786+00:00",
+      "status": "needs_verification",
+      "opportunity_id": "8d1a244b-75f1-475e-adc2-a5034da4c41f"
+    },
+    {
+      "title": "Cognitive Development Lab - COGS 160 Research Practicum",
+      "university": "UCSD",
+      "organization": "Cognitive Development Lab",
+      "description": "A three-quarter practicum/seminar in early-childhood research, with supervised projects, journal discussion and reports.",
+      "deadline_text": null,
+      "application_method": "Email gdeak@ucsd.edu with a current resume and transcript PDF.",
+      "category": "course",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "other",
+          "value": "UCSD enrollment",
+          "raw_text": "UCSD students can enroll in COGS 160, upon permission.",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "course",
+          "value": null,
+          "raw_text": "Upper-division coursework in Cognitive Science, Human Developmental Science, Linguistics, Neurobiology, and/or Psychology, including two or more UD course on cognition, cognitive development, cognitive ethnography, neuroscience, and/or linguistics",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "gpa",
+          "value": 3.3,
+          "raw_text": "GPA of 3.3 or better",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "duration",
+          "value": "3 quarters",
+          "raw_text": "Commitment to a 3-quarter COGS 160 sequence",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": "Instructor permission after interview",
+          "raw_text": "Permission of instructor based on interview and availability.",
+          "is_hard_requirement": true
+        }
+      ],
+      "source_url": "https://cogdevlab.ucsd.edu/contact-us/join-us",
+      "source_id": "d7aa04bb-cf85-45f0-bd7b-0bc1996a4f76",
+      "first_collected_at": "2026-11-14T21:59:46.058828+00:00",
+      "last_verified_at": "2026-11-14T22:06:20.863844+00:00",
+      "status": "needs_verification",
+      "opportunity_id": "6cfc5446-775a-48cb-b719-c8271f989ca5"
+    },
+    {
+      "title": "Comparative Cognition Lab - Undergraduate Research Assistant",
+      "university": "UCSD",
+      "organization": "Comparative Cognition Lab",
+      "description": "Research with children/adults and primates; one year and ten hours weekly are required.",
+      "deadline_text": null,
+      "application_method": "Interested students will USUALLY need to attend lab meetings. Once you have attended one or more lab meetings, you may apply using the button below. Be prepared to include a PDF 1 page resume or CV.",
+      "category": "research",
+      "deadline": null,
+      "required_skills": [
+        "independent work",
+        "time management"
+      ],
+      "eligibility": [
+        {
+          "type": "skill",
+          "value": "independent work",
+          "raw_text": "comfortable working independently",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "skill",
+          "value": "time management",
+          "raw_text": "good time management skills",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": "Professional commitment",
+          "raw_text": "will treat position in the lab as seriously as a job",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "hours_per_week",
+          "value": 10,
+          "raw_text": "a one year commitment (10 hours a week) is required for research assistants.",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "duration",
+          "value": "1 year",
+          "raw_text": "a one year commitment (10 hours a week) is required for research assistants.",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "course",
+          "value": "COGS 14A",
+          "raw_text": "have taken COGS 14A or an equivalent research methods class",
+          "is_hard_requirement": false
+        },
+        {
+          "type": "other",
+          "value": "Experience with children/animals",
+          "raw_text": "prior experience working with children/animals",
+          "is_hard_requirement": false
+        },
+        {
+          "type": "other",
+          "value": "Research experience",
+          "raw_text": "prior experience working in a research lab",
+          "is_hard_requirement": false
+        }
+      ],
+      "source_url": "https://cclab.ucsd.edu/for-undergrads/",
+      "source_id": "7ef39d09-0695-49a6-910b-80865d73732c",
+      "first_collected_at": "2026-11-14T21:59:49.934350+00:00",
+      "last_verified_at": "2026-11-14T22:06:20.864015+00:00",
+      "status": "needs_verification",
+      "opportunity_id": "f5b3c98c-a311-4c70-878b-94bf4bfb506c"
+    },
+    {
+      "title": "Wasserman Lab - Undergraduate Research Opportunities",
+      "university": "UCSD",
+      "organization": "Wasserman Lab",
+      "description": "Biological research with potential independent projects; review upper-level coursework expectations with the lab.",
+      "deadline_text": null,
+      "application_method": "Please E-mail Dr. Wasserman directly to discuss opportunities.",
+      "category": "research",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "gpa",
+          "value": 3.3,
+          "raw_text": "The ideal applicant has a GPA of 3.3 or higher in their basic coursework.",
+          "is_hard_requirement": false
+        },
+        {
+          "type": "course",
+          "value": [
+            "BICD 100",
+            "BIMM 100",
+            "BIMM 181",
+            "BIBC 110"
+          ],
+          "raw_text": "Applicants should also have taken one or more upper level classes, such as Genetics (BICD 100), Molecular Biology (BIMM 100), Molecular Sequence Analysis (BIMM 181), Physical Biochemistry (BIBC 110).",
+          "is_hard_requirement": true
+        }
+      ],
+      "source_url": "https://labs.biology.ucsd.edu/wasserman/undergrads/undergrad_research.html",
+      "source_id": "98fc0711-2346-43ab-bf0f-0bb622ac520f",
+      "first_collected_at": "2026-11-14T21:59:52.768752+00:00",
+      "last_verified_at": "2026-11-14T22:06:20.864385+00:00",
+      "status": "needs_verification",
+      "opportunity_id": "a52b6546-e49b-4848-a300-40f2ba6f4e79"
+    },
+    {
+      "title": "Scripps Tectonorockphysics Lab - Undergraduate Research Routes",
+      "university": "UCSD",
+      "organization": "Scripps Tectonorockphysics Lab",
+      "description": "Paid Handshake jobs, work-study arrangements or SIO 199 credit; the lab does not accept unpaid volunteers.",
+      "deadline_text": null,
+      "application_method": "For paid positions, check UCSD's Handshake. For work-study or SIO 199 course credit, email PI-Wright with an introduction, CV/resume, and a description of desired work.",
+      "category": "research",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "academic_year",
+          "value": [
+            "freshman",
+            "sophomore",
+            "junior",
+            "senior"
+          ],
+          "raw_text": "Prospective Undergraduate Researchers",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": null,
+          "raw_text": "If you already have a UCSD work-study award and would like to work with us, then please email PI-Wright with a short introduction to yourself, your CV/resume, and a description of the work you would like to do. It is okay to not know what type of work you'd like to do. If this is the case, then please let PI-Wright know which topics you feel you'd have the most fun working on. If you would like to do research with us to fulfill the SIO 199 course credit, then please follow the instructions in this bullet point.",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": "No unpaid volunteer route",
+          "raw_text": "We do not allow volunteers in the lab.",
+          "is_hard_requirement": true
+        }
+      ],
+      "source_url": "https://stripplelab.ucsd.edu/join-us/",
+      "source_id": "d43c7114-c383-4651-820f-4d13107e7887",
+      "first_collected_at": "2026-11-14T21:59:58.981850+00:00",
+      "last_verified_at": "2026-11-14T22:06:20.864435+00:00",
+      "status": "needs_verification",
+      "opportunity_id": "586dcc27-ed62-4ff6-b6f7-f5e78f83d2b9"
+    },
+    {
+      "title": "McNair Scholars 2026-2027 Research Program",
+      "university": "UCSD",
+      "organization": null,
+      "description": "Faculty-mentored winter, spring and summer research with independent-study credit and graduate-school preparation.",
+      "deadline_text": null,
+      "application_method": "Use the official McNair application link, with statement, recommendation and transcripts.",
+      "category": "program",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "other",
+          "value": "UCSD undergraduate",
+          "raw_text": "Are a UC San Diego undergraduate student",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": "90 units by program start",
+          "raw_text": "Have at least 90 units by the time the program starts (this includes any transfer/AP units)",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "gpa",
+          "value": null,
+          "raw_text": "Have at least a 3.0 grade point average",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": null,
+          "raw_text": "GPA requirement can be achieved by the end of the spring quarter in which you are in the program.",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": "Faculty mentor before program start",
+          "raw_text": "Prior to the start of the program, find a faculty mentor.",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": "Full-time UCSD enrollment",
+          "raw_text": "Be enrolled full-time at UC San Diego",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": "No other concurrent research program",
+          "raw_text": "Exclusion: not participate in another research program",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": null,
+          "raw_text": "Exclusion: During the summer quarter, students cannot work, take classes (other than program required 199), or participate in any other summer research program.",
+          "is_hard_requirement": true
+        }
+      ],
+      "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/mcnair/index.html",
+      "source_id": "493dfdfb-8469-419a-b891-d1928908febf",
+      "first_collected_at": "2026-11-14T22:06:20.855390+00:00",
+      "last_verified_at": "2026-11-14T22:06:20.864605+00:00",
+      "status": "needs_verification",
+      "opportunity_id": "75e81591-570b-4f57-b330-70ee928eed64"
+    }
+  ],
+  "reviews": [
+    {
+      "source_url": "https://pelham-lab.ucsd.edu/join-the-team/undergraduates",
+      "source_text_sha256": "808e3061a5a29d6e10321e8d4721479a465ef6c0ee7ba82d25547158c0ac45c4",
+      "reviewed_at": "2026-11-14T22:06:20.836036+00:00",
+      "reviewer": "Codex source review",
+      "requirements_complete": true,
+      "notes": "Source explicitly states currently recruiting. No minimum GPA, hours or prior experience is listed.",
+      "database_status": "needs_verification"
+    },
+    {
+      "source_url": "https://winkielmanlab.ucsd.edu/joinus/",
+      "source_text_sha256": "e3537d3b2c9745a9ec7001088913cc2912114495306cc81c1042139cb4a82fa7",
+      "reviewed_at": "2026-11-14T22:06:20.836277+00:00",
+      "reviewer": "Codex source review",
+      "requirements_complete": true,
+      "notes": "Reviewed entire requirements and application sections. Restored required communication skill omitted by AI.",
+      "database_status": "needs_verification"
+    },
+    {
+      "source_url": "https://rickardlab.ucsd.edu/join.html",
+      "source_text_sha256": "74bb1792acd01bf16fa3cba8e31ff9b18a56448a3b7ff923160dbe8b52ad88af",
+      "reviewed_at": "2026-11-14T22:06:20.836449+00:00",
+      "reviewer": "Codex source review",
+      "requirements_complete": false,
+      "notes": "REAL/contact is needed to confirm the next vacancy. Desired-skills heading contains minima and preferences; completeness is not certified.",
+      "database_status": "needs_verification"
+    },
+    {
+      "source_url": "https://eatingdisorders.ucsd.edu/node/121",
+      "source_text_sha256": "bdf6a67a956832d6983a7658db9d01288f546b09ee9478450e9dba3c03f7dba1",
+      "reviewed_at": "2026-11-14T22:06:20.836759+00:00",
+      "reviewer": "Codex source review",
+      "requirements_complete": true,
+      "notes": "Other local university undergraduates may apply. One-year commitment is described as ideal, not mandatory. Exact cycle deadline is in the form.",
+      "database_status": "needs_verification"
+    },
+    {
+      "source_url": "https://pediatrics.ucsd.edu/research/faculty-labs/cherqui-lab/career.html",
+      "source_text_sha256": "7e45e8b9b9ec0fbf8c9b3cc6e3a1a329ae9acb82ee8c59fdc9f3861d12679a05",
+      "reviewed_at": "2026-11-14T22:06:20.836924+00:00",
+      "reviewer": "Codex source review",
+      "requirements_complete": false,
+      "notes": "Separate Spring interest form may contain additional conditions. Do not advertise Fall 2026 as open.",
+      "database_status": "needs_verification"
+    },
+    {
+      "source_url": "https://winzeler.ucsd.edu/jobs/",
+      "source_text_sha256": "5ad76ed16335b30f4ffef64fe76a84b77e02b282a41206d5dfdf9c1d41066a94",
+      "reviewed_at": "2026-11-14T22:06:20.836988+00:00",
+      "reviewer": "Codex source review",
+      "requirements_complete": false,
+      "notes": "Standing recruitment information, not a confirmed current vacancy. No graduate or postdoc criteria were copied.",
+      "database_status": "needs_verification"
+    },
+    {
+      "source_url": "https://hxi.ucsd.edu/faq/join-us/",
+      "source_text_sha256": "92351a195ae186c42e5218595adecf8c90ff20f467fab63a54f1f993c236bb6c",
+      "reviewed_at": "2026-11-14T22:06:20.838737+00:00",
+      "reviewer": "Codex source review",
+      "requirements_complete": false,
+      "notes": "Project-specific fit and approval remain unresolved; graduate and postdoctoral conditions excluded.",
+      "database_status": "needs_verification"
+    },
+    {
+      "source_url": "https://ultrafast.ucsd.edu/jobs/",
+      "source_text_sha256": "4982a128f84a87370f83ecd64b700215718e6b966206ef0220e019a3ec941994",
+      "reviewed_at": "2026-11-14T22:06:20.838854+00:00",
+      "reviewer": "Codex source review",
+      "requirements_complete": true,
+      "notes": "Standing published invitation; no guaranteed funded vacancy is implied. No minimum grades, hours or prior technical skills are stated.",
+      "database_status": "needs_verification"
+    },
+    {
+      "source_url": "https://psychology.ucsd.edu/undergraduate-program/research/index.html",
+      "source_text_sha256": "0f506a8c0df66f29466f98355080124e3f0313a679e6302efa59a94a52faac42",
+      "reviewed_at": "2026-11-14T22:06:20.841247+00:00",
+      "reviewer": "Codex source review",
+      "requirements_complete": false,
+      "notes": "Two branches are alternatives, not simultaneous requirements. Individual labs add conditions; B must keep compound eligibility unresolved.",
+      "database_status": "needs_verification"
+    },
+    {
+      "source_url": "https://biology.ucsd.edu/education/undergrad/research/research-acad-cred/summer.html",
+      "source_text_sha256": "44701dd9a17136408a82168f4ee7b1f623b02d29bb3f95b28b25d4a43a3c1f82",
+      "reviewed_at": "2026-11-14T22:06:20.842087+00:00",
+      "reviewer": "Codex source review",
+      "requirements_complete": false,
+      "notes": "Workload depends on session and credits; 24 hours is not universal. June 4 is recommended submission, not the absolute Registrar cutoff.",
+      "database_status": "needs_verification"
+    },
+    {
+      "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/rsri/index.html",
+      "source_text_sha256": "0c59ad8cd0a1b546b9d94e885643220ba2e107dd9efdc9d899560f3ef5f215d0",
+      "reviewed_at": "2026-11-14T22:06:20.842944+00:00",
+      "reviewer": "Codex source review",
+      "requirements_complete": false,
+      "notes": "Specific deadline is privately emailed; June/July source statements may be stale. No current open place is asserted.",
+      "database_status": "needs_verification"
+    },
+    {
+      "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/start-neuro/index.html",
+      "source_text_sha256": "919717472290b7f1e346f9f0fbdea8c6321374a2fa4cc747b905678f3b1c94e2",
+      "reviewed_at": "2026-11-14T22:06:20.845739+00:00",
+      "reviewer": "Codex source review",
+      "requirements_complete": false,
+      "notes": "Fall 2026/Winter 2027 recruitment has no dated deadline. Second-year continuation rules need staged checks, not an invented initial GPA cutoff.",
+      "database_status": "needs_verification"
+    },
+    {
+      "source_url": "https://protolab.ucsd.edu/get-involved/",
+      "source_text_sha256": "2ba34740e0f7260edbc268ce1c07fb261d5e609de4091ba4a5047ebf5cc148e8",
+      "reviewed_at": "2026-11-14T22:06:20.845946+00:00",
+      "reviewer": "Codex source review",
+      "requirements_complete": false,
+      "notes": "Alternative role-specific technologies were not merged into an invented all-skills requirement.",
+      "database_status": "needs_verification"
+    },
+    {
+      "source_url": "https://chulab.ucsd.edu/join/",
+      "source_text_sha256": "166a1535c905de69ad8b6774019c05be9fdc194f59cba1b5969021c014cfbebb",
+      "reviewed_at": "2026-11-14T22:06:20.846096+00:00",
+      "reviewer": "Codex source review",
+      "requirements_complete": true,
+      "notes": "The sophomore preference is not a hard cutoff; all years remain possible under the published criteria.",
+      "database_status": "needs_verification"
+    },
+    {
+      "source_url": "https://poulikakos.ucsd.edu/join-us/",
+      "source_text_sha256": "d11996c0305cf9fd1cfe78e6d04e4aa8a69de56773188ec8f1f635c2964cf4c4",
+      "reviewed_at": "2026-11-14T22:06:20.846255+00:00",
+      "reviewer": "Codex source review",
+      "requirements_complete": true,
+      "notes": "Published undergraduate participation invitation; no minimum grades, hours or prior skills stated. Funding-program conditions are separate.",
+      "database_status": "needs_verification"
+    },
+    {
+      "source_url": "https://madlab.ucsd.edu/join",
+      "source_text_sha256": "9d737f2596fde5d7c441878dfd8ce5ea9475f540cf4ccf02046420339c57d030",
+      "reviewed_at": "2026-11-14T22:06:20.846695+00:00",
+      "reviewer": "Codex source review",
+      "requirements_complete": true,
+      "notes": "Entire undergraduate section checked; mandatory meetings retained rather than dropped to force eligibility.",
+      "database_status": "needs_verification"
+    },
+    {
+      "source_url": "https://griffithlab.ucsd.edu/team",
+      "source_text_sha256": "76a76fd434eb9a2e41c06e823b2ad239bc197768f0be65416643660ca43b81e0",
+      "reviewed_at": "2026-11-14T22:06:20.847021+00:00",
+      "reviewer": "Codex source review",
+      "requirements_complete": true,
+      "notes": "Published undergraduate application section lists no minimum GPA, technical skill or time prerequisite.",
+      "database_status": "needs_verification"
+    },
+    {
+      "source_url": "https://bieringlab.biosci.ucsd.edu/people/",
+      "source_text_sha256": "c7844592c1c885950d724e976d073c954947cfc6b293f3119a6e1728de58ebe8",
+      "reviewed_at": "2026-11-14T22:06:20.847878+00:00",
+      "reviewer": "Codex source review",
+      "requirements_complete": false,
+      "notes": "Current vacancy and project-specific conditions must be confirmed with the lab.",
+      "database_status": "needs_verification"
+    },
+    {
+      "source_url": "https://schen.ucsd.edu/lab/positions.html",
+      "source_text_sha256": "b42a948a7fdc8c8c668d1d9c76fb98102a6e56c3ba298276ed922e56670fe3ba",
+      "reviewed_at": "2026-11-14T22:06:20.848038+00:00",
+      "reviewer": "Codex source review",
+      "requirements_complete": false,
+      "notes": "Alternative discipline and software-engineering routes are listed; route-specific prerequisites remain unresolved.",
+      "database_status": "needs_verification"
+    },
+    {
+      "source_url": "https://cogdevlab.ucsd.edu/contact-us/join-us",
+      "source_text_sha256": "a2965c5615c9896ff91778495c96cd01f37c078e35a0df1dac617961c3a90ea3",
+      "reviewed_at": "2026-11-14T22:06:20.848474+00:00",
+      "reviewer": "Codex source review",
+      "requirements_complete": true,
+      "notes": "Course condition is a subject-area/count rule, not a fabricated course code; equivalence and instructor permission remain pending for B.",
+      "database_status": "needs_verification"
+    },
+    {
+      "source_url": "https://cclab.ucsd.edu/for-undergrads/",
+      "source_text_sha256": "63cbad391aa86c481916ccfccb6a98f834a3c6cad9ded5e75b446c34a6ac902a",
+      "reviewed_at": "2026-11-14T22:06:20.849557+00:00",
+      "reviewer": "Codex source review",
+      "requirements_complete": false,
+      "notes": "Page still gives Winter 2024 meeting times. Confirm recruiting; COGS 14A and prior experience are preferred, not mandatory.",
+      "database_status": "needs_verification"
+    },
+    {
+      "source_url": "https://labs.biology.ucsd.edu/wasserman/undergrads/undergrad_research.html",
+      "source_text_sha256": "ee20e639337805270f03da68a91e6eb4b8060e6624135feef2b08ef51d34dc07",
+      "reviewed_at": "2026-11-14T22:06:20.849629+00:00",
+      "reviewer": "Codex source review",
+      "requirements_complete": false,
+      "notes": "Course examples are an any-of expectation, not all listed courses. Static page has conflicting Parkhurst header; confirm current information.",
+      "database_status": "needs_verification"
+    },
+    {
+      "source_url": "https://stripplelab.ucsd.edu/join-us/",
+      "source_text_sha256": "7d849eb13076333e9edb9d4b8160802cb5c1a0460721686c9025df3c7299c02f",
+      "reviewed_at": "2026-11-14T22:06:20.852301+00:00",
+      "reviewer": "Codex source review",
+      "requirements_complete": false,
+      "notes": "Work-study and SIO 199 are alternative routes. Check actual Handshake advertisements for role-specific criteria.",
+      "database_status": "needs_verification"
+    },
+    {
+      "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/mcnair/index.html",
+      "source_text_sha256": "c6236aeba933e9588aa4e95d510f3e54077990b9c05266ce09ac8faa87bbdeb4",
+      "reviewed_at": "2026-11-14T22:06:20.857026+00:00",
+      "reviewer": "Codex source review",
+      "requirements_complete": false,
+      "notes": "Open source, but staged hours, later GPA attainment, summer exclusions and other program conditions need staged eligibility handling. Completeness not certified.",
+      "database_status": "needs_verification"
+    }
+  ],
+  "excluded_sources": [
+    {
+      "source_url": "https://cogdevlab.ucsd.edu/undergraduates/",
+      "reason": "Obsolete URL or no valid opportunity; a working detail URL was collected separately where available."
+    },
+    {
+      "source_url": "https://ctleelab.ucsd.edu/news/hiring-ugrad-ml-image/",
+      "reason": "Positions explicitly filled; not added as an active opening."
+    },
+    {
+      "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/tyler-center/index.html",
+      "reason": "Published 2026 application deadline has passed; no new cycle invented."
+    },
+    {
+      "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/uc-scholars/index.html",
+      "reason": "Published 2026 application deadline has passed; no new cycle invented."
+    },
+    {
+      "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/urs/index.html",
+      "reason": "Published 2026 application deadline has passed; no new cycle invented."
+    },
+    {
+      "source_url": "https://ersp.ucsd.edu/apply/applying-to-ersp",
+      "reason": "2026-2027 applications closed; exception rules require separate review."
+    },
+    {
+      "source_url": "https://lasrlab.ucsd.edu/join-the-lab",
+      "reason": "Undergraduate recruitment explicitly closed."
+    },
+    {
+      "source_url": "https://greenelab.ucsd.edu/join_us",
+      "reason": "Undergraduate recruitment explicitly closed."
+    }
+  ],
+  "validation": {
+    "single_row_per_source": true,
+    "stable_ids_and_first_collected_at": true,
+    "repeat_upsert_counts": {
+      "inserted": 0,
+      "updated": 1,
+      "duplicates": 23
+    },
+    "b_adapter_checks": {
+      "passed": true,
+      "source_url": "https://winkielmanlab.ucsd.edu/joinus/",
+      "database_status_gate": "needs_confirmation",
+      "reviewed_fixture_status": "eligible",
+      "insufficient_time": "ineligible",
+      "unknown_skills": "needs_confirmation",
+      "note": "Verified fixture is a local test copy; Neon status remains needs_verification pending admin approval."
+    }
+  },
+  "note": "Source review was performed by Codex. Database verified status still requires D/admin approval; no human approval is claimed."
+}

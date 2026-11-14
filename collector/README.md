@@ -122,9 +122,14 @@ python -B -m unittest discover -s collector/tests -v
 ```
 
 See VALIDATION.md for real-source observations and verified Neon insert/upsert
-results. No production-ready accuracy claim is made from a three-page sample.
+results. The expanded review manifest is not a general extraction-accuracy benchmark.
 
 Provider documentation:
 - https://docs.brightdata.com/products/web-unlocker/send-your-first-request
 - https://ai.google.dev/api/generate-content
 - https://www.psycopg.org/psycopg3/docs/basic/params.html
+
+## Expanded data handoff
+
+See [B/D data handoff](reviews/B_HANDOFF.md) for 24 additional UCSD records,
+source-review decisions, representative eligibility cases, and pending admin approval.

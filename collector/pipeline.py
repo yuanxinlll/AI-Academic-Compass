@@ -12,7 +12,7 @@ from collector.main import extract, fetch_page, normalize
 from collector.text import canonical_url, parse_page, is_directory
 
 ROOT = Path(__file__).resolve().parent
-EXTRACTION_VERSION = 'contract-v3'
+EXTRACTION_VERSION = 'contract-v4-undergraduate'
 
 
 def load_env(path):
@@ -98,6 +98,7 @@ def run_collection(urls, state_path, output_path, *, discover=False, max_pages=5
         report['websites_checked'] += 1
         checked_at = datetime.now(timezone.utc).isoformat()
         previous = state['pages'].get(url, {})
+        page = None
         try:
             html = fetcher(url)
             report['pages_retrieved'] += 1
@@ -171,7 +172,8 @@ def run_collection(urls, state_path, output_path, *, discover=False, max_pages=5
             retained = [dict(record, status=(
                 'expired' if record.get('status') == 'expired' else 'needs_verification'
             )) for record in previous.get('records', [])]
-            state['pages'][url] = dict(previous, records=retained, last_checked_at=checked_at, error=code)
+            state['pages'][url] = dict(previous, records=retained, last_checked_at=checked_at, error=code,
+                                       source_text=page or previous.get('source_text', ''))
             if database:
                 try:
                     database.save_page(url, [], checked_at, [entry])

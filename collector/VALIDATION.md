@@ -94,3 +94,27 @@ applies only the three collection CREATE TABLE definitions in that container,
 and removes the container afterward. It never uses DATABASE_URL or touches Neon.
 The production adapter requires TLS; only the isolated test subclass disables
 TLS for its loopback connection.
+
+## Expanded B data handoff
+
+A subsequent 2026-11-14 source review inspected 32 official UCSD pages and added
+24 records to Neon. Eight closed, filled, past-cycle or obsolete pages were
+excluded rather than advertised as active. All 24 new records passed contract
+and quotation checks and are visible in the deployed public API.
+
+The source-reviewed manifest and B-specific cases are in
+[reviews/B_HANDOFF.md](reviews/B_HANDOFF.md). Nine complete reviews are ready
+for D's admin approval, but no ADMIN_TOKEN is configured locally. Consequently
+all 24 new database records still have needs_verification; source review is not
+being presented as human/admin approval.
+
+A persistence recheck inserted zero rows, preserved all 24 IDs and initial
+timestamps, and updated one conditional GPA correction while recognizing the
+other 23 saves as duplicates. The dataset now has 27 real UCSD records, including
+the existing expired CAMP entry. Seed/test records were not modified.
+
+All 32 current offline tests pass. B's real matching adapter also passed four
+isolated tests on the new Winkielman record: unverified stays pending, a local
+verified copy can be eligible, insufficient time is ineligible, and unknown
+skills stay pending. No production verified-to-eligible claim is made until
+admin approval is applied. No student profile was written for these tests.

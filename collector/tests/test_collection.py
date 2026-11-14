@@ -84,3 +84,17 @@ class CollectionTests(unittest.TestCase):
         item['closure_evidence'] = 'Applications are currently closed.'
         result = normalize([item], 'https://ucsd.edu/test', item['closure_evidence'])[0]
         self.assertEqual(result['status'], 'expired')
+
+    def test_numeric_time_values_and_filled_positions(self):
+        item = self.record()
+        item['eligibility'] = [dict(type='hours_per_week', value='12',
+            raw_text='12 hours per week', is_hard_requirement=True)]
+        result = normalize([item], 'https://ucsd.edu/test', '12 hours per week')[0]
+        self.assertEqual(result['eligibility'][0]['value'], 12)
+        item['eligibility'][0]['value'] = '>12'
+        result = normalize([item], 'https://ucsd.edu/test', '12 hours per week')[0]
+        self.assertEqual(result['eligibility'][0]['value'], '>12')
+        item = self.record()
+        item['closure_evidence'] = 'Position(s) have been filled.'
+        result = normalize([item], 'https://ucsd.edu/test', item['closure_evidence'])[0]
+        self.assertEqual(result['status'], 'expired')
