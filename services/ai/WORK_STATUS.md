@@ -14,6 +14,10 @@
 
 ## Verification
 
+Block 8 update: 37 test methods passed, including PDF-to-handler-to-draft-to-merge
+and matching flows, explicit opt-in, mocked Gemini responses and failure paths.
+See ACCEPTANCE.md for exact scope and remaining external acceptance.
+
 Latest run: 32 non-network test methods passed, including 12 manually specified
 qualification cases within a parameterized test. These are synthetic cases,
 not measured accuracy on real opportunities. Prior HTTP tests passed before the

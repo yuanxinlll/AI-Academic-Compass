@@ -4,6 +4,11 @@ Validated locally on Python 3.9.6. Production target Python 3.11+ remains unveri
 
 ## Results
 
+Latest block 8 validation: 37 test methods passed, including five complete
+HTTP-handler flow scenarios over in-memory streams. Gemini transport is mocked;
+confirmation is simulated. This adds current handler coverage without sockets,
+not browser automation or real-provider end-to-end verification.
+
 Latest qualification change: 32 non-network test methods passed. One method
 contains 12 explicit expected qualification cases. Positive eligibility is tested
 only with trusted internal review; unknown/compound requirements remain pending.
