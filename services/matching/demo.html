@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Academic Compass — Matching Demo</title>
+<style>
+body{font:16px system-ui;background:#f3f6fa;color:#16263c;margin:0}main{max-width:1000px;margin:40px auto;padding:24px}h1{font-size:36px;margin-bottom:8px}.muted{color:#53647c}section,article{background:white;border:1px solid #dce3ed;border-radius:16px;padding:24px;margin-top:20px}.controls{display:flex;gap:16px;flex-wrap:wrap;align-items:end}label{display:grid;gap:8px}select,input,button{font:inherit;padding:10px;border:1px solid #bcc9d9;border-radius:8px}button{background:#174bc6;color:white;cursor:pointer}.badge{display:inline-block;background:#edf2ff;padding:5px 10px;border-radius:6px;font-size:14px}.score{float:right;font-size:24px}li{margin:8px 0}details{margin-top:16px}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px}#error{color:#aa2020}
+</style>
+<main><p class="muted">ACADEMIC COMPASS / LOCAL PROTOTYPE</p><h1>Find your next opportunity.</h1>
+<p class="muted">Explore how interests and availability change matching results. All records are fictional.</p>
+<section><div class="controls"><label>Student profile<select id="student"></select></label><label>Weekly availability (hours)<input id="hours" type="number" min="0" max="168" placeholder="Unknown"></label><button id="run">Match opportunities</button></div><p id="summary" class="muted"></p><p id="error" role="alert"></p></section>
+<div id="results" aria-live="polite"></div>
+<section><strong>Prototype limitations</strong><p>Scores indicate lexical relevance, not acceptance probability. Eligibility remains unverified unless an explicit failure is identified. PDF parsing, Gemini, authentication and database persistence are not connected.</p><details><summary>Inspect API response</summary><pre id="raw"></pre></details></section></main>
+<script>
+let data;
+const el=id=>document.getElementById(id);
+function node(tag,text){const n=document.createElement(tag);n.textContent=text;return n;}
+function loadProfile(){const p=data.profiles[el('student').value];el('hours').value=p.weekly_hours_available??'';el('summary').textContent=`Interests: ${(p.interests||[]).join(', ')} · Skills: ${(p.skills||[]).join(', ')}`;}
+async function run(){el('error').textContent='';try{const profile={...data.profiles[el('student').value],weekly_hours_available:el('hours').value===''?null:Number(el('hours').value)};const response=await fetch('/api/match',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({profile,opportunity_ids:data.opportunities.map(o=>o.opportunity_id)})});const result=await response.json();if(!response.ok)throw Error(result.error.message);el('raw').textContent=JSON.stringify(result,null,2);el('results').replaceChildren();for(const item of result.results){const opportunity=data.opportunities.find(o=>o.opportunity_id===item.opportunity_id);const card=node('article','');const score=node('span',item.match_score===null?'Unscored':`${item.match_score}/100`);score.className='score';card.append(score,node('h2',opportunity.title));const badge=node('span',item.eligibility_status.replaceAll('_',' '));badge.className='badge';card.append(badge,node('p',opportunity.description));const list=node('ul','');for(const reason of item.match_reasons)list.append(node('li',reason));for(const check of item.eligibility_checks)list.append(node('li',`${check.result.toUpperCase()}: ${check.reason}`));card.append(list);el('results').append(card);}}catch(error){el('error').textContent=error.message;}}
+el('student').onchange=()=>{loadProfile();run();};el('run').onclick=run;
+fetch('/api/demo-data').then(r=>r.json()).then(value=>{data=value;for(const name of Object.keys(data.profiles)){const option=node('option',name.replaceAll('_',' '));option.value=name;el('student').append(option);}loadProfile();return run();}).catch(error=>el('error').textContent=error.message);
+</script>
+</html>
