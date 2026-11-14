@@ -1,4 +1,4 @@
-# Collector verification ? 2026-11-14
+# Collector verification - 2026-11-14
 
 The collector implementation remains scoped to collector/. Shared contracts,
 Next.js routes, database schema, and other members' code were not changed.
@@ -14,7 +14,7 @@ Next.js routes, database schema, and other members' code were not changed.
 - Repeat collection reused unchanged extraction and preserved record identity.
   A changed EMPOWER page was re-extracted.
 - D's backend branch (7325512) was inspected without merging it. Its contract
-  ?8.1 assigns direct Neon writes to A's script. The adapter uses that branch's
+  section 8.1 assigns direct Neon writes to A's script. The adapter uses that branch's
   sources, opportunities, and collection_logs table definitions.
 - Disposable PostgreSQL 17 tests passed for insert, duplicate upsert, update,
   stable database-generated ID and first timestamp, JSON/date round trips,
@@ -38,29 +38,45 @@ These observations concern the sampled pages, not a general accuracy estimate.
 
 These are program records, not invented lab vacancies. All record-level
 verification remains conservative. Three samples do not satisfy the plan's
-later 20?30 listing accuracy evaluation.
+later 20-30 listing accuracy evaluation.
 
-## Remaining deployment dependency
+## Neon integration verified
 
-The team's Neon connection is not configured in collector/.env. A real Neon
-save, existing-database permissions, and dashboard display have not been tested.
-D must supply a collector-authorized DATABASE_URL for its already-created
-schema. The script checks columns and requires TLS before collection.
+On 2026-11-14, the configured Neon connection passed the existing-schema check.
+A forced live FMP collection fetched through Bright Data, extracted with Gemini,
+validated the result, and inserted one real opportunity into Neon.
 
-After configuring it, run twice:
+Two subsequent bounded discovery runs checked the academic-year directory plus
+CAMP, EMPOWER, and FMP, using the production adapter against the configured Neon
+database:
+
+| Run | Records found | Inserted | Updated | Duplicates | Errors |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| First discovery/save run | 3 | 2 | 0 | 1 | 0 |
+| Repeat discovery/save run | 3 | 0 | 0 | 3 | 0 |
+
+Database readback verified exactly one opportunity row per program source,
+structured eligibility JSON, associated source IDs, preservation of the existing
+FMP opportunity_id and first_collected_at, and exactly two additional collection
+logs per source across these two runs. No tables were created, dropped, or
+altered. No private student tables were accessed. The local machine-readable
+verification result is in ignored collector/output/neon-verification.json.
+
+The member A core collection success criterion is now demonstrated against
+Neon: real-source discovery, fetching, extraction, validation, duplicate handling,
+and database saving. The separate project-wide 20-30 listing accuracy study
+remains a broader evaluation task; this three-program sample does not establish
+general extraction accuracy. Dashboard display remains C/D's integration work.
+
+To collect again:
 
 ```powershell
-collector/.venv/Scripts/python.exe -m collector.main --url https://ugresearch.ucsd.edu/programs/all-urh-programs/fmp/index.html --database
+collector/.venv/Scripts/python.exe -m collector.main --sources collector/sources.json --discover --max-pages 4 --max-depth 1 --database
 ```
-
-Verify the same opportunity_id and first_collected_at, one opportunity row,
-and one collection_logs entry per run. C/D can then verify the existing
-GET /api/opportunities displays the new record. Do not rerun D's destructive
-schema setup against a populated database.
 
 The optional POST /api/collect route is D-owned and not mounted by this change.
 collector/api.py provides the Python logic; direct CLI collection is sufficient
-for the hackathon architecture.
+for the hackathon architecture. Credentials stay in ignored collector/.env.
 
 ## Reproduce database tests
 

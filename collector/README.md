@@ -121,8 +121,8 @@ for the hackathon; the direct database script is the primary integration.
 python -B -m unittest discover -s collector/tests -v
 ```
 
-See VALIDATION.md for real-source observations and the database verification
-boundary. No production-ready accuracy claim is made from a three-page sample.
+See VALIDATION.md for real-source observations and verified Neon insert/upsert
+results. No production-ready accuracy claim is made from a three-page sample.
 
 Provider documentation:
 - https://docs.brightdata.com/products/web-unlocker/send-your-first-request
