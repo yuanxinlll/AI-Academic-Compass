@@ -11,11 +11,20 @@
 - Framework: FastAPI; entrypoint `main:app`; configured Python 3.12
 - Source contract: `feature/backend/docs/contracts.md` v1.1
 
-The domain above is the configured target, not proof of deployment readiness.
-Check Vercel Ready status and run a live authenticated smoke test before wiring
-production traffic. The initial deployment attempt was blocked by an unmapped
-commit author. A new commit uses the repository owner's supplied commit identity;
-GitHub/Vercel account linkage must still be verified by the platform.
+Deployment `7xs2fNaerFzJpwWePBkS9EaaKsTD` (commit `4546dd2`) is Ready.
+The production domain returns the application's UNAUTHORIZED JSON without a
+token. Build logs confirm Python 3.12. Initial commit identity and missing runtime
+dependency issues were resolved. Authenticated live smoke testing still needs
+the owner or D to enter the shared token privately.
+
+Run this from the repository root; the token prompt is hidden and not saved:
+
+```bash
+.venv/bin/python -B services/ai/check_deployment.py
+```
+
+The script checks missing-token rejection, authenticated matching and a fictional
+PDF with use_ai=false. It does not call Gemini or consume model quota.
 
 ## Variables to configure in D's Next.js project
 
@@ -97,8 +106,8 @@ persisted by the AI service. Missing array fields are omitted in extracted outpu
 
 ## Acceptance checklist
 
-- [ ] AI deployment shows Ready and Python runtime is confirmed in build logs.
-- [ ] Request without token returns JSON 401.
+- [x] AI deployment shows Ready and Python 3.12 is confirmed in build logs.
+- [x] Request without token returns the application's UNAUTHORIZED JSON.
 - [ ] Matching with a fictional v1.1 profile returns HTTP 200.
 - [ ] Verified empty eligibility produces eligible; unverified produces needs_confirmation.
 - [ ] Empty student skills do not produce an automatic skill failure.
