@@ -1,17 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getSql } from "@/lib/database/db";
 import { apiError } from "@/lib/api";
+import { OPPORTUNITY_COLUMNS } from "@/lib/database/columns";
 
 // GET /api/opportunities — see docs/contracts.md §4.1
 const CATEGORIES = ["research", "internship", "event", "competition", "program", "course"];
 const STATUSES = ["verified", "needs_verification", "expired"];
 const SORTS = ["deadline", "newest", "relevance"];
 
-const COLUMNS = `
-  opportunity_id, title, university, organization, category, description,
-  required_skills, eligibility, deadline::text AS deadline, deadline_text,
-  application_method, source_url, source_id, first_collected_at,
-  last_verified_at, status`;
 
 export async function GET(req: NextRequest) {
   const p = req.nextUrl.searchParams;
@@ -57,11 +53,11 @@ export async function GET(req: NextRequest) {
     const sql = getSql();
     const [items, countRows] = await Promise.all([
       sql.query(
-        `SELECT ${COLUMNS} FROM opportunities ${whereSql}
+        `SELECT ${OPPORTUNITY_COLUMNS} FROM opportunities o ${whereSql}
          ORDER BY ${orderBy} LIMIT ${limit} OFFSET ${(page - 1) * limit}`,
         params,
       ),
-      sql.query(`SELECT count(*)::int AS total FROM opportunities ${whereSql}`, params),
+      sql.query(`SELECT count(*)::int AS total FROM opportunities o ${whereSql}`, params),
     ]);
 
     return NextResponse.json({
