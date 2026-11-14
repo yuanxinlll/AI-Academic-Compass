@@ -9,6 +9,75 @@ from engine import match, normalize
 YEARS = {'freshman': 1, 'sophomore': 2, 'junior': 3, 'senior': 4}
 
 
+def adapt_resume_draft(parsed):
+    """Return a draft D-shaped extraction plus review metadata, never a saved profile.
+
+    Unknown arrays are omitted rather than converted to confirmed empty arrays.
+    This preserves the difference between missing evidence and explicit absence.
+    """
+    if not isinstance(parsed, dict) or not isinstance(parsed.get('profile_draft'), dict):
+        raise ValueError('Parsed resume must contain a profile_draft object.')
+    draft = parsed['profile_draft']
+    extracted, field_map = {}, {
+        'university': 'university', 'major': 'major', 'skills': 'skills',
+        'interests': 'interests', 'completed_courses': 'courses_taken',
+    }
+    for source, target in field_map.items():
+        value = draft.get(source)
+        if value is not None:
+            extracted[target] = value
+    year = draft.get('academic_year')
+    level = draft.get('education_level')
+    if type(year) is int and year in YEARS.values() and level == 'undergraduate':
+        extracted['academic_year'] = next(name for name, number in YEARS.items() if number == year)
+        field_map['academic_year'] = 'academic_year'
+    elif level == 'graduate' and year is None:
+        extracted['academic_year'] = 'graduate'
+        field_map['education_level'] = 'academic_year'
+    date = draft.get('expected_graduation_date')
+    if date is not None:
+        from datetime import date as Date
+        if not isinstance(date, str):
+            raise ValueError('expected_graduation_date must be a date string.')
+        Date.fromisoformat(date)
+        extracted['expected_graduation'] = date[:7]
+        field_map['expected_graduation_date'] = 'expected_graduation'
+    experiences = draft.get('experiences')
+    if experiences is not None:
+        if not isinstance(experiences, list):
+            raise ValueError('experiences must be a list or null.')
+        mapped = []
+        for item in experiences:
+            if not isinstance(item, dict):
+                raise ValueError('Each experience must be an object.')
+            kind = item.get('experience_type')
+            # Employment is not necessarily an internship. Do not relabel it.
+            mapped.append({'type': kind if kind in ('research', 'project', 'other') else 'other',
+                           'title': item.get('title'), 'description': item.get('description'),
+                           'organization': None})
+        extracted['experiences'] = mapped
+        field_map['experiences'] = 'experiences'
+    evidence = []
+    for entry in parsed.get('evidence', []):
+        if not isinstance(entry, dict):
+            raise ValueError('Evidence entries must be objects.')
+        target = field_map.get(entry.get('field'))
+        if target in extracted:
+            evidence.append({**entry, 'field': target})
+    # Ensure supported profile values pass the same internal validation path.
+    from engine import validate_profile
+    validate_profile(adapt_profile(extracted))
+    return {'extracted': extracted, 'review_metadata': {
+        'requires_confirmation': True,
+        'parser_mode': parsed.get('parser_mode'),
+        'evidence': evidence,
+        'warnings': parsed.get('warnings', []),
+        'unmapped_fields': {key: value for key, value in draft.items()
+                            if value is not None and key not in field_map},
+        'original_experiences': experiences,
+    }}
+
+
 def adapt_profile(profile, confirmed_fields=()):
     if not isinstance(profile, dict):
         raise ValueError('Student profile must be an object.')

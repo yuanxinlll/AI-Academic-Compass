@@ -61,6 +61,15 @@ unknown-state rendering. Confirm all product copy is English.
 
 ## Can proceed now versus blocked
 
+Resume-side mapping is also available as `adapt_resume_draft(parsed)` in the
+same adapter module. It returns `extracted` plus `review_metadata`, preserving
+source evidence, warnings, original experience details and unmapped fields.
+Unknown arrays are omitted, not converted to confirmed empty values. A year
+number is mapped only with explicit undergraduate level; employment is not
+relabeled as an internship. The metadata wrapper needs C/D approval before use
+on a public endpoint. Current validation: 48 offline test methods pass, including
+the PDF-to-draft-contract-to-matching path.
+
 An opt-in draft adapter is now implemented in
 `services/matching/contract_adapter.py`. `match_contract_draft` requires the caller
 to pass `pending_status` explicitly. It accepts D-shaped records and emits a

@@ -2,7 +2,7 @@
 
 from copy import deepcopy
 import unittest
-from contract_adapter import adapt_profile, match_contract_draft
+from contract_adapter import adapt_profile, adapt_resume_draft, match_contract_draft
 from demo import OPPORTUNITIES
 
 
@@ -54,6 +54,39 @@ class ContractAdapterTests(unittest.TestCase):
         with self.assertRaises(TypeError):
             match_contract_draft({}, [])
         self.assertEqual(match_contract_draft({}, [], pending_status='needs_confirmation'), {'results': []})
+
+    def test_resume_mapping_preserves_unknowns_and_evidence(self):
+        result = adapt_resume_draft({'profile_draft': {'skills': ['Python'],
+            'completed_courses': ['DSC 10'], 'interests': None,
+            'academic_year': 2, 'education_level': 'undergraduate',
+            'expected_graduation_date': '2028-06-01'}, 'evidence': [
+            {'field': 'completed_courses', 'source_text': 'Completed courses: DSC 10'}]})
+        self.assertEqual(result['extracted']['academic_year'], 'sophomore')
+        self.assertEqual(result['extracted']['expected_graduation'], '2028-06')
+        self.assertNotIn('interests', result['extracted'])
+        self.assertEqual(result['review_metadata']['evidence'][0]['field'], 'courses_taken')
+        self.assertTrue(result['review_metadata']['requires_confirmation'])
+
+    def test_work_experience_is_not_fabricated_as_internship(self):
+        experience = {'experience_type': 'work', 'title': 'Example role',
+                      'description': 'Fictional work.', 'skills': ['Python']}
+        result = adapt_resume_draft({'profile_draft': {'experiences': [experience]}})
+        self.assertEqual(result['extracted']['experiences'][0]['type'], 'other')
+        self.assertEqual(result['review_metadata']['original_experiences'][0]['skills'], ['Python'])
+
+    def test_resume_to_draft_contract_to_matching(self):
+        from resume import parse_pdf
+        from test_resume import fictional_pdf
+        parsed = parse_pdf(fictional_pdf())
+        extracted = adapt_resume_draft(parsed)['extracted']
+        profile = {**extracted, 'hours_per_week': 8, 'academic_year': 'sophomore'}
+        result = self.invoke(self.rule('hours_per_week', 10), profile)
+        self.assertEqual(result['eligibility']['status'], 'ineligible')
+
+    def test_ambiguous_year_is_left_for_review(self):
+        result = adapt_resume_draft({'profile_draft': {'academic_year': 2}})
+        self.assertNotIn('academic_year', result['extracted'])
+        self.assertEqual(result['review_metadata']['unmapped_fields']['academic_year'], 2)
 
 
 if __name__ == '__main__':

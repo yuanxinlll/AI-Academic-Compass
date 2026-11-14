@@ -4,6 +4,11 @@ Validated locally on Python 3.9.6. Production target Python 3.11+ remains unveri
 
 ## Results
 
+Latest resume adapter update: 48 test methods passed. Four added cases cover
+source evidence remapping, incomplete years, experience preservation and the
+real PDF extraction to draft-contract matching path. Public response wrappers
+remain unapproved; no private data or live provider calls are used in these tests.
+
 Latest draft-adapter update: 44 non-network test methods passed. Seven new tests
 cover D-style profiles, typed requirements, hard/preferred separation, unknown
 empty arrays, trusted confirmed empties, explicit status selection and ambiguous
