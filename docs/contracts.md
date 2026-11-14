@@ -171,6 +171,10 @@ interface Experience {
 
 所有接口前缀 `/api`，JSON 输入输出。需要登录的接口从 session 取 `user_id`。
 
+> **临时 Demo 登录（整合前）**：`/api/profile`、`/api/bookmarks`、`/api/match`、`/api/resume/parse` 通过请求头 `x-demo-user: <名字>`（小写字母、数字、`_`、`-`，默认 `demo`）识别用户，首次请求自动创建该用户。**只能存虚构数据**。之后换成 Neon Auth 时前端只需去掉这个请求头。
+>
+> 错误可能带 `field`，便于前端标红：`{ "error": { "code": "INVALID_INPUT", "message": "...", "field": "academic_year" } }`。B 的服务未配置时 `/api/match`、`/api/resume/parse` 返回 `503 AI_SERVICE_NOT_CONFIGURED`。
+
 ### 4.1 `GET /api/opportunities` — 机会列表（C 调用）
 
 Query 参数（均可选）：
