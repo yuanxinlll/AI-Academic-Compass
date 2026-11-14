@@ -106,12 +106,17 @@ persisted by the AI service. Missing array fields are omitted in extracted outpu
 
 ## Acceptance checklist
 
+Latest public proxy rerun passed matching and local PDF extraction (HTTP 200).
+The isolated fictional profile was saved successfully and 9 match results were
+returned. Remaining live acceptance focuses on verified eligibility gating and
+opted-in Gemini parsing plus student review.
+
 - [x] AI deployment shows Ready and Python 3.12 is confirmed in build logs.
 - [x] Request without token returns the application's UNAUTHORIZED JSON.
-- [ ] Matching with a fictional v1.1 profile returns HTTP 200.
+- [x] Matching through D with a fictional v1.1 profile returns HTTP 200.
 - [ ] Verified empty eligibility produces eligible; unverified produces needs_confirmation.
 - [ ] Empty student skills do not produce an automatic skill failure.
-- [ ] Fictional PDF with use_ai=false returns extracted fields.
+- [x] Fictional PDF through D with use_ai=false returns extracted fields.
 - [ ] Fictional PDF with use_ai=true succeeds after explicit consent.
 - [ ] C reviews the draft before D saves the authenticated student's profile.
 

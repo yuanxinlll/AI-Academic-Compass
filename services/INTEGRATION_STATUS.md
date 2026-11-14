@@ -1,5 +1,14 @@
 # Integration status after merging main
 
+## Latest update: basic public integration passes
+
+Independent rerun returned GET opportunities 200 (9 records), POST fictional
+profile 200, POST match 200 (9 results), and local PDF parsing 200 with expected
+extracted skills. Token alignment and base URL routing are validated through
+D's live proxy. Earlier AI_SERVICE_NOT_CONFIGURED entries below are historical.
+Pending: live verified-to-eligible acceptance with reviewed real sources, and
+use_ai=true PDF parsing through the complete C/D/B confirmation flow.
+
 ## Completed
 
 - Merged origin/main through e39c11a into feature/personalization.

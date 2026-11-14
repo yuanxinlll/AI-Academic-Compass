@@ -4,6 +4,14 @@ Project: Academic Compass | Role: AI and Personalization | Date: 2026-11-14
 
 ## Delivery status
 
+Latest acceptance update: public D -> B integration now passes independently.
+GET opportunities returned 200 with 9 records, fictional profile POST returned
+200, match returned 200 with 9 results, and local-mode PDF parsing returned 200
+with expected extracted skills. The earlier configuration blocker below is
+resolved. Two final acceptance scenarios remain: live verified-to-eligible data
+review, and opted-in PDF/Gemini/student-review/matching flow. Record counts do
+not establish the presence of verified real opportunities.
+
 The B module is implemented, tested and deployed as a stateless FastAPI service.
 Final application acceptance is not complete: D's public matching route still
 returns AI_SERVICE_NOT_CONFIGURED, and the public dataset has no verified real
@@ -92,7 +100,7 @@ The legacy local HTML demo remains separate from the production contract.
 - D's current demo authentication permits fictional test users only; B does not
   implement production identity, database access or profile ownership.
 
-## Remaining three acceptance items
+## Earlier three-item acceptance plan (see latest status above)
 
 1. D configures Production AI_SERVICE_URL and the same rotated INTERNAL_TOKEN,
    then redeploys Next.js. The current 503 occurs before B is called, so token
