@@ -1,29 +1,20 @@
-import { timingSafeEqual } from "node:crypto";
 import { NextRequest, NextResponse } from "next/server";
 import { getSql } from "@/lib/database/db";
-import { apiError, handleError, readJson } from "@/lib/api";
+import { handleError, readJson } from "@/lib/api";
+import { requireAdmin } from "@/lib/admin";
 import {
   SOURCE_TYPES, ValidationError, httpUrl, isObject, optEnum, optString, parseOpportunityInput,
 } from "@/lib/validation";
 
 const MAX_BATCH = 50;
 
-function isAdmin(req: NextRequest): boolean | null {
-  const expected = process.env.ADMIN_TOKEN;
-  if (!expected) return null;
-  const given = req.headers.get("x-admin-token") ?? "";
-  const a = Buffer.from(given);
-  const b = Buffer.from(expected);
-  return a.length === b.length && timingSafeEqual(a, b);
-}
 
 // POST /api/admin/opportunities — batch upsert for A's collector (contracts §4.5).
 // Dedup key: source_url. Each item is validated on its own; bad items are reported, good ones saved.
 export async function POST(req: NextRequest) {
   try {
-    const admin = isAdmin(req);
-    if (admin === null) return apiError(503, "ADMIN_NOT_CONFIGURED", "ADMIN_TOKEN is not set on the server");
-    if (!admin) return apiError(401, "UNAUTHORIZED", "Missing or invalid x-admin-token");
+    const denied = requireAdmin(req);
+    if (denied) return denied;
 
     const body = await readJson(req);
     if (!isObject(body)) throw new ValidationError("body", "Request body must be a JSON object");

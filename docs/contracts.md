@@ -259,16 +259,27 @@ Body：
 - 低匹配机会也要返回，不隐藏。
 - 允许**额外附加**字段（不改名、不删字段即可）：`checks[].raw_text`、`reasons: string[]`、`questions_to_confirm: string[]`、顶层 `warnings`。
 
-### 4.5 `POST /api/collect` — 触发采集（A 实现，**仅管理员 / 内部任务**）
+### 4.5 `POST /api/admin/opportunities` — 采集结果入库（D 实现，A 调用，**仅管理员**）
 
-需要请求头 `x-admin-token: <ADMIN_TOKEN>`。
+> v1.2：原 `POST /api/collect`（触发采集）改为可选。A 的采集脚本自己跑抓取 + Gemini 提取，然后把结果 POST 到这个接口。A **不需要数据库驱动和 `DATABASE_URL`**，校验、去重、日志都由后端统一处理。
 
-Body（二选一）：
+需要请求头 `x-admin-token: <ADMIN_TOKEN>`（D 私发，不要提交进 git）。
+
+Body：
 
 ```json
-{ "source_id": "..." }
-{ "url": "https://..." }
+{
+  "source": { "website_url": "https://...", "source_type": "lab_page", "university": "UCSD" },
+  "opportunities": [ /* 1–50 条，每条按 §2 Opportunity 的字段，不含 opportunity_id / source_id / 时间戳 */ ]
+}
 ```
+
+- `source` 可选：传了会登记到 `sources` 表、更新 `last_checked_at`，并写一条 `collection_logs`。
+- 每条必填：`title`、`category`、`source_url`。`eligibility[]` 每项必须有 `type`、`raw_text`、`is_hard_requirement`。
+- `deadline` 必须是真实日期 `YYYY-MM-DD`；"Rolling basis" 之类写进 `deadline_text`，`deadline` 留 `null`。
+- `status` 不传默认 `needs_verification`。**`verified` 只在人工核对过后才可以传。**
+- **去重键是 `source_url`**（`#锚点` 会被去掉）：同一网址再次提交 → 更新内容、刷新 `last_verified_at`，保留 `first_collected_at`。如果之前被人工标成 `verified` 且内容没变，保持 `verified`。
+- **逐条校验**：不合格的条目会被拒绝并列在 `errors` 里，合格的照常保存。全部不合格返回 422。
 
 返回：
 
@@ -278,12 +289,29 @@ Body（二选一）：
   "inserted": 3,
   "updated": 1,
   "duplicates": 1,
-  "needs_verification": 2,
-  "errors": []
+  "needs_verification": 4,
+  "rejected": 1,
+  "errors": [ { "index": 4, "source_url": "https://...", "field": "deadline", "message": "..." } ],
+  "saved": [ { "index": 0, "opportunity_id": "...", "action": "inserted" } ]
 }
 ```
 
-每次调用同时写一条 `collection_logs`。
+Python 调用示例（只需要 `requests`）：
+
+```python
+import os, requests
+
+resp = requests.post(
+    "https://ai-academic-compass.vercel.app/api/admin/opportunities",
+    headers={"x-admin-token": os.environ["ADMIN_TOKEN"]},
+    json={
+        "source": {"website_url": page_url, "source_type": "lab_page"},
+        "opportunities": extracted_items,   # Gemini 提取并校验后的 list[dict]
+    },
+    timeout=30,
+)
+print(resp.status_code, resp.json())
+```
 
 ### 4.6 `/api/bookmarks` — 收藏与申请状态
 
@@ -331,7 +359,7 @@ GEMINI_MODEL=
 
 | 模块 | 写入方 | 读取方 |
 |---|---|---|
-| Opportunity | A（采集） | B（匹配）、C（展示） |
+| Opportunity | A（采集，经 §4.5 入库） | B（匹配）、C（展示） |
 | StudentProfile | C（问卷）、B（简历解析结果） | B（匹配） |
 | `/api/match` 结果 | B | C |
 | 数据库、鉴权、部署 | D | 全员 |
@@ -349,7 +377,7 @@ GEMINI_MODEL=
                   │  读写 Neon、鉴权、取 user_id、参数校验
                   ├──► Python AI 服务 /internal/*  (B，Vercel 独立项目，无状态)
                   └──► Neon PostgreSQL
-采集程序 (A，Python 脚本) ──► Neon（直接写 opportunities / sources / collection_logs）
+采集程序 (A，Python 脚本) ──► Next.js POST /api/admin/opportunities ──► Neon
 ```
 
 ### 8.2 接口归属
@@ -361,7 +389,7 @@ GEMINI_MODEL=
 | `/api/bookmarks` | D | 直接读写 Neon |
 | `POST /api/match` | D 路由 + **B 逻辑** | D 从 Neon 取学生档案和机会 → 调 B 的 `/internal/match` → 原样返回 |
 | `POST /api/resume/parse` | D 路由 + **B 逻辑** | D 校验登录和文件 → 转发给 B 的 `/internal/resume/parse` |
-| `POST /api/collect` | D 路由 + **A 逻辑** | 黑客松期间 A 可直接运行采集脚本，此接口为可选 |
+| `POST /api/admin/opportunities` | D | A 的采集脚本把提取结果 POST 到这里入库（§4.5），需要 `ADMIN_TOKEN` |
 
 ### 8.3 B 的内部接口（Python）
 
