@@ -4,6 +4,11 @@ Validated locally on Python 3.9.6. Production target Python 3.11+ remains unveri
 
 ## Results
 
+Latest handoff change: 29 non-network tests passed, including 6 additional worker
+and validation tests. Real subprocesses exercised matching and PDF input/output.
+The user reported a successful live Gemini connection check; this is separate
+from the agent-run mocked tests and does not establish arbitrary resume accuracy.
+
 Latest Gemini adapter change: 23 non-network tests passed (10 matching, 4 PDF,
 7 mocked Gemini and 2 merge tests). HTTP tests were not rerun for this change
 because permission for temporary loopback ports was declined. Previous HTTP

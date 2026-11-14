@@ -8,19 +8,52 @@ def normalize(value):
 
 
 def validate_profile(profile):
+    if not isinstance(profile, dict):
+        raise ValueError("profile must be a JSON object.")
+    level = profile.get("education_level")
+    if level not in (None, "undergraduate", "graduate", "other"):
+        raise ValueError("education_level must be undergraduate, graduate, other or null.")
+    year = profile.get("academic_year")
+    if year is not None and (type(year) is not int or not 1 <= year <= 4):
+        raise ValueError("academic_year must be an integer from 1 to 4 or null.")
     hours = profile.get("weekly_hours_available")
     if hours is not None and (
         isinstance(hours, bool) or not isinstance(hours, (int, float))
         or not 0 <= hours <= 168
     ):
         raise ValueError("weekly_hours_available must be between 0 and 168.")
-    for field in ("skills", "interests", "selected_modules"):
+    for field in ("skills", "interests", "selected_modules", "completed_courses"):
         value = profile.get(field)
         if value is not None and (
             not isinstance(value, list)
-            or any(not isinstance(item, str) for item in value)
+            or any(not isinstance(item, str) or not item.strip() for item in value)
         ):
             raise ValueError(f"{field} must be a list of strings or null.")
+    categories = {"research", "internship", "event", "competition", "program", "course"}
+    if any(item not in categories for item in profile.get("selected_modules") or []):
+        raise ValueError("selected_modules contains an unsupported category.")
+
+
+def validate_opportunities(opportunities):
+    if not isinstance(opportunities, list):
+        raise ValueError("opportunities must be a JSON array.")
+    seen = set()
+    for item in opportunities:
+        if not isinstance(item, dict):
+            raise ValueError("Each opportunity must be a JSON object.")
+        identity = item.get("opportunity_id")
+        if not isinstance(identity, str) or not identity.strip() or identity in seen:
+            raise ValueError("Each opportunity_id must be a unique nonempty string.")
+        seen.add(identity)
+        for field in ("title", "description"):
+            if not isinstance(item.get(field), str):
+                raise ValueError(f"Opportunity {field} must be a string.")
+        if item.get("category") not in ("research", "internship", "event", "competition", "program", "course"):
+            raise ValueError("Opportunity category is unsupported.")
+        for field in ("eligibility", "required_skills"):
+            values = item.get(field)
+            if not isinstance(values, list) or any(not isinstance(v, str) for v in values):
+                raise ValueError(f"Opportunity {field} must be a list of strings.")
 
 
 def check_requirement(profile, text):
@@ -75,6 +108,7 @@ def relevance(profile, opportunity):
     for field, weight in (("interests", 40), ("skills", 40)):
         values = profile.get(field)
         if values:
+            values = list(dict.fromkeys(normalize(value) for value in values))
             matches = [value for value in values if re.search(
                 r"(?<!\w)" + re.escape(normalize(value)) + r"(?!\w)", searchable
             )]
@@ -94,6 +128,7 @@ def relevance(profile, opportunity):
 
 def match(profile, opportunities):
     validate_profile(profile)
+    validate_opportunities(opportunities)
     results = []
     warnings = []
     for opportunity in opportunities:
