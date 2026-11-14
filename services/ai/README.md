@@ -5,6 +5,17 @@ Python 3.11+. Local validation currently uses Python 3.9.6.
 
 ## Optional Gemini configuration
 
+For a one-time live check, run from the repository root:
+
+```bash
+.venv/bin/python -B services/ai/check_connection.py
+```
+
+Enter the team-approved model ID, then the API key at the hidden prompt. The key
+is held only for this process; no file is written. Only fictional text is sent.
+The call may consume the Google project's API quota. This does not configure
+the demo server; server credentials must be supplied separately to its process.
+
 Set `GEMINI_API_KEY` and `GEMINI_MODEL` in the server environment, then restart
 the demo server. Choose an available model supporting generateContent structured
 output in your team's Google project. No model ID is assumed here. Do not place
