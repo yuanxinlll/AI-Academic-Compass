@@ -42,16 +42,16 @@ The prototype runs on the currently available Python 3.9; the agreed production
 target remains Python 3.11 or later and has not been verified here.
 
 `match(profile, opportunities)` returns all opportunities ranked by lexical
-relevance. Interests and skills each carry weight 40; category preference carries
-weight 20. Only dimensions with supplied, nonempty values participate. Scores
+relevance. Interests and skills each carry weight 35; category preference carries
+weight 20; explicit experience skills carry weight 10. Only dimensions with supplied, nonempty values participate. Scores
 are relevance indicators, not acceptance probabilities. Stable ties use IDs.
 
-Eligibility currently recognizes two exact English requirement patterns shown
-in the demo. Unrecognized requirements remain unknown. Explicit failures produce
-`ineligible`. Otherwise the result remains `needs_verification`, even when all
-recognized conditions pass: the shared opportunity schema does not yet establish
-that the requirement list is complete. The `eligible` result requires a future
-team-approved completeness contract. Raw requirements and decisions are preserved.
+Eligibility recognizes narrow English patterns for undergraduate status, weekly
+hours, explicit single skills, completed courses and minimum academic year. Unrecognized requirements remain unknown. Explicit failures produce
+`ineligible`. Otherwise the result remains `needs_verification` unless a trusted internal
+caller supplies reviewed requirement IDs and every explicit condition passes.
+The demo and worker do not accept that review flag from student requests;
+production review ownership and persistence still require team agreement. Raw requirements and decisions are preserved.
 
 This is an internal prototype, not an approved public API contract. It does not
 implement profile persistence, authentication, semantic

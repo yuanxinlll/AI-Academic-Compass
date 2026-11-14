@@ -72,10 +72,12 @@ Failure response (exit 1):
 - D: authentication, authorization, upload limits, process timeouts/resource limits,
   persistence, request/response agreement and Python hosting. The demo has no auth.
 
-Current eligibility rules recognize the exact undergraduate/time patterns in the
-fictional demo. Explicit failures are ineligible; all other overall results remain
-needs_verification until requirement completeness is established. No eligible claim
-or semantic matching accuracy is promised. Latest user-reported connection check
+Eligibility rules support narrow undergraduate, time, single-skill, completed-course
+and minimum-year patterns. Compound or unknown requirements remain unverified.
+The internal Python match function accepts reviewed_requirement_ids only from a
+trusted reviewer; it can return eligible when all reviewed conditions pass.
+The worker and demo do not expose this flag to clients. Production review ownership
+and storage require team agreement. Semantic matching accuracy is not established. Latest user-reported connection check
 returned PASS; agent-run live Gemini/PDF validation has not been performed.
 
 ## Verification

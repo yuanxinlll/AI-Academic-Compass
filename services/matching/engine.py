@@ -32,6 +32,16 @@ def validate_profile(profile):
     categories = {"research", "internship", "event", "competition", "program", "course"}
     if any(item not in categories for item in profile.get("selected_modules") or []):
         raise ValueError("selected_modules contains an unsupported category.")
+    experiences = profile.get("experiences")
+    if experiences is not None:
+        if not isinstance(experiences, list):
+            raise ValueError("experiences must be a list or null.")
+        for item in experiences:
+            if (not isinstance(item, dict)
+                    or any(not isinstance(item.get(key), str) for key in ("title", "description"))
+                    or not isinstance(item.get("skills"), list)
+                    or any(not isinstance(skill, str) for skill in item["skills"])):
+                raise ValueError("Each experience needs title, description and a skills list.")
 
 
 def validate_opportunities(opportunities):
@@ -83,14 +93,46 @@ def check_requirement(profile, text):
                 )
             else:
                 reason = "Weekly availability has not been provided."
+        else:
+            patterns = (
+                (r"applicants must have (.+) skills", "skills"),
+                (r"applicants must have completed (.+)", "completed_courses"),
+            )
+            for pattern, field in patterns:
+                condition = re.fullmatch(pattern, rule)
+                if condition:
+                    required = condition.group(1).strip()
+                    # Compound expressions need explicit parsing rather than
+                    # treating 'Python or R' as a single absent skill.
+                    if any(token in required for token in (" and ", " or ", ",", "/")):
+                        break
+                    values = profile.get(field)
+                    if values is None:
+                        reason = f"{field} has not been provided."
+                    else:
+                        found = required in {normalize(v) for v in values}
+                        result = "met" if found else "not_met"
+                        reason = f"Required {field} item '{required}' is {'present' if found else 'not listed'} in your confirmed profile."
+                    break
+            year_rule = re.fullmatch(r"applicants must be in year ([1-4]) or above", rule)
+            if year_rule:
+                year = profile.get("academic_year")
+                if year is None:
+                    reason = "Academic year has not been provided."
+                else:
+                    minimum = int(year_rule.group(1))
+                    result = "met" if year >= minimum else "not_met"
+                    reason = f"Your academic year is {year}; the minimum is {minimum}."
     return {"source_text": text, "result": result, "reason": reason}
 
 
-def eligibility(profile, opportunity):
+def eligibility(profile, opportunity, requirements_reviewed=False):
     checks = [check_requirement(profile, text)
               for text in opportunity.get("eligibility", [])]
     if any(item["result"] == "not_met" for item in checks):
         status = "ineligible"
+    elif requirements_reviewed and checks and all(item["result"] == "met" for item in checks):
+        status = "eligible"
     else:
         # Passing recognized rules does not establish that all source requirements
         # were captured. The shared schema has no completeness indicator yet.
@@ -105,7 +147,7 @@ def relevance(profile, opportunity):
     )
     dimensions = []
     reasons = []
-    for field, weight in (("interests", 40), ("skills", 40)):
+    for field, weight in (("interests", 35), ("skills", 35)):
         values = profile.get(field)
         if values:
             values = list(dict.fromkeys(normalize(value) for value in values))
@@ -121,18 +163,30 @@ def relevance(profile, opportunity):
         dimensions.append((20, float(matched)))
         if matched:
             reasons.append("This opportunity belongs to a selected category.")
+    experience_skills = list(dict.fromkeys(
+        normalize(skill) for experience in profile.get("experiences") or []
+        for skill in experience["skills"] if skill.strip()))
+    if experience_skills:
+        matches = [skill for skill in experience_skills if re.search(
+            r"(?<!\w)" + re.escape(skill) + r"(?!\w)", searchable)]
+        dimensions.append((10, len(matches) / len(experience_skills)))
+        if matches:
+            reasons.append(f"Related experience skills: {', '.join(matches)}.")
     score = (round(100 * sum(w * value for w, value in dimensions)
                    / sum(w for w, _ in dimensions), 1) if dimensions else None)
     return score, reasons
 
 
-def match(profile, opportunities):
+def match(profile, opportunities, reviewed_requirement_ids=None):
+    """Reviewed IDs must come from trusted internal review, never a student request."""
     validate_profile(profile)
     validate_opportunities(opportunities)
     results = []
     warnings = []
+    reviewed = set(reviewed_requirement_ids or [])
     for opportunity in opportunities:
-        status, checks = eligibility(profile, opportunity)
+        reviewed_requirements = opportunity["opportunity_id"] in reviewed
+        status, checks = eligibility(profile, opportunity, reviewed_requirements)
         score, reasons = relevance(profile, opportunity)
         results.append({
             "opportunity_id": opportunity["opportunity_id"],
@@ -143,11 +197,12 @@ def match(profile, opportunities):
             "questions_to_confirm": [item["source_text"] for item in checks
                                      if item["result"] == "unknown"],
         })
-        warnings.append({
-            "opportunity_id": opportunity["opportunity_id"],
-            "code": "REQUIREMENT_COMPLETENESS_UNVERIFIED",
-            "message": "Confirm that all source requirements have been captured.",
-        })
+        if not reviewed_requirements:
+            warnings.append({
+                "opportunity_id": opportunity["opportunity_id"],
+                "code": "REQUIREMENT_COMPLETENESS_UNVERIFIED",
+                "message": "Confirm that all source requirements have been captured.",
+            })
     results.sort(key=lambda item: (
         item["match_score"] is None,
         -(item["match_score"] or 0), item["opportunity_id"]
