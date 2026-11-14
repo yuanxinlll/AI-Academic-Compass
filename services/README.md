@@ -69,7 +69,8 @@ No browser CORS policy is enabled: browsers call D's Next.js API, not this servi
 
 1. Create a separate project from the repository and select the integration branch.
 2. Set Root Directory to `services` and use the FastAPI framework preset.
-3. Entrypoint is explicitly `main:app`; install from `requirements.txt`.
+3. Entrypoint is explicitly `main:app`; Vercel installs dependencies from
+   `pyproject.toml`. `requirements.txt` mirrors the runtime dependencies for local use.
 4. `.python-version` selects 3.12, satisfying the team's >=3.11 requirement and
    the currently documented Vercel Python versions. Verify the build log runtime.
 5. Set `INTERNAL_TOKEN`, `GEMINI_API_KEY`, `GEMINI_MODEL` in the Python project.
