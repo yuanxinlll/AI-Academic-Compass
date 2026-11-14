@@ -1,0 +1,21 @@
+{
+  "results": [
+    {
+      "opportunity_id": "00000000-0000-4000-8000-000000000001",
+      "eligibility": {
+        "status": "ineligible",
+        "checks": [
+          {
+            "type": "hours_per_week",
+            "result": "ineligible",
+            "reason": "Confirmed availability: 8 hours; required minimum: 10.",
+            "raw_text": "Applicants must commit at least 10 hours per week."
+          }
+        ]
+      },
+      "relevance_score": 100.0,
+      "explanation": "Matching interests: machine learning. Matching skills: python. This opportunity belongs to a selected category.",
+      "questions_to_confirm": []
+    }
+  ]
+}
