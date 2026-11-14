@@ -163,3 +163,5 @@ VALUES
 
 -- 验证
 SELECT category, count(*) FROM opportunities GROUP BY category ORDER BY category;
+
+-- After running this file, also run lib/database/migrations/*.sql in order.

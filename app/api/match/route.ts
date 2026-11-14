@@ -39,7 +39,7 @@ export async function POST(req: NextRequest) {
         ? sql.query(`SELECT ${OPPORTUNITY_COLUMNS} FROM opportunities o WHERE o.opportunity_id = ANY($1::uuid[])`, [ids])
         : sql.query(
             `SELECT ${OPPORTUNITY_COLUMNS} FROM opportunities o
-              WHERE o.status <> 'expired'
+              WHERE o.status <> 'expired' AND (o.deadline IS NULL OR o.deadline >= CURRENT_DATE)
               ORDER BY o.deadline ASC NULLS LAST LIMIT ${MAX_OPPORTUNITIES}`,
           ),
     ]);

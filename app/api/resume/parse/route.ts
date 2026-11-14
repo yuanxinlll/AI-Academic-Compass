@@ -30,10 +30,10 @@ export async function POST(req: NextRequest) {
 
     const forward = new FormData();
     forward.append("file", file, file.name);
-    // Only send to Gemini when the student explicitly opted in.
-    if (form.get("use_ai") === "true") forward.append("use_ai", "true");
+    // Only send to Gemini when the student explicitly opted in; anything else is an explicit "false".
+    forward.append("use_ai", form.get("use_ai") === "true" ? "true" : "false");
 
-    return NextResponse.json(await callAiService("/internal/resume/parse", forward, 60_000));
+    return NextResponse.json(await callAiService("/internal/resume/parse", forward));
   } catch (err) {
     return handleError("POST /api/resume/parse", err);
   }
