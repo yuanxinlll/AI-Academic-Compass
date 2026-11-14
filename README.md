@@ -166,7 +166,7 @@ python3 -m venv .venv
 ```
 
 On Windows, use the virtual environment's `Scripts/python.exe` equivalent.
-See [services/README.md](services/README.md) for the authenticated API and Vercel setup.
+See [services/README.md](https://github.com/yuanxinlll/AI-Academic-Compass/blob/feature/personalization/services/README.md) for the authenticated API and Vercel setup.
 
 ### Collection
 
@@ -210,8 +210,8 @@ From the repository root with Python development dependencies installed:
 The local HTML prototype is at `http://127.0.0.1:8765` and retains some legacy
 internal labels. Use the v1.1 service and fixtures as the integration reference.
 
-[Public integration checks](services/ai/check_public_integration.py) can explicitly
-create one isolated fictional demo profile. [Deployment checks](services/ai/check_deployment.py)
+[Public integration checks](https://github.com/yuanxinlll/AI-Academic-Compass/blob/feature/personalization/services/ai/check_public_integration.py) can explicitly
+create one isolated fictional demo profile. [Deployment checks](https://github.com/yuanxinlll/AI-Academic-Compass/blob/feature/personalization/services/ai/check_deployment.py)
 accept the internal token through a private local prompt. Neither requires sharing
 credentials in chat. Live opted-in Gemini checks consume provider quota.
 
@@ -237,6 +237,6 @@ counts must not be treated as a ranking of universities' total resources.
 
 - [Project concept and four-person development plan](https://docs.google.com/document/d/14lm-ddJUyXBM2freSapi1f9j5PgR0-qeHOPcZxY1GLQ/edit)
 - [Shared contracts](docs/contracts.md)
-- [B's work report](services/WORK_REPORT.md)
-- [D integration handoff](services/D_HANDOFF.md)
-- [AI integration status](services/INTEGRATION_STATUS.md)
+- [B's work report](https://github.com/yuanxinlll/AI-Academic-Compass/blob/feature/personalization/services/WORK_REPORT.md)
+- [D integration handoff](https://github.com/yuanxinlll/AI-Academic-Compass/blob/feature/personalization/services/D_HANDOFF.md)
+- [AI integration status](https://github.com/yuanxinlll/AI-Academic-Compass/blob/feature/personalization/services/INTEGRATION_STATUS.md)
