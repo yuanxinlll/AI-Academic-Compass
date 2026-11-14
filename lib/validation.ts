@@ -131,3 +131,103 @@ export function parseProfileInput(body: unknown): ProfileInput {
     work_authorization: optString(body, "work_authorization"),
   };
 }
+
+// ───────────────────────── Opportunity ingest (contracts §2, §4.5) ─────────────────────────
+
+export const OPPORTUNITY_STATUSES = ["verified", "needs_verification", "expired"] as const;
+export const SOURCE_TYPES = ["lab_page", "department", "calendar", "listing", "other"] as const;
+export const ELIGIBILITY_TYPES = [
+  "academic_year", "major", "course", "skill", "hours_per_week",
+  "duration", "work_authorization", "gpa", "other",
+] as const;
+
+export interface EligibilityRequirement {
+  type: (typeof ELIGIBILITY_TYPES)[number];
+  value: string | number | string[] | null;
+  raw_text: string;
+  is_hard_requirement: boolean;
+}
+
+export interface OpportunityInput {
+  title: string;
+  university: string;
+  organization: string | null;
+  category: (typeof CATEGORIES)[number];
+  description: string | null;
+  required_skills: string[];
+  eligibility: EligibilityRequirement[];
+  deadline: string | null;
+  deadline_text: string | null;
+  application_method: string | null;
+  source_url: string;
+  status: (typeof OPPORTUNITY_STATUSES)[number];
+}
+
+export function httpUrl(v: unknown, field: string): string {
+  if (typeof v !== "string" || v.length > 2000) throw new ValidationError(field, `${field} must be a URL string`);
+  let u: URL;
+  try {
+    u = new URL(v.trim());
+  } catch {
+    throw new ValidationError(field, `${field} must be a valid URL`);
+  }
+  if (u.protocol !== "http:" && u.protocol !== "https:")
+    throw new ValidationError(field, `${field} must start with http:// or https://`);
+  u.hash = ""; // same page with different #anchors is the same opportunity
+  return u.toString();
+}
+
+function isRealDate(s: string): boolean {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(s)) return false;
+  const d = new Date(`${s}T00:00:00Z`);
+  return !Number.isNaN(d.getTime()) && d.toISOString().slice(0, 10) === s;
+}
+
+/** Validates one extracted opportunity. Unknown values must be null/[] — never guessed. */
+export function parseOpportunityInput(o: unknown): OpportunityInput {
+  if (!isObject(o)) throw new ValidationError("opportunity", "each opportunity must be an object");
+
+  const title = optString(o, "title", 300);
+  if (!title) throw new ValidationError("title", "title is required");
+  const category = optEnum(o, "category", CATEGORIES);
+  if (!category) throw new ValidationError("category", `category is required (${CATEGORIES.join(", ")})`);
+
+  const deadline = optString(o, "deadline", 10);
+  if (deadline && !isRealDate(deadline))
+    throw new ValidationError("deadline", "deadline must be a real date YYYY-MM-DD, or null with deadline_text");
+
+  const eligRaw = o.eligibility ?? [];
+  if (!Array.isArray(eligRaw) || eligRaw.length > 30)
+    throw new ValidationError("eligibility", "eligibility must be an array (max 30)");
+  const eligibility: EligibilityRequirement[] = eligRaw.map((e, i) => {
+    const f = `eligibility[${i}]`;
+    if (!isObject(e)) throw new ValidationError(f, `${f} must be an object`);
+    const type = optEnum(e, "type", ELIGIBILITY_TYPES);
+    if (!type) throw new ValidationError(`${f}.type`, `${f}.type must be one of: ${ELIGIBILITY_TYPES.join(", ")}`);
+    const raw_text = optString(e, "raw_text", 1000);
+    if (!raw_text) throw new ValidationError(`${f}.raw_text`, `${f}.raw_text (source evidence) is required`);
+    const v = e.value;
+    const okValue =
+      v === null || v === undefined || typeof v === "string" || (typeof v === "number" && Number.isFinite(v)) ||
+      (Array.isArray(v) && v.every((x) => typeof x === "string"));
+    if (!okValue) throw new ValidationError(`${f}.value`, `${f}.value must be string, number, string[] or null`);
+    if (typeof e.is_hard_requirement !== "boolean")
+      throw new ValidationError(`${f}.is_hard_requirement`, `${f}.is_hard_requirement must be true or false`);
+    return { type, value: (v ?? null) as EligibilityRequirement["value"], raw_text, is_hard_requirement: e.is_hard_requirement };
+  });
+
+  return {
+    title,
+    university: optString(o, "university", 100) ?? "UCSD",
+    organization: optString(o, "organization", 300),
+    category,
+    description: optString(o, "description", 5000),
+    required_skills: stringArray(o, "required_skills"),
+    eligibility,
+    deadline,
+    deadline_text: optString(o, "deadline_text", 200),
+    application_method: optString(o, "application_method", 1000),
+    source_url: httpUrl(o.source_url, "source_url"),
+    status: optEnum(o, "status", OPPORTUNITY_STATUSES) ?? "needs_verification",
+  };
+}
