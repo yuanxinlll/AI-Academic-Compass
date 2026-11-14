@@ -16,6 +16,7 @@ from engine import match, validate_profile
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "ai"))
 from resume import parse_pdf, ResumeError
+from gemini import GeminiError, configured
 
 
 def merge_profile(confirmed, draft):
@@ -53,7 +54,8 @@ class Handler(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(body)
         elif self.path == "/api/demo-data":
-            self.respond(200, {"profiles": PROFILES, "opportunities": OPPORTUNITIES})
+            self.respond(200, {"profiles": PROFILES, "opportunities": OPPORTUNITIES,
+                               "gemini_configured": configured()})
         elif self.path == "/api/opportunities":
             self.respond(200, {"opportunities": OPPORTUNITIES})
         else:
@@ -108,8 +110,10 @@ class Handler(BaseHTTPRequestHandler):
                      if part.get_param("name", header="content-disposition") == "file"]
             if len(files) != 1:
                 raise ResumeError("INVALID_UPLOAD", "Provide exactly one file field.", 400)
-            self.respond(200, parse_pdf(files[0].get_payload(decode=True) or b""))
-        except ResumeError as error:
+            use_ai = any(part.get_param("name", header="content-disposition") == "use_ai"
+                         and part.get_content().strip() == "true" for part in message.iter_parts())
+            self.respond(200, parse_pdf(files[0].get_payload(decode=True) or b"", use_ai=use_ai))
+        except (ResumeError, GeminiError) as error:
             self.respond(error.status, {"error": {"code": error.code, "message": str(error), "field": "file"}})
         except (ValueError, TypeError):
             self.respond(400, {"error": {"code": "INVALID_UPLOAD", "message": "Invalid upload request."}})

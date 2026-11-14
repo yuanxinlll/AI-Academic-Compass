@@ -34,7 +34,8 @@ These local limits are not the production upload contract. Encrypted, invalid,
 and textless PDFs receive explicit errors. No file is saved.
 The fallback extracts only explicit `University:`, `Major:`, `Education level:`,
 `Skills:`, `Interests:` and `Completed courses:` labels. It is not semantic AI
-parsing; Gemini is not configured. Other fields require manual review/input.
+parsing. Optional Gemini configuration is documented in `../ai/README.md`.
+Other fields require manual review/input in local mode.
 Review and edit the draft JSON, then confirm it for the browser session to match.
 The page does not persist profiles, PDFs or raw text.
 The prototype runs on the currently available Python 3.9; the agreed production
@@ -53,5 +54,5 @@ that the requirement list is complete. The `eligible` result requires a future
 team-approved completeness contract. Raw requirements and decisions are preserved.
 
 This is an internal prototype, not an approved public API contract. It does not
-implement Gemini calls, profile persistence, authentication, semantic
+implement profile persistence, authentication, semantic
 matching, deadline ranking, or deployment. All demo records are fictional.

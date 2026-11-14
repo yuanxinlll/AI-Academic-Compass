@@ -4,6 +4,11 @@ Validated locally on Python 3.9.6. Production target Python 3.11+ remains unveri
 
 ## Results
 
+Latest Gemini adapter change: 23 non-network tests passed (10 matching, 4 PDF,
+7 mocked Gemini and 2 merge tests). HTTP tests were not rerun for this change
+because permission for temporary loopback ports was declined. Previous HTTP
+results below describe the preceding commit only. No live Gemini request ran.
+
 - 10 matching unit tests passed.
 - 8 HTTP integration and profile merge tests passed.
 - 4 PDF extraction tests passed, for 22 tests in total.

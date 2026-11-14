@@ -46,7 +46,7 @@ def draft_from_text(text):
                 "Gemini is not connected. Only explicitly labeled fields were extracted; review and complete the draft manually."}]}
 
 
-def parse_pdf(content):
+def parse_pdf(content, use_ai=False):
     if len(content) > 2 * 1024 * 1024:
         raise ResumeError("FILE_TOO_LARGE", "The local demo limit is 2 MB.", 413)
     if not content.startswith(b"%PDF-"):
@@ -66,4 +66,7 @@ def parse_pdf(content):
         raise ResumeError("PDF_TEXT_UNAVAILABLE", "No text was found. Upload a text-based PDF or complete your profile manually.")
     if len(text) > 100000:
         raise ResumeError("PDF_TEXT_LIMIT", "The extracted text exceeds the local demo limit.")
+    if use_ai:
+        from gemini import parse_text
+        return parse_text(text)
     return draft_from_text(text)
