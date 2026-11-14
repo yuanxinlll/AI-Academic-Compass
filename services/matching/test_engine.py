@@ -48,6 +48,24 @@ class MatchingTests(unittest.TestCase):
     def test_no_opportunities_are_hidden(self):
         self.assertEqual(len(match({}, OPPORTUNITIES)["results"]), 2)
 
+    def test_unknown_requirement_blocks_positive_claim(self):
+        opportunity = deepcopy(OPPORTUNITIES[0])
+        opportunity["eligibility"] = ["Applicants must have Python experience."]
+        result = match({"skills": ["Python"]}, [opportunity])["results"][0]
+        self.assertEqual(result["eligibility_status"], "needs_verification")
+
+    def test_relevance_does_not_match_partial_words(self):
+        profile = {"skills": ["R"]}
+        result = match(profile, OPPORTUNITIES)["results"]
+        self.assertTrue(all(item["match_score"] == 0 for item in result))
+
+    def test_scores_are_bounded_and_inputs_are_unchanged(self):
+        original = deepcopy(OPPORTUNITIES)
+        for profile in PROFILES.values():
+            for item in match(profile, OPPORTUNITIES)["results"]:
+                self.assertTrue(0 <= item["match_score"] <= 100)
+        self.assertEqual(OPPORTUNITIES, original)
+
 
 if __name__ == "__main__":
     unittest.main()
