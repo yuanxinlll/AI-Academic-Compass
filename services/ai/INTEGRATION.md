@@ -1,3 +1,5 @@
+> v1.1 update: the contract is now confirmed. The authenticated FastAPI service is services/main.py; see ../README.md. Earlier draft blockers below are retained as history and no longer block implementation. Deployment and cross-member acceptance remain pending.
+
 # Member B integration handoff
 
 Status: callable Python worker ready for integration. Public HTTP contracts remain

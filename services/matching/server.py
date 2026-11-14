@@ -98,8 +98,8 @@ class Handler(BaseHTTPRequestHandler):
     def parse_resume(self):
         try:
             length = int(self.headers.get("Content-Length", "0"))
-            if not 0 < length <= 2 * 1024 * 1024 + 16384:
-                raise ResumeError("FILE_TOO_LARGE", "The local demo upload limit is 2 MB.", 413)
+            if not 0 < length <= 4 * 1024 * 1024 + 16384:
+                raise ResumeError("FILE_TOO_LARGE", "The PDF upload limit is 4 MB.", 413)
             content_type = self.headers.get("Content-Type", "")
             if not content_type.startswith("multipart/form-data"):
                 raise ResumeError("UNSUPPORTED_MEDIA_TYPE", "Use multipart/form-data with one file field.", 415)

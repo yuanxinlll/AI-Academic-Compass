@@ -1,3 +1,5 @@
+> Final v1.1 service: see ../README.md. This document describes the legacy local demo.
+
 # Matching prototype
 
 Run from the repository root:
@@ -29,7 +31,7 @@ Next.js routes and must not be exposed as a production service.
   merge and conflicts. No data is persisted or automatically confirmed.
 - `POST /api/resume/parse`: multipart `file` upload; returns an unconfirmed draft.
 
-PDF extraction supports text-based PDFs up to 2 MB and 10 pages in this demo.
+PDF extraction supports text-based PDFs up to 4 MB and 10 pages in this demo.
 These local limits are not the production upload contract. Encrypted, invalid,
 and textless PDFs receive explicit errors. No file is saved.
 The fallback extracts only explicit `University:`, `Major:`, `Education level:`,

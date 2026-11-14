@@ -176,7 +176,7 @@ def match_contract_draft(profile, opportunities, *, pending_status,
         hard_checks = [check for check in checks if check['is_hard_requirement']]
         if any(check['result'] == 'not_met' for check in hard_checks):
             status = 'ineligible'
-        elif (identity in reviewed and checks
+        elif (identity in reviewed
               and all(check['result'] == 'met' for check in hard_checks)):
             status = 'eligible'
         else:
@@ -186,3 +186,27 @@ def match_contract_draft(profile, opportunities, *, pending_status,
             'relevance_score': item['match_score'],
             'explanation': ' '.join(item['match_reasons']) or 'No confirmed relevance signals are available.'})
     return {'results': results}
+
+
+def match_v11(profile, opportunities):
+    """Final v1.1 contract: opportunity verified status is the completeness gate."""
+    if not isinstance(profile, dict) or not isinstance(opportunities, list):
+        raise ValueError('profile must be an object and opportunities must be an array.')
+    for field in ('skills', 'interests', 'courses_taken', 'selected_modules',
+                  'research_areas', 'career_goals', 'available_terms', 'experiences'):
+        if field in profile and not isinstance(profile[field], list):
+            raise ValueError(f'{field} must be an array; null is not allowed.')
+    for opportunity in opportunities:
+        if not isinstance(opportunity, dict) or opportunity.get('status') not in ('verified', 'needs_verification', 'expired'):
+            raise ValueError('Each opportunity needs a valid status.')
+    reviewed = [o['opportunity_id'] for o in opportunities if o['status'] == 'verified']
+    response = match_contract_draft(profile, opportunities,
+        pending_status='needs_confirmation', reviewed_requirement_ids=reviewed)
+    for item in response['results']:
+        checks = item['eligibility']['checks']
+        item['questions_to_confirm'] = [c['source_text'] for c in checks
+            if c['result'] == 'needs_confirmation' and c['is_hard_requirement']]
+        item['eligibility']['checks'] = [
+            {'type': c['type'], 'result': c['result'], 'reason': c['reason'],
+             'raw_text': c['source_text']} for c in checks]
+    return response

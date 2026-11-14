@@ -47,8 +47,8 @@ def draft_from_text(text):
 
 
 def parse_pdf(content, use_ai=False):
-    if len(content) > 2 * 1024 * 1024:
-        raise ResumeError("FILE_TOO_LARGE", "The local demo limit is 2 MB.", 413)
+    if len(content) > 4 * 1024 * 1024:
+        raise ResumeError("FILE_TOO_LARGE", "The PDF size limit is 4 MB.", 413)
     if not content.startswith(b"%PDF-"):
         raise ResumeError("UNSUPPORTED_FILE_TYPE", "Upload a valid PDF file.", 415)
     try:

@@ -39,7 +39,7 @@ class ResumeTests(unittest.TestCase):
     def test_bad_files_return_specific_errors(self):
         for data, code in ((b'hello', 'UNSUPPORTED_FILE_TYPE'),
                            (b'%PDF-broken', 'INVALID_PDF'),
-                           (b'x' * (2 * 1024 * 1024 + 1), 'FILE_TOO_LARGE')):
+                           (b'x' * (4 * 1024 * 1024 + 1), 'FILE_TOO_LARGE')):
             with self.subTest(code=code), self.assertRaises(ResumeError) as caught:
                 parse_pdf(data)
             self.assertEqual(caught.exception.code, code)

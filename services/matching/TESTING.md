@@ -4,6 +4,13 @@ Validated locally on Python 3.9.6. Production target Python 3.11+ remains unveri
 
 ## Results
 
+Final v1.1 FastAPI update: 62 offline test methods pass, including 14 ASGI service
+tests for token authentication, verified-state gating, empty student arrays,
+preferred requirements, nullable scores, multipart parsing, 4 MiB size limits,
+local/no-network mode, mocked AI opt-in and contract error/response shapes.
+The service follows confirmed v1.1, superseding draft-blocker notes below.
+No Vercel deployment or Python 3.12 run has been performed here.
+
 Latest resume adapter update: 48 test methods passed. Four added cases cover
 source evidence remapping, incomplete years, experience preservation and the
 real PDF extraction to draft-contract matching path. Public response wrappers
