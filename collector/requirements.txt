@@ -1,0 +1,2 @@
+# Only needed for --database; collection and offline tests use the standard library.
+psycopg[binary]>=3.2,<4

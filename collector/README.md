@@ -1,63 +1,130 @@
-# Collection MVP
+# Member A ? opportunity collection
 
-Python 3.11+, standard library only. Run from the repository root.
+Run from the repository root with Python 3.11+. Bright Data and Gemini requests
+use your configured provider accounts. Collection uses the standard library.
+Only PostgreSQL mode requires the dependency in requirements.txt.
+
+Copy collector/.env.example to collector/.env and fill it locally. The CLI
+automatically loads collector/.env; existing process environment values take
+precedence. Never commit the real .env. Output and monitoring state are ignored.
+
+## Collect and discover
+
+Collect one real program:
 
 ```powershell
-$env:BRIGHTDATA_API_KEY = 'your-key'
-$env:BRIGHTDATA_ZONE = 'your-web-unlocker-zone'
-$env:GEMINI_API_KEY = 'your-key'
-$env:GEMINI_MODEL = 'your-enabled-model-name'
-python -m collector.main --url 'https://YOUR-SOURCE.ucsd.edu/openings' --output collector/output/opportunities.json
+python -m collector.main --url https://ugresearch.ucsd.edu/programs/all-urh-programs/fmp/index.html
 ```
 
-Select a real public UCSD page with explicit opportunities before running.
-Requests use paid provider accounts. Credentials are read only from the environment.
-Never commit credentials or generated records without review.
+Discover detail pages from a trusted directory, with a strict request budget:
 
-The collector fetches through Bright Data, asks Gemini for JSON, validates it,
-removes duplicate titles within a category on the supplied page, and skips
-explicitly expired deadlines. Failures leave the previous output intact.
-Missing dates remain null; records remain needs_verification pending review.
-Deadline quotations are checked against page text, but human verification is
-still required to check that the date belongs to the opportunity.
+```powershell
+python -m collector.main --url https://ugresearch.ucsd.edu/programs/urh-academic-year/index.html --discover --max-pages 4 --max-depth 1
+```
 
-Output is a JSON array for D's integration, with shared opportunity fields
-except opportunity_id, which the database generates on insert. No API or database
-schema is introduced. D must agree on the ingestion mechanism and implement
-idempotent upserts (source_url plus normalized title is a starting identity).
-File output alone is not database persistence.
+Use --sources collector/sources.json for the supplied seed list. --url can be
+repeated. Only HTTPS UCSD links are eligible. Discovery resolves relative links,
+removes fragments, excludes common assets and external domains, and prioritizes
+program detail pages. Depth is capped at 5, pages at 100; defaults are 1 and 5.
+Known URH directory pages are discovery-only, not opportunity records. Remaining
+links are listed in the report; broader search-engine discovery is not included.
 
-Current limits: one explicitly supplied source per run, no automated link
-discovery, no scheduler, no cross-source fuzzy deduplication, and no database
-connection. Reviewing source availability and obtaining provider credentials
-are required before a live integration demonstration.
+Outputs:
+- collector/output/opportunities.json: validated records across monitored sources.
+- collector/output/state.json: content hashes, last-good records, normalized
+  source text for audits, discovered links, and per-source failures.
+- collector/output/report.json: run counts, errors, pending URLs, persistence mode.
 
-Provider references:
-- https://github.com/brightdata/skills/blob/main/skills/bright-data-best-practices/references/serp-api.md
+The state file is for one worker. Do not run concurrent jobs with the same
+state/output paths. Different source sets should use separate state paths if
+their exports must be isolated.
+
+## Monitor
+
+```powershell
+python -m collector.main --sources collector/sources.json --interval 3600
+```
+
+Ctrl+C stops monitoring. Every run refetches pages. Unchanged readable text
+reuses validated extraction; --force requests fresh Gemini extraction. Extractor
+version changes also invalidate cached extraction. Local first_collected_at is
+preserved. Each provider request has a 90-second timeout and at most three
+attempts for transient network/429/5xx errors. Invalid extraction receives one
+corrective Gemini retry. Separate sources continue after an individual failure;
+a one-shot run exits nonzero if any source failed.
+
+## Validation and duplicates
+
+Output follows docs/contracts.md ?2. Eligibility uses structured objects and
+contiguous source quotations. HTML entities and whitespace are normalized for
+quotation comparison; paraphrased quotations are rejected. Deadlines use
+YYYY-MM-DD. A deadline must match a complete date in its source quotation;
+unsupported inferred dates become null, preserving deadline_text. Explicitly
+past dates or evidenced application closures yield expired. Other records stay
+needs_verification, regardless of successful extraction. last_verified_at means
+the source was checked, not that a human approved the opportunity.
+
+Missing scalar values are null and arrays are empty. System-owned IDs and
+timestamps come from the collector/database, never Gemini. Human review is still
+needed for quote-to-field meaning, conflicting source information, and extraction
+completeness. Do not treat model output as a student eligibility decision.
+
+Same-page repeated titles are removed. Distinct opportunities sharing one URL
+are rejected because the team contract makes source_url unique; collect their
+individual detail pages. Cross-page deduplication is deliberately conservative:
+only records with identical extracted fields (including deadline and eligibility)
+are merged, and only when organization/description are present. Aliases remain
+visible in state. Other possible duplicates require review.
+
+A source failure retains last-good local records with needs_verification; known
+expired records remain expired.
+Previously collected opportunities disappearing from a page are flagged for
+review rather than silently removed. Failed fetches do not advance the record's
+verification timestamp. Known directory pages never retain a record.
+
+## Save to Neon
+
+D's backend branch defines direct Python-to-Neon collection in
+docs/contracts.md ?8.1. The adapter matches that branch's existing
+lib/database/schema.sql tables. It does not execute D's schema script or make
+schema changes.
+
+```powershell
+python -m pip install -r collector/requirements.txt
+# Set DATABASE_URL in collector/.env using D's collector-authorized credentials.
+python -m collector.main --url https://ugresearch.ucsd.edu/programs/all-urh-programs/fmp/index.html --database
+```
+
+The adapter checks existing columns before paid provider calls, requires TLS,
+and writes sources, opportunities, and collection_logs in a transaction per
+source. Parameterized upserts use source_url, preserve database-generated
+opportunity_id and original first_collected_at, update verification fields,
+and log failures. It never reads or writes student tables. Repeated database
+runs update the same opportunity; report counts come from database comparisons.
+Local JSON mode is explicitly reported as local_json and is not a Neon save.
+
+## Optional collection endpoint handoff
+
+D owns app/api/. The optional collector/api.py provides
+collect_request(payload, admin_token), returning (JSON body, HTTP status).
+It validates ADMIN_TOKEN in constant time before database/provider calls and
+accepts exactly one of url or source_id. D can mount it behind POST /api/collect
+when a Python execution environment is available. No standalone service or
+Next.js route is created here. The CLI can also consume one JSON request on
+stdin via python -m collector.api and print a status/body envelope. Keep
+headers, tokens, and the subprocess call on the server. This endpoint is optional
+for the hackathon; the direct database script is the primary integration.
+
+## Checks and remaining integration
+
+```powershell
+python -B -m unittest discover -s collector/tests -v
+```
+
+See VALIDATION.md for real-source observations and the database verification
+boundary. No production-ready accuracy claim is made from a three-page sample.
+
+Provider documentation:
+- https://docs.brightdata.com/products/web-unlocker/send-your-first-request
 - https://ai.google.dev/api/generate-content
-
-Run offline checks: `python -m unittest discover -s collector/tests -v`.
-
-## Team handoff ¡ª 2026-11-14
-
-Validation completed:
-- Four offline unittest checks passed.
-- Live Bright Data retrieval of https://ugresearch.ucsd.edu/ succeeded (76,376 characters).
-- Gemini processed the fetched homepage and returned zero opportunities.
-- A separate synthetic opening produced one valid research record with a null deadline.
-- No real opportunity has yet been saved to Neon.
-
-Integration blockers: this prototype follows the earlier AGENTS.md contract.
-The newer docs/contracts.md expects structured eligibility objects, date-only
-YYYY-MM-DD deadlines, and additional opportunity fields. The collector currently
-outputs eligibility strings and timestamp deadlines. Do not ingest output into
-the newer database contract until these differences are reconciled with D.
-Also agree how to represent multiple listings on one source page, because the
-newer contract makes source_url unique. No shared contract files were changed.
-
-Next: collect and manually verify a real opening, align the collector with the
-agreed contract, then connect D's ingestion and C's dashboard.
-
-Local configuration may be stored in collector/.env (ignored by Git). The
-collector does not load that file automatically; export its values into the
-process environment before running. Never share the real file or API keys.
+- https://www.psycopg.org/psycopg3/docs/basic/params.html

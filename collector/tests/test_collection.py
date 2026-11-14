@@ -27,8 +27,60 @@ class CollectionTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 normalize([item], 'https://ucsd.edu/test', '')
 
+    def test_structured_eligibility_and_optional_fields(self):
+        item = self.record()
+        item['description'] = None
+        item['eligibility'] = [dict(type='skill', value='Python',
+            raw_text='Python required', is_hard_requirement=True)]
+        result = normalize([item], 'https://ucsd.edu/test', 'Python required')[0]
+        self.assertEqual(result['eligibility'], item['eligibility'])
+        self.assertIsNone(result['organization'])
+        self.assertIsNone(result['source_id'])
+        self.assertIsNone(result['application_method'])
+        self.assertIn('first_collected_at', result)
+
+    def test_date_only_and_expiration(self):
+        for deadline, status in [('2099-01-01', 'needs_verification'),
+                                 ('2000-01-01', 'expired')]:
+            item = self.record()
+            item.update(deadline=deadline, deadline_text=deadline)
+            result = normalize([item], 'https://ucsd.edu/test', deadline)[0]
+            self.assertEqual(result['deadline'], deadline)
+            self.assertEqual(result['status'], status)
+
+    def test_legacy_eligibility_rejected(self):
+        item = self.record()
+        item['eligibility'] = ['Python required']
+        with self.assertRaises(ValueError):
+            normalize([item], 'https://ucsd.edu/test', 'Python required')
+
+    def test_same_url_distinct_opportunities_rejected(self):
+        other = self.record()
+        other['title'] = 'Another opening'
+        with self.assertRaises(ValueError):
+            normalize([self.record(), other], 'https://ucsd.edu/test', '')
+
+    def test_timestamp_deadline_rejected(self):
+        item = self.record()
+        item.update(deadline='2099-01-01T00:00:00Z', deadline_text='2099-01-01T00:00:00Z')
+        with self.assertRaises(ValueError):
+            normalize([item], 'https://ucsd.edu/test', item['deadline_text'])
+
     def test_source_boundary(self):
         for url in ['http://ucsd.edu', 'https://ucsd.edu.evil.com', 'https://localhost']:
             with self.assertRaises(ValueError):
                 validate_url(url)
         self.assertEqual(validate_url('https://research.ucsd.edu/'), 'https://research.ucsd.edu/')
+
+    def test_inferred_deadline_becomes_unknown(self):
+        item = self.record()
+        item.update(deadline='2025-09-28',
+                    deadline_text='September 28th (deadline extended 9/24/2025)')
+        result = normalize([item], 'https://ucsd.edu/test', item['deadline_text'])[0]
+        self.assertIsNone(result['deadline'])
+
+    def test_explicit_closed_applications_are_expired(self):
+        item = self.record()
+        item['closure_evidence'] = 'Applications are currently closed.'
+        result = normalize([item], 'https://ucsd.edu/test', item['closure_evidence'])[0]
+        self.assertEqual(result['status'], 'expired')
