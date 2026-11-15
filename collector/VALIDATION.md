@@ -8,6 +8,30 @@
 The collector implementation remains scoped to collector/. Shared contracts,
 Next.js routes, database schema, and other members' code were not changed.
 
+## Instagram opportunities end-to-end - 2026-11-15 UTC
+
+- Reused the existing three-post snapshot; no additional Instagram scrape started.
+  Gemini OCR read the two announcement posters and extraction combined poster
+  text with captions. The retrospective Hack For Humanity recap was excluded.
+- DataHacks 2027 saved as competition / needs_verification. Its explicit January
+  16-17, 2027 event range validates; the separate priority deadline 11/26 lacks
+  a year, so deadline remains null and deadline_text is preserved.
+- The RAG workshop saved as event / expired. Its exact caption RSVP link publishes
+  JSON-LD ending 2026-11-12T21:50:00-08:00; publication time was not used to infer
+  an event year. The application deadline remains null.
+- First admin API run inserted two records; repeat inserted zero and updated two
+  (duplicates=2 overlaps updated). Both runs had zero rejected records/errors.
+  Public readback matched the validated fields, source IDs were populated, and
+  opportunity IDs and first_collected_at stayed stable. No DATABASE_URL used.
+- 81 offline tests passed, including caption/poster evidence, missing-year
+  rejection, explicit date ranges, recaps, expired RSVP dates, date-review holds,
+  cache/idempotent source identity, carousel limits and media host restrictions.
+- Public evidence: [Instagram opportunity review](reviews/instagram-opportunities-2026-11-15.json).
+  Source text, OCR, images and runtime state remain ignored. No dependencies,
+  schema, Next.js routes or other members' code changed. These two records are
+  not a general accuracy benchmark or admin approval. Other accounts and daily
+  deployed scheduling remain unverified.
+
 ## Dedicated Instagram API - 2026-11-15 UTC
 
 - Requested a maximum of three @ds3atucsd posts. Synchronous /scrape returned 400

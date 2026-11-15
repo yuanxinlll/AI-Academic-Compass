@@ -284,3 +284,37 @@ Provider documentation:
 
 See [B/D data handoff](reviews/B_HANDOFF.md) for 24 additional UCSD records,
 source-review decisions, representative eligibility cases, and pending admin approval.
+
+## Instagram captions and posters to opportunities
+
+After the bounded probe, reuse its saved raw posts; this command does not start
+another Bright Data job:
+
+```powershell
+python -B -m collector.instagram_collection
+python -B -m collector.instagram_collection --ingest
+```
+
+Requires GEMINI_API_KEY and GEMINI_MODEL; --ingest also requires ADMIN_TOKEN.
+No DATABASE_URL or Instagram login is needed. Use --input for another saved raw
+snapshot, --profile for its attested organization, or --snapshot-id to download
+an existing scraper job. The default input is output/instagram-probe/posts-response.json.
+
+Author/explicit-coauthor checks run before analysis. Gemini transcribes up to
+three poster images, then extracts from captions and transcriptions together.
+Incomplete carousel review is withheld. Recaps are skipped. Existing quotation,
+deadline and eligibility validation applies; missing deadline years remain null.
+An exact public Luma RSVP link may supply explicit JSON-LD event dates. Undated
+events are held for date review; confirmed past events are marked expired.
+Source affiliation never approves an opportunity as verified.
+
+Validated records use the existing admin API and backend URL upserts. Cached
+extraction avoids repeated model calls on unchanged evidence; repeated ingestion
+can update timestamps/logs but preserves opportunity identity. Generic Instagram
+HTML fetching remains blocked. State, source text, posters and OCR stay in ignored
+output/instagram-analysis/. Counts and safe failure codes are local telemetry;
+failed/empty pages produce no dummy opportunity or empty API submission.
+
+This is a bounded ingestion command, not a deployed feed scheduler. D still owns
+the daily 08:00 America/Los_Angeles deployment and token configuration. See
+[validation results](VALIDATION.md) and [Instagram review](reviews/instagram-opportunities-2026-11-15.json).

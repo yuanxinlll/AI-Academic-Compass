@@ -105,8 +105,8 @@ python -m collector.registry --source-family student_orgs --organization IEEE --
 Collection uses configured Bright Data/Gemini accounts; --ingest also needs
 ADMIN_TOKEN. No DATABASE_URL is needed. D owns deployment of the agreed daily
 08:00 America/Los_Angeles schedule (including daylight saving time); no deployed
-scheduler is claimed. D/B/C coordination is needed for Instagram post ingestion
-or new source-affiliation UI/API metadata. No shared schema or category was changed.
+scheduler is claimed. D/B/C coordination is needed for scheduled Instagram execution
+and new source-affiliation UI/API metadata. No shared schema or category was changed.
 
 ## Dedicated Instagram scraper test
 
@@ -136,3 +136,12 @@ output/instagram-probe/ds3atucsd/posts.json; versioned metadata and limitations 
 in [Instagram test evidence](instagram-probe-2026-11-15.json). The source catalog
 records scraper access separately from HTML access and preserves that distinction
 when organization links are rechecked.
+
+## Subsequent post-to-opportunity integration
+
+The earlier probe above describes access testing only. A separate
+`python -m collector.instagram_collection --ingest` command now analyzes saved
+captions and posters, validates evidence, and uses D's existing admin API.
+See [public review evidence](instagram-opportunities-2026-11-15.json) and
+[validation results](../VALIDATION.md). The other organization accounts and
+scheduled deployment remain untested; DS3 access is not proof of universal access.

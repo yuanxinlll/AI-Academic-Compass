@@ -39,7 +39,7 @@ def fetch_page(url):
     }, {'Authorization': 'Bearer ' + os.environ['BRIGHTDATA_API_KEY']})
 
 
-def extract(page, feedback=None):
+def extract(page, feedback=None, *, context=None):
     model = os.environ['GEMINI_MODEL']
     if not all(c.isalnum() or c in '-.' for c in model):
         raise ValueError('Invalid GEMINI_MODEL')
@@ -72,6 +72,8 @@ def extract(page, feedback=None):
                'for GPA and hours. Preserve concrete application instructions. Do not treat '
                'open-to-all-majors as a restrictive major criterion. Primary program only; linked programs are not separate opportunities on this page. '
                'For a directory page return [].')
+    if context:
+        prompt += '\nCOLLECTOR CONTEXT: ' + context
     if feedback:
         prompt += '\nPrevious extraction failed validation: ' + feedback + '. Correct the output using the source.'
     prompt += '\nSOURCE TEXT:\n'
@@ -99,8 +101,8 @@ def nullable_text(value, field):
     return value.strip() if isinstance(value, str) else None
 
 
-def normalize(items, source_url, page):
-    validate_url(source_url)
+def normalize(items, source_url, page, *, source_validator=None):
+    (source_validator or validate_url)(source_url)
     if not isinstance(items, list):
         raise ValueError('Extraction must be an array')
     records = []

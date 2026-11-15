@@ -4,7 +4,7 @@ from datetime import date
 
 def date_in_evidence(expected, evidence):
     patterns = [
-        r'\b(\d{4})-(\d{2})-(\d{2})\b',
+        r'\b(\d{4})-(\d{2})-(\d{2})(?=\b|T\d{2}:\d{2})',
         r'\b(\d{1,2})/(\d{1,2})/(\d{4})\b',
     ]
     for index, pattern in enumerate(patterns):
@@ -26,6 +26,16 @@ def date_in_evidence(expected, evidence):
         for match in re.finditer(pattern, evidence, re.I):
             try:
                 if date(int(match[2]), month, int(match[1])) == expected:
+                    return True
+            except ValueError:
+                pass
+        # A shared month/year explicitly qualifies both endpoints of a range.
+        pattern = rf'\b(?:{name}|{name[:3]}\.?)\s+(\d{{1,2}})\s*[-??]\s*(\d{{1,2}}),?\s+(\d{{4}})\b'
+        for match in re.finditer(pattern, evidence, re.I):
+            try:
+                start = date(int(match[3]), month, int(match[1]))
+                end = date(int(match[3]), month, int(match[2]))
+                if start <= end and expected in (start, end):
                     return True
             except ValueError:
                 pass
