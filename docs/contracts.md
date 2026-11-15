@@ -1,7 +1,7 @@
 # Academic Compass — 数据与接口约定（contracts.md）
 
 > 依据：SanD 规划文档 3.3 / 5.3 / 5.4 / 7.3。文档已定的内容不改，本文件只把字段统一、补齐类型与格式。
-> 负责人：D（Backend & Integration）。**本文件是团队最终协议**。改字段名前先在群里说；新增字段可以直接加，但要同步更新本文件。
+> 负责人：D（Backend & Integration）。**本文件是团队最终协议**。改字段名前先在群里说；New fields also require a shared-schema proposal, an update to this document, and team confirmation before implementation (latest governing coding rules).
 >
 > **v1.1 变更（2026-11-14）**：明确两个状态枚举的区别（§1）、空数组含义（§0）、资格汇总规则加入 verified 门槛（§4.4）、`relevance_score` 可为 null（§4.4）、简历上限改为 4MB（§4.3）、新增 Python 服务部署与接口归属（§8）。数据库字段不变。
 
