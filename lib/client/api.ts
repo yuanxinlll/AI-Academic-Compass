@@ -25,36 +25,39 @@ export class ApiError extends Error {
   }
 }
 
-// ───────── Temporary demo login (contracts §4) ─────────
-// Every request carries `x-demo-user`. Remove this when Neon Auth replaces demo mode.
-const DEMO_USER_KEY = "academic-compass-demo-user";
-let demoUser: string | null = null;
+// ───────── Demo accounts (signed HttpOnly cookie, set by /api/auth/login) ─────────
+export type Me = {
+  username: string;
+  display_name: string;
+  role: "student" | "admin";
+  disclaimer_accepted_at: string | null;
+  has_profile: boolean;
+};
+export type DemoAccountOption = { username: string; display_name: string; role: "student" | "admin"; blurb: string };
 
-export function getDemoUser(): string {
-  if (demoUser) return demoUser;
-  try {
-    const saved = window.localStorage.getItem(DEMO_USER_KEY);
-    if (saved) return (demoUser = saved);
-  } catch {
-    // storage unavailable (private mode, SSR) — fall back to default
-  }
-  return "demo";
+/** Who is signed in (null = signed out) plus the demo accounts to pick from. */
+export function getMe(): Promise<{ user: Me | null; accounts: DemoAccountOption[] }> {
+  return request("/api/me");
 }
 
-/** Switch demo student (lowercase letters, digits, _ or -). Only fictional data! */
-export function setDemoUser(name: string) {
-  demoUser = name.trim().toLowerCase();
-  try {
-    window.localStorage.setItem(DEMO_USER_KEY, demoUser);
-  } catch {
-    // ignore
-  }
+export async function login(username: string, password?: string): Promise<Me> {
+  const { user } = await request<{ user: Me }>("/api/auth/login", { method: "POST", json: { username, password } });
+  return user;
+}
+
+export async function logout(): Promise<void> {
+  await request("/api/auth/logout", { method: "POST" });
+}
+
+export async function acceptDisclaimer(): Promise<string> {
+  const { disclaimer_accepted_at } = await request<{ disclaimer_accepted_at: string }>("/api/me/disclaimer", { method: "POST" });
+  return disclaimer_accepted_at;
 }
 
 type RequestOptions = { method?: string; json?: unknown; form?: FormData };
 
 async function request<T>(path: string, { method = "GET", json, form }: RequestOptions = {}): Promise<T> {
-  const headers = new Headers({ "x-demo-user": getDemoUser() });
+  const headers = new Headers();
   let body: BodyInit | undefined;
   if (json !== undefined) {
     headers.set("content-type", "application/json");
@@ -65,7 +68,7 @@ async function request<T>(path: string, { method = "GET", json, form }: RequestO
 
   let res: Response;
   try {
-    res = await fetch(path, { method, headers, body, cache: "no-store" });
+    res = await fetch(path, { method, headers, body, cache: "no-store", credentials: "same-origin" });
   } catch {
     throw new ApiError(0, "NETWORK_ERROR", "Could not reach the server. Check your connection.");
   }
