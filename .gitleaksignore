@@ -1,0 +1,3 @@
+# False positive: the "secret" was the public ID of a premade ElevenLabs voice in a comment in
+# .env.example, not a key. The comment no longer contains it.
+d506c73f492607f60d4c0c4708439b2231ec5909:.env.example:generic-api-key:12
