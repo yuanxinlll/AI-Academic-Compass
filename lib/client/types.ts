@@ -101,6 +101,19 @@ export interface MatchResult {
   explanation: string;
   reasons?: string[];
   questions_to_confirm?: string[];
+  // rel-v2 (additive fields, contracts v1.3)
+  relevance_breakdown?: RelevanceSignal[];
+  signals_used?: number;
+  low_confidence?: boolean;
+  algorithm_version?: string;
+}
+
+export interface RelevanceSignal {
+  key: "topic" | "skills" | "major" | "category" | "time" | "preferred";
+  label: string;
+  weight: number;
+  score: number; // 0..1
+  explanation: string;
 }
 
 /** An opportunity plus (optionally) this student's match result. */

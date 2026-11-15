@@ -31,11 +31,14 @@ export function DeadlinePill({ item }: { item: OpportunityView }) {
   return <span className={`ac-tag ac-tone-${d.tone}`}>{d.label}</span>;
 }
 
-export function RelevanceMeter({ score }: { score: number | null | undefined }) {
+export function RelevanceMeter({ score, lowConfidence }: { score: number | null | undefined; lowConfidence?: boolean }) {
   if (score === null || score === undefined) return null;
   const s = Math.max(0, Math.min(100, Math.round(score)));
   return (
-    <div className="ac-relevance" title="How closely this matches your interests and background — not your chance of getting in">
+    <div
+      className={`ac-relevance ${lowConfidence ? "is-low" : ""}`}
+      title={lowConfidence ? "Low confidence: few signals available" : "How closely this matches your interests and background — not your chance of getting in"}
+    >
       <div className="ac-relevance-bar" aria-hidden="true">
         <span style={{ width: `${s}%` }} />
       </div>
@@ -78,7 +81,7 @@ export default function OpportunityCard({ item, saved, onOpen, onToggleSave }: P
       {item.description ? <p className="ac-card-desc">{item.description}</p> : null}
       <div className="ac-card-bottom">
         <EligibilityPill item={item} />
-        <RelevanceMeter score={item.match?.relevance_score} />
+        <RelevanceMeter score={item.match?.relevance_score} lowConfidence={item.match?.low_confidence} />
       </div>
     </article>
   );

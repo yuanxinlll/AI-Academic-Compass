@@ -44,7 +44,7 @@ export function OpportunityDetail({ item, signedIn, saved, onToggleSave }: Props
 
       <div className="ac-detail-status">
         {signedIn ? <EligibilityPill item={item} /> : null}
-        <RelevanceMeter score={item.match?.relevance_score} />
+        <RelevanceMeter score={item.match?.relevance_score} lowConfidence={item.match?.low_confidence} />
       </div>
       <p className="ac-fineprint">
         {verified ? (
@@ -102,30 +102,39 @@ export function OpportunityDetail({ item, signedIn, saved, onToggleSave }: Props
         ) : null}
       </section>
 
-      {signedIn && item.match?.explanation ? (
-        <section className="ac-detail-section ac-ai">
-          <h3>
-            Why it might fit you <span className="ac-ai-tag">AI summary</span>
-          </h3>
-          <p>{item.match.explanation}</p>
-          {item.match.reasons?.length ? (
-            <ul className="ac-bullets">
-              {item.match.reasons.map((r, i) => (
-                <li key={i}>{r}</li>
-              ))}
-            </ul>
-          ) : null}
-          {item.match.questions_to_confirm?.length ? (
-            <>
-              <h4>Worth asking before you apply</h4>
-              <ul className="ac-bullets">
-                {item.match.questions_to_confirm.map((q, i) => (
-                  <li key={i}>{q}</li>
-                ))}
-              </ul>
-            </>
-          ) : null}
-          <p className="ac-fineprint">Written by AI from the listing and your profile. It can be wrong. Always check the source page.</p>
+      {signedIn && item.match?.relevance_breakdown?.length ? (
+        <section className="ac-detail-section">
+          <h3>Why it might fit you</h3>
+          <ul className="ac-signals">
+            {item.match.relevance_breakdown.map((sig) => (
+              <li key={sig.key}>
+                <div className="ac-signal-head">
+                  <span>{sig.label}</span>
+                  <span className="ac-muted ac-small">{Math.round(sig.score * 100)}%</span>
+                </div>
+                <div className="ac-relevance-bar ac-bar-wide" aria-hidden="true">
+                  <span style={{ width: `${Math.round(sig.score * 100)}%` }} />
+                </div>
+                <p className="ac-req-reason">{sig.explanation}</p>
+              </li>
+            ))}
+          </ul>
+          <p className="ac-fineprint">
+            Fixed scoring rules ({item.match.algorithm_version}), based on {item.match.signals_used} of 6 signals
+            {item.match.low_confidence ? " — low confidence, add more to your profile" : ""}. This is how well it fits your
+            interests, not your chance of getting in.
+          </p>
+        </section>
+      ) : null}
+
+      {signedIn && item.match?.questions_to_confirm?.length ? (
+        <section className="ac-detail-section">
+          <h3>Worth asking before you apply</h3>
+          <ul className="ac-bullets">
+            {item.match.questions_to_confirm.map((q, i) => (
+              <li key={i}>{q}</li>
+            ))}
+          </ul>
         </section>
       ) : null}
 
