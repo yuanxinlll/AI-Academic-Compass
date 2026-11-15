@@ -20,19 +20,39 @@ def models():
     return out
 
 
+def keys():
+    """GEMINI_API_KEY plus optional GEMINI_API_KEYS (comma-separated, e.g. teammates' keys)."""
+    out = []
+    for k in [os.environ.get('GEMINI_API_KEY', '')] + os.environ.get('GEMINI_API_KEYS', '').split(','):
+        k = k.strip()
+        if k and k not in out:
+            out.append(k)
+    if not out:
+        raise ValueError('Missing setting: GEMINI_API_KEY')
+    return out
+
+
+_exhausted = set()  # (key, model) pairs that hit quota this run
+
+
 def call(body):
-    """POST generateContent, falling back to the next model on overload."""
+    """POST generateContent; on quota/overload try the next model, then the next key."""
     from urllib.error import HTTPError
     last = None
-    for model in models():
-        try:
-            return json.loads(post_json(
-                f'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent',
-                body, {'x-goog-api-key': os.environ['GEMINI_API_KEY']}))
-        except HTTPError as error:
-            if error.code not in (429, 500, 503):
-                raise
-            last = error
+    for key in keys():
+        for model in models():
+            if (key, model) in _exhausted:
+                continue
+            try:
+                return json.loads(post_json(
+                    f'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent',
+                    body, {'x-goog-api-key': key}))
+            except HTTPError as error:
+                if error.code not in (429, 500, 503):
+                    raise
+                if error.code == 429:
+                    _exhausted.add((key, model))
+                last = error
     raise last
 
 
