@@ -1,8 +1,45 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+  --background: #e7f3fa;
+  --foreground: #153249;
+  --muted: #425e74;
+  --panel-solid: #e9f4fb;
+  --panel: #f0f8ff99;
+  --inner: #edf7fcad;
+  --input: #f8fcfff0;
+  --border: #99b8cc;
+  --primary: #165c85;
+  --primary-hover: #10466a;
+  --primary-text: #ffffff;
+  --focus: #087ba8;
+  --fish: rgba(26, 91, 130, 0.48);
+  --school: rgba(26, 91, 130, 0.30);
+  --grid: #357da00b;
+  --glow: #ffffff99;
+  --shadow: #143c5510;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --background: #061727;
+  --foreground: #e3f2ff;
+  --muted: #adc8df;
+  --panel-solid: #102c44;
+  --panel: #102c44a3;
+  --inner: #15364db3;
+  --input: #102b43f2;
+  --border: #456c89;
+  --primary: #8ad5f5;
+  --primary-hover: #b6e8fc;
+  --primary-text: #082338;
+  --focus: #8ad5f5;
+  --fish: rgba(116, 203, 244, 0.52);
+  --school: rgba(139, 214, 249, 0.34);
+  --grid: #8ad5f509;
+  --glow: #b3e4ff13;
+  --shadow: #00000030;
 }
 
 @theme inline {
@@ -12,15 +49,261 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  isolation: isolate;
+}
+
+.compass-content {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  min-width: 0;
+  padding-bottom: 2rem;
+}
+
+.compass-content > main {
+  width: 100%;
+}
+
+/* 全站共享的装饰背景 */
+.compass-ocean {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background-color: var(--background);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+.compass-ocean canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* 现有页面中的卡片、表单分组和标题面板 */
+.compass-content :is(article, section, fieldset.rounded-xl),
+.compass-content main > h1,
+.compass-content main > div.flex,
+.compass-content > h1,
+.compass-content main:has(> a[href="/onboarding"]),
+.compass-motion,
+.compass-theme {
+  background: var(--panel-solid);
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  box-shadow:
+    0 12px 36px var(--shadow),
+    inset 0 1px 0 var(--glow);
+}
+
+.compass-content :is(article, section, fieldset.rounded-xl) {
+  min-width: 0;
+  padding: 1.5rem;
+  overflow-wrap: anywhere;
+}
+
+.compass-content main > h1,
+.compass-content main > div.flex,
+.compass-content > h1 {
+  padding: 1.25rem 1.5rem;
+}
+
+.compass-content > h1 {
+  margin: 2rem auto;
+  width: min(90%, 44rem);
+}
+
+/* 当前首页 */
+.compass-content main:has(> a[href="/onboarding"]) {
+  width: calc(100% - 2.5rem);
+  max-width: 48rem;
+  min-height: 0;
+  margin: clamp(3rem, 16vh, 10rem) auto;
+  padding: clamp(1.5rem, 4vw, 3rem);
+}
+
+.compass-content h1 {
+  letter-spacing: -0.045em;
+  font-weight: 500;
+}
+
+.compass-content article dd {
+  margin-top: 0.2rem;
+}
+
+.compass-content article > header > p {
+  color: var(--muted);
+}
+
+/* 简历审核和经历等内层区域 */
+.compass-content :is(fieldset.rounded-lg, div.rounded-lg.border) {
+  background: var(--inner);
+  border-color: var(--border);
+  min-width: 0;
+}
+
+/* 输入框使用更实的底色 */
+.compass-content :is(
+  input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),
+  select,
+  textarea
+) {
+  min-width: 0;
+  min-height: 2.9rem;
+  background: var(--input);
+  color: var(--foreground);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+}
+
+.compass-content input::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+
+.compass-content select option {
+  background: var(--input);
+  color: var(--foreground);
+}
+
+.compass-content input[aria-invalid="true"] {
+  border-color: #ac4242;
+}
+
+.compass-content :is(button, a.rounded-lg) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  background: var(--input);
+  color: var(--foreground);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+}
+
+.compass-content :is(button, a)[class*="bg-blue-700"] {
+  background: var(--primary);
+  color: var(--primary-text);
+  border-color: var(--primary);
+}
+
+.compass-content :is(button, a)[class*="bg-blue-700"]:hover:not(:disabled) {
+  background: var(--primary-hover);
+}
+
+.compass-content :is(input, select, textarea, button, a):focus-visible,
+.compass-motion:focus-visible,
+.compass-theme:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 4px;
+}
+
+.compass-content input:is([type="checkbox"], [type="radio"]) {
+  accent-color: var(--primary);
+  flex-shrink: 0;
+}
+
+.compass-content input[type="file"] {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.compass-content :is(fieldset, label) {
+  min-width: 0;
+}
+
+.compass-content input[type="file"]::file-selector-button {
+  margin-right: 0.7rem;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid var(--border);
+  background: var(--input);
+  border-radius: 0.6rem;
+  color: var(--foreground);
+}
+
+/* 放在文档流中，避免遮住手机上的表单 */
+.compass-motion,
+.compass-theme {
+  position: relative;
+  width: fit-content;
+  z-index: 1;
+  margin: 0.5rem 1rem 0 auto;
+  display: flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.55rem 0.9rem;
+  color: var(--foreground);
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.compass-motion:disabled {
+  cursor: default;
+}
+
+/* 不支持模糊效果时，保留上面的实色背景 */
+@supports (
+  (backdrop-filter: blur(1px)) or
+  (-webkit-backdrop-filter: blur(1px))
+) {
+  .compass-content :is(article, section, fieldset.rounded-xl),
+  .compass-content main > h1,
+  .compass-content main > div.flex,
+  .compass-content > h1,
+  .compass-content main:has(> a[href="/onboarding"]),
+  .compass-motion,
+  .compass-theme {
+    background: var(--panel);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+  }
+
+
+}
+
+@media (max-width: 639px) {
+  .compass-content :is(article, section, fieldset.rounded-xl) {
+    padding: 1.15rem;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@media (forced-colors: active) {
+  .compass-ocean {
+    display: none;
+  }
+}
+
+@media print {
+  .compass-ocean,
+  .compass-motion,
+  .compass-theme {
+    display: none;
+  }
+}
+.compass-theme { margin-top: 1rem; }
+.compass-to-light { display: none; }
+:root[data-theme="dark"] .compass-to-dark { display: none; }
+:root[data-theme="dark"] .compass-to-light { display: inline; }
+
+@media print {
+  :root[data-theme] {
+    --background: #fff;
+    --foreground: #153249;
+    --muted: #425e74;
+    --panel: #fff;
+    --panel-solid: #fff;
+    --inner: #fff;
+    --input: #fff;
+  }
 }
