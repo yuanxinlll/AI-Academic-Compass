@@ -1,16 +1,26 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ApiError, getReviewQueue, setOpportunityStatus } from "@/lib/client/api";
+import { ApiError, getReviewQueue, resolveReport, setOpportunityStatus, type StudentReport } from "@/lib/client/api";
 import { CATEGORY_LABELS, type Opportunity, type OpportunityStatus } from "@/lib/client/types";
 import { REQUIREMENT_LABELS, deadlineBadge, relativeTime } from "@/lib/client/labels";
 import NavBar from "../components/nav-bar";
 import { AdminSearch, matchesQuery } from "./admin-search";
 import { RequireSignIn } from "../components/session";
 
+const REPORT_TEXT: Record<string, string> = {
+  closed: "Says it's closed or full",
+  deadline: "Deadline wrong",
+  requirements: "Requirements wrong or missing",
+  who_can_apply: "Who can apply wrong",
+  link: "Broken link",
+  other: "Other",
+};
+
 function ReviewInner() {
   const [items, setItems] = useState<Opportunity[] | null>(null);
   const [reviewed, setReviewed] = useState<Opportunity[]>([]);
+  const [reports, setReports] = useState<StudentReport[]>([]);
   const [counts, setCounts] = useState<Partial<Record<OpportunityStatus, number>>>({});
   const [error, setError] = useState<string | null>(null);
   const [done, setDone] = useState<Record<string, OpportunityStatus>>({});
@@ -23,6 +33,7 @@ function ReviewInner() {
       .then((r) => {
         setItems(r.items);
         setReviewed(r.reviewed);
+        setReports(r.reports ?? []);
         setCounts(r.counts);
       })
       .catch((e) => setError(e instanceof ApiError ? e.message : "Could not load the queue."));
@@ -70,6 +81,28 @@ function ReviewInner() {
       setBusy(null);
     }
   }
+
+  async function resolve(r: StudentReport, reopen: boolean) {
+    setBusy(r.report_id);
+    try {
+      if (reopen && r.status !== "needs_verification") {
+        await setOpportunityStatus(r.opportunity_id, "needs_verification");
+        const moved = reviewed.find((o) => o.opportunity_id === r.opportunity_id);
+        setReviewed((list) => list.filter((o) => o.opportunity_id !== r.opportunity_id));
+        if (moved) setItems((list) => [{ ...moved, status: "needs_verification" }, ...(list ?? [])]);
+      }
+      await resolveReport(r.report_id);
+      setReports((list) => list.filter((x) => x.report_id !== r.report_id));
+    } catch (e) {
+      setError(e instanceof ApiError ? e.message : "Could not update that report.");
+    } finally {
+      setBusy(null);
+    }
+  }
+
+  const shownReports = reports.filter(
+    (r) => !q || q.toLowerCase().split(/\s+/).filter(Boolean).every((w) => `${r.title} ${r.organization ?? ""} ${r.source_url} ${r.note ?? ""}`.toLowerCase().includes(w)),
+  );
 
   return (
     <>
@@ -170,6 +203,38 @@ function ReviewInner() {
             })}
           </ul>
         </section>
+
+        {shownReports.length ? (
+          <section className="ac-section">
+            <div className="ac-section-head">
+              <h2>Student reports</h2>
+              <span className="ac-muted ac-small">{shownReports.length} open</span>
+            </div>
+            <ul className="ac-saved">
+              {shownReports.map((r) => (
+                <li key={r.report_id}>
+                  <div className="ac-saved-main">
+                    <a href={r.source_url} target="_blank" rel="noopener noreferrer" className="ac-saved-title">
+                      {r.title}
+                    </a>
+                    <span className="ac-muted">
+                      {REPORT_TEXT[r.reason] ?? r.reason} · {relativeTime(r.created_at)}
+                      {r.note ? ` · “${r.note}”` : ""}
+                    </span>
+                  </div>
+                  {r.status !== "needs_verification" ? (
+                    <button type="button" className="ac-btn ac-btn-sm" onClick={() => resolve(r, true)} disabled={busy === r.report_id}>
+                      Return to queue
+                    </button>
+                  ) : null}
+                  <button type="button" className="ac-btn ac-btn-ghost ac-btn-sm" onClick={() => resolve(r, false)} disabled={busy === r.report_id}>
+                    Dismiss
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
 
         {shown(reviewed).length ? (
           <section className="ac-section">

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import type { OpportunityView } from "@/lib/client/types";
+import { reportOpportunity, type ReportReason } from "@/lib/client/api";
 
 /* ------------------------------------------------------------------ */
 /* Glossary: campus words a first-gen or international student may not */
@@ -213,5 +214,86 @@ export function CalendarButtons({ item }: { item: OpportunityView }) {
         Google Calendar ↗
       </a>
     </>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Report a problem: goes to the reviewers' queue.                     */
+/* ------------------------------------------------------------------ */
+
+const REASONS: { key: ReportReason; label: string }[] = [
+  { key: "closed", label: "It's closed or full" },
+  { key: "deadline", label: "Deadline is wrong" },
+  { key: "requirements", label: "Requirements are wrong or missing" },
+  { key: "who_can_apply", label: "Who can apply is wrong" },
+  { key: "link", label: "Link is broken" },
+  { key: "other", label: "Something else" },
+];
+
+export function ReportIssue({ item, signedIn }: { item: OpportunityView; signedIn: boolean }) {
+  const [open, setOpen] = useState(false);
+  const [reason, setReason] = useState<ReportReason>("closed");
+  const [note, setNote] = useState("");
+  const [state, setState] = useState<"idle" | "busy" | "done" | "error">("idle");
+
+  if (!signedIn) {
+    return (
+      <p className="ac-fineprint ac-report-link">
+        Something wrong here? <a href="/login">Sign in</a> to tell a reviewer.
+      </p>
+    );
+  }
+  if (state === "done") {
+    return <p className="ac-fineprint ac-report-link">Thanks — a reviewer will check this listing against its source.</p>;
+  }
+  if (!open) {
+    return (
+      <p className="ac-fineprint ac-report-link">
+        <button type="button" className="ac-linkbtn" onClick={() => setOpen(true)}>
+          Report a problem with this listing
+        </button>
+      </p>
+    );
+  }
+  return (
+    <form
+      className="ac-detail-section ac-report"
+      onSubmit={async (e) => {
+        e.preventDefault();
+        setState("busy");
+        try {
+          await reportOpportunity(item.opportunity_id, reason, note.trim());
+          setState("done");
+        } catch {
+          setState("error");
+        }
+      }}
+    >
+      <h3>What&apos;s wrong?</h3>
+      <div className="ac-chips">
+        {REASONS.map((r) => (
+          <button key={r.key} type="button" className="ac-chip" aria-pressed={reason === r.key} onClick={() => setReason(r.key)}>
+            {r.label}
+          </button>
+        ))}
+      </div>
+      <textarea
+        className="ac-input"
+        rows={3}
+        maxLength={500}
+        placeholder="Optional: what does the source page actually say?"
+        value={note}
+        onChange={(e) => setNote(e.target.value)}
+      />
+      {state === "error" ? <p className="ac-error">Could not send that. Try again.</p> : null}
+      <div className="ac-detail-actions">
+        <button type="submit" className="ac-btn ac-btn-primary ac-btn-sm" disabled={state === "busy"}>
+          {state === "busy" ? "Sending…" : "Send to reviewers"}
+        </button>
+        <button type="button" className="ac-btn ac-btn-ghost ac-btn-sm" onClick={() => setOpen(false)}>
+          Cancel
+        </button>
+      </div>
+    </form>
   );
 }

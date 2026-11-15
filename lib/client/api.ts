@@ -252,9 +252,29 @@ export async function saveBackground(b: Background): Promise<Background> {
   return (await request<{ background: Background }>("/api/profile/background", { method: "POST", json: b })).background;
 }
 
+export type ReportReason = "closed" | "deadline" | "requirements" | "who_can_apply" | "link" | "other";
+export type StudentReport = {
+  report_id: string;
+  reason: ReportReason;
+  note: string | null;
+  created_at: string;
+  opportunity_id: string;
+  title: string;
+  organization: string | null;
+  source_url: string;
+  status: OpportunityStatus;
+};
+export async function reportOpportunity(id: string, reason: ReportReason, note?: string): Promise<void> {
+  await request(`/api/opportunities/${encodeURIComponent(id)}/report`, { method: "POST", json: { reason, note: note || null } });
+}
+export async function resolveReport(reportId: string): Promise<void> {
+  await request(`/api/admin/reports/${encodeURIComponent(reportId)}`, { method: "POST" });
+}
+
 export function getReviewQueue(): Promise<{
   items: Opportunity[];
   reviewed: Opportunity[];
+  reports?: StudentReport[];
   counts: Partial<Record<OpportunityStatus, number>>;
 }> {
   return request("/api/admin/review-queue");

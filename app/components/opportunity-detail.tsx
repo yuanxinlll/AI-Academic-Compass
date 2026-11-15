@@ -7,7 +7,7 @@ import { getOpportunityWithLeads } from "@/lib/client/api";
 import { CATEGORY_LABELS } from "@/lib/client/types";
 import { REQUIREMENT_LABELS, eligibilityBadge, formatDate, relativeTime } from "@/lib/client/labels";
 import { DeadlinePill, EligibilityPill, RelevanceMeter, Star } from "./opportunity-card";
-import { CalendarButtons, Glossary, ReachOutGuide } from "./student-help";
+import { CalendarButtons, Glossary, ReachOutGuide, ReportIssue } from "./student-help";
 
 const CHECK_TEXT: Record<EligibilityCheck["result"], string> = {
   eligible: "You meet this",
@@ -249,6 +249,7 @@ export function OpportunityDetail({ item, signedIn, saved, onToggleSave }: Props
           </a>
         </dd>
       </dl>
+      <ReportIssue item={item} signedIn={signedIn} />
       {!signedIn ? (
         <p className="ac-signin-hint">
           <a href="/login">Sign in</a> to see whether you meet each requirement.

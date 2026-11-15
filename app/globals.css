@@ -677,3 +677,10 @@ html, body { overflow-x: hidden; }
 .ac-steps { margin: 0.75rem 0; padding-left: 1.3rem; display: grid; gap: 0.35rem; font-size: 0.92rem; line-height: 1.45; }
 .ac-template { border: 1px solid var(--border); border-radius: 12px; padding: 0.8rem 0.9rem; background: var(--input); }
 .ac-template pre { white-space: pre-wrap; font: inherit; font-size: 0.88rem; line-height: 1.5; margin: 0.4rem 0 0.6rem; }
+
+/* Report a problem */
+.ac-report-link { margin-top: 1rem; }
+.ac-linkbtn { background: none; border: 0; padding: 0; font: inherit; color: var(--muted); text-decoration: underline; text-underline-offset: 2px; cursor: pointer; }
+.ac-linkbtn:hover { color: var(--foreground); }
+.ac-report { display: grid; gap: 0.6rem; }
+.ac-report textarea { width: 100%; resize: vertical; }

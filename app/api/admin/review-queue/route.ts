@@ -12,7 +12,7 @@ export async function GET(req: NextRequest) {
     const denied = requireAdmin(req);
     if (denied) return denied;
     const sql = getSql();
-    const [items, counts, reviewed] = await Promise.all([
+    const [items, counts, reviewed, reports] = await Promise.all([
       sql.query(
         `SELECT ${OPPORTUNITY_COLUMNS} FROM opportunities o
           WHERE o.status = 'needs_verification'
@@ -27,10 +27,19 @@ export async function GET(req: NextRequest) {
           ORDER BY o.status DESC, o.last_verified_at DESC
           LIMIT 100`,
       ),
+      // Open student reports, with the listing they are about.
+      sql.query(
+        `SELECT r.report_id, r.reason, r.note, r.created_at, o.opportunity_id, o.title, o.organization, o.source_url, o.status
+           FROM opportunity_reports r JOIN opportunities o USING (opportunity_id)
+          WHERE r.resolved_at IS NULL
+          ORDER BY r.created_at DESC
+          LIMIT 100`,
+      ).catch(() => []), // table missing before migration 005
     ]);
     return NextResponse.json({
       items,
       reviewed,
+      reports,
       counts: Object.fromEntries(counts.map((r) => [r.status, r.n])),
     });
   } catch (err) {
