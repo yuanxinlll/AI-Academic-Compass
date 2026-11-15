@@ -47,6 +47,31 @@ export function RelevanceMeter({ score, lowConfidence }: { score: number | null 
   );
 }
 
+export function AccessChips({ item }: { item: OpportunityView }) {
+  const a = item.access ?? {};
+  const chips: { label: string; tone: string }[] = [];
+  if (a.first_gen?.value === "focus") chips.push({ label: "For first-gen students", tone: "teal" });
+  if (a.transfer?.value === "focus") chips.push({ label: "For transfer students", tone: "teal" });
+  if (a.international?.value === "open") chips.push({ label: "Open to international", tone: "teal" });
+  if (a.international?.value === "restricted") chips.push({ label: "U.S. citizens / work auth only", tone: "orange" });
+  if (a.compensation?.value === "paid") chips.push({ label: "Paid", tone: "green" });
+  if (a.compensation?.value === "stipend") chips.push({ label: "Stipend", tone: "green" });
+  if (a.compensation?.value === "credit") chips.push({ label: "For credit", tone: "muted" });
+  if (a.cost?.value === "fee") chips.push({ label: "Has a fee", tone: "amber" });
+  if (item.source_kind === "flyer_image") chips.push({ label: "From a flyer", tone: "muted" });
+  if (item.source_kind === "instagram") chips.push({ label: "From Instagram", tone: "muted" });
+  if (!chips.length) return null;
+  return (
+    <div className="ac-access-chips">
+      {chips.map((c) => (
+        <span key={c.label} className={`ac-tag ac-tone-${c.tone}`}>
+          {c.label}
+        </span>
+      ))}
+    </div>
+  );
+}
+
 type Props = {
   item: OpportunityView;
   saved?: boolean;
@@ -79,6 +104,7 @@ export default function OpportunityCard({ item, saved, onOpen, onToggleSave }: P
       <h3 className="ac-card-title">{item.title}</h3>
       {item.organization ? <p className="ac-card-org">{item.organization}</p> : null}
       {item.description ? <p className="ac-card-desc">{item.description}</p> : null}
+      <AccessChips item={item} />
       <div className="ac-card-bottom">
         <EligibilityPill item={item} />
         <RelevanceMeter score={item.match?.relevance_score} lowConfidence={item.match?.low_confidence} />
