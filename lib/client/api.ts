@@ -240,7 +240,11 @@ export async function getOpportunity(id: string): Promise<Opportunity> {
   return opportunity;
 }
 
-export function getReviewQueue(): Promise<{ items: Opportunity[]; counts: Partial<Record<OpportunityStatus, number>> }> {
+export function getReviewQueue(): Promise<{
+  items: Opportunity[];
+  reviewed: Opportunity[];
+  counts: Partial<Record<OpportunityStatus, number>>;
+}> {
   return request("/api/admin/review-queue");
 }
 

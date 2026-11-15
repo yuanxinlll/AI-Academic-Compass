@@ -9,6 +9,7 @@ import { RequireSignIn } from "../components/session";
 
 function ReviewInner() {
   const [items, setItems] = useState<Opportunity[] | null>(null);
+  const [reviewed, setReviewed] = useState<Opportunity[]>([]);
   const [counts, setCounts] = useState<Partial<Record<OpportunityStatus, number>>>({});
   const [error, setError] = useState<string | null>(null);
   const [done, setDone] = useState<Record<string, OpportunityStatus>>({});
@@ -18,6 +19,7 @@ function ReviewInner() {
     getReviewQueue()
       .then((r) => {
         setItems(r.items);
+        setReviewed(r.reviewed);
         setCounts(r.counts);
       })
       .catch((e) => setError(e instanceof ApiError ? e.message : "Could not load the queue."));
@@ -47,6 +49,20 @@ function ReviewInner() {
       await setOpportunityStatus(o.opportunity_id, "needs_verification");
       setDone((d) => Object.fromEntries(Object.entries(d).filter(([k]) => k !== o.opportunity_id)));
       setCounts((c) => ({ ...c, needs_verification: (c.needs_verification ?? 0) + 1, [prev]: Math.max(0, (c[prev] ?? 1) - 1) }));
+    } finally {
+      setBusy(null);
+    }
+  }
+
+  async function returnToQueue(o: Opportunity) {
+    setBusy(o.opportunity_id);
+    try {
+      await setOpportunityStatus(o.opportunity_id, "needs_verification");
+      setReviewed((list) => list.filter((x) => x.opportunity_id !== o.opportunity_id));
+      setItems((list) => [{ ...o, status: "needs_verification" }, ...(list ?? [])]);
+      setCounts((c) => ({ ...c, needs_verification: (c.needs_verification ?? 0) + 1, [o.status]: Math.max(0, (c[o.status] ?? 1) - 1) }));
+    } catch (e) {
+      setError(e instanceof ApiError ? e.message : "Could not move it back.");
     } finally {
       setBusy(null);
     }
@@ -143,6 +159,40 @@ function ReviewInner() {
             })}
           </ul>
         </section>
+
+        {reviewed.length ? (
+          <section className="ac-section">
+            <div className="ac-section-head">
+              <h2>Reviewed</h2>
+            </div>
+            <ul className="ac-saved">
+              {reviewed.map((o) => (
+                <li key={o.opportunity_id}>
+                  <div className="ac-saved-main">
+                    <a href={o.source_url} target="_blank" rel="noopener noreferrer" className="ac-saved-title">
+                      {o.title}
+                    </a>
+                    <span className="ac-muted">
+                      {CATEGORY_LABELS[o.category]}
+                      {o.status === "verified" ? ` · verified ${relativeTime(o.last_verified_at)}` : ""}
+                    </span>
+                  </div>
+                  <span className={`ac-tag ${o.status === "verified" ? "ac-tone-green" : "ac-tone-muted"}`}>
+                    {o.status === "verified" ? "Verified" : "Expired"}
+                  </span>
+                  <button
+                    type="button"
+                    className="ac-btn ac-btn-ghost ac-btn-sm"
+                    onClick={() => returnToQueue(o)}
+                    disabled={busy === o.opportunity_id}
+                  >
+                    Return to queue
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
       </main>
     </>
   );
