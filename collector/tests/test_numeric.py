@@ -14,3 +14,10 @@ class NumericTests(unittest.TestCase):
         self.assertEqual(quantitative_value('duration','2-3 quarters or more'),'2-3 quarters or more')
         self.assertEqual(quantitative_value('major','three dimensional art'),'three dimensional art')
         self.assertIsNone(quantitative_value('gpa',None))
+
+    def test_fixed_algorithm_numeric_fields_do_not_receive_text_or_lists(self):
+        for kind in ('gpa','hours_per_week'):
+            for value in ('>12','6-10','not stated',['10'],True):
+                self.assertIsNone(quantitative_value(kind,value))
+        self.assertEqual(quantitative_value('gpa','three'),3)
+        self.assertIsNone(quantitative_value('gpa',None))

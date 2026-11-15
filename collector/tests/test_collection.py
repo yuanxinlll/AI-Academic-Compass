@@ -93,7 +93,8 @@ class CollectionTests(unittest.TestCase):
         self.assertEqual(result['eligibility'][0]['value'], 12)
         item['eligibility'][0]['value'] = '>12'
         result = normalize([item], 'https://ucsd.edu/test', '12 hours per week')[0]
-        self.assertEqual(result['eligibility'][0]['value'], '>12')
+        self.assertIsNone(result['eligibility'][0]['value'])
+        self.assertEqual(result['eligibility'][0]['raw_text'],'12 hours per week')
         item = self.record()
         item['closure_evidence'] = 'Position(s) have been filled.'
         result = normalize([item], 'https://ucsd.edu/test', item['closure_evidence'])[0]

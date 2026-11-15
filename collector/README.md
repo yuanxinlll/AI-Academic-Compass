@@ -331,3 +331,13 @@ Unambiguous quantitative scalars become JSON numbers; raw_text retains units,
 minimum/preferred qualifiers and ranges. Gemini calls are paced at 12 RPM in one
 process and honor server retry delays. Do not run multiple model-calling
 campaigns concurrently against the configured free-tier quota.
+
+## Latest demo acceptance: numeric fields and matching metadata
+
+See [demo data acceptance](reviews/DEMO_DATA_REQUIREMENTS.md). GPA and weekly-hour
+values are numeric or null through both normalization and cached-record ingestion.
+Ranges/ambiguous quantities remain in raw_text instead of becoming misleading
+numeric thresholds. `python -m collector.matching_metadata` creates evidence-only
+department/discipline/project-term metadata and prioritizes ten actual human
+reviews. New metadata is a local sidecar pending B/D shared-schema confirmation;
+it is not silently added to the public API or converted into eligibility.major.

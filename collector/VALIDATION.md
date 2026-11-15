@@ -288,3 +288,16 @@ isolated tests on the new Winkielman record: unverified stays pending, a local
 verified copy can be eligible, insufficient time is ineligible, and unknown
 skills stay pending. No production verified-to-eligible claim is made until
 admin approval is applied. No student profile was written for these tests.
+
+## Latest team demo requirements - 2026-11-15
+
+Live audit: 50 non-expired records, six categories, zero non-numeric/non-null
+GPA or weekly-hour values. Fresh normalization and cached ingestion now both
+prevent text/list/boolean values reaching those fixed-algorithm inputs.
+Evidence-only enrichment used saved sources for all 50 records: 14 departments,
+29 disciplines and nine participation terms retained; other values remain null.
+Every value has exact source evidence. Organization names, relative/historical
+meeting dates and duration-only text were excluded from inappropriate fields.
+103 offline tests passed. No schema or other member files changed. A local
+sidecar and ten prioritized CSV rows are ready; ten actual human verifications
+are still pending. See [demo requirements handoff](reviews/DEMO_DATA_REQUIREMENTS.md).

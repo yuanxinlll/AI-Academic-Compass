@@ -73,6 +73,12 @@ class ApiStore:
         # Normalization/evidence checks happen upstream. Project only agreed input
         # fields: IDs and collection timestamps belong to the backend.
         items = [{field: record.get(field) for field in FIELDS} for record in records]
+        # Cached/legacy records must obey the same numeric contract as fresh extraction.
+        from collector.numeric import quantitative_value
+        for record,item in zip(records,items):
+            item['eligibility'] = [dict(e, value=quantitative_value(e['type'],e['value']))
+                                   for e in item['eligibility']]
+            record['eligibility'] = item['eligibility']
         for offset in range(0, len(items), 50):
             batch = items[offset:offset + 50]
             payload = {'source': {'website_url': url, 'source_type': self.source_type,
