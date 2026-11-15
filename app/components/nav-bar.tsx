@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useSession } from "./session";
@@ -7,10 +8,7 @@ import { useSession } from "./session";
 export function Logo() {
   return (
     <Link href="/" className="ac-logo" aria-label="Academic Compass home">
-      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-        <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="1.6" />
-        <path d="M15.5 8.5 13.2 13.2 8.5 15.5l2.3-4.7z" fill="currentColor" />
-      </svg>
+      <Image src="/logo.png" alt="" width={28} height={28} className="ac-logo-img" priority />
       <span>Academic Compass</span>
     </Link>
   );

@@ -385,7 +385,7 @@ body {
 .ac-nav { position: sticky; top: 0.75rem; z-index: 30; width: min(72rem, calc(100% - 1.5rem)); margin: 0.75rem auto 0; border-radius: 999px; }
 .ac-nav-inner { display: flex; align-items: center; gap: 1.25rem; padding: 0.45rem 0.6rem 0.45rem 1.1rem; }
 .ac-logo { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--foreground); text-decoration: none; font-weight: 600; letter-spacing: -0.02em; white-space: nowrap; }
-.ac-logo svg { color: var(--primary); }
+.ac-logo-img { border-radius: 7px; flex: none; }
 .ac-nav-links { display: flex; gap: 0.25rem; margin-right: auto; }
 .ac-nav-link { padding: 0.4rem 0.8rem; border-radius: 999px; color: var(--muted); text-decoration: none; font-size: 0.92rem; }
 .ac-nav-link:hover, .ac-nav-link[aria-current="page"] { color: var(--foreground); background: var(--inner); }
