@@ -233,6 +233,18 @@ sync, reminders and a planning assistant are future extensions. The Data for Goo
 direction concerns the transparency of collected information; collected record
 counts must not be treated as a ranking of universities' total resources.
 
+## Acknowledgments
+
+The ocean UI takes visual inspiration from
+[jiezi1234/character-ocean](https://github.com/jiezi1234/character-ocean),
+particularly its braille-style fish, translucent panels, and light/dark palettes.
+That project credits [stackedlol/ascii-sharks](https://github.com/stackedlol/ascii-sharks)
+as its animation upstream. Our background uses a custom React/Canvas implementation.
+
+Geist and Geist Mono are provided through `next/font/google` and licensed under
+SIL OFL 1.1: [Geist](https://github.com/google/fonts/blob/main/ofl/geist/OFL.txt)
+and [Geist Mono](https://github.com/google/fonts/blob/main/ofl/geistmono/OFL.txt).
+
 ## Further reading
 
 - [Project concept and four-person development plan](https://docs.google.com/document/d/14lm-ddJUyXBM2freSapi1f9j5PgR0-qeHOPcZxY1GLQ/edit)
