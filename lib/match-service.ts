@@ -18,6 +18,7 @@ export async function matchProfile(profile: Record<string, unknown>, opportuniti
   for (const k of D_ONLY) delete profileForB[k];
   const result = (await callAiService("/internal/match", { profile: profileForB, opportunities })) as { results: MatchRow[] };
 
+  applyAccessRules(profile, opportunities, result.results);
   const checks = new Map(result.results.map((r) => [r.opportunity_id, r.eligibility?.checks ?? []]));
   const rel = scoreAll(profile, opportunities as Parameters<typeof scoreAll>[1], checks);
   const results = result.results.map((r) => {
@@ -32,4 +33,42 @@ export async function matchProfile(profile: Record<string, unknown>, opportuniti
     };
   });
   return { ...result, results };
+}
+
+type AccessFact = { value?: string; quote?: string | null };
+
+/**
+ * Fixed rules on top of B's checks, using quoted "who can apply" facts (contracts §10.1).
+ * Only the student's own self-reported background is used; nothing is inferred.
+ *  - International student + source requires U.S. citizenship / work authorization -> ineligible.
+ *  - International student + paid role or program + source silent on international eligibility
+ *    -> needs confirmation (never eligible until someone confirms F-1 students may apply).
+ */
+export function applyAccessRules(profile: Record<string, unknown>, opportunities: Record<string, unknown>[], rows: MatchRow[]) {
+  if (profile.international_student !== true) return;
+  const byId = new Map(opportunities.map((o) => [o.opportunity_id as string, o]));
+  for (const r of rows) {
+    const o = byId.get(r.opportunity_id);
+    if (!o) continue;
+    const access = (o.access ?? {}) as Record<string, AccessFact>;
+    const intl = access.international?.value ?? "unstated";
+    const paid = ["paid", "stipend"].includes(access.compensation?.value ?? "") || ["internship", "program"].includes(o.category as string);
+    const checks = r.eligibility.checks;
+    if (intl === "restricted") {
+      checks.push({
+        type: "work_authorization",
+        result: "ineligible",
+        raw_text: access.international?.quote ?? undefined,
+        reason: "The source requires U.S. citizenship, permanent residency or U.S. work authorization, and your profile says you are an international student.",
+      });
+      r.eligibility.status = "ineligible";
+    } else if (intl === "unstated" && paid) {
+      checks.push({
+        type: "work_authorization",
+        result: "needs_confirmation",
+        reason: "This is paid or a formal program, and the source does not say whether F-1/J-1 students can take part. Ask before you apply.",
+      });
+      if (r.eligibility.status === "eligible") r.eligibility.status = "needs_confirmation";
+    }
+  }
 }

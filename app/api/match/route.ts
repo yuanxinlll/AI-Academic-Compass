@@ -34,7 +34,7 @@ export async function POST(req: NextRequest) {
 
     const sql = getSql();
     const [profiles, opportunities] = await Promise.all([
-      sql.query(`SELECT ${PROFILE_COLUMNS}, interest_keywords FROM student_profiles WHERE user_id = $1`, [userId]),
+      sql.query(`SELECT ${PROFILE_COLUMNS}, interest_keywords, first_generation, transfer_student, international_student FROM student_profiles WHERE user_id = $1`, [userId]),
       Array.isArray(ids)
         ? sql.query(`SELECT ${OPPORTUNITY_COLUMNS} FROM opportunities o WHERE o.opportunity_id = ANY($1::uuid[])`, [ids])
         : sql.query(

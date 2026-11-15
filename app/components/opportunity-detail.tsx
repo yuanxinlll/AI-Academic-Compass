@@ -16,11 +16,13 @@ const CHECK_TEXT: Record<EligibilityCheck["result"], string> = {
 
 function pairChecks(reqs: EligibilityRequirement[], checks: EligibilityCheck[] | undefined) {
   const pool = [...(checks ?? [])];
-  return reqs.map((r) => {
+  const rows = reqs.map((r) => {
     let i = pool.findIndex((c) => c.type === r.type && c.raw_text && c.raw_text === r.raw_text);
     if (i < 0) i = pool.findIndex((c) => c.type === r.type);
     return { req: r, check: i >= 0 ? pool.splice(i, 1)[0] : undefined };
   });
+  // Checks from "who can apply" rules (e.g. international students) have no listed requirement.
+  return { rows, extra: pool.filter((c) => c.result !== "eligible") };
 }
 
 const ACCESS_LABELS: Record<string, Record<string, string>> = {
@@ -103,7 +105,7 @@ type Props = {
 
 export function OpportunityDetail({ item, signedIn, saved, onToggleSave }: Props) {
   const badge = eligibilityBadge(item, item.match);
-  const rows = pairChecks(item.eligibility ?? [], item.match?.eligibility.checks);
+  const { rows, extra } = pairChecks(item.eligibility ?? [], item.match?.eligibility.checks);
   const verified = item.status === "verified";
 
   return (
@@ -170,6 +172,20 @@ export function OpportunityDetail({ item, signedIn, saved, onToggleSave }: Props
             ))}
           </ul>
         )}
+        {signedIn && extra.length ? (
+          <ul className="ac-reqs" style={{ marginTop: "0.6rem" }}>
+            {extra.map((c, i) => (
+              <li key={i} className="ac-req">
+                <div className="ac-req-head">
+                  <span className="ac-req-type">{REQUIREMENT_LABELS[c.type] ?? c.type}</span>
+                  <span className={`ac-tag ac-check-${c.result}`}>{CHECK_TEXT[c.result]}</span>
+                </div>
+                {c.raw_text ? <blockquote className="ac-quote">“{c.raw_text}”</blockquote> : null}
+                <p className="ac-req-reason">{c.reason}</p>
+              </li>
+            ))}
+          </ul>
+        ) : null}
         {signedIn && badge ? (
           <p className="ac-fineprint">Eligibility is worked out by fixed rules from these quotes and your profile. AI does not decide it.</p>
         ) : null}
