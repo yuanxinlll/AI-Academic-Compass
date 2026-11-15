@@ -7,11 +7,33 @@ import re
 from collector.main import post_json
 
 
-def _model():
-    model = os.environ['GEMINI_MODEL']
-    if not all(c.isalnum() or c in '-.' for c in model):
-        raise ValueError('Invalid GEMINI_MODEL')
-    return model
+def models():
+    """Primary model, then fallbacks used when the primary is overloaded (503/429)."""
+    names = [os.environ['GEMINI_MODEL']] + [
+        m.strip() for m in os.environ.get('GEMINI_FALLBACK_MODELS', 'gemini-3.7-flash,gemini-3.5-flash').split(',')]
+    out = []
+    for m in names:
+        if m and m not in out:
+            if not all(c.isalnum() or c in '-.' for c in m):
+                raise ValueError('Invalid Gemini model name')
+            out.append(m)
+    return out
+
+
+def call(body):
+    """POST generateContent, falling back to the next model on overload."""
+    from urllib.error import HTTPError
+    last = None
+    for model in models():
+        try:
+            return json.loads(post_json(
+                f'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent',
+                body, {'x-goog-api-key': os.environ['GEMINI_API_KEY']}))
+        except HTTPError as error:
+            if error.code not in (429, 500, 503):
+                raise
+            last = error
+    raise last
 
 
 def generate(parts, *, json_mode=True, search=False):
@@ -22,9 +44,7 @@ def generate(parts, *, json_mode=True, search=False):
         body['tools'] = [{'google_search': {}}]
     elif json_mode:
         body['generationConfig'] = {'responseMimeType': 'application/json'}
-    result = json.loads(post_json(
-        f'https://generativelanguage.googleapis.com/v1beta/models/{_model()}:generateContent',
-        body, {'x-goog-api-key': os.environ['GEMINI_API_KEY']}))
+    result = call(body)
     candidate = result['candidates'][0]
     if candidate.get('finishReason') not in ('STOP', None):
         raise ValueError('Gemini output was incomplete or blocked')

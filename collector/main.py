@@ -26,7 +26,7 @@ def post_json(url, payload, headers):
         except (URLError, TimeoutError):
             if attempt == 2:
                 raise
-        time.sleep(2 ** attempt)
+        time.sleep(3 * 2 ** attempt)
 
 
 def validate_url(url):
@@ -75,11 +75,9 @@ def extract(page, feedback=None):
     if feedback:
         prompt += '\nPrevious extraction failed validation: ' + feedback + '. Correct the output using the source.'
     prompt += '\nSOURCE TEXT:\n'
-    result = json.loads(post_json(
-        f'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent',
-        {'contents': [{'parts': [{'text': prompt + page}]}],
-         'generationConfig': {'responseMimeType': 'application/json'}},
-        {'x-goog-api-key': os.environ['GEMINI_API_KEY']}))
+    from collector.gemini import call  # primary model + fallbacks on overload
+    result = call({'contents': [{'parts': [{'text': prompt + page}]}],
+                   'generationConfig': {'responseMimeType': 'application/json'}})
     candidate = result['candidates'][0]
     if candidate.get('finishReason') != 'STOP':
         raise ValueError('Gemini output was incomplete or blocked')
