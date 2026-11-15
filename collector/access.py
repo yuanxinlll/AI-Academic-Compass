@@ -79,16 +79,31 @@ def backfill(force=False, limit=100):
             report['skipped'] += 1
             continue
         report['checked'] += 1
+        step = 'brightdata'
         try:
             page, _ = parse_page(fetch_page(o['source_url']), o['source_url'])
+            step = 'gemini'
             access = extract_access(page)
+            step = 'save'
             _api('PUT', f"/api/admin/opportunities/{o['opportunity_id']}/access", {'access': access})
             report['updated'] += 1
             stated = {k: v['value'] for k, v in access.items() if v['value'] != 'unstated'}
             print(f"  ok  {o['title'][:60]:60}  {stated or '-'}", flush=True)
         except Exception as error:  # report and continue; never stop the whole run
-            report['errors'].append({'title': o['title'], 'error': type(error).__name__})
-            print(f"  ERR {o['title'][:60]:60}  {type(error).__name__}", flush=True)
+            detail = type(error).__name__
+            code = getattr(error, 'code', None)
+            if code:
+                body = ''
+                try:
+                    body = error.read().decode('utf-8', 'replace')[:160].replace('\n', ' ')
+                except Exception:
+                    pass
+                detail = f'HTTP {code} {body}'
+            report['errors'].append({'title': o['title'], 'step': step, 'error': detail})
+            print(f"  ERR [{step}] {o['title'][:50]:50}  {detail}", flush=True)
+            if len(report['errors']) >= 3 and report['updated'] == 0:
+                print('  Stopping: the first 3 listings all failed at the same kind of step. Fix that first.', flush=True)
+                break
         time.sleep(0.3)
     return report
 
