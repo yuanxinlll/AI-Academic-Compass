@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getSql } from "@/lib/database/db";
 import { requireUser } from "@/lib/auth";
+import { audit } from "@/lib/audit";
 import { apiError, handleError, readJson } from "@/lib/api";
 import { UUID_RE, ValidationError, isObject, optString } from "@/lib/validation";
 
@@ -39,6 +40,7 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ id:
         note,
       ]);
     }
+    await audit(req, id, "reported", { detail: { reason: b.reason } });
     return NextResponse.json({ ok: true }, { status: 201 });
   } catch (err) {
     return handleError("POST /api/opportunities/[id]/report", err);

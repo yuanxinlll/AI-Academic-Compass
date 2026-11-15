@@ -2,6 +2,9 @@
 import { callAiService } from "@/lib/ai-service";
 import { scoreAll } from "@/lib/relevance";
 
+/** Bump when the fixed eligibility rules change (requirement checks + "who can apply" rules below). */
+export const ELIGIBILITY_RULES_VERSION = "elig-v1.4";
+
 export type MatchRow = {
   opportunity_id: string;
   eligibility: { status: "eligible" | "ineligible" | "needs_confirmation"; checks: { type: string; result: string; raw_text?: string; reason?: string }[] };

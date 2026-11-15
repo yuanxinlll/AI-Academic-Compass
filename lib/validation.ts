@@ -164,6 +164,53 @@ export interface OpportunityInput {
   /** null = not provided (keep what is stored). */
   access: Access | null;
   source_kind: (typeof SOURCE_KINDS)[number];
+  /** null = not provided (keep what is stored). */
+  provenance: Provenance | null;
+}
+
+// ───────── Provenance (contracts v1.5) ─────────
+export type Provenance = {
+  fetched_at: string;
+  page_sha256: string;
+  page_chars: number | null;
+  model: string | null;
+  prompt_sha: string | null;
+  collector_version: string | null;
+  attempts: number | null;
+  quote_check: "passed" | null;
+  access_pass: boolean | null;
+};
+
+/** How a record was made. Optional; if present every field is checked for shape. */
+export function parseProvenance(v: unknown): Provenance | null {
+  if (v === undefined || v === null) return null;
+  if (!isObject(v)) throw new ValidationError("provenance", "provenance must be an object");
+  const str = (k: string, re: RegExp) => {
+    const x = v[k];
+    if (x === undefined || x === null) return null;
+    if (typeof x !== "string" || !re.test(x)) throw new ValidationError(`provenance.${k}`, `provenance.${k} has an invalid format`);
+    return x;
+  };
+  const fetched_at = str("fetched_at", /^\d{4}-\d{2}-\d{2}T[\d:.]+(Z|[+-]\d{2}:\d{2})$/);
+  const page_sha256 = str("page_sha256", /^[0-9a-f]{64}$/);
+  if (!fetched_at || !page_sha256) throw new ValidationError("provenance", "provenance needs fetched_at and page_sha256");
+  const num = (k: string, max: number) => {
+    const x = v[k];
+    if (x === undefined || x === null) return null;
+    if (typeof x !== "number" || !Number.isInteger(x) || x < 0 || x > max) throw new ValidationError(`provenance.${k}`, `provenance.${k} must be an integer`);
+    return x;
+  };
+  return {
+    fetched_at,
+    page_sha256,
+    page_chars: num("page_chars", 10_000_000),
+    model: str("model", /^[\w.-]{1,60}$/),
+    prompt_sha: str("prompt_sha", /^[0-9a-f]{6,64}$/),
+    collector_version: str("collector_version", /^[\w.-]{1,40}$/),
+    attempts: num("attempts", 10),
+    quote_check: v.quote_check === "passed" ? "passed" : null,
+    access_pass: typeof v.access_pass === "boolean" ? v.access_pass : null,
+  };
 }
 
 // ───────── Access facts (contracts v1.4) ─────────
@@ -265,5 +312,6 @@ export function parseOpportunityInput(o: unknown): OpportunityInput {
     status: optEnum(o, "status", OPPORTUNITY_STATUSES) ?? "needs_verification",
     access: parseAccess(o.access),
     source_kind: optEnum(o, "source_kind", SOURCE_KINDS) ?? "webpage",
+    provenance: parseProvenance(o.provenance),
   };
 }

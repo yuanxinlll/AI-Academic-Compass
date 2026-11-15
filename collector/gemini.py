@@ -33,6 +33,7 @@ def keys():
 
 
 _exhausted = set()  # (key, model) pairs that hit quota this run
+last_model = None   # the model that answered the most recent call (recorded in provenance)
 
 
 def call(body):
@@ -44,9 +45,12 @@ def call(body):
             if (key, model) in _exhausted:
                 continue
             try:
-                return json.loads(post_json(
+                result = json.loads(post_json(
                     f'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent',
                     body, {'x-goog-api-key': key}))
+                global last_model
+                last_model = model
+                return result
             except HTTPError as error:
                 if error.code not in (429, 500, 503):
                     raise

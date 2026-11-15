@@ -8,6 +8,7 @@ import { CATEGORY_LABELS } from "@/lib/client/types";
 import { REQUIREMENT_LABELS, eligibilityBadge, formatDate, relativeTime } from "@/lib/client/labels";
 import { DeadlinePill, EligibilityPill, RelevanceMeter, Star } from "./opportunity-card";
 import { CalendarButtons, Glossary, ReachOutGuide, ReportIssue } from "./student-help";
+import { Provenance } from "./provenance";
 
 const CHECK_TEXT: Record<EligibilityCheck["result"], string> = {
   eligible: "You meet this",
@@ -249,6 +250,7 @@ export function OpportunityDetail({ item, signedIn, saved, onToggleSave }: Props
           </a>
         </dd>
       </dl>
+      <Provenance id={item.opportunity_id} />
       <ReportIssue item={item} signedIn={signedIn} />
       {!signedIn ? (
         <p className="ac-signin-hint">

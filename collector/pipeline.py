@@ -56,9 +56,32 @@ def error_code(error):
     return type(error).__name__
 
 
+COLLECTOR_VERSION = 'collector-1.5'
+
+
+def provenance(page, attempts, access_ran):
+    """Where a record came from and how it was made. Shown to students as 'Where this came from'."""
+    import hashlib
+    from datetime import datetime, timezone
+    from collector import gemini, main
+    return {
+        'fetched_at': datetime.now(timezone.utc).isoformat(timespec='seconds'),
+        'page_sha256': hashlib.sha256(page.encode('utf-8')).hexdigest(),
+        'page_chars': len(page),
+        'model': gemini.last_model,
+        'prompt_sha': main.PROMPT_SHA,
+        'collector_version': COLLECTOR_VERSION,
+        'attempts': attempts,
+        'quote_check': 'passed',
+        'access_pass': access_ran,
+    }
+
+
 def collect_page(page, url, extractor=extract, with_access=None):
     feedback = None
+    attempts = 0
     for attempt in range(2):
+        attempts = attempt + 1
         try:
             records = normalize(extractor(page, feedback=feedback), url, page)
             break
@@ -78,12 +101,16 @@ def collect_page(page, url, extractor=extract, with_access=None):
             access = None  # never lose a record because the optional pass failed
         for record in records:
             record['access'] = access
+    if records and extractor is extract:
+        meta = provenance(page, attempts, bool(with_access))
+        for record in records:
+            record['provenance'] = meta
     return records
 
 
 def content_key(record):
     return {key: value for key, value in record.items()
-            if key not in ('first_collected_at', 'last_verified_at', 'opportunity_id', 'source_id')}
+            if key not in ('first_collected_at', 'last_verified_at', 'opportunity_id', 'source_id', 'provenance')}
 
 
 def duplicate_identity(record):

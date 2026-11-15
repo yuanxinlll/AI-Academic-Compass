@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { getSql } from "@/lib/database/db";
 import { OPPORTUNITY_COLUMNS } from "@/lib/database/columns";
 import { requireAdmin } from "@/lib/admin";
+import { audit } from "@/lib/audit";
 import { apiError, handleError, readJson } from "@/lib/api";
 import { OPPORTUNITY_STATUSES, UUID_RE, ValidationError, isObject, optEnum } from "@/lib/validation";
 
@@ -23,7 +24,9 @@ export async function PATCH(req: NextRequest, { params }: Ctx) {
     const status = optEnum(body, "status", OPPORTUNITY_STATUSES);
     if (!status) throw new ValidationError("status", `status is required (${OPPORTUNITY_STATUSES.join(", ")})`);
 
-    const rows = await getSql().query(
+    const sql = getSql();
+    const before = await sql.query(`SELECT status FROM opportunities WHERE opportunity_id = $1`, [id]);
+    const rows = await sql.query(
       `UPDATE opportunities o
           SET status = $2,
               last_verified_at = CASE WHEN $2 = 'verified' THEN now() ELSE o.last_verified_at END
@@ -32,6 +35,7 @@ export async function PATCH(req: NextRequest, { params }: Ctx) {
       [id, status],
     );
     if (!rows[0]) return apiError(404, "NOT_FOUND", "Opportunity not found");
+    await audit(req, id, "status", { from: before[0]?.status ?? null, to: status });
     return NextResponse.json({ opportunity: rows[0] });
   } catch (err) {
     return handleError("PATCH /api/admin/opportunities/[id]", err);

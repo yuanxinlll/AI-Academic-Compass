@@ -730,3 +730,20 @@ html, body { overflow-x: hidden; }
   .ac-field-row { grid-template-columns: 1fr 1fr; }
   .ac-field-row > :first-child { grid-column: 1 / -1; }
 }
+
+/* Provenance + history */
+.ac-prov > summary { display: flex; align-items: baseline; gap: 0.6rem; flex-wrap: wrap; cursor: pointer; list-style: none; }
+.ac-prov > summary::-webkit-details-marker { display: none; }
+.ac-prov > summary h3 { margin: 0; }
+.ac-prov > summary h3::before { content: "▸"; display: inline-block; width: 1em; color: var(--muted); transition: transform 0.15s; }
+.ac-prov[open] > summary h3::before { transform: rotate(90deg); }
+.ac-prov .ac-meta { margin-top: 0.75rem; }
+.ac-prov code { font-size: 0.82rem; }
+.ac-prov-h { margin: 1rem 0 0.4rem; font-size: 0.9rem; }
+.ac-timeline { list-style: none; margin: 0; padding: 0 0 0 0.9rem; border-left: 2px solid var(--border); display: grid; gap: 0.55rem; }
+.ac-timeline li { position: relative; display: grid; gap: 0.1rem; font-size: 0.88rem; line-height: 1.4; }
+.ac-timeline li::before { content: ""; position: absolute; left: -1.27rem; top: 0.35rem; width: 0.6rem; height: 0.6rem; border-radius: 999px; background: var(--muted); }
+.ac-timeline li.is-reviewer::before { background: var(--ac-green); }
+.ac-timeline li.is-student::before { background: var(--ac-amber); }
+.ac-timeline li.is-collector::before { background: var(--ac-teal); }
+.ac-timeline time { font-size: 0.76rem; color: var(--muted); }

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getSql } from "@/lib/database/db";
 import { requireAdmin } from "@/lib/admin";
+import { audit } from "@/lib/audit";
 import { handleError, readJson } from "@/lib/api";
 import { UUID_RE, ValidationError, httpUrl, isObject, optString } from "@/lib/validation";
 
@@ -36,6 +37,7 @@ export async function POST(req: NextRequest) {
         [id, l.field, l.value, l.quote, l.evidence_url, l.found_by],
       );
       saved += r.length;
+      if (r.length) await audit(req, id, "lead_added", { detail: { field: l.field, evidence_url: l.evidence_url, found_by: l.found_by } });
     }
     return NextResponse.json({ saved, skipped: leads.length - saved });
   } catch (err) {

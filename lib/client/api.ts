@@ -307,3 +307,34 @@ export async function updateEvent(id: string, e: EventDraft): Promise<StudentEve
 export async function deleteEvent(id: string): Promise<void> {
   await request(`/api/calendar/${encodeURIComponent(id)}`, { method: "DELETE" });
 }
+
+// ───────── Provenance + audit trail (v1.5) ─────────
+export type Provenance = {
+  fetched_at: string;
+  page_sha256: string;
+  page_chars: number | null;
+  model: string | null;
+  prompt_sha: string | null;
+  collector_version: string | null;
+  attempts: number | null;
+  quote_check: "passed" | null;
+  access_pass: boolean | null;
+};
+export type AuditEvent = {
+  at: string;
+  actor: "collector" | "reviewer" | "student" | "system";
+  action: string;
+  from_status: string | null;
+  to_status: string | null;
+  detail: Record<string, unknown> | null;
+};
+export type History = {
+  provenance: Provenance | null;
+  source_url: string;
+  first_collected_at: string;
+  rules: { eligibility: string; relevance: string };
+  events: AuditEvent[];
+};
+export function getHistory(id: string): Promise<History> {
+  return request(`/api/opportunities/${encodeURIComponent(id)}/history`);
+}

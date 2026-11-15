@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getSql } from "@/lib/database/db";
 import { requireAdmin } from "@/lib/admin";
+import { audit } from "@/lib/audit";
 import { apiError, handleError, readJson } from "@/lib/api";
 import { UUID_RE, ValidationError, isObject, parseAccess } from "@/lib/validation";
 
@@ -23,6 +24,9 @@ export async function PUT(req: NextRequest, { params }: Ctx) {
       [id, JSON.stringify(access)],
     );
     if (!rows[0]) return apiError(404, "NOT_FOUND", "Opportunity not found");
+    await audit(req, id, "access_updated", {
+      detail: Object.fromEntries(Object.entries(access).map(([k, f]) => [k, f?.value ?? null])),
+    });
     return NextResponse.json(rows[0]);
   } catch (err) {
     return handleError("PUT /api/admin/opportunities/[id]/access", err);

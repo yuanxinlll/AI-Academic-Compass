@@ -1,3 +1,4 @@
+import hashlib
 """Member A collector: python -m collector.main --help (Python 3.11+)."""
 import json
 import os
@@ -39,6 +40,9 @@ def fetch_page(url):
     }, {'Authorization': 'Bearer ' + os.environ['BRIGHTDATA_API_KEY']})
 
 
+PROMPT_SHA = None  # fingerprint of the extraction prompt actually sent (recorded in provenance)
+
+
 def extract(page, feedback=None):
     model = os.environ['GEMINI_MODEL']
     if not all(c.isalnum() or c in '-.' for c in model):
@@ -72,6 +76,8 @@ def extract(page, feedback=None):
                'for GPA and hours. Preserve concrete application instructions. Do not treat '
                'open-to-all-majors as a restrictive major criterion. Primary program only; linked programs are not separate opportunities on this page. '
                'For a directory page return [].')
+    global PROMPT_SHA
+    PROMPT_SHA = hashlib.sha256(prompt.encode('utf-8')).hexdigest()[:12]
     if feedback:
         prompt += '\nPrevious extraction failed validation: ' + feedback + '. Correct the output using the source.'
     prompt += '\nSOURCE TEXT:\n'
