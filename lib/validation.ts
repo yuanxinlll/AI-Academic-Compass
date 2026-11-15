@@ -161,6 +161,40 @@ export interface OpportunityInput {
   application_method: string | null;
   source_url: string;
   status: (typeof OPPORTUNITY_STATUSES)[number];
+  /** null = not provided (keep what is stored). */
+  access: Access | null;
+  source_kind: (typeof SOURCE_KINDS)[number];
+}
+
+// ───────── Access facts (contracts v1.4) ─────────
+export const SOURCE_KINDS = ["webpage", "flyer_image", "instagram"] as const;
+export const ACCESS_VALUES = {
+  international: ["open", "restricted", "unstated"],
+  first_gen: ["focus", "unstated"],
+  transfer: ["focus", "unstated"],
+  compensation: ["paid", "stipend", "credit", "unpaid", "unstated"],
+  cost: ["free", "fee", "unstated"],
+} as const;
+export type AccessKey = keyof typeof ACCESS_VALUES;
+export type AccessFact = { value: string; quote: string | null };
+export type Access = Partial<Record<AccessKey, AccessFact>>;
+
+/** Every stated (non-"unstated") value must carry an exact source quote. */
+export function parseAccess(v: unknown, field = "access"): Access | null {
+  if (v === undefined || v === null) return null;
+  if (!isObject(v)) throw new ValidationError(field, `${field} must be an object`);
+  const out: Access = {};
+  for (const [k, allowed] of Object.entries(ACCESS_VALUES) as [AccessKey, readonly string[]][]) {
+    const f = v[k];
+    if (f === undefined || f === null) continue;
+    if (!isObject(f) || typeof f.value !== "string" || !allowed.includes(f.value))
+      throw new ValidationError(`${field}.${k}`, `${field}.${k}.value must be one of: ${allowed.join(", ")}`);
+    const quote = typeof f.quote === "string" && f.quote.trim() ? f.quote.trim().slice(0, 1000) : null;
+    if (f.value !== "unstated" && !quote)
+      throw new ValidationError(`${field}.${k}.quote`, `${field}.${k}.quote (source evidence) is required unless value is "unstated"`);
+    out[k] = { value: f.value, quote: f.value === "unstated" ? null : quote };
+  }
+  return out;
 }
 
 export function httpUrl(v: unknown, field: string): string {
@@ -229,5 +263,7 @@ export function parseOpportunityInput(o: unknown): OpportunityInput {
     application_method: optString(o, "application_method", 1000),
     source_url: httpUrl(o.source_url, "source_url"),
     status: optEnum(o, "status", OPPORTUNITY_STATUSES) ?? "needs_verification",
+    access: parseAccess(o.access),
+    source_kind: optEnum(o, "source_kind", SOURCE_KINDS) ?? "webpage",
   };
 }

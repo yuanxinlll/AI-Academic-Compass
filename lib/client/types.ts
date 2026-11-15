@@ -46,6 +46,21 @@ export interface Opportunity {
   first_collected_at: string; // use this for "newest"
   last_verified_at: string;
   status: OpportunityStatus; // is the RECORD checked? (not the student's eligibility)
+  access?: Access; // v1.4: who can apply, each fact quoted from the source
+  source_kind?: "webpage" | "flyer_image" | "instagram";
+}
+
+export type AccessFact = { value: string; quote: string | null };
+export type Access = Partial<Record<"international" | "first_gen" | "transfer" | "compensation" | "cost", AccessFact>>;
+
+export interface Lead {
+  field: string;
+  value: string;
+  quote: string;
+  evidence_url: string;
+  found_by: string;
+  status: "unreviewed" | "confirmed" | "rejected";
+  found_at: string;
 }
 
 export interface OpportunityList {

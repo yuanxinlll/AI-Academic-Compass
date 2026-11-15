@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { getBookmarks, getProfile, removeBookmark, saveBookmark } from "@/lib/client/api";
+import { getBackground, getBookmarks, getProfile, removeBookmark, saveBackground, saveBookmark, type Background } from "@/lib/client/api";
 import {
   ACADEMIC_YEAR_LABELS,
   APPLICATION_STATUSES,
@@ -24,6 +24,50 @@ function Field({ label, value }: { label: string; value: string | null | undefin
       <dt>{label}</dt>
       <dd>{value}</dd>
     </>
+  );
+}
+
+const BG_FIELDS: { key: keyof Background; label: string }[] = [
+  { key: "first_generation", label: "First in my family to go to college" },
+  { key: "transfer_student", label: "Transferred from a community college" },
+  { key: "international_student", label: "International student" },
+];
+
+function BackgroundCard() {
+  const [bg, setBg] = useState<Background | null | undefined>(undefined);
+  useEffect(() => {
+    getBackground().then(setBg).catch(() => setBg(null));
+  }, []);
+  if (!bg) return null;
+  async function set(key: keyof Background, value: boolean | null) {
+    const next = { ...bg!, [key]: value };
+    setBg(next);
+    await saveBackground(next).catch(() => undefined);
+  }
+  return (
+    <section className="ac-panel-card">
+      <h2>Background (optional)</h2>
+      <p className="ac-muted ac-small">
+        Only you see this. We use it to point out programs made for students like you, and only as anonymous totals on
+        the Access Gap page. We never guess it.
+      </p>
+      <div className="ac-bg-rows">
+        {BG_FIELDS.map((f) => (
+          <div key={f.key} className="ac-bg-row">
+            <span>{f.label}</span>
+            <select
+              className="ac-select"
+              value={bg[f.key] === null ? "" : bg[f.key] ? "yes" : "no"}
+              onChange={(e) => set(f.key, e.target.value === "" ? null : e.target.value === "yes")}
+            >
+              <option value="">Prefer not to say</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 }
 
@@ -112,6 +156,8 @@ function MeInner() {
           )}
         </section>
       ) : null}
+
+      {user?.role === "student" ? <BackgroundCard /> : null}
 
       <section className="ac-panel-card">
         <h2>Saved</h2>

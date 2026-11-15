@@ -560,3 +560,5 @@ body {
 .ac-signals li { display: grid; gap: 0.15rem; }
 .ac-signal-head { display: flex; justify-content: space-between; gap: 1rem; font-size: 0.88rem; font-weight: 600; }
 .ac-relevance-bar.ac-bar-wide { width: 100%; height: 0.4rem; }
+.ac-bg-rows { display: grid; gap: 0.5rem; margin-top: 0.75rem; }
+.ac-bg-row { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 0.55rem 0.85rem; border-radius: 0.8rem; background: var(--inner); flex-wrap: wrap; }

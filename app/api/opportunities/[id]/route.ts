@@ -14,7 +14,12 @@ export async function GET(_req: NextRequest, { params }: Ctx) {
     if (!UUID_RE.test(id)) return apiError(400, "INVALID_INPUT", "id must be a UUID", "id");
     const rows = await getSql().query(`SELECT ${OPPORTUNITY_COLUMNS} FROM opportunities o WHERE o.opportunity_id = $1`, [id]);
     if (!rows[0]) return apiError(404, "NOT_FOUND", "Opportunity not found");
-    return NextResponse.json({ opportunity: rows[0] });
+    const leads = await getSql().query(
+      `SELECT field, value, quote, evidence_url, found_by, status, found_at FROM opportunity_leads
+        WHERE opportunity_id = $1 AND status <> 'rejected' ORDER BY found_at DESC LIMIT 20`,
+      [id],
+    );
+    return NextResponse.json({ opportunity: rows[0], leads });
   } catch (err) {
     return handleError("GET /api/opportunities/[id]", err);
   }

@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
-import type { EligibilityCheck, EligibilityRequirement, OpportunityView } from "@/lib/client/types";
+import type { Access, EligibilityCheck, EligibilityRequirement, Lead, OpportunityView } from "@/lib/client/types";
+import { getOpportunityWithLeads } from "@/lib/client/api";
 import { CATEGORY_LABELS } from "@/lib/client/types";
 import { REQUIREMENT_LABELS, eligibilityBadge, formatDate, relativeTime } from "@/lib/client/labels";
 import { DeadlinePill, EligibilityPill, RelevanceMeter, Star } from "./opportunity-card";
@@ -20,6 +21,77 @@ function pairChecks(reqs: EligibilityRequirement[], checks: EligibilityCheck[] |
     if (i < 0) i = pool.findIndex((c) => c.type === r.type);
     return { req: r, check: i >= 0 ? pool.splice(i, 1)[0] : undefined };
   });
+}
+
+const ACCESS_LABELS: Record<string, Record<string, string>> = {
+  international: { open: "Open to international students", restricted: "Citizenship or work authorization required" },
+  first_gen: { focus: "For first-generation students" },
+  transfer: { focus: "For transfer students" },
+  compensation: { paid: "Paid", stipend: "Stipend", credit: "For course credit", unpaid: "Unpaid" },
+  cost: { free: "Free", fee: "Has a fee" },
+};
+
+function AccessFacts({ access }: { access?: Access }) {
+  const facts = Object.entries(access ?? {}).filter(([, f]) => f && f.value !== "unstated");
+  const intl = access?.international?.value ?? "unstated";
+  return (
+    <section className="ac-detail-section">
+      <h3>Who can apply</h3>
+      {facts.length ? (
+        <ul className="ac-reqs">
+          {facts.map(([k, f]) => (
+            <li key={k} className="ac-req">
+              <div className="ac-req-head">
+                <span className="ac-req-type">{ACCESS_LABELS[k]?.[f!.value] ?? `${k}: ${f!.value}`}</span>
+              </div>
+              {f!.quote ? <blockquote className="ac-quote">“{f!.quote}”</blockquote> : null}
+            </li>
+          ))}
+        </ul>
+      ) : null}
+      {intl === "unstated" ? (
+        <p className="ac-fineprint">The source does not say whether international students can apply. Ask before you rely on it.</p>
+      ) : null}
+    </section>
+  );
+}
+
+function Leads({ id }: { id: string }) {
+  const [leads, setLeads] = useState<Lead[]>([]);
+  useEffect(() => {
+    let alive = true;
+    getOpportunityWithLeads(id)
+      .then((r) => alive && setLeads(r.leads ?? []))
+      .catch(() => undefined);
+    return () => {
+      alive = false;
+    };
+  }, [id]);
+  if (!leads.length) return null;
+  return (
+    <section className="ac-detail-section">
+      <h3>
+        Found elsewhere <span className="ac-ai-tag">AI web search · unverified</span>
+      </h3>
+      <ul className="ac-reqs">
+        {leads.map((l, i) => (
+          <li key={i} className="ac-req">
+            <div className="ac-req-head">
+              <span className="ac-req-type">{l.field.replace("_", " ")}</span>
+              <span className="ac-req-kind">{l.value}</span>
+            </div>
+            <blockquote className="ac-quote">“{l.quote}”</blockquote>
+            <p className="ac-req-reason">
+              <a href={l.evidence_url} target="_blank" rel="noopener noreferrer">
+                {new URL(l.evidence_url).hostname} ↗
+              </a>
+            </p>
+          </li>
+        ))}
+      </ul>
+      <p className="ac-fineprint">These came from other pages, not the listing. They are not used to decide eligibility.</p>
+    </section>
+  );
 }
 
 type Props = {
@@ -102,6 +174,9 @@ export function OpportunityDetail({ item, signedIn, saved, onToggleSave }: Props
           <p className="ac-fineprint">Eligibility is worked out by fixed rules from these quotes and your profile. AI does not decide it.</p>
         ) : null}
       </section>
+
+      <AccessFacts access={item.access} />
+      <Leads id={item.opportunity_id} />
 
       {signedIn && item.match?.relevance_breakdown?.length ? (
         <section className="ac-detail-section">

@@ -4,6 +4,7 @@ import type {
   ApplicationStatus,
   Bookmark,
   Category,
+  Lead,
   MatchResult,
   Opportunity,
   OpportunityList,
@@ -236,8 +237,19 @@ export function getStats(): Promise<Stats> {
 }
 
 export async function getOpportunity(id: string): Promise<Opportunity> {
-  const { opportunity } = await request<{ opportunity: Opportunity }>(`/api/opportunities/${encodeURIComponent(id)}`);
-  return opportunity;
+  return (await getOpportunityWithLeads(id)).opportunity;
+}
+
+export function getOpportunityWithLeads(id: string): Promise<{ opportunity: Opportunity; leads: Lead[] }> {
+  return request(`/api/opportunities/${encodeURIComponent(id)}`);
+}
+
+export type Background = { first_generation: boolean | null; transfer_student: boolean | null; international_student: boolean | null };
+export async function getBackground(): Promise<Background | null> {
+  return (await request<{ background: Background | null }>("/api/profile/background")).background;
+}
+export async function saveBackground(b: Background): Promise<Background> {
+  return (await request<{ background: Background }>("/api/profile/background", { method: "POST", json: b })).background;
 }
 
 export function getReviewQueue(): Promise<{

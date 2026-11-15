@@ -64,8 +64,9 @@ export async function POST(req: NextRequest) {
         `INSERT INTO opportunities AS cur (
            title, university, organization, category, description, required_skills, eligibility,
            deadline, deadline_text, application_method, source_url, source_id, status,
-           first_collected_at, last_verified_at
-         ) VALUES ($1,$2,$3,$4,$5,$6::text[],$7::jsonb,$8::date,$9,$10,$11,$12,$13, now(), now())
+           access, source_kind, first_collected_at, last_verified_at
+         ) VALUES ($1,$2,$3,$4,$5,$6::text[],$7::jsonb,$8::date,$9,$10,$11,$12,$13,
+                   COALESCE($14::jsonb, '{}'::jsonb), $15, now(), now())
          ON CONFLICT (source_url) DO UPDATE SET
            title = EXCLUDED.title, university = EXCLUDED.university, organization = EXCLUDED.organization,
            category = EXCLUDED.category, description = EXCLUDED.description,
@@ -73,6 +74,8 @@ export async function POST(req: NextRequest) {
            deadline = EXCLUDED.deadline, deadline_text = EXCLUDED.deadline_text,
            application_method = EXCLUDED.application_method,
            source_id = COALESCE(EXCLUDED.source_id, cur.source_id),
+           access = CASE WHEN $14::jsonb IS NULL THEN cur.access ELSE EXCLUDED.access END,
+           source_kind = EXCLUDED.source_kind,
            last_verified_at = now(),
            status = CASE
              WHEN cur.status = 'verified' AND EXCLUDED.status = 'needs_verification'
@@ -90,6 +93,7 @@ export async function POST(req: NextRequest) {
           o.title, o.university, o.organization, o.category, o.description, o.required_skills,
           JSON.stringify(o.eligibility), o.deadline, o.deadline_text, o.application_method,
           o.source_url, sourceId, o.status,
+          o.access ? JSON.stringify(o.access) : null, o.source_kind,
         ],
       );
       const r = rows[0] as { opportunity_id: string; status: string; inserted: boolean };
