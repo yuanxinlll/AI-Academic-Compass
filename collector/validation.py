@@ -30,7 +30,7 @@ def date_in_evidence(expected, evidence):
             except ValueError:
                 pass
         # A shared month/year explicitly qualifies both endpoints of a range.
-        pattern = rf'\b(?:{name}|{name[:3]}\.?)\s+(\d{{1,2}})\s*[-??]\s*(\d{{1,2}}),?\s+(\d{{4}})\b'
+        pattern = rf'\b(?:{name}|{name[:3]}\.?)\s+(\d{{1,2}})\s*[-\u2013\u2014]\s*(\d{{1,2}}),?\s+(\d{{4}})\b'
         for match in re.finditer(pattern, evidence, re.I):
             try:
                 start = date(int(match[3]), month, int(match[1]))

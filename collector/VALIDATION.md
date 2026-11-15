@@ -8,6 +8,18 @@
 The collector implementation remains scoped to collector/. Shared contracts,
 Next.js routes, database schema, and other members' code were not changed.
 
+## Authorized missing-year refinement - 2026-11-15 UTC
+
+The user explicitly replaced the earlier missing-year refusal for Instagram posts.
+See [date policy](DATE_POLICY.md). DataHacks now has deadline 2026-11-26,
+original deadline_text, and a public description warning that the year is inferred
+from its November 9 post. The explicit linked RAG event date still wins.
+Two existing rows updated, zero inserted/rejected/errors; public readback matched
+and original IDs/first collection times were preserved. 88 offline tests passed.
+The prior test below remains historical evidence of the earlier policy.
+Current evidence: [date-policy review](reviews/instagram-date-policy-2026-11-15.json).
+No shared fields, schema, dependencies or other member code changed.
+
 ## Instagram opportunities end-to-end - 2026-11-15 UTC
 
 - Reused the existing three-post snapshot; no additional Instagram scrape started.

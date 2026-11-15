@@ -44,7 +44,8 @@ class InstagramCollectionTests(unittest.TestCase):
             self.assertFalse(report['errors'])
             self.assertEqual(report['inserted'],1)
             saved=json.loads((Path(directory)/'opportunities.json').read_text())[0]
-            self.assertIsNone(saved['deadline'])
+            self.assertEqual(saved['deadline'],'2026-11-26')
+            self.assertIn('year inferred',saved['description'])
             self.assertEqual(saved['source_url'],URL)
             self.assertTrue(saved['opportunity_id'])
         with self.assertRaises(ValueError):normalize([ITEM],URL,CAPTION)
@@ -53,7 +54,7 @@ class InstagramCollectionTests(unittest.TestCase):
         from datetime import date
         from collector.validation import date_in_evidence
         self.assertTrue(date_in_evidence(date(2027,1,17),'January 16-17, 2027'))
-        self.assertTrue(date_in_evidence(date(2027,1,16),'January 16?17, 2027'))
+        self.assertTrue(date_in_evidence(date(2027,1,16),'January 16\u201317, 2027'))
         self.assertFalse(date_in_evidence(date(2027,11,26),'January 16-17, 2027. Apply by 11/26'))
         self.assertFalse(date_in_evidence(date(2027,1,17),'January 17-16, 2027'))
 

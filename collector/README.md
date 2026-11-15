@@ -303,7 +303,9 @@ an existing scraper job. The default input is output/instagram-probe/posts-respo
 Author/explicit-coauthor checks run before analysis. Gemini transcribes up to
 three poster images, then extracts from captions and transcriptions together.
 Incomplete carousel review is withheld. Recaps are skipped. Existing quotation,
-deadline and eligibility validation applies; missing deadline years remain null.
+deadline and eligibility validation applies. Under the user-authorized
+[missing-year policy](DATE_POLICY.md), yearless month/day values resolve from
+the original posting date and retain an explicit inference warning.
 An exact public Luma RSVP link may supply explicit JSON-LD event dates. Undated
 events are held for date review; confirmed past events are marked expired.
 Source affiliation never approves an opportunity as verified.

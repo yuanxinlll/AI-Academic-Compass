@@ -16,14 +16,17 @@ from collector.main import extract, normalize, post_json
 from collector.pipeline import ROOT, atomic_json, duplicate_identity, error_code
 from collector.pipeline import load_env
 
-VERSION='instagram-opportunities-v1'
+VERSION='instagram-opportunities-v2-post-date'
+from collector.social_dates import apply_policy
 CONTEXT=('This evidence is one authenticated student-organization post, its poster transcription, '
          'and optional JSON-LD from the exact RSVP link in its caption. Classify a one-time workshop '
          'as event, a hackathon as competition, a reusable learning resource as course. '
          'A retrospective recap is not a new opportunity. Prior-year prizes are not current prizes. '
          'Publication time is not a deadline or an event date. A deadline such as 11/26 without '
          'its own explicit year must stay null, even if the event title has a different year. '
-         'Keep the original deadline_text. Never infer a year from publication time. '
+         'Keep the original deadline_text. Never infer a year yourself. For a yearless event, '
+         'return activity_end_text as the exact date/time quotation with activity_end_date null; '
+         'a deterministic collector policy will assign the year from the posting date. '
          'QR destinations and link-in-bio targets are unknown unless actually supplied. '
          'Source affiliation does not mean university endorsement or eligibility.')
 
@@ -171,6 +174,7 @@ def run_posts(rows,handle,folder,*,catalog=None,store=None,extractor=extract,
             if cached:
                 records=[dict(record) for record in previous.get('candidate_records',previous['records'])]
                 end_dates=previous.get('activity_end_dates',[])
+                entry['date_interpretations']=previous.get('date_interpretations',[])
             else:
                 feedback=None
                 for attempt in range(2):
@@ -182,6 +186,8 @@ def run_posts(rows,handle,folder,*,catalog=None,store=None,extractor=extract,
                                 item['activity_end_text']=support['event']['endDate']
                         records=normalize(items,url,source_text,source_validator=validate_source)
                         end_dates=[item['activity_end_date'] for item in items if item.get('activity_end_date')]
+                        entry['date_interpretations']=apply_policy(records,items,source_text,post['posted_at'],support)
+                        end_dates.extend(e['date'] for e in entry['date_interpretations'] if e['field']=='activity_end_date')
                         break
                     except ValueError as error:
                         if attempt:raise
@@ -197,7 +203,7 @@ def run_posts(rows,handle,folder,*,catalog=None,store=None,extractor=extract,
                     for record in records:record['status']='expired'
             elif any(record['category']=='event' for record in records) and not end_dates:
                 entry['outcome']='held_for_date_review';report['held_for_date_review']+=1
-                state['posts'][url]=dict(cache_key=cache_key,records=[],candidate_records=records,source_text=source_text,images=images,activity_end_dates=end_dates)
+                state['posts'][url]=dict(cache_key=cache_key,records=[],candidate_records=records,source_text=source_text,images=images,activity_end_dates=end_dates,date_interpretations=entry.get('date_interpretations',[]))
                 report['posts'].append(entry);atomic_json(state_path,state);continue
             for record in records:
                 record['last_verified_at']=datetime.now(timezone.utc).isoformat()
@@ -216,7 +222,7 @@ def run_posts(rows,handle,folder,*,catalog=None,store=None,extractor=extract,
                          extraction_cached=cached,record_categories=[r['category'] for r in records],
                          statuses=[r['status'] for r in records],images=images,
                          supporting_source=support['source_url'] if support else None)
-            state['posts'][url]=dict(cache_key=cache_key,records=records,source_text=source_text,images=images,support=support,activity_end_dates=end_dates)
+            state['posts'][url]=dict(cache_key=cache_key,records=records,source_text=source_text,images=images,support=support,activity_end_dates=end_dates,date_interpretations=entry.get('date_interpretations',[]))
             output.extend(records)
         except Exception as error:
             code=error_code(error);entry.update(outcome='failed',code=code)
