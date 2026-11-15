@@ -1,10 +1,11 @@
-import { NextResponse } from "next/server";
+import { NextResponse, connection } from "next/server";
 import { getSql } from "@/lib/database/db";
 import { handleError } from "@/lib/api";
 
 // GET /api/stats — public, live numbers for the home page hero.
 // "open" = not expired and deadline not passed (same rule as GET /api/opportunities).
 export async function GET() {
+  await connection(); // always live — never prerender at build time
   try {
     const sql = getSql();
     const [totals, byCategory] = await Promise.all([
