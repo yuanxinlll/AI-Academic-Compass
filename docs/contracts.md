@@ -5,6 +5,9 @@
 >
 > **v1.1 变更（2026-11-14）**：明确两个状态枚举的区别（§1）、空数组含义（§0）、资格汇总规则加入 verified 门槛（§4.4）、`relevance_score` 可为 null（§4.4）、简历上限改为 4MB（§4.3）、新增 Python 服务部署与接口归属（§8）。数据库字段不变。
 
+>
+> **v1.3 变更（2026-11-14 晚，D 接管整合）**：演示账号登录取代 `x-demo-user`（§9.1，旧请求头仍可用于脚本，但不能获得管理员权限）；新增接口 `/api/auth/*`、`/api/me`、`/api/me/disclaimer`、`/api/stats`、`GET /api/opportunities/{id}`、`GET /api/admin/review-queue`（§9.2）；`/api/match` 结果新增相关度 v2 字段（§9.3，只增不改）；迁移 002 新增列（§9.4）。管理员只能改状态，提取错误退回 A 重新采集。
+
 ---
 
 ## 0. 通用约定
@@ -423,3 +426,51 @@ GEMINI_MODEL=
   - Python 服务：`GEMINI_API_KEY`、`GEMINI_MODEL`、`INTERNAL_TOKEN`
   - Next.js：新增 `AI_SERVICE_URL`、`INTERNAL_TOKEN`（与上面相同的值）
 - 如果 Vercel Python 部署在第 8 小时整合前没跑通：备选方案是把 `engine.py`（无依赖、约 120 行）移植成 TypeScript 放进 `lib/matching/`，简历解析暂时用本地 demo 演示。
+
+
+---
+
+## 9. v1.3 新增（D）
+
+### 9.1 登录（演示账号）
+- 固定账号：`maya`、`jordan`、`priya`（学生，虚构，带预填档案）和 `admin`（审核员）。定义在 `lib/demo-accounts.ts`。
+- `POST /api/auth/login` `{ "username": "maya", "password"?: "..." }` → 设置签名 HttpOnly Cookie `ac_session`（7 天，HMAC-SHA256，密钥 `AUTH_SECRET`）。学生无需密码；`admin` 在设置了 `DEMO_ADMIN_PASSWORD` 时需要密码。
+- `POST /api/auth/logout` 清除 Cookie。
+- 需要登录的接口没有 Cookie 时返回 `401 UNAUTHORIZED`。`x-demo-user` 请求头保留给测试脚本，只能映射为学生。
+- 管理员接口（§4.5、§4.7、§9.2）接受：已登录的 `admin`，或正确的 `x-admin-token`（A 的采集器继续用这个）。
+
+### 9.2 新接口
+| 方法 | 路径 | 说明 |
+|---|---|---|
+| GET | `/api/me` | `{ user: Me \| null, accounts: DemoAccount[] }`；`Me = { username, display_name, role, disclaimer_accepted_at, has_profile }` |
+| POST | `/api/me/disclaimer` | 记录用户已读 AI 声明 → `{ disclaimer_accepted_at }` |
+| GET | `/api/stats` | 公开：`{ open_total, verified_total, closing_soon, sources_total, last_collected_at, by_category }` |
+| GET | `/api/opportunities/{id}` | 公开：`{ opportunity }`，过期的也返回（旧链接仍能打开） |
+| GET | `/api/admin/review-queue` | 管理员：`{ items: Opportunity[], counts: { verified, needs_verification, expired } }`，待核实的按截止日期排序 |
+
+### 9.3 `/api/match` 新增字段（相关度 v2，`rel-v2.0`）
+资格判断仍由 B 的固定规则完成；`relevance_score` 改由 D 的 `lib/relevance.ts` 计算，并新增：
+- `relevance_breakdown`: `[{ key, label, weight, score (0–1), explanation }]`
+- `signals_used`: 参与计算的信号数（最多 6）
+- `low_confidence`: 参与计算的权重合计 < 40
+- `algorithm_version`: `"rel-v2.0"`
+- `explanation` / `reasons`：由得分最高的信号生成（规则生成，**不是 AI**）
+
+| 信号 | 权重 | 计算 |
+|---|---|---|
+| topic | 35 | 兴趣词（含同义词）在机会文本中的覆盖率，IDF 加权；标题 1，正文 0.7；覆盖 60% 即满分 |
+| skills | 25 | 机会列出的技能中学生已有的比例 |
+| major | 15 | 学科邻接表：同领域 1，相邻 0.6，其他 0.2 |
+| category | 10 | 机会类别在学生勾选的类别里 1，否则 0 |
+| time | 10 | 小时数之比（最高 1）与学期重合比例的平均 |
+| preferred | 5 | 非硬性要求中学生满足的比例 |
+
+任一侧没有数据的信号不参与计算，其余按比例放大（未知 ≠ 0 分）。
+
+### 9.4 迁移 002（`lib/database/migrations/002_demo_accounts.sql`，可重复执行；撤销见 `002_rollback.sql`）
+- `users`：`role`（`student`/`admin`）、`display_name`、`disclaimer_accepted_at`
+- `student_profiles`：`interest_statement`、`interest_keywords text[]`（只给 D 的相关度用，不发给 B）
+- 插入 4 个演示账号和 3 份虚构档案（不覆盖已有修改）
+
+### 9.5 给 A 的数据要求（重申）
+`gpa`、`hours_per_week` 的 `value` 必须是**数字**（如 `3.0`、`10`），不是文本。清理脚本：`node scripts/cleanup-data.mjs`（默认只报告，加 `--apply` 才修改）。
