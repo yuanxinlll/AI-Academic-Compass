@@ -30,3 +30,35 @@ def date_in_evidence(expected, evidence):
             except ValueError:
                 pass
     return False
+
+
+_MONTHS = ['january', 'february', 'march', 'april', 'may', 'june', 'july',
+           'august', 'september', 'october', 'november', 'december']
+_MONTH_RE = r'(?:' + '|'.join(rf'{m}|{m[:3]}\.?' for m in _MONTHS) + r')'
+
+
+def single_date(evidence):
+    """The one complete date in a deadline quote, or None when there is none or it is ambiguous.
+
+    Rule-based fallback for when the model copied a dated quote but left `deadline` empty.
+    Any date mention without a year (e.g. "September 28th") makes the quote ambiguous.
+    """
+    if not evidence:
+        return None
+    found, mentions = set(), 0
+    for m in re.finditer(r'\b(\d{4})-(\d{2})-(\d{2})\b', evidence):
+        mentions += 1
+        try: found.add(date(int(m[1]), int(m[2]), int(m[3])))
+        except ValueError: return None
+    for m in re.finditer(r'\b(\d{1,2})/(\d{1,2})(?:/(\d{2,4}))?\b', evidence):
+        mentions += 1
+        if not m[3] or len(m[3]) != 4: return None
+        try: found.add(date(int(m[3]), int(m[1]), int(m[2])))
+        except ValueError: return None
+    for m in re.finditer(rf'\b({_MONTH_RE})\s+(\d{{1,2}})(?:st|nd|rd|th)?\b(,?\s+(\d{{4}})\b)?', evidence, re.I):
+        mentions += 1
+        if not m[4]: return None
+        month = next(i for i, name in enumerate(_MONTHS, 1) if m[1].lower().rstrip('.').startswith(name[:3]))
+        try: found.add(date(int(m[4]), month, int(m[2])))
+        except ValueError: return None
+    return found.pop() if mentions and len(found) == 1 else None

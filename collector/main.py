@@ -164,6 +164,13 @@ def normalize(items, source_url, page):
                 status = 'expired'
         elif optional['deadline_text'] and not evidence_in(optional['deadline_text'], page):
             raise ValueError('Deadline text lacks source evidence')
+        elif optional['deadline_text']:
+            from collector.validation import single_date
+            found = single_date(optional['deadline_text'])
+            if found is not None:
+                deadline = found.isoformat()
+                if found < now.date():
+                    status = 'expired'
         closure = item.get('closure_evidence')
         if closure is not None:
             if not evidence_in(closure, page):
