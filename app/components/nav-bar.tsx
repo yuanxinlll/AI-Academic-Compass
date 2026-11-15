@@ -38,6 +38,7 @@ export default function NavBar() {
   const pathname = usePathname();
   const links = [
     { href: "/search", label: "Explore" },
+    { href: "/access", label: "Access Gap" },
     ...(user ? [{ href: "/me", label: "Saved" }] : []),
     ...(user?.role === "admin" ? [{ href: "/admin", label: "Review queue" }] : []),
   ];

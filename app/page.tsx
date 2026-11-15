@@ -90,6 +90,9 @@ export default function HomePage() {
               </div>
             </dl>
           ) : null}
+          <Link href="/access" className="ac-link">
+            Same campus, different doors: see the Access Gap →
+          </Link>
           {stats?.last_collected_at ? (
             <p className="ac-fineprint">Last new listing collected {relativeTime(stats.last_collected_at)}.</p>
           ) : null}

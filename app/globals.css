@@ -562,3 +562,28 @@ body {
 .ac-relevance-bar.ac-bar-wide { width: 100%; height: 0.4rem; }
 .ac-bg-rows { display: grid; gap: 0.5rem; margin-top: 0.75rem; }
 .ac-bg-row { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 0.55rem 0.85rem; border-radius: 0.8rem; background: var(--inner); flex-wrap: wrap; }
+/* Access Gap */
+.ac-hero-left { text-align: left; justify-items: start; padding-top: 2.5rem; }
+.ac-h1-xl { font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.05; letter-spacing: -0.04em; font-weight: 600; margin: 0; }
+.ac-stats-wide { width: 100%; }
+.ac-stat-of { font-size: 1rem; color: var(--muted); font-weight: 500; }
+.ac-gap-personas { display: grid; gap: 1.1rem; }
+.ac-gap-row { display: grid; grid-template-columns: 13rem 1fr; gap: 0.4rem 1rem; align-items: center; }
+.ac-gap-who { display: grid; }
+.ac-gap-bar { display: flex; height: 2rem; border-radius: 0.6rem; overflow: hidden; background: var(--inner); }
+.ac-gap-seg { display: grid; place-items: center; font-size: 0.78rem; font-weight: 600; min-width: 1.4rem; border-radius: 0; }
+.ac-gap-notes { grid-column: 2; display: flex; gap: 0.4rem 1rem; flex-wrap: wrap; color: var(--muted); }
+.ac-gap-notes strong { color: var(--foreground); }
+.ac-gap-warn { color: var(--ac-orange); }
+.ac-gap-warn strong { color: var(--ac-orange); }
+.ac-gap-legend { display: flex; gap: 1rem; flex-wrap: wrap; color: var(--muted); border-top: 1px solid var(--border); padding-top: 0.75rem; }
+.ac-gap-legend i { display: inline-block; width: 0.75rem; height: 0.75rem; border-radius: 3px; vertical-align: -1px; }
+.ac-gap-transparency { display: grid; gap: 0.8rem; }
+.ac-gap-trow { display: grid; grid-template-columns: minmax(12rem, 22rem) 1fr 7rem; gap: 1rem; align-items: center; font-size: 0.9rem; }
+.ac-gap-pct { text-align: right; font-variant-numeric: tabular-nums; color: var(--muted); }
+@media (max-width: 720px) {
+  .ac-gap-row { grid-template-columns: 1fr; }
+  .ac-gap-notes { grid-column: 1; }
+  .ac-gap-trow { grid-template-columns: 1fr 5rem; }
+  .ac-gap-trow .ac-relevance-bar { grid-column: 1 / -1; grid-row: 2; }
+}

@@ -3,9 +3,8 @@ import { getSql } from "@/lib/database/db";
 import { OPPORTUNITY_COLUMNS, PROFILE_COLUMNS } from "@/lib/database/columns";
 import { requireUser } from "@/lib/auth";
 import { apiError, handleError } from "@/lib/api";
-import { callAiService } from "@/lib/ai-service";
 import { UUID_RE, ValidationError, isObject } from "@/lib/validation";
-import { scoreAll } from "@/lib/relevance";
+import { matchProfile } from "@/lib/match-service";
 
 const MAX_OPPORTUNITIES = 200;
 
@@ -48,29 +47,7 @@ export async function POST(req: NextRequest) {
     if (!profiles[0]) return apiError(404, "PROFILE_NOT_FOUND", "Complete your profile before matching");
     if (opportunities.length === 0) return NextResponse.json({ results: [] });
 
-    const profile = profiles[0];
-    // interest_keywords is a D-only column (migration 002); B's contract does not know it.
-    const profileForB = { ...profile };
-    delete profileForB.interest_keywords;
-    const result = (await callAiService("/internal/match", { profile: profileForB, opportunities })) as {
-      results: { opportunity_id: string; eligibility: { checks: { type: string; result: string; raw_text?: string }[] }; explanation?: string }[];
-    };
-
-    // Eligibility stays B's fixed rules. Relevance is rel-v2 (lib/relevance.ts).
-    const checks = new Map(result.results.map((r) => [r.opportunity_id, r.eligibility?.checks ?? []]));
-    const rel = scoreAll(profile, opportunities as Parameters<typeof scoreAll>[1], checks);
-    const results = result.results.map((r) => {
-      const v = rel.get(r.opportunity_id);
-      if (!v) return r;
-      const top = [...v.relevance_breakdown].filter((s) => s.score > 0).sort((a, b) => b.weight * b.score - a.weight * a.score);
-      return {
-        ...r,
-        ...v,
-        reasons: top.map((s) => s.explanation),
-        explanation: top.length ? `${top[0].explanation}.` : "We found little overlap between this listing and your profile.",
-      };
-    });
-    return NextResponse.json({ ...result, results });
+    return NextResponse.json(await matchProfile(profiles[0], opportunities));
   } catch (err) {
     return handleError("POST /api/match", err);
   }
