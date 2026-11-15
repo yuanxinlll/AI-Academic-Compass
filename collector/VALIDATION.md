@@ -1,7 +1,58 @@
 # Collector verification - 2026-11-14
 
+> Current integration and coordination: [collection audit](PROJECT_AUDIT.md).
+> Direct database writes below describe historical tests. Admin-API ingestion
+> is now implemented and live-tested as described immediately below.
+
+
 The collector implementation remains scoped to collector/. Shared contracts,
 Next.js routes, database schema, and other members' code were not changed.
+
+## Registry discovery - 2026-11-14 Pacific / 2026-11-15 UTC
+
+- 52 offline tests passed after registry/pipeline implementation and live findings.
+- First six-group run exposed a malformed source href, an event confirmation URL,
+  and multi-offering extraction failures. Malformed/action links are now filtered;
+  their initial evidence is retained, not submitted as opportunities. The known
+  multi-offering Carpentries page is discovery-only rather than merging its roles.
+- Refined live run: 17 fetched pages (budget at most 18), all six discovery groups,
+  no extraction/persistence errors. Six upsert operations across groups; overlapping
+  revisits are not six unique opportunities. Local state contains five unique
+  records: four programs and one event, including previously stored records.
+- Across the two runs: three new records (UCCS expired program, AIP Enrollment
+  Workshop event, Basement Affiliate Student Organization Program). FMP/EMPOWER
+  already existed. New entries remain unverified or expired, never admin-approved.
+- Evidence: ignored output/registry/initial-report.json, report.json and state.json;
+  versioned source_registry.json and reviews/DISCOVERY_HANDOFF.md describe findings.
+- No standalone internship/competition/course was established by this test. That
+  coverage gap is reported explicitly. External links require review; source URL
+  identity prevents merging independent offerings on one page. No deployed cron,
+  search-engine discovery or measured extraction-accuracy benchmark was added.
+
+## Admin-API integration - 2026-11-14 Pacific / 2026-11-15 UTC
+
+- Implemented collector/ingest.py and CLI --ingest; no new dependencies or D files.
+- 42 offline tests passed, including payload/system-field boundaries, partial
+  rejection handling, 50-item batch limits, safe errors, transient retry,
+  authentication failure, redirect refusal and pipeline persistence.
+- Confirmed collector/.env has ADMIN_TOKEN and no DATABASE_URL, without displaying
+  values. Authenticated empty POST reached input validation (400), saving no rows.
+- Fresh real FMP fetch + Gemini extraction + normalization + API POST passed:
+  1 retrieved page, 1 opportunity, 0 inserted, 1 updated, 0 rejected, no errors.
+  This exercised updating a real existing record, not creating a synthetic row.
+- Two subsequent real fetch/API-upsert runs passed with cached extraction.
+  Public API readback matched title/category/description/requirements/deadline/
+  application fields. ID 7b90bc53-3b76-4767-ac84-aa2df770dd5d, source ID and original
+  first_collected_at were preserved; last_verified_at refreshed. No SQL access used.
+- D reports duplicates=1 alongside updated=1 for repeated source URLs; these are
+  overlapping counters. No extra opportunity row was created.
+- Evidence: ignored output/api-ingest-report.json and
+  output/api-ingest-verification.json. Reproduce with
+  python -B -m collector.tests.run_api_integration (live writes/provider usage).
+- Not verified by this test: insertion of a brand-new URL, deployed scheduling,
+  or remotely logging zero-result/provider-failure attempts. Such attempts remain
+  local because the ingestion contract requires nonempty opportunities.
+
 
 ## Verified
 

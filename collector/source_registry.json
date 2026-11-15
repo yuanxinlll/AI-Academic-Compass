@@ -1,0 +1,3811 @@
+{
+  "version": 1,
+  "scope": "Public academic/career opportunities relevant to UCSD undergraduates. Groups guide discovery, never override extracted category.",
+  "sources": [
+    {
+      "url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/fmp/index.html",
+      "discovery_groups": [
+        "program",
+        "research"
+      ],
+      "role": "detail",
+      "stage": "seed",
+      "source_type": "lab_page",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "import",
+          "artifact": "sources.json"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/index.html",
+          "observed_at": "2026-11-15T01:34:26.035456+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/camp/index.html",
+          "observed_at": "2026-11-15T01:34:28.050743+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/empower/index.html",
+          "observed_at": "2026-11-15T01:34:32.758931+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/urh-academic-year/index.html",
+          "observed_at": "2026-11-15T01:37:32.213579+00:00"
+        }
+      ],
+      "notes": "",
+      "last_checked_at": "2026-11-15T01:37:34.601414+00:00",
+      "last_error": null
+    },
+    {
+      "url": "https://ugresearch.ucsd.edu/programs/urh-academic-year/index.html",
+      "discovery_groups": [
+        "research",
+        "program"
+      ],
+      "role": "directory",
+      "stage": "seed",
+      "source_type": "listing",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "import",
+          "artifact": "sources.json"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/index.html",
+          "observed_at": "2026-11-15T01:34:26.035456+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/camp/index.html",
+          "observed_at": "2026-11-15T01:34:28.050743+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/empower/index.html",
+          "observed_at": "2026-11-15T01:34:32.758931+00:00"
+        }
+      ],
+      "notes": "Original URH academic-year discovery directory.",
+      "last_checked_at": "2026-11-15T01:37:57.845851+00:00",
+      "last_error": null
+    },
+    {
+      "url": "https://pelham-lab.ucsd.edu/join-the-team/undergraduates",
+      "discovery_groups": [
+        "research"
+      ],
+      "role": "detail",
+      "stage": "source_reviewed",
+      "source_type": "lab_page",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "import",
+          "artifact": "reviewed_sources.json"
+        }
+      ],
+      "notes": "Source-reviewed is not human/admin approval."
+    },
+    {
+      "url": "https://winkielmanlab.ucsd.edu/joinus/",
+      "discovery_groups": [
+        "research"
+      ],
+      "role": "detail",
+      "stage": "source_reviewed",
+      "source_type": "lab_page",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "import",
+          "artifact": "reviewed_sources.json"
+        }
+      ],
+      "notes": "Source-reviewed is not human/admin approval."
+    },
+    {
+      "url": "https://rickardlab.ucsd.edu/join.html",
+      "discovery_groups": [
+        "research"
+      ],
+      "role": "detail",
+      "stage": "source_reviewed",
+      "source_type": "lab_page",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "import",
+          "artifact": "reviewed_sources.json"
+        }
+      ],
+      "notes": "Source-reviewed is not human/admin approval."
+    },
+    {
+      "url": "https://eatingdisorders.ucsd.edu/node/121",
+      "discovery_groups": [
+        "research"
+      ],
+      "role": "detail",
+      "stage": "source_reviewed",
+      "source_type": "lab_page",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "import",
+          "artifact": "reviewed_sources.json"
+        }
+      ],
+      "notes": "Source-reviewed is not human/admin approval."
+    },
+    {
+      "url": "https://pediatrics.ucsd.edu/research/faculty-labs/cherqui-lab/career.html",
+      "discovery_groups": [
+        "research"
+      ],
+      "role": "detail",
+      "stage": "source_reviewed",
+      "source_type": "lab_page",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "import",
+          "artifact": "reviewed_sources.json"
+        }
+      ],
+      "notes": "Source-reviewed is not human/admin approval."
+    },
+    {
+      "url": "https://winzeler.ucsd.edu/jobs/",
+      "discovery_groups": [
+        "research"
+      ],
+      "role": "detail",
+      "stage": "source_reviewed",
+      "source_type": "lab_page",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "import",
+          "artifact": "reviewed_sources.json"
+        }
+      ],
+      "notes": "Source-reviewed is not human/admin approval."
+    },
+    {
+      "url": "https://hxi.ucsd.edu/faq/join-us/",
+      "discovery_groups": [
+        "research"
+      ],
+      "role": "detail",
+      "stage": "source_reviewed",
+      "source_type": "lab_page",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "import",
+          "artifact": "reviewed_sources.json"
+        }
+      ],
+      "notes": "Source-reviewed is not human/admin approval."
+    },
+    {
+      "url": "https://ultrafast.ucsd.edu/jobs/",
+      "discovery_groups": [
+        "research"
+      ],
+      "role": "detail",
+      "stage": "source_reviewed",
+      "source_type": "lab_page",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "import",
+          "artifact": "reviewed_sources.json"
+        }
+      ],
+      "notes": "Source-reviewed is not human/admin approval."
+    },
+    {
+      "url": "https://psychology.ucsd.edu/undergraduate-program/research/index.html",
+      "discovery_groups": [
+        "program"
+      ],
+      "role": "detail",
+      "stage": "source_reviewed",
+      "source_type": "listing",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "import",
+          "artifact": "reviewed_sources.json"
+        }
+      ],
+      "notes": "Source-reviewed is not human/admin approval."
+    },
+    {
+      "url": "https://biology.ucsd.edu/education/undergrad/research/research-acad-cred/summer.html",
+      "discovery_groups": [
+        "research"
+      ],
+      "role": "detail",
+      "stage": "source_reviewed",
+      "source_type": "lab_page",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "import",
+          "artifact": "reviewed_sources.json"
+        }
+      ],
+      "notes": "Source-reviewed is not human/admin approval."
+    },
+    {
+      "url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/rsri/index.html",
+      "discovery_groups": [
+        "program",
+        "research"
+      ],
+      "role": "detail",
+      "stage": "source_reviewed",
+      "source_type": "listing",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "import",
+          "artifact": "reviewed_sources.json"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/index.html",
+          "observed_at": "2026-11-15T01:34:26.035456+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/camp/index.html",
+          "observed_at": "2026-11-15T01:34:28.050743+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/empower/index.html",
+          "observed_at": "2026-11-15T01:34:32.758931+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/urh-academic-year/index.html",
+          "observed_at": "2026-11-15T01:37:32.213579+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/fmp/index.html",
+          "observed_at": "2026-11-15T01:37:35.995075+00:00"
+        }
+      ],
+      "notes": "Source-reviewed is not human/admin approval."
+    },
+    {
+      "url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/start-neuro/index.html",
+      "discovery_groups": [
+        "program",
+        "research"
+      ],
+      "role": "detail",
+      "stage": "source_reviewed",
+      "source_type": "listing",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "import",
+          "artifact": "reviewed_sources.json"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/index.html",
+          "observed_at": "2026-11-15T01:34:26.035456+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/camp/index.html",
+          "observed_at": "2026-11-15T01:34:28.050743+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/empower/index.html",
+          "observed_at": "2026-11-15T01:34:32.758931+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/urh-academic-year/index.html",
+          "observed_at": "2026-11-15T01:37:32.213579+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/fmp/index.html",
+          "observed_at": "2026-11-15T01:37:35.995075+00:00"
+        }
+      ],
+      "notes": "Source-reviewed is not human/admin approval."
+    },
+    {
+      "url": "https://protolab.ucsd.edu/get-involved/",
+      "discovery_groups": [
+        "research"
+      ],
+      "role": "detail",
+      "stage": "source_reviewed",
+      "source_type": "lab_page",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "import",
+          "artifact": "reviewed_sources.json"
+        }
+      ],
+      "notes": "Source-reviewed is not human/admin approval."
+    },
+    {
+      "url": "https://chulab.ucsd.edu/join/",
+      "discovery_groups": [
+        "research"
+      ],
+      "role": "detail",
+      "stage": "source_reviewed",
+      "source_type": "lab_page",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "import",
+          "artifact": "reviewed_sources.json"
+        }
+      ],
+      "notes": "Source-reviewed is not human/admin approval."
+    },
+    {
+      "url": "https://poulikakos.ucsd.edu/join-us/",
+      "discovery_groups": [
+        "research"
+      ],
+      "role": "detail",
+      "stage": "source_reviewed",
+      "source_type": "lab_page",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "import",
+          "artifact": "reviewed_sources.json"
+        }
+      ],
+      "notes": "Source-reviewed is not human/admin approval."
+    },
+    {
+      "url": "https://madlab.ucsd.edu/join",
+      "discovery_groups": [
+        "research"
+      ],
+      "role": "detail",
+      "stage": "source_reviewed",
+      "source_type": "lab_page",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "import",
+          "artifact": "reviewed_sources.json"
+        }
+      ],
+      "notes": "Source-reviewed is not human/admin approval."
+    },
+    {
+      "url": "https://griffithlab.ucsd.edu/team",
+      "discovery_groups": [
+        "research"
+      ],
+      "role": "detail",
+      "stage": "source_reviewed",
+      "source_type": "lab_page",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "import",
+          "artifact": "reviewed_sources.json"
+        }
+      ],
+      "notes": "Source-reviewed is not human/admin approval."
+    },
+    {
+      "url": "https://bieringlab.biosci.ucsd.edu/people/",
+      "discovery_groups": [
+        "research"
+      ],
+      "role": "detail",
+      "stage": "source_reviewed",
+      "source_type": "lab_page",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "import",
+          "artifact": "reviewed_sources.json"
+        }
+      ],
+      "notes": "Source-reviewed is not human/admin approval."
+    },
+    {
+      "url": "https://schen.ucsd.edu/lab/positions.html",
+      "discovery_groups": [
+        "research"
+      ],
+      "role": "detail",
+      "stage": "source_reviewed",
+      "source_type": "lab_page",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "import",
+          "artifact": "reviewed_sources.json"
+        }
+      ],
+      "notes": "Source-reviewed is not human/admin approval."
+    },
+    {
+      "url": "https://cogdevlab.ucsd.edu/contact-us/join-us",
+      "discovery_groups": [
+        "course"
+      ],
+      "role": "detail",
+      "stage": "source_reviewed",
+      "source_type": "listing",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "import",
+          "artifact": "reviewed_sources.json"
+        }
+      ],
+      "notes": "Source-reviewed is not human/admin approval."
+    },
+    {
+      "url": "https://cclab.ucsd.edu/for-undergrads/",
+      "discovery_groups": [
+        "research"
+      ],
+      "role": "detail",
+      "stage": "source_reviewed",
+      "source_type": "lab_page",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "import",
+          "artifact": "reviewed_sources.json"
+        }
+      ],
+      "notes": "Source-reviewed is not human/admin approval."
+    },
+    {
+      "url": "https://labs.biology.ucsd.edu/wasserman/undergrads/undergrad_research.html",
+      "discovery_groups": [
+        "research"
+      ],
+      "role": "detail",
+      "stage": "source_reviewed",
+      "source_type": "lab_page",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "import",
+          "artifact": "reviewed_sources.json"
+        }
+      ],
+      "notes": "Source-reviewed is not human/admin approval."
+    },
+    {
+      "url": "https://stripplelab.ucsd.edu/join-us/",
+      "discovery_groups": [
+        "research"
+      ],
+      "role": "detail",
+      "stage": "source_reviewed",
+      "source_type": "lab_page",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "import",
+          "artifact": "reviewed_sources.json"
+        }
+      ],
+      "notes": "Source-reviewed is not human/admin approval."
+    },
+    {
+      "url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/mcnair/index.html",
+      "discovery_groups": [
+        "program",
+        "research"
+      ],
+      "role": "detail",
+      "stage": "source_reviewed",
+      "source_type": "listing",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "import",
+          "artifact": "reviewed_sources.json"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/index.html",
+          "observed_at": "2026-11-15T01:34:26.035456+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/camp/index.html",
+          "observed_at": "2026-11-15T01:34:28.050743+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/empower/index.html",
+          "observed_at": "2026-11-15T01:34:32.758931+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/urh-academic-year/index.html",
+          "observed_at": "2026-11-15T01:37:32.213579+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/fmp/index.html",
+          "observed_at": "2026-11-15T01:37:35.995075+00:00"
+        }
+      ],
+      "notes": "Source-reviewed is not human/admin approval."
+    },
+    {
+      "url": "https://neuralcrossroads.ucsd.edu/opportunities/",
+      "discovery_groups": [
+        "research"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "lab_page",
+      "enabled": false,
+      "provenance": [
+        {
+          "method": "import",
+          "artifact": "candidate_sources.json"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "url": "https://moorescancercenter.ucsd.edu/education/training-programs/undergraduate.html",
+      "discovery_groups": [
+        "internship"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "provenance": [
+        {
+          "method": "import",
+          "artifact": "candidate_sources.json"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "url": "https://experientiallearning.ucsd.edu/aip/index.html",
+      "discovery_groups": [
+        "program"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "provenance": [
+        {
+          "method": "import",
+          "artifact": "candidate_sources.json"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "url": "https://aip.ucsd.edu/whatwedo/ucdc/index.html",
+      "discovery_groups": [
+        "program",
+        "internship"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "provenance": [
+        {
+          "method": "import",
+          "artifact": "candidate_sources.json"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://aip.ucsd.edu/whatwedo/uccs/index.html",
+          "observed_at": "2026-11-15T01:33:48.420777+00:00"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "url": "https://mpl.ucsd.edu/internships/",
+      "discovery_groups": [
+        "internship"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "provenance": [
+        {
+          "method": "import",
+          "artifact": "candidate_sources.json"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "url": "https://scripps.ucsd.edu/undergrad/surf",
+      "discovery_groups": [
+        "program"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "provenance": [
+        {
+          "method": "import",
+          "artifact": "candidate_sources.json"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "url": "https://aip.ucsd.edu/whatwedo/uccs/index.html",
+      "discovery_groups": [
+        "program",
+        "internship"
+      ],
+      "role": "detail",
+      "stage": "collected",
+      "source_type": "listing",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "import",
+          "artifact": "candidate_sources.json"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://students.ucsd.edu/finances/internships/index.html",
+          "observed_at": "2026-11-15T01:33:43.932068+00:00"
+        }
+      ],
+      "notes": "",
+      "last_checked_at": "2026-11-15T01:37:41.693323+00:00",
+      "last_error": null
+    },
+    {
+      "url": "https://ccgt.ucsd.edu/initiatives/wavemaker-lab/poseidon-fellows.html",
+      "discovery_groups": [
+        "program"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "provenance": [
+        {
+          "method": "import",
+          "artifact": "candidate_sources.json"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "url": "https://career.rady.ucsd.edu/jobs/under-armour-2027-summer-internship-finance-and-accounting/",
+      "discovery_groups": [
+        "internship"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "provenance": [
+        {
+          "method": "import",
+          "artifact": "candidate_sources.json"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/camp/index.html",
+      "discovery_groups": [
+        "program",
+        "research"
+      ],
+      "role": "detail",
+      "stage": "collected",
+      "source_type": "listing",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "import",
+          "artifact": "output/state.json"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/index.html",
+          "observed_at": "2026-11-15T01:34:26.035456+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/empower/index.html",
+          "observed_at": "2026-11-15T01:34:32.758931+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/urh-academic-year/index.html",
+          "observed_at": "2026-11-15T01:37:32.213579+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/fmp/index.html",
+          "observed_at": "2026-11-15T01:37:35.995075+00:00"
+        }
+      ],
+      "notes": "",
+      "last_checked_at": "2026-11-15T01:34:26.298650+00:00",
+      "last_error": "validation_failed"
+    },
+    {
+      "url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/empower/index.html",
+      "discovery_groups": [
+        "program",
+        "research"
+      ],
+      "role": "detail",
+      "stage": "collected",
+      "source_type": "listing",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "import",
+          "artifact": "output/state.json"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/index.html",
+          "observed_at": "2026-11-15T01:34:26.035456+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/camp/index.html",
+          "observed_at": "2026-11-15T01:34:28.050743+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/urh-academic-year/index.html",
+          "observed_at": "2026-11-15T01:37:32.213579+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/fmp/index.html",
+          "observed_at": "2026-11-15T01:37:35.995075+00:00"
+        }
+      ],
+      "notes": "",
+      "last_checked_at": "2026-11-15T01:38:02.454688+00:00",
+      "last_error": null
+    },
+    {
+      "url": "https://students.ucsd.edu/finances/internships/index.html",
+      "discovery_groups": [
+        "internship"
+      ],
+      "role": "directory",
+      "stage": "seed",
+      "source_type": "listing",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "primary_source_search",
+          "checked_at": "2026-11-15T01:32:27.226742+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://students.ucsd.edu/finances/jobs/index.html",
+          "observed_at": "2026-11-15T01:33:45.674258+00:00"
+        }
+      ],
+      "notes": "Student internship directory; Handshake requires login and is not crawled.",
+      "last_checked_at": "2026-11-15T01:37:38.393799+00:00",
+      "last_error": null
+    },
+    {
+      "url": "https://calendar.ucsd.edu/",
+      "discovery_groups": [
+        "event"
+      ],
+      "role": "directory",
+      "stage": "seed",
+      "source_type": "calendar",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "primary_source_search",
+          "checked_at": "2026-11-15T01:32:27.226769+00:00"
+        }
+      ],
+      "notes": "Campus calendar; academic events only, not general social events.",
+      "last_checked_at": "2026-11-15T01:37:43.802276+00:00",
+      "last_error": null
+    },
+    {
+      "url": "https://thebasement.ucsd.edu/offerings/index.html",
+      "discovery_groups": [
+        "competition"
+      ],
+      "role": "directory",
+      "stage": "seed",
+      "source_type": "listing",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "primary_source_search",
+          "checked_at": "2026-11-15T01:32:27.226773+00:00"
+        }
+      ],
+      "notes": "Competition/funding resources; external listings require separate review.",
+      "last_checked_at": "2026-11-15T01:37:52.764774+00:00",
+      "last_error": null
+    },
+    {
+      "url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/index.html",
+      "discovery_groups": [
+        "program",
+        "research"
+      ],
+      "role": "directory",
+      "stage": "seed",
+      "source_type": "listing",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "primary_source_search",
+          "checked_at": "2026-11-15T01:32:27.226775+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/camp/index.html",
+          "observed_at": "2026-11-15T01:34:28.050743+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/empower/index.html",
+          "observed_at": "2026-11-15T01:34:32.758931+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/urh-academic-year/index.html",
+          "observed_at": "2026-11-15T01:37:32.213579+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/fmp/index.html",
+          "observed_at": "2026-11-15T01:37:35.995075+00:00"
+        }
+      ],
+      "notes": "Program directory; individual detail pages required.",
+      "last_checked_at": "2026-11-15T01:37:59.536894+00:00",
+      "last_error": null
+    },
+    {
+      "url": "https://research-it.ucsd.edu/training-events/index.html",
+      "discovery_groups": [
+        "course"
+      ],
+      "role": "directory",
+      "stage": "seed",
+      "source_type": "listing",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "primary_source_search",
+          "checked_at": "2026-11-15T01:32:27.226778+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://research-it.ucsd.edu/training-events/carpentries.html",
+          "observed_at": "2026-11-15T01:34:40.837551+00:00"
+        }
+      ],
+      "notes": "Learning/training directory, including library and Carpentries resources.",
+      "last_checked_at": "2026-11-15T01:38:04.841821+00:00",
+      "last_error": null
+    },
+    {
+      "url": "https://rady.ucsd.edu/why/centers/sullivan/programs/",
+      "discovery_groups": [
+        "competition"
+      ],
+      "role": "directory",
+      "stage": "seed",
+      "source_type": "listing",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "primary_source_search",
+          "checked_at": "2026-11-15T01:32:27.226780+00:00"
+        }
+      ],
+      "notes": "Entrepreneurship pathways; some pages combine programs and closed competitions.",
+      "last_checked_at": "2026-11-15T01:37:54.526407+00:00",
+      "last_error": null
+    },
+    {
+      "url": "https://rady.ucsd.edu/why/centers/sullivan/programs/accelerate.html",
+      "discovery_groups": [
+        "competition",
+        "program"
+      ],
+      "role": "directory",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "provenance": [
+        {
+          "method": "primary_source_review",
+          "source_url": "https://rady.ucsd.edu/why/centers/sullivan/programs/"
+        }
+      ],
+      "notes": "Multiple separate programs and a closed 2026 competition share this URL; discovery only, no combined opportunity row."
+    },
+    {
+      "url": "https://ugresearch.ucsd.edu/conferences/external-research-conferences.html",
+      "discovery_groups": [
+        "research"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/urh-academic-year/index.html",
+          "observed_at": "2026-11-15T01:33:33.370441+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/research-mentors/be-a-mentor.html",
+          "observed_at": "2026-11-15T01:33:41.154739+00:00"
+        }
+      ],
+      "last_checked_at": "2026-11-15T01:33:33.630507+00:00",
+      "last_error": null
+    },
+    {
+      "url": "https://ugresearch.ucsd.edu/research-mentors/be-a-mentor.html",
+      "discovery_groups": [
+        "research"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/urh-academic-year/index.html",
+          "observed_at": "2026-11-15T01:33:33.370441+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/conferences/external-research-conferences.html",
+          "observed_at": "2026-11-15T01:33:35.921556+00:00"
+        }
+      ],
+      "last_checked_at": "2026-11-15T01:33:36.978443+00:00",
+      "last_error": null
+    },
+    {
+      "url": "https://ugresearch.ucsd.edu/research-mentors/get-involved.html",
+      "discovery_groups": [
+        "research"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/urh-academic-year/index.html",
+          "observed_at": "2026-11-15T01:33:33.370441+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/conferences/external-research-conferences.html",
+          "observed_at": "2026-11-15T01:33:35.921556+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/research-mentors/be-a-mentor.html",
+          "observed_at": "2026-11-15T01:33:41.154739+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://ugresearch.ucsd.edu/research-mentors/index.html",
+      "discovery_groups": [
+        "research"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/urh-academic-year/index.html",
+          "observed_at": "2026-11-15T01:33:33.370441+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/conferences/external-research-conferences.html",
+          "observed_at": "2026-11-15T01:33:35.921556+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/research-mentors/be-a-mentor.html",
+          "observed_at": "2026-11-15T01:33:41.154739+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://ugresearch.ucsd.edu/research-mentors/outstanding-mentor-awards/index.html",
+      "discovery_groups": [
+        "research"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/urh-academic-year/index.html",
+          "observed_at": "2026-11-15T01:33:33.370441+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/conferences/external-research-conferences.html",
+          "observed_at": "2026-11-15T01:33:35.921556+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/research-mentors/be-a-mentor.html",
+          "observed_at": "2026-11-15T01:33:41.154739+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://ugresearch.ucsd.edu/research-mentors/resources.html",
+      "discovery_groups": [
+        "research"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/urh-academic-year/index.html",
+          "observed_at": "2026-11-15T01:33:33.370441+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/conferences/external-research-conferences.html",
+          "observed_at": "2026-11-15T01:33:35.921556+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/research-mentors/be-a-mentor.html",
+          "observed_at": "2026-11-15T01:33:41.154739+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://ugresearch.ucsd.edu/research-mentors/scholarship-on-undergraduate-research.html",
+      "discovery_groups": [
+        "research",
+        "program"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/urh-academic-year/index.html",
+          "observed_at": "2026-11-15T01:33:33.370441+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/conferences/external-research-conferences.html",
+          "observed_at": "2026-11-15T01:33:35.921556+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/research-mentors/be-a-mentor.html",
+          "observed_at": "2026-11-15T01:33:41.154739+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/index.html",
+          "observed_at": "2026-11-15T01:34:26.035456+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/camp/index.html",
+          "observed_at": "2026-11-15T01:34:28.050743+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/empower/index.html",
+          "observed_at": "2026-11-15T01:34:32.758931+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://ugresearch.ucsd.edu/students/research-directory.html",
+      "discovery_groups": [
+        "research"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/urh-academic-year/index.html",
+          "observed_at": "2026-11-15T01:33:33.370441+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/conferences/external-research-conferences.html",
+          "observed_at": "2026-11-15T01:33:35.921556+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/research-mentors/be-a-mentor.html",
+          "observed_at": "2026-11-15T01:33:41.154739+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/empower/index.html",
+          "observed_at": "2026-11-15T01:37:34.105175+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/fmp/index.html",
+          "observed_at": "2026-11-15T01:37:35.995075+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://ugresearch.ucsd.edu/students/research-mentor.html",
+      "discovery_groups": [
+        "research"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/urh-academic-year/index.html",
+          "observed_at": "2026-11-15T01:33:33.370441+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/conferences/external-research-conferences.html",
+          "observed_at": "2026-11-15T01:33:35.921556+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/research-mentors/be-a-mentor.html",
+          "observed_at": "2026-11-15T01:33:41.154739+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/empower/index.html",
+          "observed_at": "2026-11-15T01:37:34.105175+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/fmp/index.html",
+          "observed_at": "2026-11-15T01:37:35.995075+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://students.ucsd.edu/finances/jobs/index.html",
+      "discovery_groups": [
+        "internship"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://students.ucsd.edu/finances/internships/index.html",
+          "observed_at": "2026-11-15T01:33:43.932068+00:00"
+        }
+      ],
+      "last_checked_at": "2026-11-15T01:37:40.012954+00:00",
+      "last_error": null
+    },
+    {
+      "url": "https://career.ucsd.edu/jobs-experience/internship-opportunities/",
+      "discovery_groups": [
+        "internship"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://students.ucsd.edu/finances/internships/index.html",
+          "observed_at": "2026-11-15T01:33:43.932068+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://ccc.ucsd.edu/get-involved/become-an-intern.html",
+      "discovery_groups": [
+        "internship"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://students.ucsd.edu/finances/internships/index.html",
+          "observed_at": "2026-11-15T01:33:43.932068+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://lgbt.ucsd.edu/join/intern-application.html",
+      "discovery_groups": [
+        "internship"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://students.ucsd.edu/finances/internships/index.html",
+          "observed_at": "2026-11-15T01:33:43.932068+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://raza.ucsd.edu/resources/student-employment-opportunities/index.html",
+      "discovery_groups": [
+        "internship"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://students.ucsd.edu/finances/internships/index.html",
+          "observed_at": "2026-11-15T01:33:43.932068+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://women.ucsd.edu/programs/intern.html",
+      "discovery_groups": [
+        "internship"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://students.ucsd.edu/finances/internships/index.html",
+          "observed_at": "2026-11-15T01:33:43.932068+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://students.ucsd.edu/finances/jobs/student-employment.html",
+      "discovery_groups": [
+        "internship"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://students.ucsd.edu/finances/jobs/index.html",
+          "observed_at": "2026-11-15T01:33:45.674258+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://aip.ucsd.edu/employers/aip-guidelines.html",
+      "discovery_groups": [
+        "internship"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://aip.ucsd.edu/whatwedo/uccs/index.html",
+          "observed_at": "2026-11-15T01:33:48.420777+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://aip.ucsd.edu/employers/internship-timeline.html",
+      "discovery_groups": [
+        "internship"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://aip.ucsd.edu/whatwedo/uccs/index.html",
+          "observed_at": "2026-11-15T01:33:48.420777+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://aip.ucsd.edu/employers/post-internship.html",
+      "discovery_groups": [
+        "internship"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://aip.ucsd.edu/whatwedo/uccs/index.html",
+          "observed_at": "2026-11-15T01:33:48.420777+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://aip.ucsd.edu/students/find-internship.html",
+      "discovery_groups": [
+        "internship"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://aip.ucsd.edu/whatwedo/uccs/index.html",
+          "observed_at": "2026-11-15T01:33:48.420777+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://aip.ucsd.edu/whatwedo/aip-courses.html",
+      "discovery_groups": [
+        "internship"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://aip.ucsd.edu/whatwedo/uccs/index.html",
+          "observed_at": "2026-11-15T01:33:48.420777+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://aip.ucsd.edu/whatwedo/uccs/coursework.html",
+      "discovery_groups": [
+        "internship"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://aip.ucsd.edu/whatwedo/uccs/index.html",
+          "observed_at": "2026-11-15T01:33:48.420777+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://aip.ucsd.edu/whatwedo/uccs/internships.html",
+      "discovery_groups": [
+        "internship"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://aip.ucsd.edu/whatwedo/uccs/index.html",
+          "observed_at": "2026-11-15T01:33:48.420777+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://calendar.ucsd.edu/event/copy-of-aip-summer-enrollment-workshop",
+      "discovery_groups": [
+        "event"
+      ],
+      "role": "detail",
+      "stage": "collected",
+      "source_type": "calendar",
+      "enabled": true,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://calendar.ucsd.edu/",
+          "observed_at": "2026-11-15T01:34:07.869241+00:00"
+        }
+      ],
+      "last_checked_at": "2026-11-15T01:37:45.550385+00:00",
+      "last_error": null
+    },
+    {
+      "url": "https://calendar.ucsd.edu/event/belonging-and-mental-wellness",
+      "discovery_groups": [
+        "event"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "calendar",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://calendar.ucsd.edu/",
+          "observed_at": "2026-11-15T01:34:07.869241+00:00"
+        }
+      ],
+      "last_checked_at": "2026-11-15T01:37:47.854155+00:00",
+      "last_error": null
+    },
+    {
+      "url": "https://calendar.ucsd.edu/event/beyond-sentences-stories-of-incarceration-resilience-and-reentry",
+      "discovery_groups": [
+        "event"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "calendar",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://calendar.ucsd.edu/",
+          "observed_at": "2026-11-15T01:34:07.869241+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://calendar.ucsd.edu/event/collage-poetry-exhibition-donation-drive",
+      "discovery_groups": [
+        "event"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "calendar",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://calendar.ucsd.edu/",
+          "observed_at": "2026-11-15T01:34:07.869241+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://calendar.ucsd.edu/event/copy-of-student-organizations-ccr-validation-partnering-for-success-6499",
+      "discovery_groups": [
+        "event"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "calendar",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://calendar.ucsd.edu/",
+          "observed_at": "2026-11-15T01:34:07.869241+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://calendar.ucsd.edu/event/grim",
+      "discovery_groups": [
+        "event"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "calendar",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://calendar.ucsd.edu/",
+          "observed_at": "2026-11-15T01:34:07.869241+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://calendar.ucsd.edu/event/lia-antico-speaker-series",
+      "discovery_groups": [
+        "event"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "calendar",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://calendar.ucsd.edu/",
+          "observed_at": "2026-11-15T01:34:07.869241+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://calendar.ucsd.edu/event/library-milestones-exhibit-fall26",
+      "discovery_groups": [
+        "event"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "calendar",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://calendar.ucsd.edu/",
+          "observed_at": "2026-11-15T01:34:07.869241+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://calendar.ucsd.edu/event/mens-water-polo-uc-san-diego-vs-saint-marys",
+      "discovery_groups": [
+        "event"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "calendar",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://calendar.ucsd.edu/",
+          "observed_at": "2026-11-15T01:34:07.869241+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://calendar.ucsd.edu/event/native-american-heritage-month-book-display-2026",
+      "discovery_groups": [
+        "event"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "calendar",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://calendar.ucsd.edu/",
+          "observed_at": "2026-11-15T01:34:07.869241+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://calendar.ucsd.edu/event/new-york-regional-club-uc-us-run-club",
+      "discovery_groups": [
+        "event"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "calendar",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://calendar.ucsd.edu/",
+          "observed_at": "2026-11-15T01:34:07.869241+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://calendar.ucsd.edu/event/shaping-a-library-exhibition-2026",
+      "discovery_groups": [
+        "event"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "calendar",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://calendar.ucsd.edu/",
+          "observed_at": "2026-11-15T01:34:07.869241+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://calendar.ucsd.edu/event/the-human-condition-exhibit",
+      "discovery_groups": [
+        "event"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "calendar",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://calendar.ucsd.edu/",
+          "observed_at": "2026-11-15T01:34:07.869241+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://calendar.ucsd.edu/event/triton-time-foresight-essentials-for-strategic-planning",
+      "discovery_groups": [
+        "event"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "calendar",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://calendar.ucsd.edu/",
+          "observed_at": "2026-11-15T01:34:07.869241+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://calendar.ucsd.edu/event/united-states-poet-laureates-exhibit-fall26",
+      "discovery_groups": [
+        "event"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "calendar",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://calendar.ucsd.edu/",
+          "observed_at": "2026-11-15T01:34:07.869241+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://calendar.ucsd.edu/event/wander-the-wetlands-science",
+      "discovery_groups": [
+        "event"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "calendar",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://calendar.ucsd.edu/",
+          "observed_at": "2026-11-15T01:34:07.869241+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://calendar.ucsd.edu/event/world-aids-day-free-rapid-hiv-testing",
+      "discovery_groups": [
+        "event"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "calendar",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://calendar.ucsd.edu/",
+          "observed_at": "2026-11-15T01:34:07.869241+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://calendar.ucsd.edu/event/copy-of-aip-summer-enrollment-workshop.ics",
+      "discovery_groups": [
+        "event"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "calendar",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://calendar.ucsd.edu/event/copy-of-aip-summer-enrollment-workshop",
+          "observed_at": "2026-11-15T01:34:10.340248+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://thebasement.ucsd.edu/programs/affiliates.html",
+      "discovery_groups": [
+        "competition"
+      ],
+      "role": "detail",
+      "stage": "collected",
+      "source_type": "listing",
+      "enabled": true,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://thebasement.ucsd.edu/offerings/index.html",
+          "observed_at": "2026-11-15T01:34:16.882394+00:00"
+        }
+      ],
+      "last_checked_at": "2026-11-15T01:37:56.197476+00:00",
+      "last_error": null
+    },
+    {
+      "url": "https://thebasement.ucsd.edu/programs/basement-launchpad/index.html",
+      "discovery_groups": [
+        "competition"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://thebasement.ucsd.edu/offerings/index.html",
+          "observed_at": "2026-11-15T01:34:16.882394+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://thebasement.ucsd.edu/programs/affiliates.html",
+          "observed_at": "2026-11-15T01:34:22.920088+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://thebasement.ucsd.edu/programs/founderstudio.html",
+      "discovery_groups": [
+        "competition"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://thebasement.ucsd.edu/offerings/index.html",
+          "observed_at": "2026-11-15T01:34:16.882394+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://thebasement.ucsd.edu/programs/affiliates.html",
+          "observed_at": "2026-11-15T01:34:22.920088+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://thebasement.ucsd.edu/programs/futureinnovators.html",
+      "discovery_groups": [
+        "competition"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://thebasement.ucsd.edu/offerings/index.html",
+          "observed_at": "2026-11-15T01:34:16.882394+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://thebasement.ucsd.edu/programs/affiliates.html",
+          "observed_at": "2026-11-15T01:34:22.920088+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://thebasement.ucsd.edu/programs/i4x.html",
+      "discovery_groups": [
+        "competition"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://thebasement.ucsd.edu/offerings/index.html",
+          "observed_at": "2026-11-15T01:34:16.882394+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://thebasement.ucsd.edu/programs/affiliates.html",
+          "observed_at": "2026-11-15T01:34:22.920088+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://thebasement.ucsd.edu/programs/index.html",
+      "discovery_groups": [
+        "competition"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://thebasement.ucsd.edu/offerings/index.html",
+          "observed_at": "2026-11-15T01:34:16.882394+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://thebasement.ucsd.edu/programs/affiliates.html",
+          "observed_at": "2026-11-15T01:34:22.920088+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://thebasement.ucsd.edu/programs/sofye.html",
+      "discovery_groups": [
+        "competition"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://thebasement.ucsd.edu/offerings/index.html",
+          "observed_at": "2026-11-15T01:34:16.882394+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://thebasement.ucsd.edu/programs/affiliates.html",
+          "observed_at": "2026-11-15T01:34:22.920088+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://thebasement.ucsd.edu/programs/venture-well.html",
+      "discovery_groups": [
+        "competition"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://thebasement.ucsd.edu/offerings/index.html",
+          "observed_at": "2026-11-15T01:34:16.882394+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://thebasement.ucsd.edu/programs/affiliates.html",
+          "observed_at": "2026-11-15T01:34:22.920088+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://rady.ucsd.edu/programs/executive-education/index.html",
+      "discovery_groups": [
+        "competition"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://rady.ucsd.edu/why/centers/sullivan/programs/",
+          "observed_at": "2026-11-15T01:34:18.886260+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://rady.ucsd.edu/programs/executive-mba/index.html",
+      "discovery_groups": [
+        "competition"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://rady.ucsd.edu/why/centers/sullivan/programs/",
+          "observed_at": "2026-11-15T01:34:18.886260+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://rady.ucsd.edu/programs/flex-evening-mba/index.html",
+      "discovery_groups": [
+        "competition"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://rady.ucsd.edu/why/centers/sullivan/programs/",
+          "observed_at": "2026-11-15T01:34:18.886260+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://rady.ucsd.edu/programs/index.html",
+      "discovery_groups": [
+        "competition"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://rady.ucsd.edu/why/centers/sullivan/programs/",
+          "observed_at": "2026-11-15T01:34:18.886260+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://rady.ucsd.edu/programs/master-professional-accountancy/index.html",
+      "discovery_groups": [
+        "competition"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://rady.ucsd.edu/why/centers/sullivan/programs/",
+          "observed_at": "2026-11-15T01:34:18.886260+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://rady.ucsd.edu/programs/master-quantitative-finance/index.html",
+      "discovery_groups": [
+        "competition"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://rady.ucsd.edu/why/centers/sullivan/programs/",
+          "observed_at": "2026-11-15T01:34:18.886260+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://rady.ucsd.edu/programs/mba/index.html",
+      "discovery_groups": [
+        "competition"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://rady.ucsd.edu/why/centers/sullivan/programs/",
+          "observed_at": "2026-11-15T01:34:18.886260+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://rady.ucsd.edu/programs/ms-business-analytics/index.html",
+      "discovery_groups": [
+        "competition"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://rady.ucsd.edu/why/centers/sullivan/programs/",
+          "observed_at": "2026-11-15T01:34:18.886260+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://rady.ucsd.edu/programs/phd/index.html",
+      "discovery_groups": [
+        "competition"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://rady.ucsd.edu/why/centers/sullivan/programs/",
+          "observed_at": "2026-11-15T01:34:18.886260+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://rady.ucsd.edu/programs/undergraduate/index.html",
+      "discovery_groups": [
+        "competition"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://rady.ucsd.edu/why/centers/sullivan/programs/",
+          "observed_at": "2026-11-15T01:34:18.886260+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://rady.ucsd.edu/why/centers/sullivan/programs/explore.html",
+      "discovery_groups": [
+        "competition"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://rady.ucsd.edu/why/centers/sullivan/programs/",
+          "observed_at": "2026-11-15T01:34:18.886260+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://rady.ucsd.edu/why/centers/sullivan/programs/launch.html",
+      "discovery_groups": [
+        "competition"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://rady.ucsd.edu/why/centers/sullivan/programs/",
+          "observed_at": "2026-11-15T01:34:18.886260+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://rady.ucsd.edu/why/centers/sullivan/programs/venture-fellows/index.html",
+      "discovery_groups": [
+        "competition"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://rady.ucsd.edu/why/centers/sullivan/programs/",
+          "observed_at": "2026-11-15T01:34:18.886260+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/trels/index.html",
+      "discovery_groups": [
+        "program",
+        "research"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/index.html",
+          "observed_at": "2026-11-15T01:34:26.035456+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/camp/index.html",
+          "observed_at": "2026-11-15T01:34:28.050743+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/empower/index.html",
+          "observed_at": "2026-11-15T01:34:32.758931+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/urh-academic-year/index.html",
+          "observed_at": "2026-11-15T01:37:32.213579+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/fmp/index.html",
+          "observed_at": "2026-11-15T01:37:35.995075+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/tyler-center/index.html",
+      "discovery_groups": [
+        "program",
+        "research"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/index.html",
+          "observed_at": "2026-11-15T01:34:26.035456+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/camp/index.html",
+          "observed_at": "2026-11-15T01:34:28.050743+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/empower/index.html",
+          "observed_at": "2026-11-15T01:34:32.758931+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/fmp/index.html",
+          "observed_at": "2026-11-15T01:37:35.995075+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/uc-scholars/index.html",
+      "discovery_groups": [
+        "program",
+        "research"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/index.html",
+          "observed_at": "2026-11-15T01:34:26.035456+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/camp/index.html",
+          "observed_at": "2026-11-15T01:34:28.050743+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/empower/index.html",
+          "observed_at": "2026-11-15T01:34:32.758931+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/fmp/index.html",
+          "observed_at": "2026-11-15T01:37:35.995075+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/urs/index.html",
+      "discovery_groups": [
+        "program",
+        "research"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/index.html",
+          "observed_at": "2026-11-15T01:34:26.035456+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/camp/index.html",
+          "observed_at": "2026-11-15T01:34:28.050743+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/empower/index.html",
+          "observed_at": "2026-11-15T01:34:32.758931+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/fmp/index.html",
+          "observed_at": "2026-11-15T01:37:35.995075+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/www.startastro.org/home",
+      "discovery_groups": [
+        "program"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/index.html",
+          "observed_at": "2026-11-15T01:34:26.035456+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://ugresearch.ucsd.edu/prestigious-scholarships/index.html",
+      "discovery_groups": [
+        "program"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/index.html",
+          "observed_at": "2026-11-15T01:34:26.035456+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/camp/index.html",
+          "observed_at": "2026-11-15T01:34:28.050743+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/empower/index.html",
+          "observed_at": "2026-11-15T01:34:32.758931+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/urh-academic-year/index.html",
+          "observed_at": "2026-11-15T01:37:59.264059+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://ugresearch.ucsd.edu/programs/all-ucsd.html",
+      "discovery_groups": [
+        "program"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/index.html",
+          "observed_at": "2026-11-15T01:34:26.035456+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/camp/index.html",
+          "observed_at": "2026-11-15T01:34:28.050743+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/empower/index.html",
+          "observed_at": "2026-11-15T01:34:32.758931+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/urh-academic-year/index.html",
+          "observed_at": "2026-11-15T01:37:59.264059+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://ugresearch.ucsd.edu/programs/index.html",
+      "discovery_groups": [
+        "program"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/index.html",
+          "observed_at": "2026-11-15T01:34:26.035456+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/camp/index.html",
+          "observed_at": "2026-11-15T01:34:28.050743+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/empower/index.html",
+          "observed_at": "2026-11-15T01:34:32.758931+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/urh-academic-year/index.html",
+          "observed_at": "2026-11-15T01:37:59.264059+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://ugresearch.ucsd.edu/programs/urh-summer/index.html",
+      "discovery_groups": [
+        "program"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/index.html",
+          "observed_at": "2026-11-15T01:34:26.035456+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/camp/index.html",
+          "observed_at": "2026-11-15T01:34:28.050743+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/empower/index.html",
+          "observed_at": "2026-11-15T01:34:32.758931+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/urh-academic-year/index.html",
+          "observed_at": "2026-11-15T01:37:59.264059+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://research-it.ucsd.edu/training-events/carpentries.html",
+      "discovery_groups": [
+        "course"
+      ],
+      "role": "directory",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "Multiple independent training opportunities share one URL. Do not merge them. Follow separate detail links; external registration links require review.",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://research-it.ucsd.edu/training-events/index.html",
+          "observed_at": "2026-11-15T01:34:38.485692+00:00"
+        }
+      ],
+      "last_checked_at": "2026-11-15T01:38:07.545097+00:00",
+      "last_error": null
+    },
+    {
+      "url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/fmp/fmp-emrap.html",
+      "discovery_groups": [
+        "research"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/fmp/index.html",
+          "observed_at": "2026-11-15T01:37:35.995075+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/fmp/frequently-asked-questions.html",
+      "discovery_groups": [
+        "research"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/fmp/index.html",
+          "observed_at": "2026-11-15T01:37:35.995075+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://calendar.ucsd.edu/event/belonging-and-mental-wellness.ics",
+      "discovery_groups": [
+        "event"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "calendar",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://calendar.ucsd.edu/event/belonging-and-mental-wellness",
+          "observed_at": "2026-11-15T01:37:51.799631+00:00"
+        }
+      ]
+    }
+  ],
+  "external_candidates": [
+    {
+      "url": "https://www.ed.gov/grants-and-programs/grants-higher-education/trio/trio--ronald-e-mcnair-postbaccalaureate-achievement-program--home-page",
+      "discovered_from": "https://ugresearch.ucsd.edu/programs/urh-academic-year/index.html",
+      "discovery_group": "research",
+      "observed_at": "2026-11-15T01:33:33.370441+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://forms.gle/KsZuRDmy1mnGPs9aA",
+      "discovered_from": "https://ugresearch.ucsd.edu/conferences/external-research-conferences.html",
+      "discovery_group": "research",
+      "observed_at": "2026-11-15T01:33:35.921556+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://www.aises.org/news/events/2022-aises-national-conference",
+      "discovered_from": "https://ugresearch.ucsd.edu/conferences/external-research-conferences.html",
+      "discovery_group": "research",
+      "observed_at": "2026-11-15T01:33:35.921556+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://blackphdnetwork.org/",
+      "discovered_from": "https://ugresearch.ucsd.edu/conferences/external-research-conferences.html",
+      "discovery_group": "research",
+      "observed_at": "2026-11-15T01:33:35.921556+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://www.abrcms.org/",
+      "discovered_from": "https://ugresearch.ucsd.edu/conferences/external-research-conferences.html",
+      "discovery_group": "research",
+      "observed_at": "2026-11-15T01:33:35.921556+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://www.sacnas.org/conference",
+      "discovered_from": "https://ugresearch.ucsd.edu/conferences/external-research-conferences.html",
+      "discovery_group": "research",
+      "observed_at": "2026-11-15T01:33:35.921556+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://shpe.org/engage/events/national-convention/",
+      "discovered_from": "https://ugresearch.ucsd.edu/conferences/external-research-conferences.html",
+      "discovery_group": "research",
+      "observed_at": "2026-11-15T01:33:35.921556+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://www.sccur.org/",
+      "discovered_from": "https://ugresearch.ucsd.edu/conferences/external-research-conferences.html",
+      "discovery_group": "research",
+      "observed_at": "2026-11-15T01:33:35.921556+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://www.hcura.org/about-ncrc",
+      "discovered_from": "https://ugresearch.ucsd.edu/conferences/external-research-conferences.html",
+      "discovery_group": "research",
+      "observed_at": "2026-11-15T01:33:35.921556+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://emerging-researchers.org/conference-registration/",
+      "discovered_from": "https://ugresearch.ucsd.edu/conferences/external-research-conferences.html",
+      "discovery_group": "research",
+      "observed_at": "2026-11-15T01:33:35.921556+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://krieger.jhu.edu/ursca/macksey-symposium/",
+      "discovered_from": "https://ugresearch.ucsd.edu/conferences/external-research-conferences.html",
+      "discovery_group": "research",
+      "observed_at": "2026-11-15T01:33:35.921556+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://sura.stanford.edu/stanford-research-conference",
+      "discovered_from": "https://ugresearch.ucsd.edu/conferences/external-research-conferences.html",
+      "discovery_group": "research",
+      "observed_at": "2026-11-15T01:33:35.921556+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://convention.nsbe.org/welcome/",
+      "discovered_from": "https://ugresearch.ucsd.edu/conferences/external-research-conferences.html",
+      "discovery_group": "research",
+      "observed_at": "2026-11-15T01:33:35.921556+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://www.cur.org/what/events/students/ncur/2022/ncur_2022/",
+      "discovered_from": "https://ugresearch.ucsd.edu/conferences/external-research-conferences.html",
+      "discovery_group": "research",
+      "observed_at": "2026-11-15T01:33:35.921556+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://www.csusm.edu/wcbsurc/index.html",
+      "discovered_from": "https://ugresearch.ucsd.edu/conferences/external-research-conferences.html",
+      "discovery_group": "research",
+      "observed_at": "2026-11-15T01:33:35.921556+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://ucsd.co1.qualtrics.com/jfe/form/SV_50ZGXYP9DawY4nP",
+      "discovered_from": "https://ugresearch.ucsd.edu/research-mentors/be-a-mentor.html",
+      "discovery_group": "research",
+      "observed_at": "2026-11-15T01:33:41.154739+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://ucsd.joinhandshake.com/",
+      "discovered_from": "https://students.ucsd.edu/finances/internships/index.html",
+      "discovery_group": "internship",
+      "observed_at": "2026-11-15T01:33:43.932068+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://ucsd.aimsparking.com/",
+      "discovered_from": "https://students.ucsd.edu/finances/internships/index.html",
+      "discovery_group": "internship",
+      "observed_at": "2026-11-15T01:33:43.932068+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://eacct-ucsd-sp.transactcampus.com/eaccounts",
+      "discovered_from": "https://students.ucsd.edu/finances/internships/index.html",
+      "discovery_group": "internship",
+      "observed_at": "2026-11-15T01:33:43.932068+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://bit.ly/3gWBMoS",
+      "discovered_from": "https://students.ucsd.edu/finances/jobs/index.html",
+      "discovery_group": "internship",
+      "observed_at": "2026-11-15T01:33:45.674258+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://ucsd.joinhandshake.com/postings?page=1&amp;per_page=25&amp;sort_direction=desc&amp;sort_column=default&amp;job.job_types%5B%5D=6",
+      "discovered_from": "https://students.ucsd.edu/finances/jobs/index.html",
+      "discovery_group": "internship",
+      "observed_at": "2026-11-15T01:33:45.674258+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://uccs.ucdavis.edu/wednesday-speaker-series",
+      "discovered_from": "https://aip.ucsd.edu/whatwedo/uccs/index.html",
+      "discovery_group": "internship",
+      "observed_at": "2026-11-15T01:33:48.420777+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://uccs.ucdavis.edu/for-students/courses",
+      "discovered_from": "https://aip.ucsd.edu/whatwedo/uccs/index.html",
+      "discovery_group": "internship",
+      "observed_at": "2026-11-15T01:33:48.420777+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://uccs.ucdavis.edu/for-students/internships",
+      "discovered_from": "https://aip.ucsd.edu/whatwedo/uccs/index.html",
+      "discovery_group": "internship",
+      "observed_at": "2026-11-15T01:33:48.420777+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "http://registrar.ucdavis.edu/csrg/",
+      "discovered_from": "https://aip.ucsd.edu/whatwedo/uccs/index.html",
+      "discovery_group": "internship",
+      "observed_at": "2026-11-15T01:33:48.420777+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://uccs.ucdavis.edu/admissions",
+      "discovered_from": "https://aip.ucsd.edu/whatwedo/uccs/index.html",
+      "discovery_group": "internship",
+      "observed_at": "2026-11-15T01:33:48.420777+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://uccs.ucdavis.edu/program-dates-deadlines",
+      "discovered_from": "https://aip.ucsd.edu/whatwedo/uccs/index.html",
+      "discovery_group": "internship",
+      "observed_at": "2026-11-15T01:33:48.420777+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://apply.uccs.ucdavis.edu/app/main",
+      "discovered_from": "https://aip.ucsd.edu/whatwedo/uccs/index.html",
+      "discovery_group": "internship",
+      "observed_at": "2026-11-15T01:33:48.420777+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://x.com/intent/post/?url=https%3A%2F%2Fcalendar.ucsd.edu%2Fevent%2Fcollage-poetry-exhibition-donation-drive&text=Collage+Poetry+Exhibition+Donation+Drive by UC+San+Diego+Events+Calendar",
+      "discovered_from": "https://calendar.ucsd.edu/",
+      "discovery_group": "event",
+      "observed_at": "2026-11-15T01:34:07.869241+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://x.com/intent/post/?url=https%3A%2F%2Fcalendar.ucsd.edu%2Fevent%2Fgrim&text=GRIM by UC+San+Diego+Events+Calendar",
+      "discovered_from": "https://calendar.ucsd.edu/",
+      "discovery_group": "event",
+      "observed_at": "2026-11-15T01:34:07.869241+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://luma.com/ucny",
+      "discovered_from": "https://calendar.ucsd.edu/",
+      "discovery_group": "event",
+      "observed_at": "2026-11-15T01:34:07.869241+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://x.com/intent/post/?url=https%3A%2F%2Fcalendar.ucsd.edu%2Fevent%2Fnew-york-regional-club-uc-us-run-club&text=New+York+Regional+Club%3A+UC+Us+Run+Club by UC+San+Diego+Events+Calendar",
+      "discovered_from": "https://calendar.ucsd.edu/",
+      "discovery_group": "event",
+      "observed_at": "2026-11-15T01:34:07.869241+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://x.com/intent/post/?url=https%3A%2F%2Fcalendar.ucsd.edu%2Fevent%2Fwander-the-wetlands-science&text=Wander+the+Wetlands+-+Fish+Seining+at+Crown+Point+Park by UC+San+Diego+Events+Calendar",
+      "discovered_from": "https://calendar.ucsd.edu/",
+      "discovery_group": "event",
+      "observed_at": "2026-11-15T01:34:07.869241+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://ucsdtritons.evenue.net/list/MWP",
+      "discovered_from": "https://calendar.ucsd.edu/",
+      "discovery_group": "event",
+      "observed_at": "2026-11-15T01:34:07.869241+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://x.com/intent/post/?url=https%3A%2F%2Fcalendar.ucsd.edu%2Fevent%2Fmens-water-polo-uc-san-diego-vs-saint-marys&text=Men%27s+Water+Polo%3A+UC+San+Diego+vs.+Saint+Mary%27s by UC+San+Diego+Events+Calendar",
+      "discovered_from": "https://calendar.ucsd.edu/",
+      "discovery_group": "event",
+      "observed_at": "2026-11-15T01:34:07.869241+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://ucsdtritons.evenue.net/list/WVB",
+      "discovered_from": "https://calendar.ucsd.edu/",
+      "discovery_group": "event",
+      "observed_at": "2026-11-15T01:34:07.869241+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://x.com/intent/post/?url=https%3A%2F%2Fcalendar.ucsd.edu%2Fevent%2Fwomens-volleyball-uc-san-diego-vs-csun-1595&text=Women%27s+Volleyball%3A+UC+San+Diego+vs.+CSUN by UC+San+Diego+Events+Calendar",
+      "discovered_from": "https://calendar.ucsd.edu/",
+      "discovery_group": "event",
+      "observed_at": "2026-11-15T01:34:07.869241+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://x.com/intent/post/?url=https%3A%2F%2Fcalendar.ucsd.edu%2Fevent%2Ftriton-time-foresight-essentials-for-strategic-planning&text=Triton+Time%3A+Foresight+Essentials+for+Strategic+Planning by UC+San+Diego+Events+Calendar",
+      "discovered_from": "https://calendar.ucsd.edu/",
+      "discovery_group": "event",
+      "observed_at": "2026-11-15T01:34:07.869241+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://x.com/intent/post/?url=https%3A%2F%2Fcalendar.ucsd.edu%2Fevent%2Flia-antico-speaker-series&text=Digital+Mindfulness+Training+to+Reduce+Clinician+Burnout%3A+Evaluation+of+Efficacy%2C+Feasibility%2C+and+Engagement+Across+Multiple+Clinical+Roles by UC+San+Diego+Events+Calendar",
+      "discovered_from": "https://calendar.ucsd.edu/",
+      "discovery_group": "event",
+      "observed_at": "2026-11-15T01:34:07.869241+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://events.com/r/en_US/registration/beyond-sentences--ucsd-san-diego-november-1106439?utm_source=chatgpt.com",
+      "discovered_from": "https://calendar.ucsd.edu/",
+      "discovery_group": "event",
+      "observed_at": "2026-11-15T01:34:07.869241+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://x.com/intent/post/?url=https%3A%2F%2Fcalendar.ucsd.edu%2Fevent%2Fbeyond-sentences-stories-of-incarceration-resilience-and-reentry&text=Beyond+Sentences%3A+Stories+of+Incarceration%2C+Resilience%2C+and+Reentry by UC+San+Diego+Events+Calendar",
+      "discovered_from": "https://calendar.ucsd.edu/",
+      "discovery_group": "event",
+      "observed_at": "2026-11-15T01:34:07.869241+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://ucsd.zoom.us/meeting/register/94W8uoy_ROOv_GC6kzsAtA",
+      "discovered_from": "https://calendar.ucsd.edu/",
+      "discovery_group": "event",
+      "observed_at": "2026-11-15T01:34:07.869241+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://x.com/intent/post/?url=https%3A%2F%2Fcalendar.ucsd.edu%2Fevent%2Fcopy-of-student-organizations-ccr-validation-partnering-for-success-6499&text=Student+Organizations+%2B+CCR+Validation%3A+Partnering+for+Success by UC+San+Diego+Events+Calendar",
+      "discovered_from": "https://calendar.ucsd.edu/",
+      "discovery_group": "event",
+      "observed_at": "2026-11-15T01:34:07.869241+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://x.com/intent/post/?url=https%3A%2F%2Fcalendar.ucsd.edu%2Fevent%2Fcopy-of-aip-summer-enrollment-workshop&text=AIP+Enrollment+Workshop by UC+San+Diego+Events+Calendar",
+      "discovered_from": "https://calendar.ucsd.edu/",
+      "discovery_group": "event",
+      "observed_at": "2026-11-15T01:34:07.869241+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://x.com/intent/post/?url=https%3A%2F%2Fcalendar.ucsd.edu%2Fevent%2Fworld-aids-day-free-rapid-hiv-testing&text=World+AIDS+Day+-+Free+Rapid+HIV+Testing by UC+San+Diego+Events+Calendar",
+      "discovered_from": "https://calendar.ucsd.edu/",
+      "discovery_group": "event",
+      "observed_at": "2026-11-15T01:34:07.869241+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://x.com/intent/post/?url=https%3A%2F%2Fcalendar.ucsd.edu%2Fevent%2Fbelonging-and-mental-wellness&text=Exploring+Connection%3A+Books+on+Friendship%2C+Community+%26+Belonging by UC+San+Diego+Events+Calendar",
+      "discovered_from": "https://calendar.ucsd.edu/",
+      "discovery_group": "event",
+      "observed_at": "2026-11-15T01:34:07.869241+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://x.com/intent/post/?url=https%3A%2F%2Fcalendar.ucsd.edu%2Fevent%2Flibrary-milestones-exhibit-fall26&text=Library+Milestones+%7C+Exhibit by UC+San+Diego+Events+Calendar",
+      "discovered_from": "https://calendar.ucsd.edu/",
+      "discovery_group": "event",
+      "observed_at": "2026-11-15T01:34:07.869241+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://x.com/intent/post/?url=https%3A%2F%2Fcalendar.ucsd.edu%2Fevent%2Fnative-american-heritage-month-book-display-2026&text=Native+American+Heritage+Month+Book+Display by UC+San+Diego+Events+Calendar",
+      "discovered_from": "https://calendar.ucsd.edu/",
+      "discovery_group": "event",
+      "observed_at": "2026-11-15T01:34:07.869241+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://x.com/intent/post/?url=https%3A%2F%2Fcalendar.ucsd.edu%2Fevent%2Fshaping-a-library-exhibition-2026&text=Shaping+a+Library+%7C++Exhibition by UC+San+Diego+Events+Calendar",
+      "discovered_from": "https://calendar.ucsd.edu/",
+      "discovery_group": "event",
+      "observed_at": "2026-11-15T01:34:07.869241+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://x.com/intent/post/?url=https%3A%2F%2Fcalendar.ucsd.edu%2Fevent%2Fthe-human-condition-exhibit&text=The+Human+Condition%3A+An+Exploration+of+Art+%26+Literature+%7C+Exhibit by UC+San+Diego+Events+Calendar",
+      "discovered_from": "https://calendar.ucsd.edu/",
+      "discovery_group": "event",
+      "observed_at": "2026-11-15T01:34:07.869241+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://x.com/intent/post/?url=https%3A%2F%2Fcalendar.ucsd.edu%2Fevent%2Funited-states-poet-laureates-exhibit-fall26&text=United+States+Poets+Laureate+%7C+Exhibit by UC+San+Diego+Events+Calendar",
+      "discovered_from": "https://calendar.ucsd.edu/",
+      "discovery_group": "event",
+      "observed_at": "2026-11-15T01:34:07.869241+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://x.com/ucsandiego",
+      "discovered_from": "https://calendar.ucsd.edu/",
+      "discovery_group": "event",
+      "observed_at": "2026-11-15T01:34:07.869241+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://www.tiktok.com/@ucsandiego",
+      "discovered_from": "https://calendar.ucsd.edu/",
+      "discovery_group": "event",
+      "observed_at": "2026-11-15T01:34:07.869241+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://www.threads.net/@ucsandiego",
+      "discovered_from": "https://calendar.ucsd.edu/",
+      "discovery_group": "event",
+      "observed_at": "2026-11-15T01:34:07.869241+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://bsky.app/profile/ucsandiego.bsky.social",
+      "discovered_from": "https://calendar.ucsd.edu/",
+      "discovery_group": "event",
+      "observed_at": "2026-11-15T01:34:07.869241+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://x.com/search?q=%23experiential learning",
+      "discovered_from": "https://calendar.ucsd.edu/event/copy-of-aip-summer-enrollment-workshop",
+      "discovery_group": "event",
+      "observed_at": "2026-11-15T01:34:10.340248+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://arcg.is/0HS1fa2",
+      "discovered_from": "https://calendar.ucsd.edu/event/copy-of-aip-summer-enrollment-workshop",
+      "discovery_group": "event",
+      "observed_at": "2026-11-15T01:34:10.340248+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://thebasement.pixieset.com/thebasementgeneraloverview/",
+      "discovered_from": "https://thebasement.ucsd.edu/offerings/index.html",
+      "discovery_group": "competition",
+      "observed_at": "2026-11-15T01:34:16.882394+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://www.startuplegalgarage.org/",
+      "discovered_from": "https://thebasement.ucsd.edu/offerings/index.html",
+      "discovery_group": "competition",
+      "observed_at": "2026-11-15T01:34:16.882394+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://www.startuplegalgarage.org/apply",
+      "discovered_from": "https://thebasement.ucsd.edu/offerings/index.html",
+      "discovery_group": "competition",
+      "observed_at": "2026-11-15T01:34:16.882394+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://qb3.org/legal-support/",
+      "discovered_from": "https://thebasement.ucsd.edu/offerings/index.html",
+      "discovery_group": "competition",
+      "observed_at": "2026-11-15T01:34:16.882394+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://www.sandiego.edu/law/academics/clinics-externships/clinical-education/application-procedure.php",
+      "discovered_from": "https://thebasement.ucsd.edu/offerings/index.html",
+      "discovery_group": "competition",
+      "observed_at": "2026-11-15T01:34:16.882394+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://nvca.org/model-legal-documents/",
+      "discovered_from": "https://thebasement.ucsd.edu/offerings/index.html",
+      "discovery_group": "competition",
+      "observed_at": "2026-11-15T01:34:16.882394+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://www.upcounsel.com/free-legal-documents",
+      "discovered_from": "https://thebasement.ucsd.edu/offerings/index.html",
+      "discovery_group": "competition",
+      "observed_at": "2026-11-15T01:34:16.882394+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "http://pillsburypropel.com/",
+      "discovered_from": "https://thebasement.ucsd.edu/offerings/index.html",
+      "discovery_group": "competition",
+      "observed_at": "2026-11-15T01:34:16.882394+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://aws.amazon.com/startups/credits",
+      "discovered_from": "https://thebasement.ucsd.edu/offerings/index.html",
+      "discovery_group": "competition",
+      "observed_at": "2026-11-15T01:34:16.882394+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://airtable.com/appXFJFcEuf3aWCz5/pag1lYrt6eO3lr02J/form",
+      "discovered_from": "https://thebasement.ucsd.edu/offerings/index.html",
+      "discovery_group": "competition",
+      "observed_at": "2026-11-15T01:34:16.882394+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://www.mathworks.com/products/startups/accelerators.html",
+      "discovered_from": "https://thebasement.ucsd.edu/offerings/index.html",
+      "discovery_group": "competition",
+      "observed_at": "2026-11-15T01:34:16.882394+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://airtable.com/appl9ijWfWHTnZfvn/shruCB475pCEdPtJl/tblsjy0vVMgXN83Kl",
+      "discovered_from": "https://thebasement.ucsd.edu/offerings/index.html",
+      "discovery_group": "competition",
+      "observed_at": "2026-11-15T01:34:16.882394+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://www.omnisync.io/",
+      "discovered_from": "https://thebasement.ucsd.edu/offerings/index.html",
+      "discovery_group": "competition",
+      "observed_at": "2026-11-15T01:34:16.882394+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://www.openvc.app/",
+      "discovered_from": "https://thebasement.ucsd.edu/offerings/index.html",
+      "discovery_group": "competition",
+      "observed_at": "2026-11-15T01:34:16.882394+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://ramp.com/vc-database/vc-angel-list",
+      "discovered_from": "https://thebasement.ucsd.edu/offerings/index.html",
+      "discovery_group": "competition",
+      "observed_at": "2026-11-15T01:34:16.882394+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://app.startupscience.io/ucsd/signup",
+      "discovered_from": "https://thebasement.ucsd.edu/offerings/index.html",
+      "discovery_group": "competition",
+      "observed_at": "2026-11-15T01:34:16.882394+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://toolkit.techstars.com/",
+      "discovered_from": "https://thebasement.ucsd.edu/offerings/index.html",
+      "discovery_group": "competition",
+      "observed_at": "2026-11-15T01:34:16.882394+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://www.startupschool.org/",
+      "discovered_from": "https://thebasement.ucsd.edu/offerings/index.html",
+      "discovery_group": "competition",
+      "observed_at": "2026-11-15T01:34:16.882394+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://sdivsbdc.org/",
+      "discovered_from": "https://thebasement.ucsd.edu/offerings/index.html",
+      "discovery_group": "competition",
+      "observed_at": "2026-11-15T01:34:16.882394+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://sdivsbdc.org/advising/",
+      "discovered_from": "https://thebasement.ucsd.edu/offerings/index.html",
+      "discovery_group": "competition",
+      "observed_at": "2026-11-15T01:34:16.882394+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://airtable.com/appb8zTNoX0EOUYvV/shrBstqIRDWAYnp1y/tblfPokdSrrWVOfrh?viewControls=on&date=undefined&mode=undefined",
+      "discovered_from": "https://thebasement.ucsd.edu/offerings/index.html",
+      "discovery_group": "competition",
+      "observed_at": "2026-11-15T01:34:16.882394+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://radynetwork.com/",
+      "discovered_from": "https://rady.ucsd.edu/why/centers/sullivan/programs/",
+      "discovery_group": "competition",
+      "observed_at": "2026-11-15T01:34:18.886260+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://x.com/radyschool",
+      "discovered_from": "https://rady.ucsd.edu/why/centers/sullivan/programs/",
+      "discovery_group": "competition",
+      "observed_at": "2026-11-15T01:34:18.886260+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://www.threads.net/@radyschool",
+      "discovered_from": "https://rady.ucsd.edu/why/centers/sullivan/programs/",
+      "discovery_group": "competition",
+      "observed_at": "2026-11-15T01:34:18.886260+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://airtable.com/apprNXURzs6yXYDXZ/shrjibbnUgYsoWeU6",
+      "discovered_from": "https://ugresearch.ucsd.edu/programs/all-urh-programs/index.html",
+      "discovery_group": "program",
+      "observed_at": "2026-11-15T01:34:26.035456+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://www.camp.uci.edu/camp-statewide/",
+      "discovered_from": "https://ugresearch.ucsd.edu/programs/all-urh-programs/camp/index.html",
+      "discovery_group": "program",
+      "observed_at": "2026-11-15T01:34:28.050743+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://ucsd-research.academicworks.com/",
+      "discovered_from": "https://ugresearch.ucsd.edu/programs/all-urh-programs/camp/index.html",
+      "discovery_group": "program",
+      "observed_at": "2026-11-15T01:34:28.050743+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CONS&sectionNum=SEC.%2031.&article=I",
+      "discovered_from": "https://ugresearch.ucsd.edu/programs/all-urh-programs/camp/index.html",
+      "discovery_group": "program",
+      "observed_at": "2026-11-15T01:34:28.050743+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://policy.ucop.edu/doc/1001004/Anti-Discrimination",
+      "discovered_from": "https://ugresearch.ucsd.edu/programs/all-urh-programs/camp/index.html",
+      "discovery_group": "program",
+      "observed_at": "2026-11-15T01:34:28.050743+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://www.nsf.gov/funding/opportunities/s-stem-nsf-scholarships-science-technology-engineering-mathematics",
+      "discovered_from": "https://ugresearch.ucsd.edu/programs/all-urh-programs/empower/index.html",
+      "discovery_group": "program",
+      "observed_at": "2026-11-15T01:34:32.758931+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://urldefense.com/v3/__https://www.amazon.science/research-awards/call-for-proposals/aws-agentic-ai-call-for-proposals-fall-2026__;!!Mih3wA!GrRrV_ruNWQ_VmV1fgIxT5yNeyPxRHT_63ePJxa7SXmYr8LV2DpBArF8TKlljS_fC_5-gEHDXKAKQeBePg$",
+      "discovered_from": "https://research-it.ucsd.edu/training-events/index.html",
+      "discovery_group": "course",
+      "observed_at": "2026-11-15T01:34:38.485692+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://urldefense.com/v3/__https://www.amazon.science/research-awards/call-for-proposals/ai-for-information-security-call-for-proposals-fall-2026__;!!Mih3wA!GrRrV_ruNWQ_VmV1fgIxT5yNeyPxRHT_63ePJxa7SXmYr8LV2DpBArF8TKlljS_fC_5-gEHDXKDGi8b4Pg$",
+      "discovered_from": "https://research-it.ucsd.edu/training-events/index.html",
+      "discovery_group": "course",
+      "observed_at": "2026-11-15T01:34:38.485692+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://urldefense.com/v3/__https://www.amazon.science/research-awards/call-for-proposals/amazon-security-call-for-proposals-fall-2026__;!!Mih3wA!GrRrV_ruNWQ_VmV1fgIxT5yNeyPxRHT_63ePJxa7SXmYr8LV2DpBArF8TKlljS_fC_5-gEHDXKC08UDOVQ$",
+      "discovered_from": "https://research-it.ucsd.edu/training-events/index.html",
+      "discovery_group": "course",
+      "observed_at": "2026-11-15T01:34:38.485692+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://urldefense.com/v3/__https://www.amazon.science/research-awards/call-for-proposals/automated-reasoning-call-for-proposals-fall-2026__;!!Mih3wA!GrRrV_ruNWQ_VmV1fgIxT5yNeyPxRHT_63ePJxa7SXmYr8LV2DpBArF8TKlljS_fC_5-gEHDXKDRDK48sg$",
+      "discovered_from": "https://research-it.ucsd.edu/training-events/index.html",
+      "discovery_group": "course",
+      "observed_at": "2026-11-15T01:34:38.485692+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://urldefense.com/v3/__https://www.amazon.science/research-awards/call-for-proposals/aws-cryptography-call-for-proposals-fall-2026__;!!Mih3wA!GrRrV_ruNWQ_VmV1fgIxT5yNeyPxRHT_63ePJxa7SXmYr8LV2DpBArF8TKlljS_fC_5-gEHDXKCwDr5cYQ$",
+      "discovered_from": "https://research-it.ucsd.edu/training-events/index.html",
+      "discovery_group": "course",
+      "observed_at": "2026-11-15T01:34:38.485692+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://urldefense.com/v3/__https://www.amazon.science/research-awards/call-for-proposals/build-on-trainium-agentic-recursive-improvement-of-kernels-and-frameworks-call-for-proposals-fall-2026__;!!Mih3wA!GrRrV_ruNWQ_VmV1fgIxT5yNeyPxRHT_63ePJxa7SXmYr8LV2DpBArF8TKlljS_fC_5-gEHDXKDXWsdpDg$",
+      "discovered_from": "https://research-it.ucsd.edu/training-events/index.html",
+      "discovery_group": "course",
+      "observed_at": "2026-11-15T01:34:38.485692+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://urldefense.com/v3/__https://www.amazon.science/research-awards/call-for-proposals/multilingual-and-contextual-ai-evaluation-call-for-proposals-fall-2026__;!!Mih3wA!GrRrV_ruNWQ_VmV1fgIxT5yNeyPxRHT_63ePJxa7SXmYr8LV2DpBArF8TKlljS_fC_5-gEHDXKCTEdXZ2A$",
+      "discovered_from": "https://research-it.ucsd.edu/training-events/index.html",
+      "discovery_group": "course",
+      "observed_at": "2026-11-15T01:34:38.485692+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://urldefense.com/v3/__https://www.amazon.science/research-awards/call-for-proposals/on-device-multimodal-perception-call-for-proposals-fall-2026__;!!Mih3wA!GrRrV_ruNWQ_VmV1fgIxT5yNeyPxRHT_63ePJxa7SXmYr8LV2DpBArF8TKlljS_fC_5-gEHDXKDocMcr_A$",
+      "discovered_from": "https://research-it.ucsd.edu/training-events/index.html",
+      "discovery_group": "course",
+      "observed_at": "2026-11-15T01:34:38.485692+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://urldefense.com/v3/__https://www.amazon.science/research-awards/call-for-proposals/synthetic-data-generation-for-multimodal-perception-call-for-proposals-fall-2026__;!!Mih3wA!GrRrV_ruNWQ_VmV1fgIxT5yNeyPxRHT_63ePJxa7SXmYr8LV2DpBArF8TKlljS_fC_5-gEHDXKC_sGdDgA$",
+      "discovered_from": "https://research-it.ucsd.edu/training-events/index.html",
+      "discovery_group": "course",
+      "observed_at": "2026-11-15T01:34:38.485692+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://urldefense.com/v3/__https://www.amazon.science/research-awards/latest-news/amazon-research-awards-opens-fall-2026-call-for-proposals__;!!Mih3wA!GrRrV_ruNWQ_VmV1fgIxT5yNeyPxRHT_63ePJxa7SXmYr8LV2DpBArF8TKlljS_fC_5-gEHDXKASutoSXw$",
+      "discovered_from": "https://research-it.ucsd.edu/training-events/index.html",
+      "discovery_group": "course",
+      "observed_at": "2026-11-15T01:34:38.485692+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://amazon.zoom.us/j/98773512082?pwd=fwk48a42VoGsWDvRmwwCfvnWVcXXjS.1&from=addon",
+      "discovered_from": "https://research-it.ucsd.edu/training-events/index.html",
+      "discovery_group": "course",
+      "observed_at": "2026-11-15T01:34:38.485692+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://www.sdsc.edu/events/index.html",
+      "discovered_from": "https://research-it.ucsd.edu/training-events/index.html",
+      "discovery_group": "course",
+      "observed_at": "2026-11-15T01:34:38.485692+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://carpentries.org/",
+      "discovered_from": "https://research-it.ucsd.edu/training-events/carpentries.html",
+      "discovery_group": "course",
+      "observed_at": "2026-11-15T01:34:40.837551+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://ti.to/uc-san-diego-carpentries/uc-san-diego-fall-2026-carpentries-workshop/with/ucsd-sdsu-fall-2026-software-carpentries-workshop",
+      "discovered_from": "https://research-it.ucsd.edu/training-events/carpentries.html",
+      "discovery_group": "course",
+      "observed_at": "2026-11-15T01:34:40.837551+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://ti.to/uc-san-diego-carpentries/uc-san-diego-fall-2026-carpentries-workshop",
+      "discovered_from": "https://research-it.ucsd.edu/training-events/carpentries.html",
+      "discovery_group": "course",
+      "observed_at": "2026-11-15T01:34:40.837551+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://software-carpentry.org/",
+      "discovered_from": "https://research-it.ucsd.edu/training-events/carpentries.html",
+      "discovery_group": "course",
+      "observed_at": "2026-11-15T01:34:40.837551+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://www.hhs.gov/surgeongeneral/reports-and-publications/connection/index.html",
+      "discovered_from": "https://calendar.ucsd.edu/event/belonging-and-mental-wellness",
+      "discovery_group": "event",
+      "observed_at": "2026-11-15T01:37:51.799631+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://ucsd.libguides.com/readinglists/social-connection",
+      "discovered_from": "https://calendar.ucsd.edu/event/belonging-and-mental-wellness",
+      "discovery_group": "event",
+      "observed_at": "2026-11-15T01:37:51.799631+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    }
+  ],
+  "excluded_sources": [
+    {
+      "url": "https://career.ucsd.edu/jobs-experience/student-employment/on-campus/work-study/index.html ",
+      "discovery_groups": [
+        "internship"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://students.ucsd.edu/finances/jobs/index.html",
+          "observed_at": "2026-11-15T01:33:45.674258+00:00"
+        }
+      ],
+      "exclusion_reason": "malformed_source_href"
+    },
+    {
+      "url": "https://research-it.ucsd.edu/training-events/Co-Designing%20Intelligent Cyberinfrastructure for Computing Continuum: Overview of the Activities at the NSF-AI Institute ICICLE Speaker: Dhabaleswar K. (DK) Panda, Professor and University Distinguished Scholar at Ohio State University Date: Tuesday, February 10, from 11:00 am – 12:00 pm (Pacific Time) Brief Summary: Artificial intelligence (AI) is transforming every sector of society. However, there is a massive and ever-growing gap between available AI techniques and their availability to end users across a range of application domains. This talk will start with an overview of the ICICLE (Intelligent CyberInfrastructure (CI) with Computational Learning in the Environment), an NSF-AI Institute, to address these challenges. We will demonstrate how ICICLE seeks to be the first and foremost edge-to-center AI-as-a-service enterprise for the emerging computing continuum, advancing foundational AI research by fostering next-gen CI for AI to support the wholesome democratization of AI through responsible plug-and-play, and extending the usability and usefulness of AI to the wider population. Register today",
+      "discovery_groups": [
+        "course"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://research-it.ucsd.edu/training-events/index.html",
+          "observed_at": "2026-11-15T01:34:38.485692+00:00"
+        }
+      ],
+      "last_checked_at": "2026-11-15T01:34:38.756649+00:00",
+      "last_error": "http_400",
+      "exclusion_reason": "malformed_source_href"
+    },
+    {
+      "url": "https://calendar.ucsd.edu/event/50225731647116/confirm?instance_id=52139315445394&return=https%3A%2F%2Fcalendar.ucsd.edu%2F",
+      "discovery_groups": [
+        "event"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "calendar",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://calendar.ucsd.edu/",
+          "observed_at": "2026-11-15T01:34:07.869241+00:00"
+        }
+      ],
+      "last_checked_at": "2026-11-15T01:34:12.679318+00:00",
+      "last_error": null,
+      "exclusion_reason": "interaction_or_authentication_url"
+    },
+    {
+      "url": "https://calendar.ucsd.edu/event/53482095898627/confirm?instance_id=53482095911958&return=https%3A%2F%2Fcalendar.ucsd.edu%2F",
+      "discovery_groups": [
+        "event"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "calendar",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://calendar.ucsd.edu/",
+          "observed_at": "2026-11-15T01:34:07.869241+00:00"
+        }
+      ],
+      "exclusion_reason": "interaction_or_authentication_url"
+    },
+    {
+      "url": "https://calendar.ucsd.edu/event/53606390192255/confirm?instance_id=53606390192256&return=https%3A%2F%2Fcalendar.ucsd.edu%2F",
+      "discovery_groups": [
+        "event"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "calendar",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://calendar.ucsd.edu/",
+          "observed_at": "2026-11-15T01:34:07.869241+00:00"
+        }
+      ],
+      "exclusion_reason": "interaction_or_authentication_url"
+    },
+    {
+      "url": "https://calendar.ucsd.edu/event/53613145244021/confirm?instance_id=53613145244022&return=https%3A%2F%2Fcalendar.ucsd.edu%2F",
+      "discovery_groups": [
+        "event"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "calendar",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://calendar.ucsd.edu/",
+          "observed_at": "2026-11-15T01:34:07.869241+00:00"
+        }
+      ],
+      "exclusion_reason": "interaction_or_authentication_url"
+    },
+    {
+      "url": "https://calendar.ucsd.edu/event/53666915722385/confirm?instance_id=54248975055663&return=https%3A%2F%2Fcalendar.ucsd.edu%2F",
+      "discovery_groups": [
+        "event"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "calendar",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://calendar.ucsd.edu/",
+          "observed_at": "2026-11-15T01:34:07.869241+00:00"
+        }
+      ],
+      "exclusion_reason": "interaction_or_authentication_url"
+    },
+    {
+      "url": "https://calendar.ucsd.edu/event/53888890827029/confirm?instance_id=53888890851655&return=https%3A%2F%2Fcalendar.ucsd.edu%2F",
+      "discovery_groups": [
+        "event"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "calendar",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://calendar.ucsd.edu/",
+          "observed_at": "2026-11-15T01:34:07.869241+00:00"
+        }
+      ],
+      "exclusion_reason": "interaction_or_authentication_url"
+    },
+    {
+      "url": "https://calendar.ucsd.edu/event/53949301241412/confirm?instance_id=53949301313142&return=https%3A%2F%2Fcalendar.ucsd.edu%2F",
+      "discovery_groups": [
+        "event"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "calendar",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://calendar.ucsd.edu/",
+          "observed_at": "2026-11-15T01:34:07.869241+00:00"
+        }
+      ],
+      "exclusion_reason": "interaction_or_authentication_url"
+    },
+    {
+      "url": "https://calendar.ucsd.edu/event/54038668518595/confirm?instance_id=54038675603868&return=https%3A%2F%2Fcalendar.ucsd.edu%2F",
+      "discovery_groups": [
+        "event"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "calendar",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://calendar.ucsd.edu/",
+          "observed_at": "2026-11-15T01:34:07.869241+00:00"
+        }
+      ],
+      "exclusion_reason": "interaction_or_authentication_url"
+    },
+    {
+      "url": "https://calendar.ucsd.edu/event/54038732179726/confirm?instance_id=54065968501550&return=https%3A%2F%2Fcalendar.ucsd.edu%2F",
+      "discovery_groups": [
+        "event"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "calendar",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://calendar.ucsd.edu/",
+          "observed_at": "2026-11-15T01:34:07.869241+00:00"
+        }
+      ],
+      "exclusion_reason": "interaction_or_authentication_url"
+    },
+    {
+      "url": "https://calendar.ucsd.edu/event/54101877156715/confirm?instance_id=54101877207977&return=https%3A%2F%2Fcalendar.ucsd.edu%2F",
+      "discovery_groups": [
+        "event"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "calendar",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://calendar.ucsd.edu/",
+          "observed_at": "2026-11-15T01:34:07.869241+00:00"
+        }
+      ],
+      "exclusion_reason": "interaction_or_authentication_url"
+    },
+    {
+      "url": "https://calendar.ucsd.edu/event/54102097328975/confirm?instance_id=54102097398669&return=https%3A%2F%2Fcalendar.ucsd.edu%2F",
+      "discovery_groups": [
+        "event"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "calendar",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://calendar.ucsd.edu/",
+          "observed_at": "2026-11-15T01:34:07.869241+00:00"
+        }
+      ],
+      "exclusion_reason": "interaction_or_authentication_url"
+    },
+    {
+      "url": "https://calendar.ucsd.edu/event/54234580401372/confirm?instance_id=54234580480234&return=https%3A%2F%2Fcalendar.ucsd.edu%2F",
+      "discovery_groups": [
+        "event"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "calendar",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://calendar.ucsd.edu/",
+          "observed_at": "2026-11-15T01:34:07.869241+00:00"
+        }
+      ],
+      "exclusion_reason": "interaction_or_authentication_url"
+    },
+    {
+      "url": "https://calendar.ucsd.edu/event/54435790922301/confirm?instance_id=54435790923326&return=https%3A%2F%2Fcalendar.ucsd.edu%2F",
+      "discovery_groups": [
+        "event"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "calendar",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://calendar.ucsd.edu/",
+          "observed_at": "2026-11-15T01:34:07.869241+00:00"
+        }
+      ],
+      "exclusion_reason": "interaction_or_authentication_url"
+    },
+    {
+      "url": "https://calendar.ucsd.edu/event/54445216247597/confirm?instance_id=54445216247598&return=https%3A%2F%2Fcalendar.ucsd.edu%2F",
+      "discovery_groups": [
+        "event"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "calendar",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://calendar.ucsd.edu/",
+          "observed_at": "2026-11-15T01:34:07.869241+00:00"
+        }
+      ],
+      "exclusion_reason": "interaction_or_authentication_url"
+    },
+    {
+      "url": "https://calendar.ucsd.edu/event/54481862407046/confirm?instance_id=54481862408071&return=https%3A%2F%2Fcalendar.ucsd.edu%2F",
+      "discovery_groups": [
+        "event"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "calendar",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://calendar.ucsd.edu/",
+          "observed_at": "2026-11-15T01:34:07.869241+00:00"
+        }
+      ],
+      "exclusion_reason": "interaction_or_authentication_url"
+    },
+    {
+      "url": "https://calendar.ucsd.edu/event/54038732179726/confirm?instance_id=54065968501550&return=https%3A%2F%2Fcalendar.ucsd.edu%2Fevent%2Fcopy-of-aip-summer-enrollment-workshop",
+      "discovery_groups": [
+        "event"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "calendar",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://calendar.ucsd.edu/event/copy-of-aip-summer-enrollment-workshop",
+          "observed_at": "2026-11-15T01:34:10.340248+00:00"
+        }
+      ],
+      "exclusion_reason": "interaction_or_authentication_url"
+    }
+  ]
+}

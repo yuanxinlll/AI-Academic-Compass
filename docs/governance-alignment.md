@@ -69,5 +69,8 @@ against fetched main, with local documentation pending commit/review. Existing
 application behavior was not deliberately edited; the merge incorporates main's
 code as requested. Runtime/deployment and live end-to-end behavior are out-of-scope
 for this documentation update. No memory system was modified (not-applicable).
-New ingestion transport, discovery coverage, scheduler and benchmark remain
-pending implementation; governance edits do not complete those tasks.
+At the time of the governance update, ingestion/discovery implementation remained
+pending. The subsequent collector implementation and live evidence are recorded
+in [collector validation](../collector/VALIDATION.md) and
+[discovery handoff](../collector/reviews/DISCOVERY_HANDOFF.md). Deployed scheduling,
+full category coverage and the human-labeled accuracy benchmark remain pending.

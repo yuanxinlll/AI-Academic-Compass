@@ -6,6 +6,8 @@ from html.parser import HTMLParser
 from urllib.parse import urljoin, urlsplit, urlunsplit
 
 def canonical_url(url):
+    if not isinstance(url, str) or len(url) > 2000 or any(c.isspace() or ord(c) < 32 for c in url):
+        raise ValueError('Invalid public source URL')
     parsed = urlsplit(url)
     if (parsed.scheme != 'https' or not parsed.hostname
         or not (parsed.hostname == 'ucsd.edu' or parsed.hostname.endswith('.ucsd.edu'))
@@ -54,11 +56,11 @@ def parse_page(html, url):
             continue
         if link != canonical_url(url) and link not in links:
             links.append(link)
-    # Focus bounded crawling on program, research, and application pages.
+    # Neutral standalone ordering; registry runs apply group-specific priorities.
     links.sort(key=lambda link: (
-        not bool(re.search(r'programs|opportunit|opening|research|join|apply', urlsplit(link).path, re.I)),
-        not ('/all-urh-programs/' in link and not link.endswith('/all-urh-programs/index.html')),
-        link))
+        not bool(re.search(r'opportunit|opening|intern|event|seminar|workshop|lecture|'
+                           r'compet|challenge|hackathon|course|training|program|research|join|apply',
+                           urlsplit(link).path, re.I)), link))
     return text, links
 
 def evidence_in(quote, page):

@@ -12,7 +12,7 @@ from collector.main import extract, fetch_page, normalize
 from collector.text import canonical_url, parse_page, is_directory
 
 ROOT = Path(__file__).resolve().parent
-EXTRACTION_VERSION = 'contract-v4-undergraduate'
+EXTRACTION_VERSION = 'contract-v5-category-neutral'
 
 
 def load_env(path):
@@ -44,6 +44,9 @@ def atomic_json(path, data):
 
 def error_code(error):
     # Provider messages can contain credentials; never persist them.
+    from collector.ingest import IngestError
+    if isinstance(error, IngestError):
+        return error.code
     if isinstance(error, HTTPError):
         return f'http_{error.code}'
     if isinstance(error, URLError):
@@ -80,7 +83,7 @@ def duplicate_identity(record):
 
 def run_collection(urls, state_path, output_path, *, discover=False, max_pages=5,
                    max_depth=1, force=False, database=None, fetcher=fetch_page,
-                   extractor=extract, delay=0.25):
+                   extractor=extract, delay=0.25, discovery_policy=None):
     if not 1 <= max_pages <= 100 or not 0 <= max_depth <= 5:
         raise ValueError('Page budget must be 1..100 and depth 0..5')
     state_path = Path(state_path)
@@ -89,7 +92,7 @@ def run_collection(urls, state_path, output_path, *, discover=False, max_pages=5
     seen = set()
     report = dict(websites_checked=0, pages_retrieved=0, records_found=0,
                   inserted=0, updated=0, duplicates=0, needs_verification=0,
-                  expired=0, errors=[], discovered_urls=[], pages=[])
+                  expired=0, rejected=0, errors=[], persistence_warnings=[], discovered_urls=[], pages=[])
     while queue and len(seen) < max_pages:
         url, depth = queue.pop(0)
         if url in seen:
@@ -107,6 +110,8 @@ def run_collection(urls, state_path, output_path, *, discover=False, max_pages=5
                 raise ValueError('Empty page')
             if len(page) > 180000:
                 raise ValueError('Source too large; choose a detail page')
+            if discovery_policy is not None:
+                links = discovery_policy.links(html, url, links)
             if discover and depth < max_depth:
                 for link in links:
                     if link not in report['discovered_urls']:
@@ -118,7 +123,8 @@ def run_collection(urls, state_path, output_path, *, discover=False, max_pages=5
             if alias and (not state['pages'].get(alias, {}).get('records')
                           or state['pages'].get(alias, {}).get('error')):
                 unchanged = False
-            if is_directory(url):
+            directory = is_directory(url) or (discovery_policy is not None and discovery_policy.is_directory(url))
+            if directory:
                 records = []
             elif unchanged:
                 records = [dict(record) for record in previous.get('records', [])]
@@ -129,7 +135,7 @@ def run_collection(urls, state_path, output_path, *, discover=False, max_pages=5
             else:
                 records = collect_page(page, url, extractor)
             old_records = previous.get('records', [])
-            if not records and old_records and not is_directory(url):
+            if not records and old_records and not directory:
                 raise ValueError('Previously collected opportunity is no longer identifiable')
             for record in records:
                 if old_records:
@@ -154,10 +160,16 @@ def run_collection(urls, state_path, output_path, *, discover=False, max_pages=5
                 report['needs_verification'] += sum(r['status'] == 'needs_verification' for r in records)
                 report['expired'] += sum(r['status'] == 'expired' for r in records)
             if database:
+                if discovery_policy is not None and hasattr(database, 'source_type'):
+                    database.source_type = discovery_policy.source_type(url)
                 counts = database.save_page(url, records, checked_at, [])
                 if isinstance(counts, dict):
                     for key in ('inserted', 'updated', 'duplicates'):
-                        report[key] += counts[key]
+                        report[key] += counts.get(key, 0)
+                    report['rejected'] += counts.get('rejected', 0)
+                    report['errors'].extend(counts.get('errors', []))
+                    for warning in counts.get('warnings', []):
+                        report['persistence_warnings'].append(dict(source_url=url, code=warning))
             state['pages'][url] = dict(digest=digest, records=records, last_checked_at=checked_at,
                                        links=links, error=None, duplicate_of=alias_of,
                                        source_text=page, extraction_version=EXTRACTION_VERSION)
@@ -176,7 +188,10 @@ def run_collection(urls, state_path, output_path, *, discover=False, max_pages=5
                                        source_text=page or previous.get('source_text', ''))
             if database:
                 try:
-                    database.save_page(url, [], checked_at, [entry])
+                    logged = database.save_page(url, [], checked_at, [entry])
+                    if isinstance(logged, dict):
+                        for warning in logged.get('warnings', []):
+                            report['persistence_warnings'].append(dict(source_url=url, code=warning))
                 except Exception as log_error:
                     report['errors'].append(dict(source_url=url, code='database_log_' + error_code(log_error)))
             report['pages'].append(dict(url=url, outcome='failed', code=code))
@@ -186,7 +201,7 @@ def run_collection(urls, state_path, output_path, *, discover=False, max_pages=5
     records = [record for entry in state['pages'].values() for record in entry.get('records', [])]
     atomic_json(output_path, records)
     report['pending_urls'] = len({url for url, _ in queue} - seen)
-    report['persistence'] = 'postgresql' if database else 'local_json'
+    report['persistence'] = getattr(database, 'persistence', 'postgresql') if database else 'local_json'
     report['checked_at'] = datetime.now(timezone.utc).isoformat()
     return report
 
@@ -203,7 +218,12 @@ def cli():
     parser.add_argument('--max-pages', type=int, default=5)
     parser.add_argument('--max-depth', type=int, default=1)
     parser.add_argument('--force', action='store_true', help='Re-extract even when page text is unchanged')
-    parser.add_argument('--database', action='store_true', help='Upsert into existing D-owned PostgreSQL tables')
+    persistence = parser.add_mutually_exclusive_group()
+    persistence.add_argument('--database', action='store_true', help='Legacy direct PostgreSQL mode; requires DATABASE_URL')
+    persistence.add_argument('--ingest', action='store_true', help='Save through D admin API; requires ADMIN_TOKEN, no database driver')
+    from collector.ingest import DEFAULT_BASE, SOURCE_TYPES
+    parser.add_argument('--api-base-url', default=None, help='HTTPS origin; defaults to COLLECTOR_API_BASE_URL or deployed app')
+    parser.add_argument('--source-type', choices=sorted(SOURCE_TYPES), default='listing')
     parser.add_argument('--interval', type=int, default=0, help='Repeat every N seconds (minimum 60); Ctrl+C stops')
     args = parser.parse_args()
     try:
@@ -220,6 +240,10 @@ def cli():
             if not os.environ.get(key):
                 raise ValueError('Missing setting: ' + key)
         database = None
+        if args.ingest:
+            from collector.ingest import ApiStore
+            database = ApiStore(args.api_base_url or os.environ.get('COLLECTOR_API_BASE_URL', DEFAULT_BASE),
+                                source_type=args.source_type)
         if args.database:
             from collector.storage import PostgresStore
             database = PostgresStore(os.environ['DATABASE_URL'])

@@ -1,5 +1,11 @@
 # Member A to B/D: expanded UCSD opportunity data
 
+> Current integration and coordination: [collection audit](../PROJECT_AUDIT.md).
+> Direct database writes below describe historical integration. The --ingest
+> admin-API transport is now implemented and live-tested; see collector README
+> and VALIDATION.md. These historical review notes do not grant admin approval.
+
+
 Reviewed 2026-11-14. Scope: public UCSD opportunities only; no student records,
 resumes, credentials, or other members' source files were changed.
 
