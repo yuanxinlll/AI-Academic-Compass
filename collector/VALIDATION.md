@@ -8,6 +8,29 @@
 The collector implementation remains scoped to collector/. Shared contracts,
 Next.js routes, database schema, and other members' code were not changed.
 
+## Dedicated Instagram API - 2026-11-15 UTC
+
+- Requested a maximum of three @ds3atucsd posts. Synchronous /scrape returned 400
+  Customer is not active; no job ran there. The configured key still listed its
+  existing zone and fetched a real UCSD page via Web Unlocker (200).
+- Documented asynchronous /trigger accepted the same bounded input and completed;
+  /progress reported ready and /snapshot returned three posts. No account settings,
+  activation, payment or login credentials were changed.
+- All three posts passed author/explicit-coauthor validation: one primary DS3
+  post and two collaborator posts listing DS3 as coauthor. Dates/permalinks and
+  captions were retrieved. Followers, tagged users and engagement fields were
+  excluded from the normalized probe output.
+- A reusable resumable probe downloaded the existing snapshot without triggering
+  another collection and updated only DS3's scraper-access evidence in the source
+  catalog. HTML fetch and arbitrary Instagram domains remain disallowed.
+- 69 offline tests passed, including eight new Instagram tests for authorship,
+  bounded requests, no automatic trigger retries, attestation, timestamps,
+  safe errors and discarded profile fields. No new dependency was added.
+- No Gemini/image analysis or opportunity/API database writes occurred in this
+  test. Other organization accounts and scheduled monitoring remain unverified.
+- Public evidence: reviews/instagram-probe-2026-11-15.json. Captions and provider
+  results remain ignored in output/instagram-probe/.
+
 ## Student-organization sources - 2026-11-15 UTC
 
 - Read all 628 current UCSD CSI records; 467 have a social field. Retained no

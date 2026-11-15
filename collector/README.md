@@ -84,11 +84,30 @@ evidence validation and its own verification status. Unrelated profile/chatter
 pages yield no opportunity. B ranks the resulting records; source affiliation
 does not decide their category or student eligibility.
 
-Instagram links are recorded with institution evidence, but a generic login page
-is not verified public-post access. No Instagram feed or blanket Instagram-domain
-permission is enabled. JavaScript-only, unavailable and suspicious destinations
+Instagram links are recorded with institution evidence; a generic login page
+is not verified public-post access. The dedicated async scraper has now retrieved
+three DS3 posts with author/coauthor validation. No blanket Instagram-domain
+permission or deployed Instagram monitoring is enabled. JavaScript-only, unavailable and suspicious destinations
 remain distinguishable from readable sources. Re-verification disables unavailable
 organization scopes without stopping unrelated collection sources.
+
+## Dedicated Instagram post probe
+
+```powershell
+python -m collector.instagram --profile ds3atucsd --limit 3
+```
+
+Uses the existing BRIGHTDATA_API_KEY and Bright Data's asynchronous Instagram
+Posts scraper, not HTML Web Unlocker. Only current UCSD-attested accounts in the
+source catalog are accepted; the limit is 1-3 posts. The job ID is saved before
+polling. Use --snapshot-id with that ID to resume without creating another job.
+No automatic POST retry creates duplicate paid jobs. All results must identify
+the attested account as author or explicit coauthor; tags are insufficient.
+
+The successful DS3 test retrieved three captions, dates and permalinks. Output is
+ignored under output/instagram-probe/<handle>/. This command does not send posts
+to Gemini or Neon. Poster-image extraction, opportunity validation and scheduled
+feed integration remain pending. See reviews/instagram-probe-2026-11-15.json.
 
 ## Collect and discover
 
