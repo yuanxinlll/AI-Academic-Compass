@@ -16,10 +16,11 @@ Built in a weekend for **SanD Hacks 2026**.
 ## Try it
 
 1. Open the live site and click **Sign in**.
-2. Pick a demo student. All three are fictional and already have a profile:
+2. Pick a demo student. All four are fictional and already have a profile:
    - **Maya Chen** · CS sophomore · machine learning, HCI
-   - **Jordan Rivera** · Biology junior · neuroscience research
-   - **Priya Patel** · Cognitive Science transfer junior · data for social good
+   - **Jordan Rivera** · first-generation Biology junior · neuroscience
+   - **Priya Patel** · community college transfer, Cognitive Science · data for social good
+   - **Wei Zhang** · international (F-1) Data Science junior
 3. Read the one-page disclaimer, then browse **Picked for you** or **Explore**.
 4. Open any card to see each requirement, the quote it came from, and whether you meet it.
 5. Sign in as **Reviewer** to see the review queue. Verifying a listing is what lets a
@@ -63,6 +64,37 @@ one-line reason: topic match 35, skills 25, major 15, category 10, time fit 10,
 preferred qualifications 5. A signal with no data is skipped, not scored as zero.
 Details in [`lib/relevance.ts`](lib/relevance.ts) and [contracts §9.3](docs/contracts.md).
 
+### Who can apply — and the Access Gap
+
+Every listing also records, **only when the source page says so in an exact quote**, whether
+international students can apply, whether it is designed for first-generation or transfer students,
+whether it is paid / stipend / for credit, and whether it costs money. Silence is recorded as
+"unstated" — and that silence is the point of our Data for Good page.
+
+**[/access](https://ai-academic-compass.vercel.app/access)** runs the same open listings past four
+fictional students — a typical student, a first-generation student, a community college transfer and
+an international (F-1) student — with the same fixed rules, and shows how many each can actually
+apply to, how many are paid, how many need U.S. citizenship, and how often listings even say.
+
+### Where the data comes from
+
+- **Bright Data** fetches public UC San Diego pages (research hub, departments, transfer and first-gen
+  offices, career center, community engagement, arts and humanities) and single public Instagram posts
+  of verified student organizations.
+- **Gemini** extracts listings and requirements as exact quotes. For **flyers and Instagram images**
+  it first transcribes the image word for word, and the same quote checks run on that transcript.
+- When a listing is silent on a deadline or international eligibility, **Gemini with Google Search**
+  proposes official pages; we fetch each one ourselves and keep a lead only if its quote is really on
+  the page. Leads are shown as "Found elsewhere — unverified" and never decide eligibility.
+
+### How we check ourselves
+
+- **Extraction accuracy** — reviewers label each field of a listing against its source at `/admin/eval`.
+  Listings are split into dev/test by a hash of their id *before* anyone looks; we report "N of M" on
+  the test set and publish every failure (`/api/eval-summary`).
+- **Relevance properties** — `npm run test:relevance` checks monotonicity (more matching interests or
+  skills never lowers a score; unknown data is never scored as zero) on 200 generated cases.
+
 ### Labels students see
 
 | Label | Meaning |
@@ -85,7 +117,7 @@ Bright Data · Gemini · Vercel
 ```bash
 npm install
 cp .env.example .env.local      # fill in DATABASE_URL, AUTH_SECRET, AI_SERVICE_URL, INTERNAL_TOKEN, ADMIN_TOKEN
-node scripts/migrate.mjs lib/database/migrations/002_demo_accounts.sql
+for m in 002_demo_accounts 003_access_and_leads 004_eval_labels; do node scripts/migrate.mjs lib/database/migrations/$m.sql; done
 npm run dev                     # http://localhost:3000
 ```
 

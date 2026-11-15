@@ -6,6 +6,8 @@
 > **v1.1 变更（2026-11-14）**：明确两个状态枚举的区别（§1）、空数组含义（§0）、资格汇总规则加入 verified 门槛（§4.4）、`relevance_score` 可为 null（§4.4）、简历上限改为 4MB（§4.3）、新增 Python 服务部署与接口归属（§8）。数据库字段不变。
 
 >
+> **v1.4 变更（2026-11-15）**：机会新增 `access`、`source_kind`；AI 网络线索；学生自愿背景；Access Gap；评估接口（§10）。只增不改。
+>
 > **v1.3 变更（2026-11-14 晚，D 接管整合）**：演示账号登录取代 `x-demo-user`（§9.1，旧请求头仍可用于脚本，但不能获得管理员权限）；新增接口 `/api/auth/*`、`/api/me`、`/api/me/disclaimer`、`/api/stats`、`GET /api/opportunities/{id}`、`GET /api/admin/review-queue`（§9.2）；`/api/match` 结果新增相关度 v2 字段（§9.3，只增不改）；迁移 002 新增列（§9.4）。管理员只能改状态，提取错误退回 A 重新采集。
 
 ---
@@ -474,3 +476,40 @@ GEMINI_MODEL=
 
 ### 9.5 给 A 的数据要求（重申）
 `gpa`、`hours_per_week` 的 `value` 必须是**数字**（如 `3.0`、`10`），不是文本。清理脚本：`node scripts/cleanup-data.mjs`（默认只报告，加 `--apply` 才修改）。
+
+
+---
+
+## 10. v1.4 新增（2026-11-15 凌晨）
+
+### 10.1 Opportunity 新字段（迁移 003）
+- `access`（jsonb，默认 `{}`）：谁能申请 / 报酬 / 费用。每项 `{ "value", "quote" }`；除 `"unstated"` 外**必须**有来源原文引用。
+
+| key | 允许值 |
+|---|---|
+| international | open / restricted / unstated |
+| first_gen | focus / unstated |
+| transfer | focus / unstated |
+| compensation | paid / stipend / credit / unpaid / unstated |
+| cost | free / fee / unstated |
+
+- `source_kind`：`webpage`（默认）/ `flyer_image` / `instagram`。图片来源先由 Gemini 逐字转写，再走同一套抽取与原文校验。
+- `POST /api/admin/opportunities` 接受可选 `access`、`source_kind`（不传 `access` = 保留已有值）。
+- `PUT /api/admin/opportunities/{id}/access` `{ access }`：只改 access（采集器回填用）。
+
+### 10.2 线索（AI 全网搜索，迁移 003 `opportunity_leads`）
+- `POST /api/admin/leads` `{ opportunity_id, leads: [{ field, value, quote, evidence_url, found_by? }] }`
+- `GET /api/opportunities/{id}` 额外返回 `leads`。
+- 规则：只有 `quote` 在我们自己用 Bright Data 抓到的 `evidence_url` 页面上真实存在时才保存；前端标注 “Found elsewhere — unverified”；**永不参与资格判断**。
+
+### 10.3 学生背景（自愿、可留空）
+- `GET/POST /api/profile/background` `{ first_generation, transfer_student, international_student }`，`null` = 不愿透露。从不推断。只用于本人视图和 Access Gap 的匿名统计。
+
+### 10.4 Data for Good
+- `GET /api/access-gap`（公开）：4 个虚构学生在同一批开放机会上的标签分布、可申请数、有薪数、专为其设计数、需公民身份数；以及 5 项信息透明度（截止日期 / 资格 / 申请方式 / 国际生 / 报酬）的“几中几”。
+
+### 10.5 评估（迁移 004 `eval_labels`）
+- 每条机会按 id 的 md5 首位固定分到 dev（约 3/8）或 test，标注前即确定。
+- `GET/POST /api/admin/eval`：审核员逐字段标注 correct / wrong / missing / na。
+- `GET /api/eval-summary`（公开）：test 集每字段 “N of M”（na 不计入 M）+ 全部失败案例。
+- 相关度性质测试：`npm run test:relevance`（5 条单调性/范围性质 × 200 个生成用例）。
