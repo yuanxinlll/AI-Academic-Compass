@@ -7,6 +7,8 @@ in the image. Records are ingested with source_kind 'flyer_image' or 'instagram'
     # Flyers/posters embedded in public UCSD pages
     python -m collector.multimodal --flyers --url https://example.ucsd.edu/events --ingest
 
+    # Instagram posts: use collector/instagram_collection.py (attested accounts, validated posts).
+    # The --instagram option below is kept for reference; post URLs are rejected by canonical_url.
     # Public Instagram posts of verified student organizations (one URL per line)
     python -m collector.multimodal --instagram collector/instagram_posts.txt --ingest
 

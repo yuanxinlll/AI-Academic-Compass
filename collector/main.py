@@ -5,6 +5,7 @@ import os
 import math
 import time
 import re
+import threading
 from datetime import date, datetime, timezone
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError, URLError
@@ -13,17 +14,44 @@ from collector.text import canonical_url, evidence_in
 CATEGORIES = {'research', 'internship', 'event', 'competition', 'program', 'course'}
 
 
+_gemini_lock = threading.Lock()
+_gemini_next_request = 0.0
+
+
+def pace_gemini(url):
+    global _gemini_next_request
+    if not url.startswith('https://generativelanguage.googleapis.com/'):
+        return
+    # Configured free-tier quota is 15 RPM. Keep this process at 12 RPM.
+    with _gemini_lock:
+        delay = max(0, _gemini_next_request - time.monotonic())
+        if delay:
+            time.sleep(delay)
+        _gemini_next_request = time.monotonic() + 5
+
+
 def post_json(url, payload, headers):
     request = Request(url, data=json.dumps(payload).encode(),
                       headers={'Content-Type': 'application/json', **headers})
     for attempt in range(3):
+        pace_gemini(url)
         try:
             with urlopen(request, timeout=90) as response:
                 return response.read().decode('utf-8')
         except HTTPError as error:
             if error.code not in (429, 500, 502, 503, 504) or attempt == 2:
                 raise
+            retry_after = error.headers.get('Retry-After') if error.headers else None
+            if error.code == 429:
+                try:
+                    details = json.load(error).get('error', {}).get('details', [])
+                    retry_after = next((d['retryDelay'].rstrip('s') for d in details if 'retryDelay' in d), retry_after)
+                except (ValueError, TypeError, KeyError):
+                    pass
             error.close()
+            if retry_after:
+                try: time.sleep(min(55, max(0, float(retry_after))))
+                except ValueError: pass
         except (URLError, TimeoutError):
             if attempt == 2:
                 raise
@@ -43,7 +71,7 @@ def fetch_page(url):
 PROMPT_SHA = None  # fingerprint of the extraction prompt actually sent (recorded in provenance)
 
 
-def extract(page, feedback=None):
+def extract(page, feedback=None, *, context=None):
     model = os.environ['GEMINI_MODEL']
     if not all(c.isalnum() or c in '-.' for c in model):
         raise ValueError('Invalid GEMINI_MODEL')
@@ -73,11 +101,14 @@ def extract(page, feedback=None):
                'Do not paraphrase quotations or concatenate separate bullets. Extract only the primary '
                'program on a detail page; include ALL explicit hard eligibility criteria, including '
                'student enrollment, standing, GPA, time commitment, and duration. Use numeric values '
-               'for GPA and hours. Preserve concrete application instructions. Do not treat '
+               'for GPA and hours: use JSON numbers such as 3.5 and 10, never spelled-out or quoted numerals. '
+               'For other genuinely numeric quantities use JSON numbers while preserving units in raw_text. Preserve concrete application instructions. Do not treat '
                'open-to-all-majors as a restrictive major criterion. Primary program only; linked programs are not separate opportunities on this page. '
                'For a directory page return [].')
     global PROMPT_SHA
     PROMPT_SHA = hashlib.sha256(prompt.encode('utf-8')).hexdigest()[:12]
+    if context:
+        prompt += '\nCOLLECTOR CONTEXT: ' + context
     if feedback:
         prompt += '\nPrevious extraction failed validation: ' + feedback + '. Correct the output using the source.'
     prompt += '\nSOURCE TEXT:\n'
@@ -103,8 +134,8 @@ def nullable_text(value, field):
     return value.strip() if isinstance(value, str) else None
 
 
-def normalize(items, source_url, page):
-    validate_url(source_url)
+def normalize(items, source_url, page, *, source_validator=None):
+    (source_validator or validate_url)(source_url)
     if not isinstance(items, list):
         raise ValueError('Extraction must be an array')
     records = []
@@ -147,9 +178,8 @@ def normalize(items, source_url, page):
             )
             if not valid:
                 raise ValueError('Invalid eligibility value')
-            if requirement['type'] in ('hours_per_week', 'gpa') and isinstance(value, str):
-                if re.fullmatch(r'\d+(?:\.\d+)?', value.strip()):
-                    value = float(value) if '.' in value else int(value)
+            from collector.numeric import quantitative_value
+            value = quantitative_value(requirement['type'], value)
             eligibility.append(dict(requirement, value=value))
         optional = {field: nullable_text(item.get(field), field) for field in (
             'organization', 'description', 'deadline_text', 'application_method'

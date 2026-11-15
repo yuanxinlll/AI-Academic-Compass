@@ -886,7 +886,7 @@
       "affiliation_evidence": [
         "https://rady.ucsd.edu/programs/undergraduate/resources/radyvantage.html"
       ],
-      "verification_status": "pending",
+      "verification_status": "verified_ucsd_affiliated_source",
       "fetch_enabled": false,
       "checked_at": "2026-11-15T02:23:27.151041+00:00",
       "http_status": 200,
@@ -895,7 +895,15 @@
       "identity_status": "listed_by_ucsd_directory",
       "access_status": "login_or_render_required",
       "observed_instagram_links": [],
-      "approved_scopes": []
+      "approved_scopes": [],
+      "scraper_enabled": true,
+      "scraper_access_status": "public_posts_retrieved",
+      "scraper_last_verified_at": "2026-11-15T08:42:19.875046+00:00",
+      "verified_post_urls": [
+        "https://www.instagram.com/p/DfijWSKRYCh/",
+        "https://www.instagram.com/p/Dfiaw1hGWEu/",
+        "https://www.instagram.com/p/DfnuvJZKVE6/"
+      ]
     },
     {
       "url": "https://kapiatucsd.com/",

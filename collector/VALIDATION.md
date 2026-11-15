@@ -8,6 +8,99 @@
 The collector implementation remains scoped to collector/. Shared contracts,
 Next.js routes, database schema, and other members' code were not changed.
 
+## Directory-wide expansion - 2026-11-15 UTC
+
+- Considered all 628 directory records; submitted 466 candidate handles in six
+  bounded batches, at most three recent public posts each. 433 returned matching
+  authorship, with 1,319 raw rows becoming 1,226 unique public posts.
+- All 1,226 posts completed caption screening: 434 candidates, 167 recaps,
+  450 non-opportunities, 175 poster/uncertainty reviews. No final screening
+  batch failures after retry. These preliminary labels are not validated openings.
+- Full caption/poster validation attempted 105 unique posts (132 attempts across
+  resumptions). Retained 35 structured opportunities locally: 21 non-expired
+  records matched API readback, including one existing baseline record; 14
+  expired records were excluded from the current-feed additions.
+- Website increased from 30 to 50 non-expired records: research 19, event 14,
+  program 10, competition 5, internship 1, course 1. The 20 additions include a
+  paid coding-instructor position, skills/academic workshops, competitions,
+  mentorship and a research-journal submission call. Unknown availability still
+  requires review; non-expired does not mean confirmed currently open.
+- Six existing records had unambiguous quantitative values normalized through
+  the existing admin API. Units/constraints in raw_text, source metadata, IDs
+  and first collection timestamps were preserved; public readback matched.
+- Initial parallel requests encountered the configured model's 15 RPM limit.
+  Model calls now pace at 12 RPM within one process and honor retry delays.
+  No account/model/dependency setting was changed. Interrupted/error attempts
+  remain in ignored runtime telemetry; selected saved rows passed validation.
+- 96 offline tests passed, including cap/resume behavior, directory coverage,
+  source authorship, numeric values, provider pacing and relative-date holds.
+- The completed campaign resumes with no further analysis or inserts. Full
+  public readback verified all 21 collected current records and backend source IDs.
+- [Team handoff](reviews/INSTAGRAM_EXPANSION.md),
+  [structured snapshot](reviews/instagram-expansion-2026-11-15.json), and
+  [human review CSV](reviews/HUMAN_REVIEW_2026-11-15.csv).
+  Human approval is pending; no new row was marked verified by this run.
+  Scope remains collector/; no shared schema, dependency or other member code changed.
+
+## Authorized missing-year refinement - 2026-11-15 UTC
+
+The user explicitly replaced the earlier missing-year refusal for Instagram posts.
+See [date policy](DATE_POLICY.md). DataHacks now has deadline 2026-11-26,
+original deadline_text, and a public description warning that the year is inferred
+from its November 9 post. The explicit linked RAG event date still wins.
+Two existing rows updated, zero inserted/rejected/errors; public readback matched
+and original IDs/first collection times were preserved. 88 offline tests passed.
+The prior test below remains historical evidence of the earlier policy.
+Current evidence: [date-policy review](reviews/instagram-date-policy-2026-11-15.json).
+No shared fields, schema, dependencies or other member code changed.
+
+## Instagram opportunities end-to-end - 2026-11-15 UTC
+
+- Reused the existing three-post snapshot; no additional Instagram scrape started.
+  Gemini OCR read the two announcement posters and extraction combined poster
+  text with captions. The retrospective Hack For Humanity recap was excluded.
+- DataHacks 2027 saved as competition / needs_verification. Its explicit January
+  16-17, 2027 event range validates; the separate priority deadline 11/26 lacks
+  a year, so deadline remains null and deadline_text is preserved.
+- The RAG workshop saved as event / expired. Its exact caption RSVP link publishes
+  JSON-LD ending 2026-11-12T21:50:00-08:00; publication time was not used to infer
+  an event year. The application deadline remains null.
+- First admin API run inserted two records; repeat inserted zero and updated two
+  (duplicates=2 overlaps updated). Both runs had zero rejected records/errors.
+  Public readback matched the validated fields, source IDs were populated, and
+  opportunity IDs and first_collected_at stayed stable. No DATABASE_URL used.
+- 81 offline tests passed, including caption/poster evidence, missing-year
+  rejection, explicit date ranges, recaps, expired RSVP dates, date-review holds,
+  cache/idempotent source identity, carousel limits and media host restrictions.
+- Public evidence: [Instagram opportunity review](reviews/instagram-opportunities-2026-11-15.json).
+  Source text, OCR, images and runtime state remain ignored. No dependencies,
+  schema, Next.js routes or other members' code changed. These two records are
+  not a general accuracy benchmark or admin approval. Other accounts and daily
+  deployed scheduling remain unverified.
+
+## Dedicated Instagram API - 2026-11-15 UTC
+
+- Requested a maximum of three @ds3atucsd posts. Synchronous /scrape returned 400
+  Customer is not active; no job ran there. The configured key still listed its
+  existing zone and fetched a real UCSD page via Web Unlocker (200).
+- Documented asynchronous /trigger accepted the same bounded input and completed;
+  /progress reported ready and /snapshot returned three posts. No account settings,
+  activation, payment or login credentials were changed.
+- All three posts passed author/explicit-coauthor validation: one primary DS3
+  post and two collaborator posts listing DS3 as coauthor. Dates/permalinks and
+  captions were retrieved. Followers, tagged users and engagement fields were
+  excluded from the normalized probe output.
+- A reusable resumable probe downloaded the existing snapshot without triggering
+  another collection and updated only DS3's scraper-access evidence in the source
+  catalog. HTML fetch and arbitrary Instagram domains remain disallowed.
+- 69 offline tests passed, including eight new Instagram tests for authorship,
+  bounded requests, no automatic trigger retries, attestation, timestamps,
+  safe errors and discarded profile fields. No new dependency was added.
+- No Gemini/image analysis or opportunity/API database writes occurred in this
+  test. Other organization accounts and scheduled monitoring remain unverified.
+- Public evidence: reviews/instagram-probe-2026-11-15.json. Captions and provider
+  results remain ignored in output/instagram-probe/.
+
 ## Student-organization sources - 2026-11-15 UTC
 
 - Read all 628 current UCSD CSI records; 467 have a social field. Retained no
@@ -195,3 +288,16 @@ isolated tests on the new Winkielman record: unverified stays pending, a local
 verified copy can be eligible, insufficient time is ineligible, and unknown
 skills stay pending. No production verified-to-eligible claim is made until
 admin approval is applied. No student profile was written for these tests.
+
+## Latest team demo requirements - 2026-11-15
+
+Live audit: 50 non-expired records, six categories, zero non-numeric/non-null
+GPA or weekly-hour values. Fresh normalization and cached ingestion now both
+prevent text/list/boolean values reaching those fixed-algorithm inputs.
+Evidence-only enrichment used saved sources for all 50 records: 14 departments,
+29 disciplines and nine participation terms retained; other values remain null.
+Every value has exact source evidence. Organization names, relative/historical
+meeting dates and duration-only text were excluded from inappropriate fields.
+103 offline tests passed. No schema or other member files changed. A local
+sidecar and ten prioritized CSV rows are ready; ten actual human verifications
+are still pending. See [demo requirements handoff](reviews/DEMO_DATA_REQUIREMENTS.md).

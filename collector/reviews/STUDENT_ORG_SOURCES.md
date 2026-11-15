@@ -12,8 +12,10 @@ organizations are independent entities, not official university units.
 - Catalog and complete checked-candidate/access-status list:
   [student_org_sources.json](../student_org_sources.json).
 - Fourteen website destinations passed readable-content and affiliation checks.
-- Twenty-two Instagram references were located. Public profile/post readability
-  was not established with the current fetch methods; no Instagram feed is enabled.
+- Twenty-two Instagram references were located. HTML fetching did not establish
+  readable posts. A subsequent dedicated asynchronous scraper test retrieved three
+  DS3 posts with author/coauthor validation; the other 21 references remain untested
+  through that scraper. Continuous Instagram monitoring is not deployed.
 - Remaining social references are an unverified research queue. The directory
   scan is exhaustive for its current 628 records; external-site discovery and
   verification are not exhaustive for all 628 organizations.
@@ -50,9 +52,11 @@ A working HTTP response alone is insufficient: sign-in pages, parked/offline
 sites, unrelated redirects and JS-only responses are not promoted to readable
 sources. Broken department links and suspicious redirects remain disabled. Some
 real organization sites require browser rendering; do not call them nonexistent.
-Instagram account links can be institution-attested while post access is blocked.
-An Instagram post extractor and authorship checks are still needed before enabling
-feeds; no whole-Instagram allowlist was added.
+Instagram account links can be institution-attested while HTML post access is blocked.
+collector.instagram now retrieves bounded posts through the dedicated async scraper
+and checks primary author or explicit coauthor, not tags/mentions. DS3 passed;
+caption/image-to-opportunity processing remains separate. No whole-Instagram
+allowlist was added.
 
 ## Classification and display
 
@@ -101,5 +105,43 @@ python -m collector.registry --source-family student_orgs --organization IEEE --
 Collection uses configured Bright Data/Gemini accounts; --ingest also needs
 ADMIN_TOKEN. No DATABASE_URL is needed. D owns deployment of the agreed daily
 08:00 America/Los_Angeles schedule (including daylight saving time); no deployed
-scheduler is claimed. D/B/C coordination is needed for Instagram post ingestion
-or new source-affiliation UI/API metadata. No shared schema or category was changed.
+scheduler is claimed. D/B/C coordination is needed for scheduled Instagram execution
+and new source-affiliation UI/API metadata. No shared schema or category was changed.
+
+## Dedicated Instagram scraper test
+
+The asynchronous Instagram Posts API succeeded for @ds3atucsd with three posts.
+One was authored by DS3; two listed DS3 as an explicit coauthor. Tags or discovery
+origin alone are not accepted as authorship. The posts cover DataHacks 2027
+applications, a Hack For Humanity recap, and a RAG workshop announcement. A recap
+must not be advertised as a new opening. Event dates/eligibility and poster image
+contents have not been validated; no opportunity rows were written in this test.
+
+The synchronous route returned HTTP 400, Customer is not active. Follow-up checks
+showed that the configured key could list its existing zone and retrieve a real
+page through Web Unlocker. The documented asynchronous route then completed
+successfully with the same key. No account activation/billing change was made.
+
+```powershell
+# Starts at most a three-post job on a current UCSD-attested account.
+python -m collector.instagram --profile ds3atucsd --limit 3
+
+# Reuse a previous job ID printed by the command; do not submit another paid job.
+python -m collector.instagram --profile ds3atucsd --snapshot-id SNAPSHOT_ID
+```
+
+Only BRIGHTDATA_API_KEY is required for this probe. No Instagram password,
+GEMINI_API_KEY, ADMIN_TOKEN or DATABASE_URL is needed. Captions stay in ignored
+output/instagram-probe/ds3atucsd/posts.json; versioned metadata and limitations are
+in [Instagram test evidence](instagram-probe-2026-11-15.json). The source catalog
+records scraper access separately from HTML access and preserves that distinction
+when organization links are rechecked.
+
+## Subsequent post-to-opportunity integration
+
+The earlier probe above describes access testing only. A separate
+`python -m collector.instagram_collection --ingest` command now analyzes saved
+captions and posters, validates evidence, and uses D's existing admin API.
+See [public review evidence](instagram-opportunities-2026-11-15.json) and
+[validation results](../VALIDATION.md). The other organization accounts and
+scheduled deployment remain untested; DS3 access is not proof of universal access.

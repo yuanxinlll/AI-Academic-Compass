@@ -43,6 +43,17 @@ class IngestTests(unittest.TestCase):
         self.assertEqual(record['opportunity_id'], ID)
         self.assertEqual(counts['inserted'], 1)
 
+    def test_cached_numeric_requirements_are_clean_in_wire_and_local_record(self):
+        store=self.store();store._post=Mock(return_value=result())
+        record=dict(ITEM,eligibility=[dict(type='hours_per_week',value='ten',raw_text='ten hours per week',is_hard_requirement=True),
+                                     dict(type='gpa',value='3.3-3.5',raw_text='3.3-3.5 GPA',is_hard_requirement=True)])
+        store.save_page(URL,[record],'',[])
+        wire=store._post.call_args.args[0]['opportunities'][0]['eligibility']
+        self.assertEqual(wire[0]['value'],10)
+        self.assertIsNone(wire[1]['value'])
+        self.assertEqual(wire,record['eligibility'])
+        self.assertEqual(wire[1]['raw_text'],'3.3-3.5 GPA')
+
     def test_partial_rejections_do_not_hide_saved_records_or_echo_server_text(self):
         store = self.store()
         response = dict(inserted=1, updated=0, duplicates=0, rejected=1,

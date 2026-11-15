@@ -1,0 +1,773 @@
+{
+  "checked_at": "2026-11-15T10:06:41.427708+00:00",
+  "schema_status": "Local Member A sidecar; proposed field names require B/D shared-schema confirmation before public API ingestion.",
+  "public_api_fields_changed": false,
+  "website_records": 50,
+  "categories": {
+    "program": 10,
+    "competition": 5,
+    "event": 14,
+    "internship": 1,
+    "research": 19,
+    "course": 1
+  },
+  "numeric_violations": [],
+  "confirmed_human_reviews": 0,
+  "human_review_note": "No fresh human approvals collected by this run; existing verified API status is not a signed review of this requirement.",
+  "minimum_human_reviews_required": 10,
+  "prioritized_review_ids": [
+    "82246069-b3e5-4546-bed2-6d46f2478d8a",
+    "02ea51bb-029c-460b-8453-fa1501193f78",
+    "36ace033-4234-4d7b-8c37-7785816d2498",
+    "0a844c0b-cf75-4a3f-9192-8de95fc0a38f",
+    "189c6090-e4e1-4309-b2ae-eda15654bb9a",
+    "6cfc5446-775a-48cb-b719-c8271f989ca5",
+    "512822c4-3c1d-4472-b400-1a3b84db3322",
+    "bb0985e5-a376-4cf2-b65a-48b930452920",
+    "586dcc27-ed62-4ff6-b6f7-f5e78f83d2b9",
+    "7dae6a62-3b77-4b08-a87e-66f1135b08fe"
+  ],
+  "metadata": [
+    {
+      "opportunity_id": "b7c63549-1f3a-4821-ab7b-d87ed9f0da67",
+      "source_url": "https://www.instagram.com/p/DfqB9oRNL2r/",
+      "title": "Insight Big/Little Program",
+      "category": "program",
+      "department": null,
+      "discipline": null,
+      "project_term": null,
+      "evidence": {},
+      "source_snapshot_sha256": "02711d4cd8b708a34849bbaad1a0a62054fbea48cd62c23a9b8e93e144eccc94",
+      "review_status": "pending_human_review",
+      "validation_error": null
+    },
+    {
+      "opportunity_id": "02ea51bb-029c-460b-8453-fa1501193f78",
+      "source_url": "https://psychology.ucsd.edu/undergraduate-program/research/index.html",
+      "title": "Winter 2027 Psychology PSYC 099/199 Common Application",
+      "category": "program",
+      "department": "Department of Psychology",
+      "discipline": "psychology",
+      "project_term": "Winter 2027",
+      "evidence": {
+        "department": "Department of Psychology",
+        "discipline": "psychology research",
+        "project_term": "The Winter 2027 PSYC-099/199 Common Application is now live."
+      },
+      "source_snapshot_sha256": "0f506a8c0df66f29466f98355080124e3f0313a679e6302efa59a94a52faac42",
+      "review_status": "pending_human_review",
+      "validation_error": null
+    },
+    {
+      "opportunity_id": "e2d1cbf0-505c-4756-9076-373e713d02be",
+      "source_url": "https://www.instagram.com/p/DfVgeqGhaTC/",
+      "title": "Challenger Research Journal Volume 8 Submission",
+      "category": "program",
+      "department": null,
+      "discipline": null,
+      "project_term": null,
+      "evidence": {},
+      "source_snapshot_sha256": "26fd6c6032249da08ffef9d33e0f7311813df4c4953d7549268bf48cd20a200a",
+      "review_status": "pending_human_review",
+      "validation_error": null
+    },
+    {
+      "opportunity_id": "76bd59cd-98bd-4f5b-9314-5a992499c848",
+      "source_url": "https://www.instagram.com/p/DfijWSKRYCh/",
+      "title": "DataHacks 2027",
+      "category": "competition",
+      "department": null,
+      "discipline": null,
+      "project_term": null,
+      "evidence": {},
+      "source_snapshot_sha256": "cb1fd2549ff4605cc831314cdb629bd27896fe4007e0e494f760cc71b303674a",
+      "review_status": "pending_human_review",
+      "validation_error": null
+    },
+    {
+      "opportunity_id": "7b90bc53-3b76-4767-ac84-aa2df770dd5d",
+      "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/fmp/index.html",
+      "title": "Faculty Mentor Program (FMP)",
+      "category": "program",
+      "department": null,
+      "discipline": null,
+      "project_term": "Winter and Spring",
+      "evidence": {
+        "project_term": "The Faculty Mentor Program (FMP) is a two-quarter program that takes place during Winter and Spring quarters."
+      },
+      "source_snapshot_sha256": "596235093664c51c9516e8d05ff4c208b463501c21bfac22ad4efaa14b4f4c99",
+      "review_status": "pending_human_review",
+      "validation_error": "department: Metadata lacks exact source evidence: department"
+    },
+    {
+      "opportunity_id": "f20333df-c24e-457a-9062-40fa33cd1762",
+      "source_url": "https://www.instagram.com/p/Dfp1MhThknG/",
+      "title": "CALPIRG FREE COOKING CLASS",
+      "category": "event",
+      "department": null,
+      "discipline": null,
+      "project_term": null,
+      "evidence": {},
+      "source_snapshot_sha256": "f2c2adebeff268d7ad1e248ba9400834b303097e747feb011e73bf4558b863a6",
+      "review_status": "pending_human_review",
+      "validation_error": null
+    },
+    {
+      "opportunity_id": "189c6090-e4e1-4309-b2ae-eda15654bb9a",
+      "source_url": "https://www.instagram.com/p/DfjJ3V-oXhg/",
+      "title": "Part-time Instructor",
+      "category": "internship",
+      "department": null,
+      "discipline": "coding, Roblox Studio, Python, and AI",
+      "project_term": "2026-2027",
+      "evidence": {
+        "discipline": "teaching coding, Roblox Studio, Python, and AI",
+        "project_term": "part-time instructors for the 2026-2027 academic year!"
+      },
+      "source_snapshot_sha256": "f0fbf9a497fdbc0ff72d42f1d2ac71bf6c35181db275b0f9956e1b148074063e",
+      "review_status": "pending_human_review",
+      "validation_error": null
+    },
+    {
+      "opportunity_id": "36ace033-4234-4d7b-8c37-7785816d2498",
+      "source_url": "https://www.instagram.com/p/Dff_kYJmPWx/",
+      "title": "MLIS & Library Careers Panel",
+      "category": "event",
+      "department": null,
+      "discipline": "library science",
+      "project_term": null,
+      "evidence": {
+        "discipline": "career paths in library science"
+      },
+      "source_snapshot_sha256": "e8535a5668e70b6802551019dd04afef150d5f8704dabdfc26c5a3bd450d8cc9",
+      "review_status": "pending_human_review",
+      "validation_error": null
+    },
+    {
+      "opportunity_id": "e3af8e41-74d3-44bb-a408-ec14e45a2051",
+      "source_url": "https://www.instagram.com/p/DffIs0PFPl7/",
+      "title": "Black Business Association Financial Literacy Workshop",
+      "category": "event",
+      "department": null,
+      "discipline": null,
+      "project_term": null,
+      "evidence": {},
+      "source_snapshot_sha256": "9007e054efbf37f5f573ad25be07ef96b8a9e3fd29834d1e170b72ce191c9ed3",
+      "review_status": "pending_human_review",
+      "validation_error": "discipline: Metadata lacks exact source evidence: discipline"
+    },
+    {
+      "opportunity_id": "d5612676-0884-48eb-a2f0-5df8fa719bb6",
+      "source_url": "https://www.instagram.com/p/DfQBLJiBSHC/",
+      "title": "First GBM: Meet the Pediatric Dentist",
+      "category": "event",
+      "department": null,
+      "discipline": "pediatric dentistry",
+      "project_term": null,
+      "evidence": {
+        "discipline": "pediatric dentistry"
+      },
+      "source_snapshot_sha256": "a7d3488d452dc13e2122e8ec59a716115a13e0f638a8b272d8aecf39dc403b1e",
+      "review_status": "pending_human_review",
+      "validation_error": null
+    },
+    {
+      "opportunity_id": "a89557d8-5fed-466b-a43c-f0a048a91c48",
+      "source_url": "https://www.instagram.com/p/Dff9s-nxmzk/",
+      "title": "BSSA Resume Workshop",
+      "category": "event",
+      "department": null,
+      "discipline": null,
+      "project_term": null,
+      "evidence": {},
+      "source_snapshot_sha256": "c550233c4bb8b5b015d3b067b5cf6513d80da7458f07aed3bcd85fc7b89b3386",
+      "review_status": "pending_human_review",
+      "validation_error": "department: Department is not an explicitly named academic unit; discipline: Metadata lacks exact source evidence: discipline"
+    },
+    {
+      "opportunity_id": "d157b730-0141-4644-a1cd-da850c2a2a42",
+      "source_url": "https://www.instagram.com/p/DfnUxOIkkvi/",
+      "title": "Study with ECES: Midterm Prep & Good Vibes",
+      "category": "event",
+      "department": null,
+      "discipline": null,
+      "project_term": null,
+      "evidence": {},
+      "source_snapshot_sha256": "049d0664c8f1dbae31ae64184bf64decd00b5976d3fe4ce1743e9f7c206aa442",
+      "review_status": "pending_human_review",
+      "validation_error": null
+    },
+    {
+      "opportunity_id": "6fd303b4-e422-4a87-866c-55bae7ef223d",
+      "source_url": "https://www.instagram.com/p/Dfil7ZFxY1A/",
+      "title": "Dental Hygiene Kit-Making Workshop",
+      "category": "event",
+      "department": null,
+      "discipline": null,
+      "project_term": null,
+      "evidence": {},
+      "source_snapshot_sha256": "99828c0069189264716cd70cbec97df792851aced605cbe8323f8bb328ecdaad",
+      "review_status": "pending_human_review",
+      "validation_error": "discipline: Metadata lacks exact source evidence: discipline"
+    },
+    {
+      "opportunity_id": "0d8f1bfd-d549-4522-80b4-0ab48511df87",
+      "source_url": "https://www.instagram.com/p/DfqvoCdvCkk/",
+      "title": "BLS Certification Workshop",
+      "category": "event",
+      "department": null,
+      "discipline": "BLS",
+      "project_term": null,
+      "evidence": {
+        "discipline": "BLS Certification"
+      },
+      "source_snapshot_sha256": "5b5a58f6037964c238afe32778195b5038946e3ada15aabca70e4fa1c6257412",
+      "review_status": "pending_human_review",
+      "validation_error": "department: Department is not an explicitly named academic unit"
+    },
+    {
+      "opportunity_id": "15e3ced9-0c34-48eb-b674-6c66e17b57ca",
+      "source_url": "https://www.instagram.com/p/Dfntx5YS8Al/",
+      "title": "HITS COLLAB",
+      "category": "competition",
+      "department": null,
+      "discipline": null,
+      "project_term": null,
+      "evidence": {},
+      "source_snapshot_sha256": "f03ba2fd8c6acda13ab4574718d71be7d16b9712ae90956ca3806f7d9d3e18ae",
+      "review_status": "pending_human_review",
+      "validation_error": "discipline: Generic activity label is not a stated academic discipline"
+    },
+    {
+      "opportunity_id": "fba5bcde-87ec-4cdc-ac22-4b998e8f0599",
+      "source_url": "https://www.instagram.com/p/DfqGXBvvcIE/",
+      "title": "Triton NeuroTech Journal Club Week 8 Showcase",
+      "category": "event",
+      "department": null,
+      "discipline": "neurotech",
+      "project_term": null,
+      "evidence": {
+        "discipline": "neurotech topic"
+      },
+      "source_snapshot_sha256": "f96133e431c39d92ed2bccafa82c4fcb1c364c9670978978c337f07dd6804611",
+      "review_status": "pending_human_review",
+      "validation_error": "department: Metadata lacks exact source evidence: department"
+    },
+    {
+      "opportunity_id": "0a844c0b-cf75-4a3f-9192-8de95fc0a38f",
+      "source_url": "https://www.instagram.com/p/DfseDrmToT6/",
+      "title": "SCSE Mentor-Mentee Spaghetti and Marshmallow Structures Competition",
+      "category": "competition",
+      "department": null,
+      "discipline": "structural engineering",
+      "project_term": null,
+      "evidence": {
+        "discipline": "structural engineering skills"
+      },
+      "source_snapshot_sha256": "489d600d6be31024cf170aaf37956bea73a5b0eb3cb556b5f0ed5ed33f9e8c4a",
+      "review_status": "pending_human_review",
+      "validation_error": null
+    },
+    {
+      "opportunity_id": "cfa1994e-93d9-47ae-85a2-540b29d8f1cc",
+      "source_url": "https://www.instagram.com/p/Dfsi_e9m88K/",
+      "title": "Personal Statement Writing Workshop",
+      "category": "event",
+      "department": null,
+      "discipline": "Personal Statement",
+      "project_term": null,
+      "evidence": {
+        "discipline": "Personal Statement Writing Workshop"
+      },
+      "source_snapshot_sha256": "be57ae365625f41445299f9111ef557003e47a3fbe285f7c04f4b252cb6b505c",
+      "review_status": "pending_human_review",
+      "validation_error": null
+    },
+    {
+      "opportunity_id": "e4b14798-f132-45f1-ba46-746f1071422b",
+      "source_url": "https://www.instagram.com/p/DfsaAuZu9q8/",
+      "title": "VR Workshop (Part 2)",
+      "category": "event",
+      "department": null,
+      "discipline": "VR",
+      "project_term": null,
+      "evidence": {
+        "discipline": "UNITY VR WORKSHOP"
+      },
+      "source_snapshot_sha256": "b00ec9cdf971a00b7943ff4314affcfe76e710627256cafad8de37a8768633d6",
+      "review_status": "pending_human_review",
+      "validation_error": "department: Department is not an explicitly named academic unit"
+    },
+    {
+      "opportunity_id": "74c095d0-449a-4931-bdeb-b8e9b3f2ec0c",
+      "source_url": "https://www.instagram.com/p/DftBZkgEbQ2/",
+      "title": "ICE OUT Vigil and Speech Opportunity",
+      "category": "event",
+      "department": null,
+      "discipline": null,
+      "project_term": null,
+      "evidence": {},
+      "source_snapshot_sha256": "e6e8ac93d7504c1f2e5fbc0cbf8a480d7b7702fe0024cd0eb672e6dae2384091",
+      "review_status": "pending_human_review",
+      "validation_error": null
+    },
+    {
+      "opportunity_id": "599a6970-5d9b-4283-9360-f698cee0e656",
+      "source_url": "https://www.instagram.com/p/DekS65WyFVj/",
+      "title": "Accounting Competition Interest Form",
+      "category": "competition",
+      "department": null,
+      "discipline": "accounting",
+      "project_term": null,
+      "evidence": {
+        "discipline": "Interested in accounting competitions?"
+      },
+      "source_snapshot_sha256": "636ebbbf9b7e6ac0f43949f6fa59fc39c3dde45b83a11e0c28b791f07779a054",
+      "review_status": "pending_human_review",
+      "validation_error": null
+    },
+    {
+      "opportunity_id": "42d42d5f-a755-4243-946e-76a31cb3061b",
+      "source_url": "https://www.instagram.com/p/DfnTtaqgXxq/",
+      "title": "Triton Game Development Challenge",
+      "category": "competition",
+      "department": null,
+      "discipline": null,
+      "project_term": null,
+      "evidence": {},
+      "source_snapshot_sha256": "bc4643a74e3f4db0dd84f7253bcb9e0f4cd372612494b20706cabd6d691f7cc3",
+      "review_status": "pending_human_review",
+      "validation_error": "discipline: Metadata lacks exact source evidence: discipline"
+    },
+    {
+      "opportunity_id": "280e20b5-ddbe-4efa-8e83-f0663d59e496",
+      "source_url": "https://www.instagram.com/p/DfgyV66m6yT/",
+      "title": "Ascension Fall Training Open Workshop with Danyel Moulton",
+      "category": "event",
+      "department": null,
+      "discipline": null,
+      "project_term": null,
+      "evidence": {},
+      "source_snapshot_sha256": "3634dbb5e0a6d799fc5b405a51e4ba076b805af17b00a5ffbe5649fee288edc6",
+      "review_status": "pending_human_review",
+      "validation_error": "project_term: Participation term is relative, historical meeting text, or only duration"
+    },
+    {
+      "opportunity_id": "4d9b57cc-3fa0-4cfd-bc23-da16026ed078",
+      "source_url": "https://ieeeatucsd.org/projects/quarterly",
+      "title": "Quarterly Projects",
+      "category": "program",
+      "department": null,
+      "discipline": "hardware development",
+      "project_term": null,
+      "evidence": {
+        "discipline": "Getting started on hardware development"
+      },
+      "source_snapshot_sha256": "aa82b38ac09f0c5185559577e2a90f480fd3a3b0f719b9edba305d05af218496",
+      "review_status": "pending_human_review",
+      "validation_error": null
+    },
+    {
+      "opportunity_id": "0ed4d64b-e8aa-4fe1-b1e1-defe4b3b0451",
+      "source_url": "https://thebasement.ucsd.edu/programs/affiliates.html",
+      "title": "Basement Affiliate Student Organization Program",
+      "category": "program",
+      "department": null,
+      "discipline": "entrepreneurship, innovation, and design",
+      "project_term": null,
+      "evidence": {
+        "discipline": "entrepreneurship, innovation, and design knowledge."
+      },
+      "source_snapshot_sha256": "4bd76accf29b6b64a7cea8c417c412976d82ed92644aef17be8b865e5a415dd5",
+      "review_status": "pending_human_review",
+      "validation_error": null
+    },
+    {
+      "opportunity_id": "bb5f6a56-13ae-465f-bee3-bd4db9f788a4",
+      "source_url": "https://calendar.ucsd.edu/event/copy-of-aip-summer-enrollment-workshop",
+      "title": "AIP Enrollment Workshop",
+      "category": "event",
+      "department": null,
+      "discipline": null,
+      "project_term": "Winter Quarter",
+      "evidence": {
+        "project_term": "Winter Quarter internship"
+      },
+      "source_snapshot_sha256": "8fdaa2603ba10754d95b1db9f198dc8f586589471ea2eded37d78abf35cc366a",
+      "review_status": "pending_human_review",
+      "validation_error": "department: Department is not an explicitly named academic unit; discipline: Generic activity label is not a stated academic discipline"
+    },
+    {
+      "opportunity_id": "75e81591-570b-4f57-b330-70ee928eed64",
+      "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/mcnair/index.html",
+      "title": "McNair Scholars 2026-2027 Research Program",
+      "category": "program",
+      "department": null,
+      "discipline": null,
+      "project_term": "Winter and Spring quarters",
+      "evidence": {
+        "project_term": "includes research in Winter and Spring quarters"
+      },
+      "source_snapshot_sha256": "c6236aeba933e9588aa4e95d510f3e54077990b9c05266ce09ac8faa87bbdeb4",
+      "review_status": "pending_human_review",
+      "validation_error": "discipline: Metadata lacks exact source evidence: discipline"
+    },
+    {
+      "opportunity_id": "586dcc27-ed62-4ff6-b6f7-f5e78f83d2b9",
+      "source_url": "https://stripplelab.ucsd.edu/join-us/",
+      "title": "Scripps Tectonorockphysics Lab - Undergraduate Research Routes",
+      "category": "research",
+      "department": "Scripps Institution of Oceanography",
+      "discipline": "Tectonorockphysics",
+      "project_term": null,
+      "evidence": {
+        "department": "SIO Dept\nScripps Institution of Oceanography",
+        "discipline": "Scripps Tectonorockphysics Lab"
+      },
+      "source_snapshot_sha256": "7d849eb13076333e9edb9d4b8160802cb5c1a0460721686c9025df3c7299c02f",
+      "review_status": "pending_human_review",
+      "validation_error": null
+    },
+    {
+      "opportunity_id": "a52b6546-e49b-4848-a300-40f2ba6f4e79",
+      "source_url": "https://labs.biology.ucsd.edu/wasserman/undergrads/undergrad_research.html",
+      "title": "Wasserman Lab - Undergraduate Research Opportunities",
+      "category": "research",
+      "department": null,
+      "discipline": "genetics, bioinformatics, development, signal transduction, gene expression, and molecular evolution",
+      "project_term": null,
+      "evidence": {
+        "discipline": "genetics, bioinformatics, development, signal transduction,\ngene expression, and molecular evolution."
+      },
+      "source_snapshot_sha256": "ee20e639337805270f03da68a91e6eb4b8060e6624135feef2b08ef51d34dc07",
+      "review_status": "pending_human_review",
+      "validation_error": null
+    },
+    {
+      "opportunity_id": "f5b3c98c-a311-4c70-878b-94bf4bfb506c",
+      "source_url": "https://cclab.ucsd.edu/for-undergrads/",
+      "title": "Comparative Cognition Lab - Undergraduate Research Assistant",
+      "category": "research",
+      "department": null,
+      "discipline": "Comparative Cognition",
+      "project_term": null,
+      "evidence": {
+        "discipline": "Comparative Cognition Lab"
+      },
+      "source_snapshot_sha256": "63cbad391aa86c481916ccfccb6a98f834a3c6cad9ded5e75b446c34a6ac902a",
+      "review_status": "pending_human_review",
+      "validation_error": "project_term: Participation term is relative, historical meeting text, or only duration"
+    },
+    {
+      "opportunity_id": "6cfc5446-775a-48cb-b719-c8271f989ca5",
+      "source_url": "https://cogdevlab.ucsd.edu/contact-us/join-us",
+      "title": "Cognitive Development Lab - COGS 160 Research Practicum",
+      "category": "course",
+      "department": "Department of Cognitive Science",
+      "discipline": "Cognitive Science",
+      "project_term": null,
+      "evidence": {
+        "department": "Department of Cognitive Science",
+        "discipline": "Cognitive Science"
+      },
+      "source_snapshot_sha256": "a2965c5615c9896ff91778495c96cd01f37c078e35a0df1dac617961c3a90ea3",
+      "review_status": "pending_human_review",
+      "validation_error": null
+    },
+    {
+      "opportunity_id": "8d1a244b-75f1-475e-adc2-a5034da4c41f",
+      "source_url": "https://schen.ucsd.edu/lab/positions.html",
+      "title": "Chen Lab - Undergraduate Student Researchers",
+      "category": "research",
+      "department": null,
+      "discipline": null,
+      "project_term": null,
+      "evidence": {},
+      "source_snapshot_sha256": "b42a948a7fdc8c8c668d1d9c76fb98102a6e56c3ba298276ed922e56670fe3ba",
+      "review_status": "pending_human_review",
+      "validation_error": "discipline: Metadata lacks exact source evidence: discipline"
+    },
+    {
+      "opportunity_id": "7dae6a62-3b77-4b08-a87e-66f1135b08fe",
+      "source_url": "https://bieringlab.biosci.ucsd.edu/people/",
+      "title": "Biering Lab - Undergraduate Research Inquiries",
+      "category": "research",
+      "department": "Department of Molecular Biology",
+      "discipline": "virology",
+      "project_term": null,
+      "evidence": {
+        "department": "Department of Molecular Biology",
+        "discipline": "virology"
+      },
+      "source_snapshot_sha256": "c7844592c1c885950d724e976d073c954947cfc6b293f3119a6e1728de58ebe8",
+      "review_status": "pending_human_review",
+      "validation_error": null
+    },
+    {
+      "opportunity_id": "52b14e9e-6600-4ffe-b842-174dcdc738b8",
+      "source_url": "https://griffithlab.ucsd.edu/team",
+      "title": "Griffith Lab - Undergraduate Research Positions",
+      "category": "research",
+      "department": "Dept. of Chemistry & Biochemistry",
+      "discipline": "Chemistry",
+      "project_term": null,
+      "evidence": {
+        "department": "Dept. of Chemistry & Biochemistry",
+        "discipline": "Chemistry"
+      },
+      "source_snapshot_sha256": "76a76fd434eb9a2e41c06e823b2ad239bc197768f0be65416643660ca43b81e0",
+      "review_status": "pending_human_review",
+      "validation_error": null
+    },
+    {
+      "opportunity_id": "1ae64e02-9522-4971-934c-dddf2adc59dc",
+      "source_url": "https://madlab.ucsd.edu/join",
+      "title": "Mind and Development Lab - Undergraduate Researcher",
+      "category": "research",
+      "department": "Department of Psychology",
+      "discipline": "social cognitive development, children & digital technology, or music cognition",
+      "project_term": null,
+      "evidence": {
+        "department": "Department of Psychology",
+        "discipline": "social cognitive development, children & digital technology, or music cognition"
+      },
+      "source_snapshot_sha256": "9d737f2596fde5d7c441878dfd8ce5ea9475f540cf4ccf02046420339c57d030",
+      "review_status": "pending_human_review",
+      "validation_error": null
+    },
+    {
+      "opportunity_id": "3d1e6859-f9fd-450b-8bb3-6a47b34bf874",
+      "source_url": "https://poulikakos.ucsd.edu/join-us/",
+      "title": "Poulikakos Lab - Undergraduate Research Projects",
+      "category": "research",
+      "department": "Department of Mechanical and Aerospace Engineering",
+      "discipline": "Nanophotonics",
+      "project_term": null,
+      "evidence": {
+        "department": "Department of Mechanical and Aerospace Engineering",
+        "discipline": "Nanophotonics"
+      },
+      "source_snapshot_sha256": "d11996c0305cf9fd1cfe78e6d04e4aa8a69de56773188ec8f1f635c2964cf4c4",
+      "review_status": "pending_human_review",
+      "validation_error": null
+    },
+    {
+      "opportunity_id": "5623a489-7e43-40a7-a9fa-4f8d639accce",
+      "source_url": "https://chulab.ucsd.edu/join/",
+      "title": "Chu Laboratory - Undergraduate Research Opportunities",
+      "category": "research",
+      "department": "UCSD School of Medicine",
+      "discipline": "immunology or microbiology",
+      "project_term": null,
+      "evidence": {
+        "department": "UCSD School of Medicine",
+        "discipline": "immunology or microbiology"
+      },
+      "source_snapshot_sha256": "166a1535c905de69ad8b6774019c05be9fdc194f59cba1b5969021c014cfbebb",
+      "review_status": "pending_human_review",
+      "validation_error": null
+    },
+    {
+      "opportunity_id": "db6f0a87-c45b-406f-86fe-186c8312b059",
+      "source_url": "https://winzeler.ucsd.edu/jobs/",
+      "title": "Winzeler Lab - Undergraduate Research Assistant Inquiries",
+      "category": "research",
+      "department": null,
+      "discipline": "molecular biology, bioinformatics, or chemical sciences",
+      "project_term": null,
+      "evidence": {
+        "discipline": "molecular biology, bioinformatics, or chemical sciences"
+      },
+      "source_snapshot_sha256": "5ad76ed16335b30f4ffef64fe76a84b77e02b282a41206d5dfdf9c1d41066a94",
+      "review_status": "pending_human_review",
+      "validation_error": null
+    },
+    {
+      "opportunity_id": "7bb1fefc-656c-4db6-9f7b-8129eb9ce5d4",
+      "source_url": "https://pediatrics.ucsd.edu/research/faculty-labs/cherqui-lab/career.html",
+      "title": "Cherqui Lab - Spring 2027 Undergraduate/Postbacc Research Volunteer Interest",
+      "category": "research",
+      "department": "Department of Pediatrics",
+      "discipline": null,
+      "project_term": "Spring 2027",
+      "evidence": {
+        "department": "Department of Pediatrics",
+        "project_term": "Spring 2027"
+      },
+      "source_snapshot_sha256": "7e45e8b9b9ec0fbf8c9b3cc6e3a1a329ae9acb82ee8c59fdc9f3861d12679a05",
+      "review_status": "pending_human_review",
+      "validation_error": null
+    },
+    {
+      "opportunity_id": "cae0895f-27ab-4e97-a08f-6a3e69cf0a57",
+      "source_url": "https://protolab.ucsd.edu/get-involved/",
+      "title": "ProtoLab - Undergraduate Research Collaborator Applications",
+      "category": "research",
+      "department": null,
+      "discipline": "design, computer science, HCI, communication, visual arts, sociology, history, political science, environmental policy, and gender studies",
+      "project_term": null,
+      "evidence": {
+        "discipline": "design, computer science, HCI, communication, visual arts, sociology, history, political science, environmental policy, and gender studies"
+      },
+      "source_snapshot_sha256": "2ba34740e0f7260edbc268ce1c07fb261d5e609de4091ba4a5047ebf5cc148e8",
+      "review_status": "pending_human_review",
+      "validation_error": null
+    },
+    {
+      "opportunity_id": "512822c4-3c1d-4472-b400-1a3b84db3322",
+      "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/start-neuro/index.html",
+      "title": "STARTneuro Transfer Neuroscience Research Program",
+      "category": "program",
+      "department": "School of Biological Sciences",
+      "discipline": "neuroscience",
+      "project_term": "summer",
+      "evidence": {
+        "department": "STARTneuro is a collaboration between the School of Biological Sciences and the Undergraduate Research Hub.",
+        "discipline": "STARTneuro is a competitive program that trains, mentors, and funds transfer students as they enter neuroscience research.",
+        "project_term": "A fully funded 8-week summer program"
+      },
+      "source_snapshot_sha256": "919717472290b7f1e346f9f0fbdea8c6321374a2fa4cc747b905678f3b1c94e2",
+      "review_status": "pending_human_review",
+      "validation_error": null
+    },
+    {
+      "opportunity_id": "e9b41422-3a7f-447f-9bf2-ee5df72c5a40",
+      "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/rsri/index.html",
+      "title": "Regents Scholars Research Initiative (RSRI)",
+      "category": "program",
+      "department": null,
+      "discipline": null,
+      "project_term": null,
+      "evidence": {},
+      "source_snapshot_sha256": "0c59ad8cd0a1b546b9d94e885643220ba2e107dd9efdc9d899560f3ef5f215d0",
+      "review_status": "pending_human_review",
+      "validation_error": "project_term: Participation term is relative, historical meeting text, or only duration"
+    },
+    {
+      "opportunity_id": "0514e67e-0d2e-4e0c-afd7-91b0d6e2fa08",
+      "source_url": "https://biology.ucsd.edu/education/undergrad/research/research-acad-cred/summer.html",
+      "title": "Biology Summer 2027 Research for Academic Credit",
+      "category": "research",
+      "department": "School of Biological Sciences",
+      "discipline": null,
+      "project_term": "Summer 2027",
+      "evidence": {
+        "department": "School of Biological Sciences\nUC San Diego School of Biological Sciences",
+        "project_term": "The recommended application submission deadline for Summer 2027 participation is Friday, June 4, 2027."
+      },
+      "source_snapshot_sha256": "44701dd9a17136408a82168f4ee7b1f623b02d29bb3f95b28b25d4a43a3c1f82",
+      "review_status": "pending_human_review",
+      "validation_error": "discipline: Metadata lacks exact source evidence: discipline"
+    },
+    {
+      "opportunity_id": "6049a3cf-8be8-48e9-83a3-a49818cd6e9c",
+      "source_url": "https://ultrafast.ucsd.edu/jobs/",
+      "title": "Xiong Group - Undergraduate Research Opportunities",
+      "category": "research",
+      "department": null,
+      "discipline": null,
+      "project_term": null,
+      "evidence": {},
+      "source_snapshot_sha256": "4982a128f84a87370f83ecd64b700215718e6b966206ef0220e019a3ec941994",
+      "review_status": "pending_human_review",
+      "validation_error": null
+    },
+    {
+      "opportunity_id": "422310d9-03ed-48c6-a1a3-48debe8c9a50",
+      "source_url": "https://hxi.ucsd.edu/faq/join-us/",
+      "title": "HXI Lab - Undergraduate Research Participation",
+      "category": "research",
+      "department": null,
+      "discipline": "Human-centered eXtended Intelligence",
+      "project_term": null,
+      "evidence": {
+        "discipline": "HXI - Human-centered eXtended Intelligence"
+      },
+      "source_snapshot_sha256": "92351a195ae186c42e5218595adecf8c90ff20f467fab63a54f1f993c236bb6c",
+      "review_status": "pending_human_review",
+      "validation_error": "department: Department is not an explicitly named academic unit"
+    },
+    {
+      "opportunity_id": "faf9d67d-0d68-4844-b61b-39baeeed8a71",
+      "source_url": "https://eatingdisorders.ucsd.edu/node/121",
+      "title": "Eating Disorders Center - Volunteer Research Assistant",
+      "category": "research",
+      "department": null,
+      "discipline": "eating disorder research",
+      "project_term": null,
+      "evidence": {
+        "discipline": "Interested in learning more about and contributing to eating disorder research?"
+      },
+      "source_snapshot_sha256": "bdf6a67a956832d6983a7658db9d01288f546b09ee9478450e9dba3c03f7dba1",
+      "review_status": "pending_human_review",
+      "validation_error": null
+    },
+    {
+      "opportunity_id": "82246069-b3e5-4546-bed2-6d46f2478d8a",
+      "source_url": "https://rickardlab.ucsd.edu/join.html",
+      "title": "Rickard Lab - Undergraduate Research Assistant",
+      "category": "research",
+      "department": "Psychology Department",
+      "discipline": "Experimental Psychology",
+      "project_term": null,
+      "evidence": {
+        "department": "Graduate students in this lab are members of the Psychology Department's PhD Program in Experimental Psychology.",
+        "discipline": "Graduate students in this lab are members of the Psychology Department's PhD Program in Experimental Psychology."
+      },
+      "source_snapshot_sha256": "74bb1792acd01bf16fa3cba8e31ff9b18a56448a3b7ff923160dbe8b52ad88af",
+      "review_status": "pending_human_review",
+      "validation_error": null
+    },
+    {
+      "opportunity_id": "824c6a54-15a8-4778-81b3-1c7126d57309",
+      "source_url": "https://winkielmanlab.ucsd.edu/joinus/",
+      "title": "Winkielman Lab - Undergraduate/Volunteer Research Assistant",
+      "category": "research",
+      "department": "Department of Psychology",
+      "discipline": "social/cognitive psychology",
+      "project_term": null,
+      "evidence": {
+        "department": "Department of Psychology",
+        "discipline": "This position is ideal for those interested in getting some hands-on experience in topics related to social/cognitive psychology."
+      },
+      "source_snapshot_sha256": "e3537d3b2c9745a9ec7001088913cc2912114495306cc81c1042139cb4a82fa7",
+      "review_status": "pending_human_review",
+      "validation_error": null
+    },
+    {
+      "opportunity_id": "fa39cdf0-c11c-4b79-85e6-324c4890e985",
+      "source_url": "https://pelham-lab.ucsd.edu/join-the-team/undergraduates",
+      "title": "Pelham Lab - Undergraduate Research Assistant",
+      "category": "research",
+      "department": null,
+      "discipline": null,
+      "project_term": null,
+      "evidence": {},
+      "source_snapshot_sha256": "808e3061a5a29d6e10321e8d4721479a465ef6c0ee7ba82d25547158c0ac45c4",
+      "review_status": "pending_human_review",
+      "validation_error": null
+    },
+    {
+      "opportunity_id": "bb0985e5-a376-4cf2-b65a-48b930452920",
+      "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/empower/index.html",
+      "title": "EMPOWER Scholars",
+      "category": "program",
+      "department": "Jacobs School of Engineering",
+      "discipline": "engineering",
+      "project_term": "winter '27 and spring '27",
+      "evidence": {
+        "department": "The EMPOWER Scholars program is sponsored by the National Science Foundation, UC San Diego's Jacobs School of Engineering",
+        "discipline": "EMPOWER Scholars are transfer engineering students",
+        "project_term": "up to $3,333 per quarter, winter '27 and spring '27."
+      },
+      "source_snapshot_sha256": "0b01ad7070db041811641b6a1e381b18882ebf53c77bbb6244599215435a1e8e",
+      "review_status": "pending_human_review",
+      "validation_error": null
+    }
+  ],
+  "coverage": {
+    "department": 14,
+    "discipline": 29,
+    "project_term": 9
+  }
+}

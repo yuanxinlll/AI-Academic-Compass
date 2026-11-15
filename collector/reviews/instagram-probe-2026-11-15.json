@@ -1,0 +1,58 @@
+{
+  "checked_at": "2026-11-15T08:45:31.498611+00:00",
+  "profile_url": "https://www.instagram.com/ds3atucsd/",
+  "affiliation_evidence": "https://studentorg.ucsd.edu/Home/Details/21322",
+  "request_limit": 3,
+  "retrieved_posts": 3,
+  "author_or_coauthor_validated": 3,
+  "database_writes": 0,
+  "method": "Bright Data asynchronous Instagram Posts discover_by=url",
+  "synchronous_attempt": {
+    "http_status": 400,
+    "message": "Customer is not active"
+  },
+  "asynchronous_attempt": {
+    "status": "ready",
+    "returned_posts": 3
+  },
+  "note": "The synchronous error did not establish a globally inactive account: zone listing and a live Web Unlocker call succeeded, and asynchronous Instagram retrieval succeeded. No account settings were changed.",
+  "posts": [
+    {
+      "source_url": "https://www.instagram.com/p/DfijWSKRYCh/",
+      "publisher": "datahacks_2027",
+      "verified_source_account": "ds3atucsd",
+      "coauthors": [
+        "ds3atucsd"
+      ],
+      "posted_at": "2026-11-09T23:52:32.000Z",
+      "image_count": 1
+    },
+    {
+      "source_url": "https://www.instagram.com/p/Dfiaw1hGWEu/",
+      "publisher": "aic_at_ucsd",
+      "verified_source_account": "ds3atucsd",
+      "coauthors": [
+        "ds3atucsd"
+      ],
+      "posted_at": "2026-11-09T22:35:57.000Z",
+      "image_count": 7
+    },
+    {
+      "source_url": "https://www.instagram.com/p/DfnuvJZKVE6/",
+      "publisher": "ds3atucsd",
+      "verified_source_account": "ds3atucsd",
+      "coauthors": [
+        "aic_at_ucsd"
+      ],
+      "posted_at": "2026-11-12T00:07:26.000Z",
+      "image_count": 1
+    }
+  ],
+  "not_verified": [
+    "event eligibility/deadlines",
+    "poster image contents",
+    "automatic opportunity extraction/ingestion",
+    "other organization accounts",
+    "deployed scheduled Instagram monitoring"
+  ]
+}

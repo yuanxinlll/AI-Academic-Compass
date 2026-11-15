@@ -84,11 +84,30 @@ evidence validation and its own verification status. Unrelated profile/chatter
 pages yield no opportunity. B ranks the resulting records; source affiliation
 does not decide their category or student eligibility.
 
-Instagram links are recorded with institution evidence, but a generic login page
-is not verified public-post access. No Instagram feed or blanket Instagram-domain
-permission is enabled. JavaScript-only, unavailable and suspicious destinations
+Instagram links are recorded with institution evidence; a generic login page
+is not verified public-post access. The dedicated async scraper has now retrieved
+three DS3 posts with author/coauthor validation. No blanket Instagram-domain
+permission or deployed Instagram monitoring is enabled. JavaScript-only, unavailable and suspicious destinations
 remain distinguishable from readable sources. Re-verification disables unavailable
 organization scopes without stopping unrelated collection sources.
+
+## Dedicated Instagram post probe
+
+```powershell
+python -m collector.instagram --profile ds3atucsd --limit 3
+```
+
+Uses the existing BRIGHTDATA_API_KEY and Bright Data's asynchronous Instagram
+Posts scraper, not HTML Web Unlocker. Only current UCSD-attested accounts in the
+source catalog are accepted; the limit is 1-3 posts. The job ID is saved before
+polling. Use --snapshot-id with that ID to resume without creating another job.
+No automatic POST retry creates duplicate paid jobs. All results must identify
+the attested account as author or explicit coauthor; tags are insufficient.
+
+The successful DS3 test retrieved three captions, dates and permalinks. Output is
+ignored under output/instagram-probe/<handle>/. This command does not send posts
+to Gemini or Neon. Poster-image extraction, opportunity validation and scheduled
+feed integration remain pending. See reviews/instagram-probe-2026-11-15.json.
 
 ## Collect and discover
 
@@ -265,3 +284,60 @@ Provider documentation:
 
 See [B/D data handoff](reviews/B_HANDOFF.md) for 24 additional UCSD records,
 source-review decisions, representative eligibility cases, and pending admin approval.
+
+## Instagram captions and posters to opportunities
+
+After the bounded probe, reuse its saved raw posts; this command does not start
+another Bright Data job:
+
+```powershell
+python -B -m collector.instagram_collection
+python -B -m collector.instagram_collection --ingest
+```
+
+Requires GEMINI_API_KEY and GEMINI_MODEL; --ingest also requires ADMIN_TOKEN.
+No DATABASE_URL or Instagram login is needed. Use --input for another saved raw
+snapshot, --profile for its attested organization, or --snapshot-id to download
+an existing scraper job. The default input is output/instagram-probe/posts-response.json.
+
+Author/explicit-coauthor checks run before analysis. Gemini transcribes up to
+three poster images, then extracts from captions and transcriptions together.
+Incomplete carousel review is withheld. Recaps are skipped. Existing quotation,
+deadline and eligibility validation applies. Under the user-authorized
+[missing-year policy](DATE_POLICY.md), yearless month/day values resolve from
+the original posting date and retain an explicit inference warning.
+An exact public Luma RSVP link may supply explicit JSON-LD event dates. Undated
+events are held for date review; confirmed past events are marked expired.
+Source affiliation never approves an opportunity as verified.
+
+Validated records use the existing admin API and backend URL upserts. Cached
+extraction avoids repeated model calls on unchanged evidence; repeated ingestion
+can update timestamps/logs but preserves opportunity identity. Generic Instagram
+HTML fetching remains blocked. State, source text, posters and OCR stay in ignored
+output/instagram-analysis/. Counts and safe failure codes are local telemetry;
+failed/empty pages produce no dummy opportunity or empty API submission.
+
+This is a bounded ingestion command, not a deployed feed scheduler. D still owns
+the daily 08:00 America/Los_Angeles deployment and token configuration. See
+[validation results](VALIDATION.md) and [Instagram review](reviews/instagram-opportunities-2026-11-15.json).
+
+## Directory-wide Instagram expansion
+
+See [the coverage and human-review handoff](reviews/INSTAGRAM_EXPANSION.md).
+`python -m collector.instagram_campaign` provides resumable plan, download,
+classify, collect and export stages. It separates all-post preliminary screening
+from evidence-validated website records and exports an actual human-review CSV.
+Unambiguous quantitative scalars become JSON numbers; raw_text retains units,
+minimum/preferred qualifiers and ranges. Gemini calls are paced at 12 RPM in one
+process and honor server retry delays. Do not run multiple model-calling
+campaigns concurrently against the configured free-tier quota.
+
+## Latest demo acceptance: numeric fields and matching metadata
+
+See [demo data acceptance](reviews/DEMO_DATA_REQUIREMENTS.md). GPA and weekly-hour
+values are numeric or null through both normalization and cached-record ingestion.
+Ranges/ambiguous quantities remain in raw_text instead of becoming misleading
+numeric thresholds. `python -m collector.matching_metadata` creates evidence-only
+department/discipline/project-term metadata and prioritizes ten actual human
+reviews. New metadata is a local sidecar pending B/D shared-schema confirmation;
+it is not silently added to the public API or converted into eligibility.major.

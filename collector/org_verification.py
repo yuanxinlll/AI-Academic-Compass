@@ -233,6 +233,16 @@ def main():
     catalog['unresolved_social_references']=[dict(organization=row['organization'],
         directory_url=row['directory_url'],reference=row['social_media'],status='needs_identity_and_access_check')
         for row in organizations if row.get('social_media') and row['directory_url'] not in represented]
+    catalog_path=ROOT/'student_org_sources.json'
+    previous=json.loads(catalog_path.read_text(encoding='utf-8')) if catalog_path.exists() else {'sources':[]}
+    prior_sources={row['url']:row for row in previous['sources']}
+    for source in checked:
+        prior=prior_sources.get(source['url'],{})
+        if (source['kind']=='instagram' and source.get('registration_status')=='Current'
+                and prior.get('directory_url')==source['directory_url'] and prior.get('scraper_enabled')):
+            for field in ('scraper_enabled','scraper_access_status','scraper_last_verified_at','verified_post_urls'):
+                if field in prior:source[field]=prior[field]
+            source['verification_status']='verified_ucsd_affiliated_source'
     atomic_json(ROOT/'student_org_sources.json',catalog)
     sync_registry(catalog)
     print(json.dumps({'candidates_checked':len(checked),'verified_websites':sum(s['fetch_enabled'] for s in checked),

@@ -1,0 +1,134 @@
+{
+  "checked_at": "2026-11-15T09:09:45.472138+00:00",
+  "database_url_required": false,
+  "public_api_readback_matches": true,
+  "stable_ids": true,
+  "stable_first_collected_at": true,
+  "runs": [
+    {
+      "posts_checked": 3,
+      "records_found": 2,
+      "inserted": 2,
+      "updated": 0,
+      "duplicates": 0,
+      "rejected": 0,
+      "skipped_recaps": 1,
+      "errors": []
+    },
+    {
+      "posts_checked": 3,
+      "records_found": 2,
+      "inserted": 0,
+      "updated": 2,
+      "duplicates": 2,
+      "rejected": 0,
+      "skipped_recaps": 1,
+      "errors": []
+    }
+  ],
+  "records": [
+    {
+      "opportunity_id": "76bd59cd-98bd-4f5b-9314-5a992499c848",
+      "title": "DataHacks 2027",
+      "university": "UCSD",
+      "organization": "DataHacks",
+      "category": "competition",
+      "description": "The largest hackathon in San Diego, featuring workshops, mentors, sponsor networking, and project building over one weekend.",
+      "required_skills": [],
+      "eligibility": [],
+      "deadline": null,
+      "deadline_text": "11/26",
+      "application_method": "link in bio",
+      "source_url": "https://www.instagram.com/p/DfijWSKRYCh/",
+      "source_id": "27ac3856-1a06-43ef-aacd-1f388d77aad9",
+      "first_collected_at": "2026-11-15T09:09:43.703Z",
+      "last_verified_at": "2026-11-15T09:09:45.118Z",
+      "status": "needs_verification",
+      "access": {},
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "83922f18-78d8-40ae-805a-fcfd17ba6047",
+      "title": "DS3 x AIC - RAG and Vector Databases Workshop",
+      "university": "UCSD",
+      "organization": "Data Science Student Society (DS3) and The AI Collective (AIC)",
+      "category": "event",
+      "description": "A beginner-friendly, hands-on workshop exploring Retrieval-Augmented Generation (RAG) and vector databases, covering core concepts and real-world applications.",
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "other",
+          "value": null,
+          "raw_text": "No prior experience needed!",
+          "is_hard_requirement": false
+        }
+      ],
+      "deadline": null,
+      "deadline_text": null,
+      "application_method": "RSVP via https://luma.com/3uzfbj3y",
+      "source_url": "https://www.instagram.com/p/DfnuvJZKVE6/",
+      "source_id": "421ccbda-b764-4dff-8bfc-6d0ccad59c29",
+      "first_collected_at": "2026-11-15T09:09:43.888Z",
+      "last_verified_at": "2026-11-15T09:09:45.403Z",
+      "status": "expired",
+      "access": {},
+      "source_kind": "webpage"
+    }
+  ],
+  "recap_excluded": "https://www.instagram.com/p/Dfiaw1hGWEu/",
+  "date_policy": "DataHacks priority 11/26 has no year: deadline null. Workshop expired from explicit linked RSVP endDate 2026-11-12T21:50:00-08:00. Source attestation is not record approval.",
+  "post_evidence": [
+    {
+      "source_url": "https://www.instagram.com/p/DfijWSKRYCh/",
+      "publisher": "datahacks_2027",
+      "coauthors": [
+        "ds3atucsd"
+      ],
+      "outcome": "collected",
+      "extraction_cached": true,
+      "record_categories": [
+        "competition"
+      ],
+      "statuses": [
+        "needs_verification"
+      ],
+      "images": [
+        {
+          "sha256": "bc78eccf321a602c13454fcabf867322f07b7250d885c818ae4aad59175741f6",
+          "mime_type": "image/jpeg"
+        }
+      ],
+      "supporting_source": null
+    },
+    {
+      "source_url": "https://www.instagram.com/p/Dfiaw1hGWEu/",
+      "publisher": "aic_at_ucsd",
+      "coauthors": [
+        "ds3atucsd"
+      ],
+      "outcome": "skipped_recap"
+    },
+    {
+      "source_url": "https://www.instagram.com/p/DfnuvJZKVE6/",
+      "publisher": "ds3atucsd",
+      "coauthors": [
+        "aic_at_ucsd"
+      ],
+      "outcome": "collected",
+      "extraction_cached": true,
+      "record_categories": [
+        "event"
+      ],
+      "statuses": [
+        "expired"
+      ],
+      "images": [
+        {
+          "sha256": "8688f397d0cd57ac72b3174073482e63a4d6ad2b25c68783f8e0cc584c518a3b",
+          "mime_type": "image/jpeg"
+        }
+      ],
+      "supporting_source": "https://luma.com/3uzfbj3y"
+    }
+  ]
+}
