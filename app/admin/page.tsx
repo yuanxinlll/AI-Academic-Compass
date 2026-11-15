@@ -5,6 +5,7 @@ import { ApiError, getReviewQueue, setOpportunityStatus } from "@/lib/client/api
 import { CATEGORY_LABELS, type Opportunity, type OpportunityStatus } from "@/lib/client/types";
 import { REQUIREMENT_LABELS, deadlineBadge, relativeTime } from "@/lib/client/labels";
 import NavBar from "../components/nav-bar";
+import { AdminSearch, matchesQuery } from "./admin-search";
 import { RequireSignIn } from "../components/session";
 
 function ReviewInner() {
@@ -14,6 +15,8 @@ function ReviewInner() {
   const [error, setError] = useState<string | null>(null);
   const [done, setDone] = useState<Record<string, OpportunityStatus>>({});
   const [busy, setBusy] = useState<string | null>(null);
+  const [q, setQ] = useState("");
+  const shown = (list: Opportunity[]) => list.filter((o) => matchesQuery(o, q));
 
   useEffect(() => {
     getReviewQueue()
@@ -97,11 +100,19 @@ function ReviewInner() {
             Open the source page and compare it with the quotes below. Verify only if every quote is on the page and
             nothing important is missing. If a field was extracted wrong, leave it here and tell the collection team.
           </p>
+          <AdminSearch
+            value={q}
+            onChange={setQ}
+            count={q && items ? `${shown(items).length} waiting · ${shown(reviewed).length} reviewed match` : undefined}
+          />
           {error ? <p className="ac-error">{error}</p> : null}
           {items === null && !error ? <p className="ac-muted">Loading…</p> : null}
           {items?.length === 0 ? <p className="ac-empty">Nothing waiting. Nice.</p> : null}
+          {items && items.length > 0 && q && shown(items).length === 0 ? (
+            <p className="ac-empty">No waiting listing matches “{q}”.</p>
+          ) : null}
           <ul className="ac-review-list">
-            {items?.map((o) => {
+            {(items ? shown(items) : []).map((o) => {
               const decided = done[o.opportunity_id];
               const d = deadlineBadge(o);
               return (
@@ -160,13 +171,13 @@ function ReviewInner() {
           </ul>
         </section>
 
-        {reviewed.length ? (
+        {shown(reviewed).length ? (
           <section className="ac-section">
             <div className="ac-section-head">
               <h2>Reviewed</h2>
             </div>
             <ul className="ac-saved">
-              {reviewed.map((o) => (
+              {shown(reviewed).map((o) => (
                 <li key={o.opportunity_id}>
                   <div className="ac-saved-main">
                     <a href={o.source_url} target="_blank" rel="noopener noreferrer" className="ac-saved-title">

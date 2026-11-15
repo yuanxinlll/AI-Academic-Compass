@@ -5,6 +5,7 @@ import type { Opportunity } from "@/lib/client/types";
 import { CATEGORY_LABELS } from "@/lib/client/types";
 import { REQUIREMENT_LABELS, formatDate } from "@/lib/client/labels";
 import NavBar from "../../components/nav-bar";
+import { AdminSearch, matchesQuery } from "../admin-search";
 import { RequireSignIn } from "../../components/session";
 
 type Field = { key: string; label: string; verdicts: string[] };
@@ -47,6 +48,7 @@ function EvalInner() {
   const [idx, setIdx] = useState(0);
   const [summary, setSummary] = useState<Summary | null>(null);
   const [onlyTodo, setOnlyTodo] = useState(true);
+  const [q, setQ] = useState("");
 
   const loadSummary = () => fetch("/api/eval-summary", { cache: "no-store" }).then(async (r) => r.ok && setSummary(await r.json()));
   useEffect(() => {
@@ -60,8 +62,9 @@ function EvalInner() {
   }, []);
 
   const queue = useMemo(
-    () => (onlyTodo ? items.filter((o) => Object.keys(o.labels).length < fields.length) : items),
-    [items, fields, onlyTodo],
+    () =>
+      (onlyTodo ? items.filter((o) => Object.keys(o.labels).length < fields.length) : items).filter((o) => matchesQuery(o, q)),
+    [items, fields, onlyTodo, q],
   );
   const cur = queue[Math.min(idx, Math.max(0, queue.length - 1))];
   const labeled = items.filter((o) => Object.keys(o.labels).length >= fields.length && fields.length).length;
@@ -98,6 +101,11 @@ function EvalInner() {
             <input type="checkbox" checked={onlyTodo} onChange={(e) => { setOnlyTodo(e.target.checked); setIdx(0); }} />
             <span>Only show unfinished</span>
           </label>
+          <AdminSearch
+            value={q}
+            onChange={(v) => { setQ(v); setIdx(0); }}
+            count={q ? `${queue.length} match${queue.length === 1 ? "" : "es"}${onlyTodo ? " (unfinished only)" : ""}` : undefined}
+          />
         </section>
 
         {cur ? (
@@ -144,7 +152,7 @@ function EvalInner() {
             </div>
           </section>
         ) : (
-          <p className="ac-empty">Nothing left to label.</p>
+          <p className="ac-empty">{q ? `Nothing matches “${q}”${onlyTodo ? " among unfinished listings" : ""}.` : "Nothing left to label."}</p>
         )}
 
         {summary ? (

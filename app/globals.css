@@ -652,3 +652,9 @@ html, body { overflow-x: hidden; }
   .ac-auth-card { padding: 1.4rem; }
   .ac-me-actions { margin-left: 0; width: 100%; }
 }
+
+/* Admin search */
+.ac-admin-search { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin: 0.75rem 0 0.25rem; }
+.ac-admin-search .ac-search { width: min(32rem, 100%); }
+.ac-admin-search .ac-search-input { font-size: 0.95rem; padding: 0.4rem 0; }
+.ac-admin-search .ac-search-input::-webkit-search-cancel-button { cursor: pointer; }
