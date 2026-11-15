@@ -1,0 +1,46 @@
+{
+  "profile": {
+    "university": "UCSD",
+    "major": "Data Science",
+    "minor": null,
+    "academic_year": "sophomore",
+    "expected_graduation": null,
+    "courses_taken": ["DSC 10"],
+    "interests": ["machine learning"],
+    "research_areas": [],
+    "career_goals": [],
+    "selected_modules": ["research"],
+    "skills": ["Python"],
+    "experiences": [],
+    "hours_per_week": 8,
+    "available_terms": [],
+    "work_authorization": null
+  },
+  "opportunities": [
+    {
+      "opportunity_id": "00000000-0000-4000-8000-000000000001",
+      "title": "Fictional Machine Learning Research Assistant",
+      "university": "UCSD",
+      "organization": "Fictional Example Lab",
+      "category": "research",
+      "description": "A fictional machine learning project. Python experience is preferred.",
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "hours_per_week",
+          "value": 10,
+          "raw_text": "Applicants must commit at least 10 hours per week.",
+          "is_hard_requirement": true
+        }
+      ],
+      "deadline": null,
+      "deadline_text": null,
+      "application_method": null,
+      "source_url": "https://example.com/fictional-research",
+      "source_id": null,
+      "first_collected_at": "2026-11-14T20:00:00Z",
+      "last_verified_at": "2026-11-14T20:00:00Z",
+      "status": "verified"
+    }
+  ]
+}
