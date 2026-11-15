@@ -112,6 +112,20 @@ Signed-out visitors see listings without any labels.
 Next.js 16 · React · TypeScript · Tailwind · Neon Postgres · Python · FastAPI ·
 Bright Data · Gemini · Vercel
 
+### Custom domain — GoDaddy Registry
+
+We registered **aiacademiccompass.us** through **Porkbun** during the hackathon
+and connected it to our existing **Vercel** deployment. Both
+[aiacademiccompass.us](https://aiacademiccompass.us) and
+[www.aiacademiccompass.us](https://www.aiacademiccompass.us) serve Academic Compass
+over HTTPS. The custom domain gives students and judges one memorable public entry point.
+
+Porkbun is our registrar and DNS provider; it lists `.us` in its
+[GoDaddy Registry domain offering](https://porkbun.com/land/godaddy-domain-sale).
+We registered **one domain**: `www` is a subdomain, not a second registration.
+See [domain setup and the submission answer](docs/custom-domain.md) for the DNS
+records, verification steps, and the distinction between registry, registrar, and hosting.
+
 ## Run locally
 
 ```bash
@@ -125,6 +139,7 @@ npm run dev                     # http://localhost:3000
 - Matching service: see [services/README.md](services/README.md)
 - Collector: see [collector/README.md](collector/README.md)
 - API and data contract: [docs/contracts.md](docs/contracts.md)
+- Public domain and DNS setup: [docs/custom-domain.md](docs/custom-domain.md)
 
 ## Repository
 

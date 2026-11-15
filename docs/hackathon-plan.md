@@ -170,7 +170,7 @@ Use Figma as a design and collaboration tool for onboarding, résumé upload, da
 | ElevenLabs | Voice search for opportunities | Defer |
 | Tiger Data | Analyze trends in opportunity updates | Consider later |
 | Vultr | Cloud deployment | Optional |
-| GoDaddy Registry | Domain | Optional |
+| GoDaddy Registry | Custom `.us` domain, registered through Porkbun | Implemented: [aiacademiccompass.us](https://aiacademiccompass.us); [domain notes](custom-domain.md) |
 | Solana | Blockchain functionality | Skip for this project |
 | Cursor | AI-assisted development | Recommended |
 

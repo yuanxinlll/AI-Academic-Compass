@@ -4,6 +4,9 @@ All backend calls go through `lib/client/api.ts`. Types live in `lib/client/type
 and match `docs/contracts.md`, so a wrong field name is a TypeScript error.
 Use these only inside `"use client"` components.
 
+Public demo: [aiacademiccompass.us](https://aiacademiccompass.us).
+See [custom-domain notes](custom-domain.md) for the public URLs and DNS setup.
+
 ## 0. Local setup (no database credentials needed)
 
 ```bash
@@ -15,6 +18,9 @@ npm run dev
 
 With `API_PROXY_TARGET` set, your local `/api/*` calls are forwarded to the live
 backend. Always call relative paths (`/api/...`) — never hard-code the vercel URL.
+The Vercel address above remains the existing development proxy target; the
+custom domain is the public entry point. The separate `academic-compass-ai`
+project hosts the internal Python service and is not the frontend proxy target.
 
 ## 1. Dashboard
 
@@ -91,5 +97,10 @@ await removeBookmark(o.opportunity_id);
 
 ## 4. Demo login
 
-Requests automatically send `x-demo-user` (default `demo`). To demo two different
-students: `setDemoUser("alex")`. Fictional data only.
+Open `/login` and select one of the fictional student accounts. The browser client
+sends the signed HttpOnly session cookie with same-origin requests. Use
+`useSession()` from `app/components/session.tsx` to read the current session;
+do not set a browser-side user ID or call the removed `setDemoUser()` helper.
+
+The legacy `x-demo-user` header is retained by the backend for fictional script
+tests only and cannot grant administrator access. Store fictional data only.
