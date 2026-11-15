@@ -151,3 +151,15 @@ docs/contracts.md     Shared data and API agreement
 Ocean background visual idea inspired by
 [jiezi1234/character-ocean](https://github.com/jiezi1234/character-ocean); the fish
 shapes and animation in this project are an independent implementation.
+
+## Acknowledgments
+
+The ocean UI takes visual inspiration from
+[jiezi1234/character-ocean](https://github.com/jiezi1234/character-ocean),
+particularly its braille-style fish, translucent panels, and light/dark palettes.
+That project credits [stackedlol/ascii-sharks](https://github.com/stackedlol/ascii-sharks)
+as its animation upstream. Our background uses a custom React/Canvas implementation.
+
+Geist and Geist Mono are provided through `next/font/google` and licensed under
+SIL OFL 1.1: [Geist](https://github.com/google/fonts/blob/main/ofl/geist/OFL.txt)
+and [Geist Mono](https://github.com/google/fonts/blob/main/ofl/geistmono/OFL.txt).
