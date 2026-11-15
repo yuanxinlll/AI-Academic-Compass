@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse, connection } from "next/server";
 import { getSql } from "@/lib/database/db";
 import { OPPORTUNITY_COLUMNS } from "@/lib/database/columns";
 import { requireAdmin } from "@/lib/admin";
@@ -7,6 +7,7 @@ import { handleError } from "@/lib/api";
 // GET /api/admin/review-queue — listings waiting for a human check, newest first.
 // Admins can only change status (verified / expired); wrong fields go back to A's collector.
 export async function GET(req: NextRequest) {
+  await connection(); // per-request (reads cookies) — skip build-time prerender
   try {
     const denied = requireAdmin(req);
     if (denied) return denied;

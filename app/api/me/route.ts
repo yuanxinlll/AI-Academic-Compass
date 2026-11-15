@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse, connection } from "next/server";
 import { handleError } from "@/lib/api";
 import { currentUser } from "@/lib/auth";
 import { currentUserView } from "@/lib/me";
@@ -6,6 +6,7 @@ import { DEMO_ACCOUNTS } from "@/lib/demo-accounts";
 
 // GET /api/me — who is signed in (user: null when nobody), plus the demo account picker list.
 export async function GET(req: NextRequest) {
+  await connection(); // per-request (reads cookies) — skip build-time prerender
   try {
     const u = await currentUser(req);
     const accounts = DEMO_ACCOUNTS.map(({ username, displayName, role, blurb }) => ({
