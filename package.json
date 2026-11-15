@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test:relevance": "node --experimental-strip-types tests/relevance.test.mts"
+    "test:relevance": "node --experimental-strip-types tests/relevance.test.mts",
+    "test:calendar": "TZ=America/Los_Angeles node --experimental-strip-types tests/calendar.test.mts",
+    "test": "npm run test:relevance && npm run test:calendar"
   },
   "dependencies": {
     "@neon/config": "^1.14.0",

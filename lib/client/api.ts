@@ -1,3 +1,4 @@
+import type { StudentEvent } from "./calendar";
 // Browser-side API client for Academic Compass — use from "use client" components.
 // Every function returns contract-shaped data (docs/contracts.md) or throws ApiError.
 import type {
@@ -290,4 +291,19 @@ export async function setOpportunityStatus(id: string, status: OpportunityStatus
 
 export async function updateBookmarkStatus(opportunityId: string, status: ApplicationStatus): Promise<Bookmark> {
   return saveBookmark(opportunityId, status);
+}
+
+// ───────── Student calendar (v1.5) ─────────
+export type EventDraft = Omit<StudentEvent, "event_id">;
+export async function getCalendar(): Promise<StudentEvent[]> {
+  return (await request<{ events: StudentEvent[] }>("/api/calendar")).events;
+}
+export async function createEvent(e: EventDraft): Promise<StudentEvent> {
+  return (await request<{ event: StudentEvent }>("/api/calendar", { method: "POST", json: e })).event;
+}
+export async function updateEvent(id: string, e: EventDraft): Promise<StudentEvent> {
+  return (await request<{ event: StudentEvent }>(`/api/calendar/${encodeURIComponent(id)}`, { method: "PUT", json: e })).event;
+}
+export async function deleteEvent(id: string): Promise<void> {
+  await request(`/api/calendar/${encodeURIComponent(id)}`, { method: "DELETE" });
 }

@@ -160,7 +160,14 @@ function MeInner() {
       {user?.role === "student" ? <BackgroundCard /> : null}
 
       <section className="ac-panel-card">
-        <h2>Saved</h2>
+        <div className="ac-section-head">
+          <h2>Saved</h2>
+          {user?.role === "student" ? (
+            <Link href="/calendar" className="ac-btn ac-btn-sm">
+              Open calendar
+            </Link>
+          ) : null}
+        </div>
         {saved === null ? (
           <p className="ac-muted">Loading…</p>
         ) : saved.length === 0 ? (
