@@ -104,7 +104,7 @@ function MeInner() {
               <Field label="Major" value={[profile.major, profile.minor && `minor in ${profile.minor}`].filter(Boolean).join(", ")} />
               <Field label="Year" value={profile.academic_year ? ACADEMIC_YEAR_LABELS[profile.academic_year] : null} />
               <Field label="Graduating" value={profile.expected_graduation} />
-              <Field label="Interests" value={[...profile.interests, ...profile.research_areas].join(", ")} />
+              <Field label="Interests" value={[...new Set([...profile.interests, ...profile.research_areas].map((x) => x.trim()))].join(", ")} />
               <Field label="Skills" value={profile.skills.join(", ")} />
               <Field label="Looking for" value={profile.selected_modules.map((c) => CATEGORY_LABELS[c]).join(", ")} />
               <Field label="Hours per week" value={profile.hours_per_week?.toString()} />
