@@ -32,9 +32,10 @@ class ApiStore:
 
     def __init__(self, base_url=DEFAULT_BASE, admin_token=None, source_type='listing'):
         parts = urlsplit(base_url)
-        if (parts.scheme != 'https' or not parts.hostname or parts.username or
+        local = parts.scheme == 'http' and parts.hostname in ('localhost', '127.0.0.1')
+        if ((parts.scheme != 'https' and not local) or not parts.hostname or parts.username or
                 parts.password or parts.query or parts.fragment or parts.path not in ('', '/')):
-            raise ValueError('API base must be an HTTPS origin')
+            raise ValueError('API base must be an HTTPS origin (or http://localhost for local dev)')
         token = admin_token if admin_token is not None else os.environ.get('ADMIN_TOKEN')
         if not token or not token.strip() or any(c in token for c in '\r\n'):
             raise ValueError('ADMIN_TOKEN must be configured')
