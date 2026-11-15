@@ -74,7 +74,7 @@ function SearchInner() {
               className="ac-search-input"
               name="q"
               defaultValue={q}
-              placeholder="Try “machine learning”, “summer”, “neuroscience lab”…"
+              placeholder="Search labs, programs, events…"
               aria-label="Search opportunities"
               autoFocus
             />

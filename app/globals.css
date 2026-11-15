@@ -591,3 +591,64 @@ body {
 .ac-eval-value { white-space: pre-wrap; font-family: inherit; font-size: 0.88rem; margin: 0.4rem 0; color: var(--foreground); }
 .ac-eval-verdicts { display: flex; gap: 0.4rem; flex-wrap: wrap; }
 .ac-access-chips { display: flex; gap: 0.3rem; flex-wrap: wrap; }
+
+/* ───────── Mobile (≤ 640px) ───────── */
+html, body { overflow-x: hidden; }
+.ac-search { box-sizing: border-box; max-width: 100%; }
+.ac-search .ac-btn { flex: none; }
+@media (max-width: 640px) {
+  .ac-page { width: calc(100% - 1.5rem); padding-bottom: 5rem; }
+  .ac-me { width: calc(100% - 1.5rem); }
+
+  /* Nav: logo + user on one row, links scroll underneath */
+  .ac-nav { top: 0.5rem; width: calc(100% - 1rem); border-radius: 1.25rem; }
+  .ac-nav-inner { flex-wrap: wrap; row-gap: 0.25rem; padding: 0.45rem 0.5rem 0.4rem 0.75rem; }
+  .ac-nav-inner > .ac-logo { order: 1; }
+  .ac-nav-inner > .ac-user-chip, .ac-nav-inner > .ac-btn, .ac-nav-inner > .ac-nav-placeholder { order: 2; margin-left: auto; }
+  .ac-nav-links { order: 3; width: 100%; margin: 0; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .ac-nav-links::-webkit-scrollbar { display: none; }
+  .ac-nav-link { white-space: nowrap; padding: 0.3rem 0.7rem; font-size: 0.88rem; }
+  .ac-logo span { display: inline; font-size: 0.95rem; }
+
+  /* User chip: just the avatar, no empty pill */
+  .ac-user-chip { padding: 0; border: 0; background: transparent; }
+
+  /* Search: fits the screen */
+  .ac-search-top { width: calc(100% - 1.5rem); margin-top: 0.75rem; }
+  .ac-search-stage { padding: 1.25rem 0 1rem; }
+  .ac-search, .ac-search-big { padding: 0.3rem 0.3rem 0.3rem 0.85rem; gap: 0.35rem; }
+  .ac-search-big .ac-search-input, .ac-search-input { font-size: 1rem; padding: 0.55rem 0; }
+  .ac-search .ac-btn { min-height: 2.4rem; padding: 0.4rem 0.9rem; font-size: 0.9rem; }
+  .ac-search-icon { display: none; }
+  .ac-chips { gap: 0.35rem; }
+  .ac-chip { padding: 0.3rem 0.7rem; font-size: 0.82rem; }
+
+  /* Hero */
+  .ac-hero { padding: 1.75rem 0 1rem; }
+  .ac-hero h1 { font-size: 2.1rem; }
+  .ac-lede { font-size: 0.98rem; }
+  .ac-stats dd { font-size: 1.4rem; }
+
+  /* Toolbar stacks */
+  .ac-toolbar { flex-direction: column; align-items: stretch; gap: 0.5rem; }
+  .ac-toolbar-right { justify-content: space-between; }
+
+  /* Ocean / theme buttons: small, out of the way */
+  .compass-motion, .compass-theme { bottom: 0.6rem; min-height: 2rem; padding: 0.3rem 0.65rem; font-size: 0.68rem; opacity: 0.85; }
+  .compass-motion { right: 0.6rem; }
+  .compass-theme { right: auto; left: 0.6rem; }
+
+  /* Detail panel full width */
+  .ac-panel { top: 0.5rem; right: 0.5rem; bottom: 0.5rem; width: calc(100% - 1rem); padding: 1.1rem 1.1rem 2rem; }
+  .ac-detail-title { font-size: 1.25rem; }
+  .ac-meta { grid-template-columns: 1fr; }
+  .ac-meta dt { margin-top: 0.4rem; }
+
+  /* Cards */
+  .ac-card { padding: 1rem; }
+  .ac-card-bottom { flex-direction: column; align-items: flex-start; }
+
+  /* Auth cards */
+  .ac-auth-card { padding: 1.4rem; }
+  .ac-me-actions { margin-left: 0; width: 100%; }
+}
