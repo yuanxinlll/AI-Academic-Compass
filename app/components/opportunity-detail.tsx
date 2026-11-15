@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import type { EligibilityCheck, EligibilityRequirement, OpportunityView } from "@/lib/client/types";
 import { CATEGORY_LABELS } from "@/lib/client/types";
 import { REQUIREMENT_LABELS, eligibilityBadge, formatDate, relativeTime } from "@/lib/client/labels";
@@ -127,17 +128,6 @@ export function OpportunityDetail({ item, signedIn, saved, onToggleSave }: Props
         </section>
       ) : null}
 
-      {signedIn && item.match?.questions_to_confirm?.length ? (
-        <section className="ac-detail-section">
-          <h3>Worth asking before you apply</h3>
-          <ul className="ac-bullets">
-            {item.match.questions_to_confirm.map((q, i) => (
-              <li key={i}>{q}</li>
-            ))}
-          </ul>
-        </section>
-      ) : null}
-
       <dl className="ac-meta">
         {item.deadline || item.deadline_text ? (
           <>
@@ -185,7 +175,15 @@ export function DetailPanel({ onClose, children }: { onClose: () => void; childr
       document.body.style.overflow = prev;
     };
   }, [onClose]);
-  return (
+  // Portal to <body> so the panel sits above the fixed ocean/theme buttons
+  // (.compass-content creates its own stacking context).
+  const [host, setHost] = useState<HTMLElement | null>(null);
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setHost(document.body);
+  }, []);
+  if (!host) return null;
+  return createPortal(
     <div className="ac-panel-root">
       <div className="ac-panel-backdrop" onClick={onClose} />
       <aside className="ac-panel" role="dialog" aria-modal="true" aria-label="Opportunity details">
@@ -194,6 +192,7 @@ export function DetailPanel({ onClose, children }: { onClose: () => void; childr
         </button>
         {children}
       </aside>
-    </div>
+    </div>,
+    host,
   );
 }
