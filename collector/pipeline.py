@@ -56,16 +56,29 @@ def error_code(error):
     return type(error).__name__
 
 
-def collect_page(page, url, extractor=extract):
+def collect_page(page, url, extractor=extract, with_access=None):
     feedback = None
     for attempt in range(2):
         try:
-            return normalize(extractor(page, feedback=feedback), url, page)
+            records = normalize(extractor(page, feedback=feedback), url, page)
+            break
         except ValueError as error:
             if attempt:
                 raise
             feedback = str(error)
-    raise AssertionError('unreachable')
+    # Access facts (who can apply / pay / cost) need a second, quote-checked Gemini pass.
+    # Only for real provider runs; tests inject their own extractor and skip it.
+    if with_access is None:
+        with_access = extractor is extract
+    if records and with_access:
+        from collector.access import extract_access
+        try:
+            access = extract_access(page)
+        except Exception:
+            access = None  # never lose a record because the optional pass failed
+        for record in records:
+            record['access'] = access
+    return records
 
 
 def content_key(record):

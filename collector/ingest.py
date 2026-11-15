@@ -10,7 +10,7 @@ from uuid import UUID
 DEFAULT_BASE = 'https://ai-academic-compass.vercel.app'
 FIELDS = ('title', 'university', 'organization', 'category', 'description',
           'required_skills', 'eligibility', 'deadline', 'deadline_text',
-          'application_method', 'source_url', 'status')
+          'application_method', 'source_url', 'status', 'access', 'source_kind')
 SOURCE_TYPES = {'lab_page', 'department', 'calendar', 'listing', 'other'}
 
 

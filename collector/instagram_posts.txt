@@ -1,0 +1,3 @@
+# One public Instagram POST URL per line (https://www.instagram.com/p/XXXX/).
+# Only posts from student organizations already verified in student_org_sources.json.
+# Pick posts announcing events, workshops, recruitment or programs.

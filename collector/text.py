@@ -11,9 +11,12 @@ def canonical_url(url):
     parsed = urlsplit(url)
     from collector.source_policy import approved_org_url
     university_host = parsed.hostname and (parsed.hostname == 'ucsd.edu' or parsed.hostname.endswith('.ucsd.edu'))
+    # Narrow exception for multimodal collection: single public Instagram posts only
+    # (never profiles, search or login pages). Posts are read as caption + image.
+    instagram_post = parsed.hostname == 'www.instagram.com' and bool(re.fullmatch(r'/(p|reel)/[A-Za-z0-9_-]+/?', parsed.path or ''))
     if (parsed.scheme != 'https' or not parsed.hostname
         or parsed.username or parsed.password or parsed.port not in (None, 443)
-        or not (university_host or approved_org_url(url))):
+        or not (university_host or instagram_post or approved_org_url(url))):
         raise ValueError('Use a public HTTPS UCSD or explicitly approved organization source URL')
     return urlunsplit(('https', parsed.hostname, parsed.path or '/', parsed.query, ''))
 
