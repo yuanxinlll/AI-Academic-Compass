@@ -1,7 +1,9 @@
 # Academic Compass — 数据与接口约定（contracts.md）
 
 > 依据：SanD 规划文档 3.3 / 5.3 / 5.4 / 7.3。文档已定的内容不改，本文件只把字段统一、补齐类型与格式。
-> 负责人：D（Backend & Integration）。**改字段名前先在群里说**；新增字段可以直接加，但要同步更新本文件。
+> 负责人：D（Backend & Integration）。**本文件是团队最终协议**。改字段名前先在群里说；新增字段可以直接加，但要同步更新本文件。
+>
+> **v1.1 变更（2026-11-14）**：明确两个状态枚举的区别（§1）、空数组含义（§0）、资格汇总规则加入 verified 门槛（§4.4）、`relevance_score` 可为 null（§4.4）、简历上限改为 4MB（§4.3）、新增 Python 服务部署与接口归属（§8）。数据库字段不变。
 
 ---
 
@@ -13,7 +15,12 @@
 | 时间戳 | ISO 8601 UTC，如 `2026-11-14T19:00:00Z`（数据库用 `timestamptz`） |
 | 日期 | `YYYY-MM-DD`，如 `2026-12-01` |
 | 未知值 | 单值字段用 `null`；**不要**用 `""`、`"N/A"`、`"unknown"`。AI 不得猜测填充 |
-| 数组 | 没有提取到内容时用 `[]` |
+| 数组 | 一律不用 `null`，最少为 `[]`（数据库列均为 `NOT NULL DEFAULT '{}'`/`'[]'`）。**`[]` 只表示"没有提取到/没有提供"，不表示"确定没有"**，见下方说明 |
+
+**`[]` 的含义（v1.1）**
+- **机会侧**（`required_skills`、`eligibility`）：`[]` = 没有提取到要求。只有当该机会 `status = "verified"` 时，才可以把它的 `eligibility` 视为**完整列表**（此时 `[]` 才等于"没有硬性要求"）。
+- **学生侧**（`skills`、`interests`、`courses_taken` 等）：`[]` = 学生没有填写，按**未知**处理，不能推断为"没有这项技能"。匹配时该维度不参与计算。
+- **标量**（如 `hours_per_week`、`deadline`）：`null` = 未知。
 | ID | `uuid`（数据库 `gen_random_uuid()` 生成） |
 | 错误返回 | `{ "error": { "code": "NOT_FOUND", "message": "..." } }` + 对应 HTTP 状态码 |
 
@@ -39,6 +46,11 @@ type EligibilityStatus =
   | "eligible"            // 符合条件
   | "ineligible"          // 不符合条件（存在明确且未满足的硬性要求）
   | "needs_confirmation"; // 需要进一步确认（信息不足）
+
+// ⚠️ 上面两个枚举是不同层面的东西，不冲突，不能互相替换：
+//   OpportunityStatus.needs_verification  → 这条【机会数据】本身是否核实过（A 负责，存数据库）
+//   EligibilityStatus.needs_confirmation  → 【某个学生】对这条机会的资格能否判断（B 负责，实时计算，不存库）
+// 原规划 3.4 的"需要进一步确认"对应 needs_confirmation；5.3 示例里的 "status": "needs_verification" 是机会状态。
 
 type AcademicYear =
   | "freshman" | "sophomore" | "junior" | "senior" | "graduate";
@@ -159,6 +171,10 @@ interface Experience {
 
 所有接口前缀 `/api`，JSON 输入输出。需要登录的接口从 session 取 `user_id`。
 
+> **临时 Demo 登录（整合前）**：`/api/profile`、`/api/bookmarks`、`/api/match`、`/api/resume/parse` 通过请求头 `x-demo-user: <名字>`（小写字母、数字、`_`、`-`，默认 `demo`）识别用户，首次请求自动创建该用户。**只能存虚构数据**。之后换成 Neon Auth 时前端只需去掉这个请求头。
+>
+> 错误可能带 `field`，便于前端标红：`{ "error": { "code": "INVALID_INPUT", "message": "...", "field": "academic_year" } }`。B 的服务未配置时 `/api/match`、`/api/resume/parse` 返回 `503 AI_SERVICE_NOT_CONFIGURED`。
+
 ### 4.1 `GET /api/opportunities` — 机会列表（C 调用）
 
 Query 参数（均可选）：
@@ -191,7 +207,8 @@ Query 参数（均可选）：
 
 ### 4.3 `POST /api/resume/parse` — 简历解析（B 实现）
 
-- Content-Type：`multipart/form-data`，字段名 `file`，仅 PDF，≤ 5MB
+- Content-Type：`multipart/form-data`，字段名 `file`，仅 PDF，**≤ 4MB**（Vercel 函数请求体上限约 4.5MB）
+- 可选字段 `use_ai=true`：学生明确同意后才把文本发给 Gemini；否则只做本地标签提取
 - **只解析、不保存**。学生确认后由前端调用 `POST /api/profile` 保存。
 
 ```json
@@ -200,7 +217,7 @@ Query 参数（均可选）：
 }
 ```
 
-### 4.4 `POST /api/match` — 资格判断 + 排序（B 实现）
+### 4.4 `POST /api/match` — 资格判断 + 排序（D 路由，B 逻辑，见 §8）
 
 Body：
 
@@ -229,21 +246,40 @@ Body：
 }
 ```
 
-规则：
-- `eligibility.status` 汇总规则：任一硬性要求 `ineligible` → `ineligible`；否则任一 `needs_confirmation` → `needs_confirmation`；否则 `eligible`。
-- `relevance_score`：0–100，**只表示相关程度，不代表申请成功概率**。
+规则（v1.1）：
+- **单项检查** `checks[].result` 使用 `EligibilityStatus` 同一套枚举：满足 → `eligible`，明确不满足 → `ineligible`，无法判断 → `needs_confirmation`。
+- **汇总** `eligibility.status`，按顺序判断：
+  1. 任一 **硬性要求**（`is_hard_requirement: true`）为 `ineligible` → `ineligible`
+  2. 机会本身 `status` 不是 `verified`（要求列表未确认完整）→ `needs_confirmation`
+  3. 任一硬性要求为 `needs_confirmation` → `needs_confirmation`
+  4. 否则 → `eligible`
+- **非硬性要求**（preferred / 加分项）只出现在 `checks` 和解释里，**不影响汇总状态**。
+- 没有被规则识别的要求 → `needs_confirmation`，并保留 `raw_text`，不得推测。
+- `relevance_score`：0–100 的数字，或 `null`（学生没有提供任何可用于匹配的兴趣/技能/类别时）。**只表示相关程度，不代表申请成功概率**。排序时 `null` 排在最后，同分按 `opportunity_id` 稳定排序。
 - 低匹配机会也要返回，不隐藏。
+- 允许**额外附加**字段（不改名、不删字段即可）：`checks[].raw_text`、`reasons: string[]`、`questions_to_confirm: string[]`、顶层 `warnings`。
 
-### 4.5 `POST /api/collect` — 触发采集（A 实现，**仅管理员 / 内部任务**）
+### 4.5 `POST /api/admin/opportunities` — 采集结果入库（D 实现，A 调用，**仅管理员**）
 
-需要请求头 `x-admin-token: <ADMIN_TOKEN>`。
+> v1.2：原 `POST /api/collect`（触发采集）改为可选。A 的采集脚本自己跑抓取 + Gemini 提取，然后把结果 POST 到这个接口。A **不需要数据库驱动和 `DATABASE_URL`**，校验、去重、日志都由后端统一处理。
 
-Body（二选一）：
+需要请求头 `x-admin-token: <ADMIN_TOKEN>`（D 私发，不要提交进 git）。
+
+Body：
 
 ```json
-{ "source_id": "..." }
-{ "url": "https://..." }
+{
+  "source": { "website_url": "https://...", "source_type": "lab_page", "university": "UCSD" },
+  "opportunities": [ /* 1–50 条，每条按 §2 Opportunity 的字段，不含 opportunity_id / source_id / 时间戳 */ ]
+}
 ```
+
+- `source` 可选：传了会登记到 `sources` 表、更新 `last_checked_at`，并写一条 `collection_logs`。
+- 每条必填：`title`、`category`、`source_url`。`eligibility[]` 每项必须有 `type`、`raw_text`、`is_hard_requirement`。
+- `deadline` 必须是真实日期 `YYYY-MM-DD`；"Rolling basis" 之类写进 `deadline_text`，`deadline` 留 `null`。
+- `status` 不传默认 `needs_verification`。**`verified` 只在人工核对过后才可以传。**
+- **去重键是 `source_url`**（`#锚点` 会被去掉）：同一网址再次提交 → 更新内容、刷新 `last_verified_at`，保留 `first_collected_at`。如果之前被人工标成 `verified` 且内容没变，保持 `verified`。
+- **逐条校验**：不合格的条目会被拒绝并列在 `errors` 里，合格的照常保存。全部不合格返回 422。
 
 返回：
 
@@ -253,12 +289,29 @@ Body（二选一）：
   "inserted": 3,
   "updated": 1,
   "duplicates": 1,
-  "needs_verification": 2,
-  "errors": []
+  "needs_verification": 4,
+  "rejected": 1,
+  "errors": [ { "index": 4, "source_url": "https://...", "field": "deadline", "message": "..." } ],
+  "saved": [ { "index": 0, "opportunity_id": "...", "action": "inserted" } ]
 }
 ```
 
-每次调用同时写一条 `collection_logs`。
+Python 调用示例（只需要 `requests`）：
+
+```python
+import os, requests
+
+resp = requests.post(
+    "https://ai-academic-compass.vercel.app/api/admin/opportunities",
+    headers={"x-admin-token": os.environ["ADMIN_TOKEN"]},
+    json={
+        "source": {"website_url": page_url, "source_type": "lab_page"},
+        "opportunities": extracted_items,   # Gemini 提取并校验后的 list[dict]
+    },
+    timeout=30,
+)
+print(resp.status_code, resp.json())
+```
 
 ### 4.6 `/api/bookmarks` — 收藏与申请状态
 
@@ -293,6 +346,9 @@ GEMINI_API_KEY=
 BRIGHTDATA_API_KEY=
 ADMIN_TOKEN=
 AUTH_SECRET=
+AI_SERVICE_URL=
+INTERNAL_TOKEN=
+GEMINI_MODEL=
 ```
 
 真实值私下传，**不要提交进 git**。
@@ -303,9 +359,67 @@ AUTH_SECRET=
 
 | 模块 | 写入方 | 读取方 |
 |---|---|---|
-| Opportunity | A（采集） | B（匹配）、C（展示） |
+| Opportunity | A（采集，经 §4.5 入库） | B（匹配）、C（展示） |
 | StudentProfile | C（问卷）、B（简历解析结果） | B（匹配） |
 | `/api/match` 结果 | B | C |
 | 数据库、鉴权、部署 | D | 全员 |
 
 开发期间前端可先用 `GET /api/opportunities` 返回的假数据，不必等采集模块完成。
+
+---
+
+## 8. 接口归属与 Python 服务部署（v1.1）
+
+### 8.1 架构
+
+```
+浏览器 (C) ──► Next.js /api/*  (D，唯一对外接口，Vercel)
+                  │  读写 Neon、鉴权、取 user_id、参数校验
+                  ├──► Python AI 服务 /internal/*  (B，Vercel 独立项目，无状态)
+                  └──► Neon PostgreSQL
+采集程序 (A，Python 脚本) ──► Next.js POST /api/admin/opportunities ──► Neon
+```
+
+### 8.2 接口归属
+
+| 对外接口（C 只调这些） | 负责人 | 实现方式 |
+|---|---|---|
+| `GET /api/opportunities` | D | 直接查 Neon（已完成） |
+| `GET/POST /api/profile` | D | 直接读写 Neon |
+| `/api/bookmarks` | D | 直接读写 Neon |
+| `POST /api/match` | D 路由 + **B 逻辑** | D 从 Neon 取学生档案和机会 → 调 B 的 `/internal/match` → 原样返回 |
+| `POST /api/resume/parse` | D 路由 + **B 逻辑** | D 校验登录和文件 → 转发给 B 的 `/internal/resume/parse` |
+| `POST /api/admin/opportunities` | D | A 的采集脚本把提取结果 POST 到这里入库（§4.5），需要 `ADMIN_TOKEN` |
+
+### 8.3 B 的内部接口（Python）
+
+- **无状态**：不连数据库、不需要 `DATABASE_URL`、不保存任何简历或档案。
+- **鉴权**：只接受带请求头 `x-internal-token: <INTERNAL_TOKEN>` 的请求（Next.js 服务端调用，浏览器拿不到）。
+- `POST /internal/match`
+  - 输入：`{ "profile": StudentProfile, "opportunities": Opportunity[] }`（字段名严格按 §2、§3）
+  - 输出：§4.4 的 `{ "results": [...] }`
+- `POST /internal/resume/parse`
+  - 输入：同 §4.3（multipart `file`，可选 `use_ai`）
+  - 输出：`{ "extracted": Partial<StudentProfile> }`
+- 档案合并（`profile/merge`）属于前端确认流程的辅助逻辑，可作为 `/internal/profile/merge` 保留，非必须。
+
+**B 的适配层负责字段映射**，engine 内部命名可以不改，例如：
+
+| B 原型内部 | 协议字段 |
+|---|---|
+| `weekly_hours_available` | `hours_per_week` |
+| `education_level`（undergraduate/graduate） | 由 `academic_year` 推出：freshman–senior → undergraduate，graduate → graduate |
+| `eligibility: string[]` | `eligibility: EligibilityRequirement[]`（优先用 `type`/`value` 判断，`raw_text` 兜底） |
+| `eligibility_status` / `needs_verification` | `eligibility.status` / `needs_confirmation` |
+| `eligibility_checks[].result`：met / not_met / unknown | `eligible` / `ineligible` / `needs_confirmation` |
+| `match_score` | `relevance_score` |
+| `match_reasons: string[]` | `explanation`（拼成一句）+ 可选 `reasons` |
+
+### 8.4 部署
+
+- B 的服务用 **FastAPI** 包装（原规划 5.1 技术栈），在 Vercel 上作为**独立项目**部署，Root Directory 设为 `services`，Python ≥ 3.11（部署时确认运行时版本）。
+- 本地开发的 `server.py`（127.0.0.1:8765）保留为 demo，不上线。
+- 环境变量：
+  - Python 服务：`GEMINI_API_KEY`、`GEMINI_MODEL`、`INTERNAL_TOKEN`
+  - Next.js：新增 `AI_SERVICE_URL`、`INTERNAL_TOKEN`（与上面相同的值）
+- 如果 Vercel Python 部署在第 8 小时整合前没跑通：备选方案是把 `engine.py`（无依赖、约 120 行）移植成 TypeScript 放进 `lib/matching/`，简历解析暂时用本地 demo 演示。
