@@ -3,38 +3,13 @@
 import { useState } from "react";
 import type { OpportunityView } from "@/lib/client/types";
 import { reportOpportunity, type ReportReason } from "@/lib/client/api";
+import { findTerms, termsIn } from "@/lib/glossary";
 
 /* ------------------------------------------------------------------ */
 /* Glossary: campus words a first-gen or international student may not */
 /* have been taught. Fixed definitions, shown only when the listing    */
 /* actually uses the word.                                             */
 /* ------------------------------------------------------------------ */
-
-const GLOSSARY: { term: string; match: RegExp; text: string }[] = [
-  { term: "PI", match: /\bPIs?\b|principal investigator/i, text: "Principal investigator: the faculty member who runs the lab and decides who joins." },
-  { term: "99 / 199", match: /\b(?:[A-Z]{2,5}[\s-]?)?(?:99H?|199)\b/, text: "Independent study courses where you earn units for research with a faculty member. 99 is for lower-division students, 199 for upper-division." },
-  { term: "198", match: /\b(?:[A-Z]{2,5}[\s-]?)?198\b/, text: "Directed group study: a small, faculty-led group course, often used for team research projects." },
-  { term: "TEA", match: /\bTEA\b|Triton Enrollment Authorization/, text: "Triton Enrollment Authorization: the online request in the Triton Student System you submit to get approved for courses like 99/199." },
-  { term: "Units", match: /\bunits?\b/i, text: "Course credit. A full-time load is about 12 or more units a quarter. Many research courses expect about 30 hours of work per unit over the quarter." },
-  { term: "Upper / lower division", match: /\b(?:upper|lower)[- ]division\b|\bUD course/i, text: "Lower-division courses are numbered 1–99, upper-division 100–199. \"Upper-division standing\" usually means you have finished about 90 units." },
-  { term: "Quarter", match: /\bquarters?\b/i, text: "UC San Diego's 10-week terms: Fall, Winter and Spring, plus Summer Sessions." },
-  { term: "Standing", match: /\b(?:sophomore|junior|senior|class) standing\b/i, text: "Your class level, counted by completed units rather than years in school." },
-  { term: "GPA", match: /\bGPA\b|grade point average/i, text: "Grade point average on a 4.0 scale. Programs usually mean your UC San Diego GPA; incoming transfer students may be asked for their previous school's." },
-  { term: "CV", match: /\bCV\b|curriculum vitae/i, text: "An academic résumé: education, research, skills, awards. For undergrads, a one-page résumé is usually fine." },
-  { term: "Cover letter", match: /cover letter/i, text: "A short letter (half a page is plenty) saying why you are interested in this lab and what you can bring." },
-  { term: "Postbacc", match: /post-?bacc/i, text: "Someone who has already finished a bachelor's degree, often gaining research experience before graduate school." },
-  { term: "Postdoc", match: /\bpost-?doc/i, text: "A researcher with a PhD who works in the lab. Postdocs and grad students often supervise undergraduates day to day." },
-  { term: "RA", match: /\bRAs?\b|research assistant/i, text: "Research assistant: an undergraduate helping with a lab's studies. It can be volunteer, for credit, or paid — the listing should say which." },
-  { term: "REU", match: /\bREU\b|Research Experiences? for Undergraduates/i, text: "Research Experiences for Undergraduates: paid summer research programs funded by the U.S. National Science Foundation. NSF-funded spots are often limited to U.S. citizens and permanent residents — check the listing." },
-  { term: "Stipend", match: /stipend|fellowship/i, text: "A fixed payment for taking part, rather than an hourly wage. It may count as taxable income." },
-  { term: "Pell Grant", match: /\bPell\b/i, text: "A federal grant for students with financial need. \"Pell-eligible\" is often used to mean low-income." },
-  { term: "Rolling", match: /\brolling\b/i, text: "Applications are reviewed as they arrive, so applying early helps even without a fixed deadline." },
-  { term: "Handshake", match: /handshake/i, text: "UC San Diego's job and internship site, run by Career Services. Sign in with your student account." },
-  { term: "REAL portal", match: /\bREAL\b/, text: "UC San Diego's portal for research and experiential-learning postings (real.ucsd.edu)." },
-  { term: "Work authorization", match: /work authori[sz]ation|citizen|permanent resident/i, text: "Being legally allowed to work in the U.S. International students on F-1 or J-1 visas have limits on paid work — ask International Students & Programs (ISPO) before accepting a paid role." },
-  { term: "Undocumented", match: /undocumented|AB ?540|DACA/i, text: "UC San Diego's Undocumented Student Services can tell you which programs and payments you qualify for." },
-  { term: "Honors program / thesis", match: /honors (?:program|thesis)|senior thesis/i, text: "A year-long research project, usually in your major, that ends in a written thesis. Departments set their own GPA and course requirements." },
-];
 
 function textOf(item: OpportunityView) {
   return [
@@ -49,9 +24,31 @@ function textOf(item: OpportunityView) {
     .join("\n");
 }
 
+/** Text with campus words underlined; hover, focus or tap shows a one-line definition. First use only. */
+export function TermText({ text, terms }: { text: string; terms?: Map<string, Set<string>> }) {
+  const allowed = terms?.get(text);
+  const hits = allowed ? findTerms(text).filter((h) => allowed.has(h.term.term)) : [];
+  if (!hits.length) return <>{text}</>;
+  const out: React.ReactNode[] = [];
+  let at = 0;
+  hits.forEach((h, i) => {
+    if (h.start > at) out.push(text.slice(at, h.start));
+    out.push(
+      <span key={i} className="ac-term" tabIndex={0}>
+        <span className="ac-term-word">{text.slice(h.start, h.end)}</span>
+        <span className="ac-term-tip" role="tooltip">
+          <strong>{h.term.term}</strong> {h.term.text}
+        </span>
+      </span>,
+    );
+    at = h.end;
+  });
+  if (at < text.length) out.push(text.slice(at));
+  return <>{out}</>;
+}
+
 export function Glossary({ item }: { item: OpportunityView }) {
-  const text = textOf(item);
-  const terms = GLOSSARY.filter((g) => g.match.test(text));
+  const terms = termsIn(textOf(item));
   if (!terms.length) return null;
   return (
     <details className="ac-detail-section ac-glossary">
@@ -67,6 +64,9 @@ export function Glossary({ item }: { item: OpportunityView }) {
           </div>
         ))}
       </dl>
+      <p className="ac-fineprint">
+        Written by our team, not AI. <a href="/glossary">See all campus words</a>.
+      </p>
     </details>
   );
 }

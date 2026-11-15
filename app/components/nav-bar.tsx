@@ -39,6 +39,7 @@ export default function NavBar() {
   const links = [
     { href: "/search", label: "Explore" },
     { href: "/access", label: "Access Gap" },
+    { href: "/glossary", label: "Campus words" },
     ...(user ? [{ href: "/me", label: "Saved" }] : []),
     ...(user?.role === "student" ? [{ href: "/calendar", label: "Calendar" }] : []),
     ...(user?.role === "admin"

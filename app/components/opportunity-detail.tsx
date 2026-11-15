@@ -7,8 +7,9 @@ import { getOpportunityWithLeads } from "@/lib/client/api";
 import { CATEGORY_LABELS } from "@/lib/client/types";
 import { REQUIREMENT_LABELS, eligibilityBadge, formatDate, relativeTime } from "@/lib/client/labels";
 import { DeadlinePill, EligibilityPill, RelevanceMeter, Star } from "./opportunity-card";
-import { CalendarButtons, Glossary, ReachOutGuide, ReportIssue } from "./student-help";
+import { CalendarButtons, Glossary, ReachOutGuide, ReportIssue, TermText } from "./student-help";
 import { Provenance } from "./provenance";
+import { assignTerms } from "@/lib/glossary";
 
 const CHECK_TEXT: Record<EligibilityCheck["result"], string> = {
   eligible: "You meet this",
@@ -35,7 +36,7 @@ const ACCESS_LABELS: Record<string, Record<string, string>> = {
   cost: { free: "Free", fee: "Has a fee" },
 };
 
-function AccessFacts({ access }: { access?: Access }) {
+function AccessFacts({ access, terms }: { access?: Access; terms: Map<string, Set<string>> }) {
   const facts = Object.entries(access ?? {}).filter(([, f]) => f && f.value !== "unstated");
   const intl = access?.international?.value ?? "unstated";
   return (
@@ -48,7 +49,11 @@ function AccessFacts({ access }: { access?: Access }) {
               <div className="ac-req-head">
                 <span className="ac-req-type">{ACCESS_LABELS[k]?.[f!.value] ?? `${k}: ${f!.value}`}</span>
               </div>
-              {f!.quote ? <blockquote className="ac-quote">“{f!.quote}”</blockquote> : null}
+              {f!.quote ? (
+                <blockquote className="ac-quote">
+                  “<TermText text={f!.quote} terms={terms} />”
+                </blockquote>
+              ) : null}
             </li>
           ))}
         </ul>
@@ -109,6 +114,13 @@ export function OpportunityDetail({ item, signedIn, saved, onToggleSave }: Props
   const badge = eligibilityBadge(item, item.match);
   const { rows, extra } = pairChecks(item.eligibility ?? [], item.match?.eligibility.checks);
   const verified = item.status === "verified";
+  // Each campus word gets its tooltip once per listing, at its first use in reading order.
+  const terms = assignTerms([
+    item.description,
+    ...(item.eligibility ?? []).map((r) => r.raw_text),
+    ...Object.values(item.access ?? {}).map((f) => f?.quote),
+    item.application_method,
+  ]);
 
   return (
     <div className="ac-detail">
@@ -148,7 +160,9 @@ export function OpportunityDetail({ item, signedIn, saved, onToggleSave }: Props
       {item.description ? (
         <section className="ac-detail-section">
           <h3>About</h3>
-          <p>{item.description}</p>
+          <p>
+            <TermText text={item.description} terms={terms} />
+          </p>
         </section>
       ) : null}
 
@@ -169,7 +183,9 @@ export function OpportunityDetail({ item, signedIn, saved, onToggleSave }: Props
                     <span className={`ac-tag ac-check-${check.result}`}>{CHECK_TEXT[check.result]}</span>
                   ) : null}
                 </div>
-                <blockquote className="ac-quote">“{req.raw_text}”</blockquote>
+                <blockquote className="ac-quote">
+                  “<TermText text={req.raw_text} terms={terms} />”
+                </blockquote>
                 {signedIn && check?.reason ? <p className="ac-req-reason">{check.reason}</p> : null}
               </li>
             ))}
@@ -194,7 +210,7 @@ export function OpportunityDetail({ item, signedIn, saved, onToggleSave }: Props
         ) : null}
       </section>
 
-      <AccessFacts access={item.access} />
+      <AccessFacts access={item.access} terms={terms} />
       <Leads id={item.opportunity_id} />
       <ReachOutGuide item={item} />
       <Glossary item={item} />
@@ -234,7 +250,9 @@ export function OpportunityDetail({ item, signedIn, saved, onToggleSave }: Props
         {item.application_method ? (
           <>
             <dt>How to apply</dt>
-            <dd>{item.application_method}</dd>
+            <dd>
+              <TermText text={item.application_method} terms={terms} />
+            </dd>
           </>
         ) : null}
         {item.required_skills?.length ? (
