@@ -11,7 +11,7 @@ student which ones they meet, which they don't, and which they need to confirm.
 
 Built in a weekend for **SanD Hacks 2026**.
 
-**Live site:** https://ai-academic-compass.vercel.app
+**Live site:** https://aiacademiccompass.us
 
 ## Try it
 
@@ -71,7 +71,7 @@ international students can apply, whether it is designed for first-generation or
 whether it is paid / stipend / for credit, and whether it costs money. Silence is recorded as
 "unstated" — and that silence is the point of our Data for Good page.
 
-**[/access](https://ai-academic-compass.vercel.app/access)** runs the same open listings past four
+**[/access](https://aiacademiccompass.us/access)** runs the same open listings past four
 fictional students — a typical student, a first-generation student, a community college transfer and
 an international (F-1) student — with the same fixed rules, and shows how many each can actually
 apply to, how many are paid, how many need U.S. citizenship, and how often listings even say.
