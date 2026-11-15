@@ -1,0 +1,126 @@
+{
+  "checked_at": "2026-11-15T01:40:28.171858+00:00",
+  "note": "Public API readback plus extraction evidence; not human-reviewed ground truth. Host-based UCSD count is not proof of student eligibility.",
+  "ucsd_hosted_categories": {
+    "program": 9,
+    "event": 1,
+    "research": 19,
+    "course": 1
+  },
+  "records": [
+    {
+      "record": {
+        "opportunity_id": "7fbbdc4d-e3ea-424a-8669-19757f4aacfe",
+        "title": "UC Center Sacramento (UCCS) Program",
+        "university": "UCSD",
+        "organization": "UC Center Sacramento",
+        "category": "program",
+        "description": "The UCCS program provides undergraduate students the opportunity to combine academics, research, and public service through internships in the Sacramento policy community, government departments, and agencies, while taking mandatory coursework.",
+        "required_skills": [],
+        "eligibility": [
+          {
+            "type": "academic_year",
+            "value": "Upper division standing (90 units)",
+            "raw_text": "Upper division standing (90 units)",
+            "is_hard_requirement": true
+          },
+          {
+            "type": "gpa",
+            "value": 3,
+            "raw_text": "3.0 GPA or above preferred",
+            "is_hard_requirement": false
+          },
+          {
+            "type": "hours_per_week",
+            "value": 20,
+            "raw_text": "Work as an intern for about 20 hours per week",
+            "is_hard_requirement": true
+          }
+        ],
+        "deadline": "2025-10-16",
+        "deadline_text": "Final Deadline - October 16th, 2025",
+        "application_method": "Online application via the link provided on the UC Center Sacramento website.",
+        "source_url": "https://aip.ucsd.edu/whatwedo/uccs/index.html",
+        "source_id": "57a0b0be-c49d-41bf-9fe8-5ff7b1f4b4a3",
+        "first_collected_at": "2026-11-15T01:34:07.202Z",
+        "last_verified_at": "2026-11-15T01:37:44.788Z",
+        "status": "expired"
+      },
+      "discovered_from": [
+        "https://students.ucsd.edu/finances/internships/index.html"
+      ],
+      "source_text_sha256": "25b24e5772aaeb04233a7265a71ddf4ae9db82433856759b2a53dd1bc2270135",
+      "human_review_complete": false
+    },
+    {
+      "record": {
+        "opportunity_id": "bb5f6a56-13ae-465f-bee3-bd4db9f788a4",
+        "title": "AIP Enrollment Workshop",
+        "university": "UCSD",
+        "organization": "Experiential Learning, Teaching and Learning Commons",
+        "category": "event",
+        "description": "Learn about your internship course options offered through Academic Internship Program and get support with enrollment ahead of AIP's deadlines.",
+        "required_skills": [],
+        "eligibility": [
+          {
+            "type": "other",
+            "value": "All students",
+            "raw_text": "Audience: All students",
+            "is_hard_requirement": true
+          }
+        ],
+        "deadline": null,
+        "deadline_text": null,
+        "application_method": "RSVP HERE!",
+        "source_url": "https://calendar.ucsd.edu/event/copy-of-aip-summer-enrollment-workshop",
+        "source_id": "adb2b90d-00de-437a-ae5e-0ce9c19bfcd9",
+        "first_collected_at": "2026-11-15T01:34:13.387Z",
+        "last_verified_at": "2026-11-15T01:37:48.862Z",
+        "status": "needs_verification"
+      },
+      "discovered_from": [
+        "https://calendar.ucsd.edu/"
+      ],
+      "source_text_sha256": "8fdaa2603ba10754d95b1db9f198dc8f586589471ea2eded37d78abf35cc366a",
+      "human_review_complete": false
+    },
+    {
+      "record": {
+        "opportunity_id": "0ed4d64b-e8aa-4fe1-b1e1-defe4b3b0451",
+        "title": "Basement Affiliate Student Organization Program",
+        "university": "UCSD",
+        "organization": "The Basement",
+        "category": "program",
+        "description": "The Basement Affiliate Student Organization Program is designed to foster meaningful partnerships with student organizations that are passionate about entrepreneurship, innovation, and design knowledge.",
+        "required_skills": [],
+        "eligibility": [
+          {
+            "type": "other",
+            "value": "registered with UC San Diego’s Center for Student Involvement",
+            "raw_text": "The organization must be registered and in good standing with UC San Diego’s Center for Student Involvement (CSI).",
+            "is_hard_requirement": true
+          },
+          {
+            "type": "other",
+            "value": "active member base",
+            "raw_text": "The organization should have an active member base and demonstrate consistent engagement throughout the academic year.",
+            "is_hard_requirement": true
+          }
+        ],
+        "deadline": null,
+        "deadline_text": null,
+        "application_method": "Complete the Affiliate Agreement Form, signed by all Executive Board",
+        "source_url": "https://thebasement.ucsd.edu/programs/affiliates.html",
+        "source_id": "ee5db5c0-db68-4ac6-9b8a-b7cf54085c1f",
+        "first_collected_at": "2026-11-15T01:34:25.512Z",
+        "last_verified_at": "2026-11-15T01:37:58.799Z",
+        "status": "needs_verification"
+      },
+      "discovered_from": [
+        "https://thebasement.ucsd.edu/offerings/index.html"
+      ],
+      "source_text_sha256": "4bd76accf29b6b64a7cea8c417c412976d82ed92644aef17be8b865e5a415dd5",
+      "human_review_complete": false
+    }
+  ]
+}
