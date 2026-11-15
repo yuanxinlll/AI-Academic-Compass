@@ -15,7 +15,7 @@ const apply = process.argv.includes("--apply");
 const sql = neon(process.env.DATABASE_URL);
 
 const MONTHS = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
-const MONTH_RE = MONTHS.map((m) => `${m}|${m.slice(0, 3)}\\.?`).join("|");
+const MONTH_RE = MONTHS.map((m) => `${m}|${m.slice(0, 3)}\\.?`).join("|") + "|sept\\.?";
 
 function iso(y, m, d) {
   const dt = new Date(Date.UTC(y, m - 1, d));

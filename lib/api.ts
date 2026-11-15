@@ -6,9 +6,20 @@ export function apiError(status: number, code: string, message: string, field?: 
   return NextResponse.json({ error: { code, message, ...(field ? { field } : {}) } }, { status });
 }
 
+const MAX_BODY = 2_000_000; // bytes; the largest legitimate body is a 50-item collector batch
+
 export async function readJson(req: Request): Promise<unknown> {
+  const declared = Number(req.headers.get("content-length") ?? 0);
+  if (declared > MAX_BODY) throw new ValidationError("body", "Request body is too large");
+  let text: string;
   try {
-    return await req.json();
+    text = await req.text();
+  } catch {
+    throw new ValidationError("body", "Request body could not be read");
+  }
+  if (text.length > MAX_BODY) throw new ValidationError("body", "Request body is too large");
+  try {
+    return JSON.parse(text);
   } catch {
     throw new ValidationError("body", "Request body must be valid JSON");
   }

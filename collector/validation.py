@@ -34,7 +34,7 @@ def date_in_evidence(expected, evidence):
 
 _MONTHS = ['january', 'february', 'march', 'april', 'may', 'june', 'july',
            'august', 'september', 'october', 'november', 'december']
-_MONTH_RE = r'(?:' + '|'.join(rf'{m}|{m[:3]}\.?' for m in _MONTHS) + r')'
+_MONTH_RE = r'(?:' + '|'.join(rf'{m}|{m[:3]}\.?' for m in _MONTHS) + r'|sept\.?)'
 
 
 def single_date(evidence):

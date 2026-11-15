@@ -20,6 +20,12 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ id:
       throw new ValidationError("reason", `reason must be one of: ${REPORT_REASONS.join(", ")}`);
     const note = optString(b, "note", 500);
     const sql = getSql();
+    // Rate limit: at most 10 reports per student per hour.
+    const recent = await sql.query(
+      `SELECT count(*)::int AS n FROM opportunity_reports WHERE user_id = $1 AND created_at > now() - interval '1 hour'`,
+      [auth.userId],
+    );
+    if (recent[0].n >= 10) return apiError(429, "RATE_LIMITED", "Too many reports in the last hour. Try again later.");
     const exists = await sql.query(`SELECT 1 FROM opportunities WHERE opportunity_id = $1`, [id]);
     if (!exists.length) return apiError(404, "NOT_FOUND", "No such opportunity");
     const open = await sql.query(
