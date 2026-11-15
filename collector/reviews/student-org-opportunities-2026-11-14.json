@@ -1,0 +1,49 @@
+{
+  "checked_at": "2026-11-15T02:35:54.441222+00:00",
+  "note": "Source identity is verified separately. Records are not human-approved and do not establish current-cycle availability.",
+  "records": [
+    {
+      "opportunity_id": "4d9b57cc-3fa0-4cfd-bc23-da16026ed078",
+      "title": "Quarterly Projects",
+      "university": "UCSD",
+      "organization": "IEEE at UC San Diego",
+      "category": "program",
+      "description": "IEEE's Quarterly Projects aims to provide students with project experience in a span of 10 weeks. Students are put into teams of 5 to develop a hardware project, receive mentorship, and showcase their work at the end of the quarter.",
+      "required_skills": [],
+      "eligibility": [],
+      "deadline": null,
+      "deadline_text": null,
+      "application_method": "Fill out QP interest form found on the bottom of the page or via links to this quarter's application forms provided via IEEE discord or Instagram.",
+      "source_url": "https://ieeeatucsd.org/projects/quarterly",
+      "source_id": "c207e774-f43b-465b-8d75-38d3c5b900b2",
+      "first_collected_at": "2026-11-15T02:32:58.078Z",
+      "last_verified_at": "2026-11-15T02:32:58.078Z",
+      "status": "needs_verification"
+    },
+    {
+      "opportunity_id": "ae7749d9-e775-46f8-b274-a6adff844c53",
+      "title": "TritonBots RoboCup SSL Team",
+      "university": "UCSD",
+      "organization": "IEEE at UC San Diego",
+      "category": "competition",
+      "description": "TritonBots FC is UCSD’s RoboCup Small-Size League Team. Students develop fully autonomous soccer playing robots to compete in the annual RoboCup International Competition. All hardware is custom built and software programmed from the ground up.",
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "other",
+          "value": null,
+          "raw_text": "All TritonBot members must purchase an IEEE membership following their recruitment.",
+          "is_hard_requirement": true
+        }
+      ],
+      "deadline": "2025-10-10",
+      "deadline_text": "Oct 10, 2025\nApplications Close (11:59 PM)",
+      "application_method": "Apply Here (link on page)",
+      "source_url": "https://ieeeatucsd.org/projects/robocup",
+      "source_id": "ccb78883-57b8-43f7-9dad-5571127ae3aa",
+      "first_collected_at": "2026-11-15T02:30:23.797Z",
+      "last_verified_at": "2026-11-15T02:32:49.166Z",
+      "status": "expired"
+    }
+  ]
+}

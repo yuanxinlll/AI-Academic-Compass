@@ -8,6 +8,32 @@
 The collector implementation remains scoped to collector/. Shared contracts,
 Next.js routes, database schema, and other members' code were not changed.
 
+## Student-organization sources - 2026-11-15 UTC
+
+- Read all 628 current UCSD CSI records; 467 have a social field. Retained no
+  principal member names/student emails. Verified cross-links from UCSD academic
+  department/organization pages and targeted online searches.
+- Fourteen readable website sources enabled with exact host/path scopes. Twenty-two
+  explicit Instagram references checked; public posts were not readable with the
+  current fetch method, so no Instagram feed was enabled. Other social references
+  remain an unresolved research queue, not inferred/verified Instagram accounts.
+- Exact identity matching rejected similarly named organizations; offline/parked,
+  generic institutional footer links, unrelated redirects, login/JS-only pages
+  were not promoted to readable sources. Real JS sites remain pending rendering.
+- 61 offline tests passed: scope boundaries, no host-suffix/shared-host escapes,
+  exact identity, no member/email retention, disabled-source handling, seed
+  rotation and all existing extraction/API integration regressions.
+- Refined live IEEE crawl: four retrieved pages, two records, one inserted and
+  one updated, no errors. Quarterly Projects classified as program with unknown
+  deadline; TritonBots RoboCup SSL classified as competition and expired with
+  source-supported 2025-10-10 deadline. Public API readback matched both records.
+- The initial IEEE run withheld a validation failure; that evidence remains in
+  output/student-org-live/initial-report.json. A fresh valid extraction later
+  saved the program. No record was approved merely from source affiliation.
+- Versioned evidence: student_org_sources.json, reviews/STUDENT_ORG_SOURCES.md,
+  reviews/student-org-opportunities-2026-11-14.json. Runtime state/provider output
+  stays ignored. No B/C/D code, schema, dependency or deployed scheduler changed.
+
 ## Registry discovery - 2026-11-14 Pacific / 2026-11-15 UTC
 
 - 52 offline tests passed after registry/pipeline implementation and live findings.

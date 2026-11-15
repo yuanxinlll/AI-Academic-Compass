@@ -2616,6 +2616,609 @@
           "observed_at": "2026-11-15T01:37:51.799631+00:00"
         }
       ]
+    },
+    {
+      "url": "https://acmucsd.com/",
+      "discovery_groups": [
+        "event",
+        "internship",
+        "competition",
+        "course"
+      ],
+      "role": "directory",
+      "stage": "seed",
+      "source_type": "listing",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "verified_student_org_source",
+          "source_url": "https://studentorg.ucsd.edu/Home/Details/20905"
+        }
+      ],
+      "notes": "Verified student-organization source identity; each opportunity still needs content/evidence validation.",
+      "source_family": "student_orgs",
+      "affiliation_catalog_url": "https://acmucsd.com/",
+      "organization": "Association for Computing Machinery (ACM)"
+    },
+    {
+      "url": "https://ieeeatucsd.org/",
+      "discovery_groups": [
+        "event",
+        "internship",
+        "competition",
+        "course"
+      ],
+      "role": "directory",
+      "stage": "seed",
+      "source_type": "listing",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "verified_student_org_source",
+          "source_url": "https://studentorg.ucsd.edu/Home/Details/21355"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ieeeatucsd.org/projects/quarterly",
+          "observed_at": "2026-11-15T02:30:14.078643+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ieeeatucsd.org/projects/robocup",
+          "observed_at": "2026-11-15T02:30:19.562402+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ieeeatucsd.org/projects/supercomputing",
+          "observed_at": "2026-11-15T02:30:26.448709+00:00"
+        }
+      ],
+      "notes": "Verified student-organization source identity; each opportunity still needs content/evidence validation.",
+      "source_family": "student_orgs",
+      "affiliation_catalog_url": "https://ieeeucsd.org/",
+      "organization": "Institute of Electrical and Electronics Engineers (IEEE)",
+      "last_checked_at": "2026-11-15T02:32:43.539645+00:00",
+      "last_error": null
+    },
+    {
+      "url": "https://saseatucsd.weebly.com/",
+      "discovery_groups": [
+        "event",
+        "internship",
+        "competition",
+        "course"
+      ],
+      "role": "directory",
+      "stage": "seed",
+      "source_type": "listing",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "verified_student_org_source",
+          "source_url": "https://studentorg.ucsd.edu/Home/Details/20963"
+        }
+      ],
+      "notes": "Verified student-organization source identity; each opportunity still needs content/evidence validation.",
+      "source_family": "student_orgs",
+      "affiliation_catalog_url": "https://saseatucsd.weebly.com/",
+      "organization": "Society of Asian Scientists and Engineers at UC San Diego"
+    },
+    {
+      "url": "https://scse.weebly.com/",
+      "discovery_groups": [
+        "event",
+        "internship",
+        "competition",
+        "course"
+      ],
+      "role": "directory",
+      "stage": "seed",
+      "source_type": "listing",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "verified_student_org_source",
+          "source_url": "https://studentorg.ucsd.edu/Home/Details/20947"
+        }
+      ],
+      "notes": "Verified student-organization source identity; each opportunity still needs content/evidence validation.",
+      "source_family": "student_orgs",
+      "affiliation_catalog_url": "https://scse.weebly.com/",
+      "organization": "Society of Civil and Structural Engineers"
+    },
+    {
+      "url": "https://shpe313.wixsite.com/shpe-at-ucsd",
+      "discovery_groups": [
+        "event",
+        "internship",
+        "competition",
+        "course"
+      ],
+      "role": "directory",
+      "stage": "seed",
+      "source_type": "listing",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "verified_student_org_source",
+          "source_url": "https://studentorg.ucsd.edu/Home/Details/21188"
+        }
+      ],
+      "notes": "Verified student-organization source identity; each opportunity still needs content/evidence validation.",
+      "source_family": "student_orgs",
+      "affiliation_catalog_url": "https://shpe313.wixsite.com/shpe-at-ucsd",
+      "organization": "Society of Hispanic Professional Engineers"
+    },
+    {
+      "url": "https://bioinformatics.ucsd.edu/undergrad/ubic",
+      "discovery_groups": [
+        "event",
+        "internship",
+        "competition",
+        "course"
+      ],
+      "role": "directory",
+      "stage": "seed",
+      "source_type": "listing",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "verified_student_org_source",
+          "source_url": "https://studentorg.ucsd.edu/Home/Details/20961"
+        }
+      ],
+      "notes": "Verified student-organization source identity; each opportunity still needs content/evidence validation.",
+      "source_family": "student_orgs",
+      "affiliation_catalog_url": "https://bioinformatics.ucsd.edu/node/12",
+      "organization": "Undergraduate Bioinformatics Club (UBIC)"
+    },
+    {
+      "url": "https://www.vgdc.dev/",
+      "discovery_groups": [
+        "event",
+        "internship",
+        "competition",
+        "course"
+      ],
+      "role": "directory",
+      "stage": "seed",
+      "source_type": "listing",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "verified_student_org_source",
+          "source_url": "https://studentorg.ucsd.edu/Home/Details/20906"
+        }
+      ],
+      "notes": "Verified student-organization source identity; each opportunity still needs content/evidence validation.",
+      "source_family": "student_orgs",
+      "affiliation_catalog_url": "https://www.vgdc.dev/",
+      "organization": "Video Game Development Club (VGDC) at UC San Diego"
+    },
+    {
+      "url": "https://ucsdsolarcar.org/",
+      "discovery_groups": [
+        "event",
+        "internship",
+        "competition",
+        "course"
+      ],
+      "role": "directory",
+      "stage": "seed",
+      "source_type": "listing",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "verified_student_org_source",
+          "source_url": "https://studentorg.ucsd.edu/Home/Details/21494"
+        }
+      ],
+      "notes": "Verified student-organization source identity; each opportunity still needs content/evidence validation.",
+      "source_family": "student_orgs",
+      "affiliation_catalog_url": "https://ucsdsolarcar.org/",
+      "organization": "Triton Solar Car"
+    },
+    {
+      "url": "https://ucsdcornerstone.com/",
+      "discovery_groups": [
+        "event",
+        "internship",
+        "competition",
+        "course"
+      ],
+      "role": "directory",
+      "stage": "seed",
+      "source_type": "listing",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "verified_student_org_source",
+          "source_url": "https://studentorg.ucsd.edu/Home/Details/21051"
+        }
+      ],
+      "notes": "Verified student-organization source identity; each opportunity still needs content/evidence validation.",
+      "source_family": "student_orgs",
+      "affiliation_catalog_url": "https://ucsdcornerstone.com/",
+      "organization": "Cornerstone Community Consultants at UC San Diego"
+    },
+    {
+      "url": "https://ascendatucsandiego.weebly.com/",
+      "discovery_groups": [
+        "event",
+        "internship",
+        "competition",
+        "course"
+      ],
+      "role": "directory",
+      "stage": "seed",
+      "source_type": "listing",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "verified_student_org_source",
+          "source_url": "https://studentorg.ucsd.edu/Home/Details/21485"
+        }
+      ],
+      "notes": "Verified student-organization source identity; each opportunity still needs content/evidence validation.",
+      "source_family": "student_orgs",
+      "affiliation_catalog_url": "https://ascendatucsandiego.weebly.com/",
+      "organization": "Ascend at UC San Diego"
+    },
+    {
+      "url": "https://bapatucsdrady.org/",
+      "discovery_groups": [
+        "event",
+        "internship",
+        "competition",
+        "course"
+      ],
+      "role": "directory",
+      "stage": "seed",
+      "source_type": "listing",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "verified_student_org_source",
+          "source_url": "https://studentorg.ucsd.edu/Home/Details/21433"
+        }
+      ],
+      "notes": "Verified student-organization source identity; each opportunity still needs content/evidence validation.",
+      "source_family": "student_orgs",
+      "affiliation_catalog_url": "https://bapatucsdrady.org/",
+      "organization": "Beta Alpha Psi"
+    },
+    {
+      "url": "https://www.bssa-at-ucsd.com/",
+      "discovery_groups": [
+        "event",
+        "internship",
+        "competition",
+        "course"
+      ],
+      "role": "directory",
+      "stage": "seed",
+      "source_type": "listing",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "verified_student_org_source",
+          "source_url": "https://studentorg.ucsd.edu/Home/Details/21017"
+        }
+      ],
+      "notes": "Verified student-organization source identity; each opportunity still needs content/evidence validation.",
+      "source_family": "student_orgs",
+      "affiliation_catalog_url": "https://www.ucsdbssa.com/",
+      "organization": "Biological Sciences Student Association"
+    },
+    {
+      "url": "https://designatucsd.com/",
+      "discovery_groups": [
+        "event",
+        "internship",
+        "competition",
+        "course"
+      ],
+      "role": "directory",
+      "stage": "seed",
+      "source_type": "listing",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "verified_student_org_source",
+          "source_url": "https://studentorg.ucsd.edu/Home/Details/21095"
+        }
+      ],
+      "notes": "Verified student-organization source identity; each opportunity still needs content/evidence validation.",
+      "source_family": "student_orgs",
+      "affiliation_catalog_url": "https://designatucsd.com/",
+      "organization": "Design Co"
+    },
+    {
+      "url": "https://wicucsd.vercel.app/",
+      "discovery_groups": [
+        "event",
+        "internship",
+        "competition",
+        "course"
+      ],
+      "role": "directory",
+      "stage": "seed",
+      "source_type": "listing",
+      "enabled": true,
+      "provenance": [
+        {
+          "method": "verified_student_org_source",
+          "source_url": "https://studentorg.ucsd.edu/Home/Details/21366"
+        }
+      ],
+      "notes": "Verified student-organization source identity; each opportunity still needs content/evidence validation.",
+      "source_family": "student_orgs",
+      "affiliation_catalog_url": "https://wicucsd.vercel.app/",
+      "organization": "Undergraduate Women in Computing at UC San Diego"
+    },
+    {
+      "url": "https://ieeeatucsd.org/projects/quarterly",
+      "discovery_groups": [
+        "competition"
+      ],
+      "role": "detail",
+      "stage": "collected",
+      "source_type": "listing",
+      "enabled": true,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://ieeeatucsd.org/",
+          "observed_at": "2026-11-15T02:30:10.096252+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ieeeatucsd.org/projects/robocup",
+          "observed_at": "2026-11-15T02:30:19.562402+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ieeeatucsd.org/projects/supercomputing",
+          "observed_at": "2026-11-15T02:30:26.448709+00:00"
+        }
+      ],
+      "last_checked_at": "2026-11-15T02:32:52.041101+00:00",
+      "last_error": null,
+      "source_family": "student_orgs",
+      "organization": "Institute of Electrical and Electronics Engineers (IEEE)",
+      "affiliation_catalog_url": "https://ieeeucsd.org/"
+    },
+    {
+      "url": "https://ieeeatucsd.org/projects/robocup",
+      "discovery_groups": [
+        "competition"
+      ],
+      "role": "detail",
+      "stage": "collected",
+      "source_type": "listing",
+      "enabled": true,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://ieeeatucsd.org/",
+          "observed_at": "2026-11-15T02:30:10.096252+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ieeeatucsd.org/projects/quarterly",
+          "observed_at": "2026-11-15T02:30:14.078643+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ieeeatucsd.org/projects/supercomputing",
+          "observed_at": "2026-11-15T02:30:26.448709+00:00"
+        }
+      ],
+      "last_checked_at": "2026-11-15T02:32:45.423445+00:00",
+      "last_error": null,
+      "source_family": "student_orgs",
+      "organization": "Institute of Electrical and Electronics Engineers (IEEE)",
+      "affiliation_catalog_url": "https://ieeeucsd.org/"
+    },
+    {
+      "url": "https://ieeeatucsd.org/projects/supercomputing",
+      "discovery_groups": [
+        "competition"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://ieeeatucsd.org/",
+          "observed_at": "2026-11-15T02:30:10.096252+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ieeeatucsd.org/projects/quarterly",
+          "observed_at": "2026-11-15T02:30:14.078643+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ieeeatucsd.org/projects/robocup",
+          "observed_at": "2026-11-15T02:30:19.562402+00:00"
+        }
+      ],
+      "last_checked_at": "2026-11-15T02:32:48.105269+00:00",
+      "last_error": null,
+      "source_family": "student_orgs",
+      "organization": "Institute of Electrical and Electronics Engineers (IEEE)",
+      "affiliation_catalog_url": "https://ieeeucsd.org/"
+    },
+    {
+      "url": "https://ieeeatucsd.org/cdn-cgi/l/email-protection",
+      "discovery_groups": [
+        "competition"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://ieeeatucsd.org/",
+          "observed_at": "2026-11-15T02:30:10.096252+00:00"
+        }
+      ],
+      "source_family": "student_orgs",
+      "organization": "Institute of Electrical and Electronics Engineers (IEEE)",
+      "affiliation_catalog_url": "https://ieeeucsd.org/"
+    },
+    {
+      "url": "https://ieeeatucsd.org/events",
+      "discovery_groups": [
+        "competition"
+      ],
+      "role": "directory",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://ieeeatucsd.org/",
+          "observed_at": "2026-11-15T02:30:10.096252+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ieeeatucsd.org/projects/quarterly",
+          "observed_at": "2026-11-15T02:30:14.078643+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ieeeatucsd.org/projects/robocup",
+          "observed_at": "2026-11-15T02:30:19.562402+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ieeeatucsd.org/projects/supercomputing",
+          "observed_at": "2026-11-15T02:30:26.448709+00:00"
+        }
+      ],
+      "source_family": "student_orgs",
+      "organization": "Institute of Electrical and Electronics Engineers (IEEE)",
+      "affiliation_catalog_url": "https://ieeeucsd.org/"
+    },
+    {
+      "url": "https://ieeeatucsd.org/join",
+      "discovery_groups": [
+        "competition"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://ieeeatucsd.org/",
+          "observed_at": "2026-11-15T02:30:10.096252+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ieeeatucsd.org/projects/quarterly",
+          "observed_at": "2026-11-15T02:30:14.078643+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ieeeatucsd.org/projects/robocup",
+          "observed_at": "2026-11-15T02:30:19.562402+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ieeeatucsd.org/projects/supercomputing",
+          "observed_at": "2026-11-15T02:30:26.448709+00:00"
+        }
+      ],
+      "source_family": "student_orgs",
+      "organization": "Institute of Electrical and Electronics Engineers (IEEE)",
+      "affiliation_catalog_url": "https://ieeeucsd.org/"
+    },
+    {
+      "url": "https://ieeeatucsd.org/projects",
+      "discovery_groups": [
+        "competition"
+      ],
+      "role": "directory",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://ieeeatucsd.org/",
+          "observed_at": "2026-11-15T02:30:10.096252+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ieeeatucsd.org/projects/quarterly",
+          "observed_at": "2026-11-15T02:30:14.078643+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ieeeatucsd.org/projects/robocup",
+          "observed_at": "2026-11-15T02:30:19.562402+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ieeeatucsd.org/projects/supercomputing",
+          "observed_at": "2026-11-15T02:30:26.448709+00:00"
+        }
+      ],
+      "source_family": "student_orgs",
+      "organization": "Institute of Electrical and Electronics Engineers (IEEE)",
+      "affiliation_catalog_url": "https://ieeeucsd.org/"
+    },
+    {
+      "url": "https://ieeeatucsd.org/terms-of-service",
+      "discovery_groups": [
+        "competition"
+      ],
+      "role": "detail",
+      "stage": "candidate",
+      "source_type": "listing",
+      "enabled": false,
+      "notes": "",
+      "provenance": [
+        {
+          "method": "internal_link",
+          "source_url": "https://ieeeatucsd.org/",
+          "observed_at": "2026-11-15T02:30:10.096252+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ieeeatucsd.org/projects/quarterly",
+          "observed_at": "2026-11-15T02:30:14.078643+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ieeeatucsd.org/projects/robocup",
+          "observed_at": "2026-11-15T02:30:19.562402+00:00"
+        },
+        {
+          "method": "internal_link",
+          "source_url": "https://ieeeatucsd.org/projects/supercomputing",
+          "observed_at": "2026-11-15T02:30:26.448709+00:00"
+        }
+      ],
+      "source_family": "student_orgs",
+      "organization": "Institute of Electrical and Electronics Engineers (IEEE)",
+      "affiliation_catalog_url": "https://ieeeucsd.org/"
     }
   ],
   "external_candidates": [
@@ -3458,6 +4061,134 @@
       "observed_at": "2026-11-15T01:37:51.799631+00:00",
       "status": "needs_review",
       "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://www.instagram.com/ieee.at.ucsd",
+      "discovered_from": "https://ieeeatucsd.org/",
+      "discovery_group": "competition",
+      "observed_at": "2026-11-15T02:30:10.096252+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://discord.gg/XxfjqZSjca",
+      "discovered_from": "https://ieeeatucsd.org/",
+      "discovery_group": "competition",
+      "observed_at": "2026-11-15T02:30:10.096252+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://devpost.com/software/water-purity-tester?_gl=1*150emi1*_gcl_au*MTY5OTAyNDI1NS4xNzYyMDM0OTg3*_ga*OTI5NDA0NDYxLjE3NjIwMzQ5ODc.*_ga_0YHJK3Y10M*czE3NjIwMzQ5ODYkbzEkZzEkdDE3NjIwMzY3MzAkajYwJGwwJGgw",
+      "discovered_from": "https://ieeeatucsd.org/projects/quarterly",
+      "discovery_group": "competition",
+      "observed_at": "2026-11-15T02:30:14.078643+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://devpost.com/software/play-a-eye?_gl=1*lna3rh*_gcl_au*MTY5OTAyNDI1NS4xNzYyMDM0OTg3*_ga*OTI5NDA0NDYxLjE3NjIwMzQ5ODc.*_ga_0YHJK3Y10M*czE3NjIwMzQ5ODYkbzEkZzEkdDE3NjIwMzcyNzYkajU3JGwwJGgw",
+      "discovered_from": "https://ieeeatucsd.org/projects/quarterly",
+      "discovery_group": "competition",
+      "observed_at": "2026-11-15T02:30:14.078643+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://devpost.com/software/lava-lidar-game?_gl=1*1jl072a*_gcl_au*MTY5OTAyNDI1NS4xNzYyMDM0OTg3*_ga*OTI5NDA0NDYxLjE3NjIwMzQ5ODc.*_ga_0YHJK3Y10M*czE3NjIwMzQ5ODYkbzEkZzEkdDE3NjIwMzcyODYkajQ3JGwwJGgw",
+      "discovered_from": "https://ieeeatucsd.org/projects/quarterly",
+      "discovery_group": "competition",
+      "observed_at": "2026-11-15T02:30:14.078643+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://devpost.com/software/compact-gps-tracker?_gl=1*1dadoff*_gcl_au*MTY5OTAyNDI1NS4xNzYyMDM0OTg3*_ga*OTI5NDA0NDYxLjE3NjIwMzQ5ODc.*_ga_0YHJK3Y10M*czE3NjIwMzQ5ODYkbzEkZzEkdDE3NjIwMzcyOTYkajM3JGwwJGgw",
+      "discovered_from": "https://ieeeatucsd.org/projects/quarterly",
+      "discovery_group": "competition",
+      "observed_at": "2026-11-15T02:30:14.078643+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://devpost.com/software/power-tag?_gl=1*1jtnuuz*_gcl_au*MTY5OTAyNDI1NS4xNzYyMDM0OTg3*_ga*OTI5NDA0NDYxLjE3NjIwMzQ5ODc.*_ga_0YHJK3Y10M*czE3NjIwMzQ5ODYkbzEkZzEkdDE3NjIwMzU0MDYkajYwJGwwJGgw",
+      "discovered_from": "https://ieeeatucsd.org/projects/quarterly",
+      "discovery_group": "competition",
+      "observed_at": "2026-11-15T02:30:14.078643+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://devpost.com/software/holiday-photo-robot-sjqf2w?_gl=1*tu5sby*_gcl_au*MTY5OTAyNDI1NS4xNzYyMDM0OTg3*_ga*OTI5NDA0NDYxLjE3NjIwMzQ5ODc.*_ga_0YHJK3Y10M*czE3NjIwMzQ5ODYkbzEkZzEkdDE3NjIwMzczMTEkajIyJGwwJGgw",
+      "discovered_from": "https://ieeeatucsd.org/projects/quarterly",
+      "discovery_group": "competition",
+      "observed_at": "2026-11-15T02:30:14.078643+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://devpost.com/software/step-see-the-end-point?_gl=1*ui3vmy*_gcl_au*MTY5OTAyNDI1NS4xNzYyMDM0OTg3*_ga*OTI5NDA0NDYxLjE3NjIwMzQ5ODc.*_ga_0YHJK3Y10M*czE3NjIwMzQ5ODYkbzEkZzEkdDE3NjIwMzczMjIkajExJGwwJGgw",
+      "discovered_from": "https://ieeeatucsd.org/projects/quarterly",
+      "discovery_group": "competition",
+      "observed_at": "2026-11-15T02:30:14.078643+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://forms.gle/pAVXShHpPHMdmnQg9",
+      "discovered_from": "https://ieeeatucsd.org/projects/quarterly",
+      "discovery_group": "competition",
+      "observed_at": "2026-11-15T02:30:14.078643+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://forms.gle/QNxqwCkFCPPsxtAq8",
+      "discovered_from": "https://ieeeatucsd.org/projects/quarterly",
+      "discovery_group": "competition",
+      "observed_at": "2026-11-15T02:30:14.078643+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://docs.google.com/forms/d/e/1FAIpQLSdigg2WPFvAGwaeY_i7uTEPkDplRUkPFb3w5SJLEQeZYNviXw/viewform?usp=sharing&ouid=108575348199269065111",
+      "discovered_from": "https://ieeeatucsd.org/projects/robocup",
+      "discovery_group": "competition",
+      "observed_at": "2026-11-15T02:30:19.562402+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://ssl.robocup.org/",
+      "discovered_from": "https://ieeeatucsd.org/projects/robocup",
+      "discovery_group": "competition",
+      "observed_at": "2026-11-15T02:30:19.562402+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://tdpsearch.com/",
+      "discovered_from": "https://ieeeatucsd.org/projects/robocup",
+      "discovery_group": "competition",
+      "observed_at": "2026-11-15T02:30:19.562402+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://drive.google.com/file/d/1wx4d79kWA3_dq6UBP-7pE1ECLRKhAOWK/view?usp=drive_link",
+      "discovered_from": "https://ieeeatucsd.org/projects/robocup",
+      "discovery_group": "competition",
+      "observed_at": "2026-11-15T02:30:19.562402+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
+    },
+    {
+      "url": "https://drive.google.com/file/d/1dX9MjNjK_A-GmBK_ELF-zYO38qwvRm0L/view?usp=drive_link",
+      "discovered_from": "https://ieeeatucsd.org/projects/robocup",
+      "discovery_group": "competition",
+      "observed_at": "2026-11-15T02:30:19.562402+00:00",
+      "status": "needs_review",
+      "reason": "outside_current_fetch_allowlist"
     }
   ],
   "excluded_sources": [
@@ -3807,5 +4538,8 @@
       ],
       "exclusion_reason": "interaction_or_authentication_url"
     }
-  ]
+  ],
+  "discovery_cursors": {
+    "student_orgs:competition": 2
+  }
 }

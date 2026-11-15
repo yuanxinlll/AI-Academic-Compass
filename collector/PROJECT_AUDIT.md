@@ -54,8 +54,10 @@ No comparable independent internship, event, competition or course seed groups
 were established. Six supported category labels cannot correct missing sources.
 Do not relabel research positions as internships merely to balance counts.
 
-Other coverage limits: HTTPS ucsd.edu-only URL validation excludes official
-external destinations; extraction hardcodes university=UCSD. Source hosting,
+Original coverage limits: HTTPS ucsd.edu-only URL validation excluded official
+external destinations. The subsequent student-org task added 14 verified website
+scopes in student_org_sources.json; arbitrary external destinations remain blocked.
+See reviews/STUDENT_ORG_SOURCES.md. Existing extraction hardcodes university=UCSD. Source hosting,
 organizer identity and applicant eligibility are distinct facts. A UCSD-hosted
 page may exclude UCSD students; an external employer may accept them. The
 one-opportunity-per-source-URL rule also prevents ingesting several independent

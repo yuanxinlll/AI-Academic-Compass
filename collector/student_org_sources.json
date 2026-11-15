@@ -1,0 +1,4004 @@
+{
+  "version": 1,
+  "checked_at": "2026-11-15T02:23:30.283177+00:00",
+  "directory_url": "https://studentorg.ucsd.edu/",
+  "directory_count": 628,
+  "directory_records_checked": 628,
+  "sources": [
+    {
+      "url": "https://acmucsd.com/",
+      "kind": "website",
+      "organization": "Association for Computing Machinery (ACM)",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20905",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://jacobsschool.ucsd.edu/idea/current-undergraduates/undergraduate"
+      ],
+      "verification_status": "verified_ucsd_affiliated_source",
+      "fetch_enabled": true,
+      "checked_at": "2026-11-15T02:23:24.795497+00:00",
+      "http_status": 200,
+      "final_url": "https://acmucsd.com/",
+      "observed_title": "ACM at UCSD",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "public_content",
+      "identity_evidence": "Linked from UCSD organization/department directory; public page identifies UCSD.",
+      "observed_instagram_links": [
+        "http://instagram.com/acm.ucsd",
+        "https://instagram.com/acm.ucsd"
+      ],
+      "approved_scopes": [
+        {
+          "hostname": "acmucsd.com",
+          "path_prefix": "/"
+        }
+      ]
+    },
+    {
+      "url": "https://www.instagram.com/ucsdaiaa/",
+      "kind": "instagram",
+      "organization": "American Institute of Aeronautics and Astronautics",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21021",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://jacobsschool.ucsd.edu/idea/current-undergraduates/undergraduate"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:24.795910+00:00",
+      "http_status": 200,
+      "final_url": "https://www.instagram.com/accounts/login/",
+      "observed_title": "Instagram",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "login_or_render_required",
+      "observed_instagram_links": [],
+      "approved_scopes": []
+    },
+    {
+      "url": "https://aiche.ucsd.edu/",
+      "kind": "website",
+      "organization": "American Institute of Chemical Engineers (AIChE)",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21285",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://jacobsschool.ucsd.edu/idea/current-undergraduates/undergraduate"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:24.796215+00:00",
+      "access_status": "http_404",
+      "approved_scopes": []
+    },
+    {
+      "url": "https://tuas.ucsd.edu/",
+      "kind": "website",
+      "organization": "Triton Unmanned Aerial Systems",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21411",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://jacobsschool.ucsd.edu/idea/current-undergraduates/undergraduate"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:24.796511+00:00",
+      "access_status": "unavailable",
+      "approved_scopes": []
+    },
+    {
+      "url": "https://bmes.ucsd.edu/",
+      "kind": "website",
+      "organization": "Biomedical Engineering Society (BMES)",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21170",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://jacobsschool.ucsd.edu/idea/current-undergraduates/undergraduate"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:24.806306+00:00",
+      "access_status": "unavailable",
+      "approved_scopes": []
+    },
+    {
+      "url": "https://chemecarucsd.mystrikingly.com/",
+      "kind": "website",
+      "organization": "Chem-E-Car Project",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21162",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://jacobsschool.ucsd.edu/idea/current-undergraduates/undergraduate"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:24.810167+00:00",
+      "access_status": "http_403",
+      "approved_scopes": []
+    },
+    {
+      "url": "https://csforeach.ucsd.edu/",
+      "kind": "website",
+      "organization": "CS foreach",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20990",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://jacobsschool.ucsd.edu/idea/current-undergraduates/undergraduate"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:24.861078+00:00",
+      "access_status": "unavailable",
+      "approved_scopes": []
+    },
+    {
+      "url": "https://jacobsschool.ucsd.edu/idea/current-undergraduates/DBFucsd.com",
+      "kind": "website",
+      "organization": "Design/Build/Fly",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21278",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://jacobsschool.ucsd.edu/idea/current-undergraduates/undergraduate"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:24.865877+00:00",
+      "access_status": "http_404",
+      "approved_scopes": []
+    },
+    {
+      "url": "https://www.instagram.com/ewb_ucsandiego/",
+      "kind": "instagram",
+      "organization": "Engineers Without Borders at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20948",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://jacobsschool.ucsd.edu/idea/current-undergraduates/undergraduate"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:24.898978+00:00",
+      "http_status": 200,
+      "final_url": "https://www.instagram.com/accounts/login/",
+      "observed_title": "Instagram",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "login_or_render_required",
+      "observed_instagram_links": [],
+      "approved_scopes": []
+    },
+    {
+      "url": "https://hkn.ucsd.edu/",
+      "kind": "website",
+      "organization": "Eta Kappa Nu (HKN)",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21257",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://jacobsschool.ucsd.edu/idea/current-undergraduates/undergraduate"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:24.906221+00:00",
+      "http_status": 200,
+      "final_url": "https://hknucsd.com/",
+      "observed_title": "HKN @ UCSD",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "render_required",
+      "observed_instagram_links": [],
+      "approved_scopes": []
+    },
+    {
+      "url": "https://ieeeucsd.org/",
+      "kind": "website",
+      "organization": "Institute of Electrical and Electronics Engineers (IEEE)",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21355",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://jacobsschool.ucsd.edu/idea/current-undergraduates/undergraduate"
+      ],
+      "verification_status": "verified_ucsd_affiliated_source",
+      "fetch_enabled": true,
+      "checked_at": "2026-11-15T02:23:24.928778+00:00",
+      "http_status": 200,
+      "final_url": "https://ieeeatucsd.org/",
+      "observed_title": "IEEE at UC San Diego - Join One of the Largest IEEE Student Branches",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "public_content",
+      "identity_evidence": "Linked from UCSD organization/department directory; public page identifies UCSD.",
+      "observed_instagram_links": [
+        "https://www.instagram.com/ieee.at.ucsd"
+      ],
+      "approved_scopes": [
+        {
+          "hostname": "ieeeucsd.org",
+          "path_prefix": "/"
+        },
+        {
+          "hostname": "ieeeatucsd.org",
+          "path_prefix": "/"
+        }
+      ]
+    },
+    {
+      "url": "https://ispeucsd.weebly.com/",
+      "kind": "website",
+      "organization": "International Society for Pharmaceutical Engineers (ISPE)",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21408",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://jacobsschool.ucsd.edu/idea/current-undergraduates/undergraduate"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:24.998947+00:00",
+      "access_status": "http_404",
+      "approved_scopes": []
+    },
+    {
+      "url": "https://www.instagram.com/netsucsd",
+      "kind": "instagram",
+      "organization": "NanoEngineering and Technology Society",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20967",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://jacobsschool.ucsd.edu/idea/current-undergraduates/undergraduate"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:25.133963+00:00",
+      "http_status": 200,
+      "final_url": "https://www.instagram.com/accounts/login/",
+      "observed_title": "Instagram",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "login_or_render_required",
+      "observed_instagram_links": [],
+      "approved_scopes": []
+    },
+    {
+      "url": "https://nsbeatucsd.github.io/",
+      "kind": "website",
+      "organization": "National Society of Black Engineers at UC San Diego (NSBE)",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21088",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://jacobsschool.ucsd.edu/idea/current-undergraduates/undergraduate"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:25.191720+00:00",
+      "access_status": "http_404",
+      "approved_scopes": []
+    },
+    {
+      "url": "https://ostematucsd.com/",
+      "kind": "website",
+      "organization": "Out in Science, Technology, Engineering, and Mathematics (oSTEM)",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21049",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://jacobsschool.ucsd.edu/idea/current-undergraduates/undergraduate"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:25.230792+00:00",
+      "access_status": "unavailable",
+      "approved_scopes": []
+    },
+    {
+      "url": "https://pib.ucsd.edu/",
+      "kind": "website",
+      "organization": "Project in a Box",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21407",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://jacobsschool.ucsd.edu/idea/current-undergraduates/undergraduate"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:25.254415+00:00",
+      "http_status": 200,
+      "final_url": "https://accounts.google.com/v3/signin/identifier",
+      "observed_title": "Google Drive: Sign-in",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "unrelated_or_login_page",
+      "observed_instagram_links": [],
+      "approved_scopes": []
+    },
+    {
+      "url": "https://saseatucsd.weebly.com/",
+      "kind": "website",
+      "organization": "Society of Asian Scientists and Engineers at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20963",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://jacobsschool.ucsd.edu/idea/current-undergraduates/undergraduate"
+      ],
+      "verification_status": "verified_ucsd_affiliated_source",
+      "fetch_enabled": true,
+      "checked_at": "2026-11-15T02:23:25.343041+00:00",
+      "http_status": 200,
+      "final_url": "https://saseatucsd.weebly.com/",
+      "observed_title": "SOCIETY OF ASIAN SCIENTISTS AND ENGINEERS AT UC SAN DIEGO - Home",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "public_content",
+      "identity_evidence": "Linked from UCSD organization/department directory; public page identifies UCSD.",
+      "observed_instagram_links": [
+        "https://instagram.com/saseucsd",
+        "https://www.instagram.com/saseatucsd/"
+      ],
+      "approved_scopes": [
+        {
+          "hostname": "saseatucsd.weebly.com",
+          "path_prefix": "/"
+        }
+      ]
+    },
+    {
+      "url": "https://scse.weebly.com/",
+      "kind": "website",
+      "organization": "Society of Civil and Structural Engineers",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20947",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://jacobsschool.ucsd.edu/idea/current-undergraduates/undergraduate"
+      ],
+      "verification_status": "verified_ucsd_affiliated_source",
+      "fetch_enabled": true,
+      "checked_at": "2026-11-15T02:23:25.499454+00:00",
+      "http_status": 200,
+      "final_url": "https://scse.weebly.com/",
+      "observed_title": "Society of Civil and Structural EngineersUniversity of California, San Diego - News",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "public_content",
+      "identity_evidence": "Linked from UCSD organization/department directory; public page identifies UCSD.",
+      "observed_instagram_links": [],
+      "approved_scopes": [
+        {
+          "hostname": "scse.weebly.com",
+          "path_prefix": "/"
+        }
+      ]
+    },
+    {
+      "url": "https://shpe313.wixsite.com/shpe-at-ucsd",
+      "kind": "website",
+      "organization": "Society of Hispanic Professional Engineers",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21188",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://jacobsschool.ucsd.edu/idea/current-undergraduates/undergraduate"
+      ],
+      "verification_status": "verified_ucsd_affiliated_source",
+      "fetch_enabled": true,
+      "checked_at": "2026-11-15T02:23:25.542712+00:00",
+      "http_status": 200,
+      "final_url": "https://shpe313.wixsite.com/shpe-at-ucsd",
+      "observed_title": "Home | Shpe Ucsd",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "public_content",
+      "identity_evidence": "Linked from UCSD organization/department directory; public page identifies UCSD.",
+      "observed_instagram_links": [
+        "https://www.instagram.com/shpeatucsd"
+      ],
+      "approved_scopes": [
+        {
+          "hostname": "shpe313.wixsite.com",
+          "path_prefix": "/shpe-at-ucsd"
+        }
+      ]
+    },
+    {
+      "url": "https://swe-atucsd.netlify.app/about",
+      "kind": "website",
+      "organization": "Society of Women Engineers (SWE)",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21059",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://jacobsschool.ucsd.edu/idea/current-undergraduates/undergraduate"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:25.582547+00:00",
+      "http_status": 200,
+      "final_url": "https://swe-atucsd.netlify.app/about",
+      "observed_title": "Society of Women Engineers UCSD",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "render_required",
+      "observed_instagram_links": [],
+      "approved_scopes": []
+    },
+    {
+      "url": "https://tbp.ucsd.edu/",
+      "kind": "website",
+      "organization": "Tau Beta Pi",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20928",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://jacobsschool.ucsd.edu/idea/current-undergraduates/undergraduate"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:25.688319+00:00",
+      "access_status": "unavailable",
+      "approved_scopes": []
+    },
+    {
+      "url": "https://tea.ucsd.edu/",
+      "kind": "website",
+      "organization": "Themed Entertainment Association @ UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21300",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://jacobsschool.ucsd.edu/idea/current-undergraduates/undergraduate"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:25.732801+00:00",
+      "access_status": "unavailable",
+      "approved_scopes": []
+    },
+    {
+      "url": "https://tescatucsd.org/",
+      "kind": "website",
+      "organization": "Triton Engineering Student Council",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20975",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://jacobsschool.ucsd.edu/idea/current-undergraduates/undergraduate"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:25.738945+00:00",
+      "http_status": 200,
+      "final_url": "https://tescatucsd.org/",
+      "observed_title": "UCSD TESC",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "render_required",
+      "observed_instagram_links": [],
+      "approved_scopes": []
+    },
+    {
+      "url": "https://thetatau.org/",
+      "kind": "website",
+      "organization": "Theta Tau at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21374",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://jacobsschool.ucsd.edu/idea/current-undergraduates/undergraduate"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:25.742721+00:00",
+      "http_status": 200,
+      "final_url": "https://thetatau.org/",
+      "observed_title": "Home - Theta Tau",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "identity_needs_review",
+      "observed_instagram_links": [
+        "https://www.instagram.com/theta_tau/?hl=en"
+      ],
+      "approved_scopes": []
+    },
+    {
+      "url": "https://neurotechx.ucsd.edu/",
+      "kind": "website",
+      "organization": "Triton NeuroTech",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21598",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://jacobsschool.ucsd.edu/idea/current-undergraduates/undergraduate"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:25.761568+00:00",
+      "access_status": "unavailable",
+      "approved_scopes": []
+    },
+    {
+      "url": "https://sae.eng.ucsd.edu/",
+      "kind": "website",
+      "organization": "Society of Automotive Engineers @ UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21262",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://jacobsschool.ucsd.edu/idea/current-undergraduates/undergraduate"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:25.774431+00:00",
+      "http_status": 200,
+      "final_url": "https://accounts.google.com/v3/signin/identifier",
+      "observed_title": "Google Drive: Sign-in",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "unrelated_or_login_page",
+      "observed_instagram_links": [],
+      "approved_scopes": []
+    },
+    {
+      "url": "https://tritonrobotics.ucsd.edu/",
+      "kind": "website",
+      "organization": "Triton Robotics",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21277",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://jacobsschool.ucsd.edu/idea/current-undergraduates/undergraduate"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:25.786799+00:00",
+      "access_status": "unavailable",
+      "approved_scopes": []
+    },
+    {
+      "url": "https://tse.ucsd.edu/",
+      "kind": "website",
+      "organization": "Triton Software Engineering",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21395",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://jacobsschool.ucsd.edu/idea/current-undergraduates/undergraduate"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:25.789797+00:00",
+      "access_status": "unavailable",
+      "approved_scopes": []
+    },
+    {
+      "url": "https://sites.google.com/ucsd.edu/tritonbaja",
+      "kind": "website",
+      "organization": "Triton Baja",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21565",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://jacobsschool.ucsd.edu/idea/current-undergraduates/undergraduate"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:25.792900+00:00",
+      "http_status": 200,
+      "final_url": "https://accounts.google.com/v3/signin/identifier",
+      "observed_title": "Google Drive: Sign-in",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "unrelated_or_login_page",
+      "observed_instagram_links": [],
+      "approved_scopes": []
+    },
+    {
+      "url": "https://bioinformatics.ucsd.edu/node/12",
+      "kind": "website",
+      "organization": "Undergraduate Bioinformatics Club (UBIC)",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20961",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://jacobsschool.ucsd.edu/idea/current-undergraduates/undergraduate"
+      ],
+      "verification_status": "verified_ucsd_affiliated_source",
+      "fetch_enabled": true,
+      "checked_at": "2026-11-15T02:23:25.795088+00:00",
+      "http_status": 200,
+      "final_url": "https://bioinformatics.ucsd.edu/undergrad/ubic",
+      "observed_title": "Undergraduate Bioinformatics Club (UBIC) | Bioinformatics and Systems Biology",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "public_content",
+      "identity_evidence": "Linked from UCSD organization/department directory; public page identifies UCSD.",
+      "observed_instagram_links": [
+        "https://www.instagram.com/ucsd_bioinformatics"
+      ],
+      "approved_scopes": [
+        {
+          "hostname": "bioinformatics.ucsd.edu",
+          "path_prefix": "/node/12"
+        },
+        {
+          "hostname": "bioinformatics.ucsd.edu",
+          "path_prefix": "/undergrad/ubic"
+        }
+      ]
+    },
+    {
+      "url": "https://www.vgdc.dev/",
+      "kind": "website",
+      "organization": "Video Game Development Club (VGDC) at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20906",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://jacobsschool.ucsd.edu/idea/current-undergraduates/undergraduate"
+      ],
+      "verification_status": "verified_ucsd_affiliated_source",
+      "fetch_enabled": true,
+      "checked_at": "2026-11-15T02:23:25.980336+00:00",
+      "http_status": 200,
+      "final_url": "https://www.vgdc.dev/",
+      "observed_title": "VGDC @ UC San Diego",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "public_content",
+      "identity_evidence": "Linked from UCSD organization/department directory; public page identifies UCSD.",
+      "observed_instagram_links": [
+        "https://www.instagram.com/vgdc.at.ucsd/"
+      ],
+      "approved_scopes": [
+        {
+          "hostname": "www.vgdc.dev",
+          "path_prefix": "/"
+        }
+      ]
+    },
+    {
+      "url": "https://ucsdwic.github.io/",
+      "kind": "website",
+      "organization": "Undergraduate Women in Computing at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21366",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://jacobsschool.ucsd.edu/idea/current-undergraduates/undergraduate"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:26.026484+00:00",
+      "http_status": 200,
+      "final_url": "https://ucsdwic.github.io/",
+      "observed_title": "WIC at UCSD",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "render_required",
+      "observed_instagram_links": [],
+      "approved_scopes": []
+    },
+    {
+      "url": "https://yonderdynamics.org/",
+      "kind": "website",
+      "organization": "Yonder Dynamics",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21251",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://jacobsschool.ucsd.edu/idea/current-undergraduates/undergraduate"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:26.077491+00:00",
+      "http_status": 200,
+      "final_url": "https://yonderdynamics.org/",
+      "observed_title": "Yonder Dynamics",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "render_required",
+      "observed_instagram_links": [],
+      "approved_scopes": []
+    },
+    {
+      "url": "https://hps-ucsd-2020.github.io/Home.html",
+      "kind": "website",
+      "organization": "Human Powered Submarine",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20974",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://jacobsschool.ucsd.edu/idea/current-undergraduates/undergraduate"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:26.215669+00:00",
+      "access_status": "http_404",
+      "approved_scopes": []
+    },
+    {
+      "url": "https://ucsdsolarcar.org/",
+      "kind": "website",
+      "organization": "Triton Solar Car",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21494",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://jacobsschool.ucsd.edu/idea/current-undergraduates/undergraduate"
+      ],
+      "verification_status": "verified_ucsd_affiliated_source",
+      "fetch_enabled": true,
+      "checked_at": "2026-11-15T02:23:26.278792+00:00",
+      "http_status": 200,
+      "final_url": "https://ucsdsolarcar.org/",
+      "observed_title": "Triton Solar Car",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "public_content",
+      "identity_evidence": "Linked from UCSD organization/department directory; public page identifies UCSD.",
+      "observed_instagram_links": [
+        "https://www.instagram.com/p/DCxu6Civs6E/?utm_source=ig_embed&utm_campaign=loading",
+        "https://www.instagram.com/tritonsolarcar/"
+      ],
+      "approved_scopes": [
+        {
+          "hostname": "ucsdsolarcar.org",
+          "path_prefix": "/"
+        }
+      ]
+    },
+    {
+      "url": "https://tquantt.ucsd.edu/",
+      "kind": "website",
+      "organization": "Triton Quantitative Trading",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21345",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://jacobsschool.ucsd.edu/idea/current-undergraduates/undergraduate"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:26.323813+00:00",
+      "access_status": "unavailable",
+      "approved_scopes": []
+    },
+    {
+      "url": "https://kk6uc.ucsd.edu/",
+      "kind": "website",
+      "organization": "Amateur Radio Club at UC San Diego (KK6UC)",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21645",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://jacobsschool.ucsd.edu/idea/current-undergraduates/undergraduate"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:26.326973+00:00",
+      "http_status": 200,
+      "final_url": "https://kk6uc.org/",
+      "observed_title": "KK6UC - Temporarily Offline",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "unrelated_or_login_page",
+      "observed_instagram_links": [
+        "https://www.instagram.com/kk6uc"
+      ],
+      "approved_scopes": []
+    },
+    {
+      "url": "https://www.tritondroids.com/",
+      "kind": "website",
+      "organization": "Triton Droids",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21651",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://jacobsschool.ucsd.edu/idea/current-undergraduates/undergraduate"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:26.379128+00:00",
+      "http_status": 200,
+      "final_url": "https://tritondroids.org/",
+      "observed_title": "Triton Droids | UCSD",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "render_required",
+      "observed_instagram_links": [],
+      "approved_scopes": []
+    },
+    {
+      "url": "https://jacobsschool.ucsd.edu/idea/current-undergraduates/www.tarsgrp.org",
+      "kind": "website",
+      "organization": "Triton Astronautics Research Systems Group",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21029",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://jacobsschool.ucsd.edu/idea/current-undergraduates/undergraduate"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:26.575592+00:00",
+      "access_status": "http_404",
+      "approved_scopes": []
+    },
+    {
+      "url": "https://www.instagram.com/180dc.ucsd",
+      "kind": "instagram",
+      "organization": "180 Degrees Consulting at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21097",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://rady.ucsd.edu/programs/undergraduate/resources/radyvantage.html"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:26.622442+00:00",
+      "http_status": 200,
+      "final_url": "https://www.instagram.com/accounts/login/",
+      "observed_title": "Instagram",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "login_or_render_required",
+      "observed_instagram_links": [],
+      "approved_scopes": []
+    },
+    {
+      "url": "https://www.instagram.com/bbaatucsd",
+      "kind": "instagram",
+      "organization": "Black Business Association",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21510",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://rady.ucsd.edu/programs/undergraduate/resources/radyvantage.html"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:26.727806+00:00",
+      "http_status": 200,
+      "final_url": "https://www.instagram.com/accounts/login/",
+      "observed_title": "Instagram",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "login_or_render_required",
+      "observed_instagram_links": [],
+      "approved_scopes": []
+    },
+    {
+      "url": "https://www.instagram.com/pmcatucsd",
+      "kind": "instagram",
+      "organization": "Product Management Club @ UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21331",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://rady.ucsd.edu/programs/undergraduate/resources/radyvantage.html"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:26.833746+00:00",
+      "http_status": 200,
+      "final_url": "https://www.instagram.com/accounts/login/",
+      "observed_title": "Instagram",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "login_or_render_required",
+      "observed_instagram_links": [],
+      "approved_scopes": []
+    },
+    {
+      "url": "https://www.instagram.com/businessleadersassoc/",
+      "kind": "instagram",
+      "organization": "Business Leaders Association",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21077",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://rady.ucsd.edu/programs/undergraduate/resources/radyvantage.html"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:26.928559+00:00",
+      "http_status": 200,
+      "final_url": "https://www.instagram.com/accounts/login/",
+      "observed_title": "Instagram",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "login_or_render_required",
+      "observed_instagram_links": [],
+      "approved_scopes": []
+    },
+    {
+      "url": "https://ds3atucsd.com/",
+      "kind": "website",
+      "organization": "Data Science Student Society",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21322",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://rady.ucsd.edu/programs/undergraduate/resources/radyvantage.html"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:27.038559+00:00",
+      "http_status": 200,
+      "final_url": "https://www.ds3atucsd.com/",
+      "observed_title": "DS3 @ UCSD",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "render_required",
+      "observed_instagram_links": [],
+      "approved_scopes": []
+    },
+    {
+      "url": "https://www.instagram.com/ds3atucsd/",
+      "kind": "instagram",
+      "organization": "Data Science Student Society",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21322",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://rady.ucsd.edu/programs/undergraduate/resources/radyvantage.html"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:27.151041+00:00",
+      "http_status": 200,
+      "final_url": "https://www.instagram.com/accounts/login/",
+      "observed_title": "Instagram",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "login_or_render_required",
+      "observed_instagram_links": [],
+      "approved_scopes": []
+    },
+    {
+      "url": "https://kapiatucsd.com/",
+      "kind": "website",
+      "organization": "Kappa Alpha Pi",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20973",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://rady.ucsd.edu/programs/undergraduate/resources/radyvantage.html"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:27.219371+00:00",
+      "http_status": 200,
+      "final_url": "https://www.kapiatucsd.com/",
+      "observed_title": "Unnamed",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "identity_needs_review",
+      "observed_instagram_links": [
+        "https://www.instagram.com/kapiatucsd/"
+      ],
+      "approved_scopes": []
+    },
+    {
+      "url": "https://www.instagram.com/kapiatucsd/",
+      "kind": "instagram",
+      "organization": "Kappa Alpha Pi",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20973",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://rady.ucsd.edu/programs/undergraduate/resources/radyvantage.html"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:27.271430+00:00",
+      "http_status": 200,
+      "final_url": "https://www.instagram.com/accounts/login/",
+      "observed_title": "Instagram",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "login_or_render_required",
+      "observed_instagram_links": [],
+      "approved_scopes": []
+    },
+    {
+      "url": "https://www.instagram.com/productspaceucsd/",
+      "kind": "instagram",
+      "organization": "Product Space at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20902",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://rady.ucsd.edu/programs/undergraduate/resources/radyvantage.html"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:27.376407+00:00",
+      "http_status": 200,
+      "final_url": "https://www.instagram.com/accounts/login/",
+      "observed_title": "Instagram",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "login_or_render_required",
+      "observed_instagram_links": [],
+      "approved_scopes": []
+    },
+    {
+      "url": "https://www.instagram.com/reiatucsd",
+      "kind": "instagram",
+      "organization": "Rho Epsilon Iota",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21155",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://rady.ucsd.edu/programs/undergraduate/resources/radyvantage.html"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:27.631359+00:00",
+      "http_status": 200,
+      "final_url": "https://www.instagram.com/accounts/login/",
+      "observed_title": "Instagram",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "login_or_render_required",
+      "observed_instagram_links": [],
+      "approved_scopes": []
+    },
+    {
+      "url": "https://solariavc.com/",
+      "kind": "website",
+      "organization": "SOLARIA Venture Capital at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21065",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://rady.ucsd.edu/programs/undergraduate/resources/radyvantage.html"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:27.664029+00:00",
+      "http_status": 200,
+      "final_url": "https://solariavc.com/",
+      "observed_title": "Solaria Capital — Student venture capital for frontier builders",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "render_required",
+      "observed_instagram_links": [],
+      "approved_scopes": []
+    },
+    {
+      "url": "https://www.instagram.com/solariacapital_ucsd",
+      "kind": "instagram",
+      "organization": "SOLARIA Venture Capital at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21065",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://rady.ucsd.edu/programs/undergraduate/resources/radyvantage.html"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:27.796061+00:00",
+      "http_status": 200,
+      "final_url": "https://www.instagram.com/accounts/login/",
+      "observed_title": "Instagram",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "login_or_render_required",
+      "observed_instagram_links": [],
+      "approved_scopes": []
+    },
+    {
+      "url": "https://www.instagram.com/tamiducsd/",
+      "kind": "instagram",
+      "organization": "TAMID at UCSD",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21460",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://rady.ucsd.edu/programs/undergraduate/resources/radyvantage.html"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:27.906862+00:00",
+      "http_status": 200,
+      "final_url": "https://www.instagram.com/accounts/login/",
+      "observed_title": "Instagram",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "login_or_render_required",
+      "observed_instagram_links": [],
+      "approved_scopes": []
+    },
+    {
+      "url": "https://ucsduas.com/",
+      "kind": "website",
+      "organization": "United Accounting Society",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21405",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://rady.ucsd.edu/programs/undergraduate/resources/radyvantage.html"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:27.929405+00:00",
+      "access_status": "unavailable",
+      "approved_scopes": []
+    },
+    {
+      "url": "https://ucsdwib.com/",
+      "kind": "website",
+      "organization": "Women in Business",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20908",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://rady.ucsd.edu/programs/undergraduate/resources/radyvantage.html"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:27.933795+00:00",
+      "http_status": 200,
+      "final_url": "https://www.collectivesoulcreations.com/contact",
+      "observed_title": "BADAK178 ^^ Inovasi Zaman Sekarang Dengan Main Game Online Paling Mantul Se-Indonesia",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "identity_needs_review",
+      "observed_instagram_links": [
+        "https://www.instagram.com/seoclerksofficial"
+      ],
+      "approved_scopes": []
+    },
+    {
+      "url": "https://ucsdcornerstone.com/",
+      "kind": "website",
+      "organization": "Cornerstone Community Consultants at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21051",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://rady.ucsd.edu/programs/undergraduate/resources/radyvantage.html"
+      ],
+      "verification_status": "verified_ucsd_affiliated_source",
+      "fetch_enabled": true,
+      "checked_at": "2026-11-15T02:23:28.150347+00:00",
+      "http_status": 200,
+      "final_url": "https://ucsdcornerstone.com/",
+      "observed_title": "Home",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "public_content",
+      "identity_evidence": "Linked from UCSD organization/department directory; public page identifies UCSD.",
+      "observed_instagram_links": [
+        "https://www.instagram.com/ucsdcornerstone/"
+      ],
+      "approved_scopes": [
+        {
+          "hostname": "ucsdcornerstone.com",
+          "path_prefix": "/"
+        }
+      ]
+    },
+    {
+      "url": "https://ascendatucsandiego.weebly.com/",
+      "kind": "website",
+      "organization": "Ascend at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21485",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://rady.ucsd.edu/programs/undergraduate/resources/radyvantage.html"
+      ],
+      "verification_status": "verified_ucsd_affiliated_source",
+      "fetch_enabled": true,
+      "checked_at": "2026-11-15T02:23:28.231186+00:00",
+      "http_status": 200,
+      "final_url": "https://ascendatucsandiego.weebly.com/",
+      "observed_title": "ASCEND @ UC SAN DIEGO - Home",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "public_content",
+      "identity_evidence": "Linked from UCSD organization/department directory; public page identifies UCSD.",
+      "observed_instagram_links": [],
+      "approved_scopes": [
+        {
+          "hostname": "ascendatucsandiego.weebly.com",
+          "path_prefix": "/"
+        }
+      ]
+    },
+    {
+      "url": "https://www.instagram.com/ascendatucsd_",
+      "kind": "instagram",
+      "organization": "Ascend at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21485",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://rady.ucsd.edu/programs/undergraduate/resources/radyvantage.html"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:28.243099+00:00",
+      "http_status": 200,
+      "final_url": "https://www.instagram.com/accounts/login/",
+      "observed_title": "Instagram",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "login_or_render_required",
+      "observed_instagram_links": [],
+      "approved_scopes": []
+    },
+    {
+      "url": "https://bapatucsdrady.org/",
+      "kind": "website",
+      "organization": "Beta Alpha Psi",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21433",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://rady.ucsd.edu/programs/undergraduate/resources/radyvantage.html"
+      ],
+      "verification_status": "verified_ucsd_affiliated_source",
+      "fetch_enabled": true,
+      "checked_at": "2026-11-15T02:23:28.366993+00:00",
+      "http_status": 200,
+      "final_url": "https://bapatucsdrady.org/",
+      "observed_title": "UCSD BAP",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "public_content",
+      "identity_evidence": "Linked from UCSD organization/department directory; public page identifies UCSD.",
+      "observed_instagram_links": [
+        "http://www.instagram.com/ucsdbap"
+      ],
+      "approved_scopes": [
+        {
+          "hostname": "bapatucsdrady.org",
+          "path_prefix": "/"
+        }
+      ]
+    },
+    {
+      "url": "https://www.ucsdbssa.com/",
+      "kind": "website",
+      "organization": "Biological Sciences Student Association",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21017",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://biology.ucsd.edu/education/undergrad/student-org/index.html",
+        "https://biology.ucsd.edu/education/undergrad/student-org/index.html"
+      ],
+      "verification_status": "verified_ucsd_affiliated_source",
+      "fetch_enabled": true,
+      "checked_at": "2026-11-15T02:23:28.373955+00:00",
+      "http_status": 200,
+      "final_url": "https://www.bssa-at-ucsd.com/",
+      "observed_title": "About | Bssa",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "public_content",
+      "identity_evidence": "Linked from UCSD organization/department directory; public page identifies UCSD.",
+      "observed_instagram_links": [
+        "https://www.instagram.com/accounts/login/?next=https%3A%2F%2Fwww.instagram.com%2Fucsdbssa%2F%3Fhl%3Den&is_from_rle"
+      ],
+      "approved_scopes": [
+        {
+          "hostname": "www.ucsdbssa.com",
+          "path_prefix": "/"
+        },
+        {
+          "hostname": "www.bssa-at-ucsd.com",
+          "path_prefix": "/"
+        }
+      ]
+    },
+    {
+      "url": "https://ucsdtcg.org/",
+      "kind": "website",
+      "organization": "Triton Consulting Group",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20901",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://economics.ucsd.edu/undergraduate-program/resources/student-organizations/index.html"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:28.660297+00:00",
+      "access_status": "unavailable",
+      "approved_scopes": []
+    },
+    {
+      "url": "https://www.ucsdwib.com/",
+      "kind": "website",
+      "organization": "Women in Business",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20908",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://economics.ucsd.edu/undergraduate-program/resources/student-organizations/index.html"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:28.712987+00:00",
+      "http_status": 200,
+      "final_url": "https://www.collectivesoulcreations.com/contact",
+      "observed_title": "BADAK178 ^^ Inovasi Zaman Sekarang Dengan Main Game Online Paling Mantul Se-Indonesia",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "identity_needs_review",
+      "observed_instagram_links": [
+        "https://www.instagram.com/seoclerksofficial"
+      ],
+      "approved_scopes": []
+    },
+    {
+      "url": "https://ucsdues.com/",
+      "kind": "website",
+      "organization": "Undergraduate Economics Society at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20940",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://economics.ucsd.edu/undergraduate-program/resources/student-organizations/index.html"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:28.730515+00:00",
+      "http_status": 200,
+      "final_url": "https://ucsdues.com/",
+      "observed_title": "Home",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "render_required",
+      "observed_instagram_links": [],
+      "approved_scopes": []
+    },
+    {
+      "url": "https://www.instagram.com/acssa.atucsd/",
+      "kind": "instagram",
+      "organization": "American Chemical Society Student Affiliates (ACSSA)",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21361",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://studentorg.ucsd.edu/Home/Details/21361"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:28.773883+00:00",
+      "http_status": 200,
+      "final_url": "https://www.instagram.com/accounts/login/",
+      "observed_title": "Instagram",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "login_or_render_required",
+      "observed_instagram_links": [],
+      "approved_scopes": []
+    },
+    {
+      "url": "https://www.instagram.com/graphiteatucsd/",
+      "kind": "instagram",
+      "organization": "Graphite",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21218",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://studentorg.ucsd.edu/Home/Details/21218"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:28.832121+00:00",
+      "http_status": 200,
+      "final_url": "https://www.instagram.com/accounts/login/",
+      "observed_title": "Instagram",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "login_or_render_required",
+      "observed_instagram_links": [],
+      "approved_scopes": []
+    },
+    {
+      "url": "https://www.instagram.com/isa_atucsd/",
+      "kind": "instagram",
+      "organization": "Indian Student Association",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21442",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://studentorg.ucsd.edu/Home/Details/21442"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:28.851534+00:00",
+      "http_status": 200,
+      "final_url": "https://www.instagram.com/accounts/login/",
+      "observed_title": "Instagram",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "login_or_render_required",
+      "observed_instagram_links": [],
+      "approved_scopes": []
+    },
+    {
+      "url": "https://www.instagram.com/keepingthebeatsocal/",
+      "kind": "instagram",
+      "organization": "Keeping the Beat @ UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21600",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://studentorg.ucsd.edu/Home/Details/21600"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:29.276044+00:00",
+      "http_status": 200,
+      "final_url": "https://www.instagram.com/accounts/login/",
+      "observed_title": "Instagram",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "login_or_render_required",
+      "observed_instagram_links": [],
+      "approved_scopes": []
+    },
+    {
+      "url": "https://www.instagram.com/mtcatucsd/",
+      "kind": "instagram",
+      "organization": "Muslim Tech Collaborative at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20913",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://studentorg.ucsd.edu/Home/Details/20913"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:29.282752+00:00",
+      "http_status": 200,
+      "final_url": "https://www.instagram.com/accounts/login/",
+      "observed_title": "Instagram",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "login_or_render_required",
+      "observed_instagram_links": [],
+      "approved_scopes": []
+    },
+    {
+      "url": "https://www.instagram.com/tritonwrestlingclub",
+      "kind": "instagram",
+      "organization": "National Collegiate Wrestling Association Team at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21402",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://studentorg.ucsd.edu/Home/Details/21402"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:29.287136+00:00",
+      "http_status": 200,
+      "final_url": "https://www.instagram.com/accounts/login/",
+      "observed_title": "Instagram",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "login_or_render_required",
+      "observed_instagram_links": [],
+      "approved_scopes": []
+    },
+    {
+      "url": "https://www.instagram.com/tamidatucsandiego/",
+      "kind": "instagram",
+      "organization": "TAMID at UCSD",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21460",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://studentorg.ucsd.edu/Home/Details/21460"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:29.618994+00:00",
+      "http_status": 200,
+      "final_url": "https://www.instagram.com/accounts/login/",
+      "observed_title": "Instagram",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "login_or_render_required",
+      "observed_instagram_links": [],
+      "approved_scopes": []
+    },
+    {
+      "url": "https://www.instagram.com/tritonrobotics/",
+      "kind": "instagram",
+      "organization": "Triton Robotics",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21277",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://studentorg.ucsd.edu/Home/Details/21277"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:23:29.717820+00:00",
+      "http_status": 200,
+      "final_url": "https://www.instagram.com/accounts/login/",
+      "observed_title": "Instagram",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "login_or_render_required",
+      "observed_instagram_links": [],
+      "approved_scopes": []
+    },
+    {
+      "url": "https://designatucsd.com/",
+      "kind": "website",
+      "organization": "Design Co",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21095",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://designatucsd.com/contact",
+        "https://studentorg.ucsd.edu/Home/Details/21095"
+      ],
+      "verification_status": "verified_ucsd_affiliated_source",
+      "fetch_enabled": true,
+      "checked_at": "2026-11-15T02:26:19.426688+00:00",
+      "http_status": 200,
+      "final_url": "https://designatucsd.com/",
+      "observed_title": "Design Co",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "public_content",
+      "identity_evidence": "Linked from UCSD organization/department directory; public page identifies UCSD.",
+      "observed_instagram_links": [
+        "https://www.instagram.com/designcoatucsd/"
+      ],
+      "approved_scopes": [
+        {
+          "hostname": "designatucsd.com",
+          "path_prefix": "/"
+        }
+      ]
+    },
+    {
+      "url": "https://wicucsd.vercel.app/",
+      "kind": "website",
+      "organization": "Undergraduate Women in Computing at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21366",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://jacobsschool.ucsd.edu/idea/current-undergraduates/undergraduate",
+        "https://studentorg.ucsd.edu/Home/Details/21366"
+      ],
+      "verification_status": "verified_ucsd_affiliated_source",
+      "fetch_enabled": true,
+      "checked_at": "2026-11-15T02:26:24.057063+00:00",
+      "http_status": 200,
+      "final_url": "https://wicucsd.vercel.app/",
+      "observed_title": "WIC at UCSD",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "public_content",
+      "identity_evidence": "Linked from UCSD organization/department directory; public page identifies UCSD.",
+      "observed_instagram_links": [
+        "https://www.instagram.com/wicatucsd"
+      ],
+      "approved_scopes": [
+        {
+          "hostname": "wicucsd.vercel.app",
+          "path_prefix": "/"
+        }
+      ]
+    },
+    {
+      "url": "https://ai.acmucsd.com/competitions",
+      "kind": "website",
+      "organization": "Association for Computing Machinery (ACM)",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20905",
+      "registration_status": "Current",
+      "affiliation_evidence": [
+        "https://acmucsd.com/about",
+        "https://studentorg.ucsd.edu/Home/Details/20905"
+      ],
+      "verification_status": "pending",
+      "fetch_enabled": false,
+      "checked_at": "2026-11-15T02:26:24.146353+00:00",
+      "http_status": 200,
+      "final_url": "https://ai.acmucsd.com/competitions",
+      "observed_title": "ACM AI at UC San Diego",
+      "identity_status": "listed_by_ucsd_directory",
+      "access_status": "render_required",
+      "observed_instagram_links": [],
+      "approved_scopes": []
+    }
+  ],
+  "note": "Source affiliation/access verification is separate from opportunity verification. Registered student organizations are independent entities, not official university units.",
+  "unresolved_social_references": [
+    {
+      "organization": "Andrew McDonough B+ Foundation at UC San Diego, The",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21169",
+      "reference": "bepositiveatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Reclamation Project at UC San Diego, The",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21662",
+      "reference": "trp_sandiego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "333Jugglers",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21202",
+      "reference": "@jugglingatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Academy of Managed Care Pharmacy (AMCP at UC San Diego)",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20972",
+      "reference": "@amcp.atucsandiego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Acamazing",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21298",
+      "reference": "@acamazingatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "ACEing Autism at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21313",
+      "reference": "aceingautism_sandiego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Action for Lung Health",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21376",
+      "reference": "@actionforlunghealth",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Aequora Ballet Company",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21209",
+      "reference": "@aequoraballet",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Ahlul-Bayt Student Association",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21340",
+      "reference": "absaatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "AI Collective at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21020",
+      "reference": "@aic_at_ucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Airsoft at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21562",
+      "reference": "insta: airsoftatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Ally Network, The",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21713",
+      "reference": "theallynetworkatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Alpha Chi Omega",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21533",
+      "reference": "axoatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Alpha Epsilon Omega, Eta",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20991",
+      "reference": "sd.aeo",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Alpha Epsilon Pi",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21220",
+      "reference": "aepiatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Alpha Gamma Alpha",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21373",
+      "reference": "@agaatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Alpha Kappa Alpha Sorority Inc., Mu Iota",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21260",
+      "reference": "muiota1908",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Alpha Lambda Mu",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21459",
+      "reference": "alm.at.ucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Alpha Omega Campus Ministry",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21066",
+      "reference": "coastal.ao",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Alpha Omicron Pi",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21126",
+      "reference": "@aoiiatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Alpha Phi",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21363",
+      "reference": "@alphaphiatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Alpha Phi Omega",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21337",
+      "reference": "@apoatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Alzheimer’s Foundation of America On Campus",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21536",
+      "reference": "afaatucsandiego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "American Lung Cancer Screening Initiative (ALCSI)",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21496",
+      "reference": "alcsi.atucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "American Medical Student Association",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20976",
+      "reference": "amsa.at.ucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "American Pacific Health Foundation @ UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21638",
+      "reference": "aphf.atucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "American Pharmacists Association APhA-ASP at UC San Diego SSPPS",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21591",
+      "reference": "@aphaaspatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "American Society of Mechanical Engineers @UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21707",
+      "reference": "@asme.atucsandiego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Animation Club",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21317",
+      "reference": "animation_at_ucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Anime & Manga Enthusiasts at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21010",
+      "reference": "@animeclubatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Aoinagi Karate Club",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21292",
+      "reference": "N/A",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "APD Consulting Club at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21625",
+      "reference": "https://www.linkedin.com/company/apd-consulting-club-at-uc-san-diego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Arab Heritage Leadership & Network at UCSD",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21447",
+      "reference": "ahlan_at_ucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Architecture at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20960",
+      "reference": "archatucsd (Instagram); Architecture at UC San Diego (LinkedIn)",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Argentine Tango Club",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21198",
+      "reference": "tangoatucsd (Instagram, Facebook)",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Armenian Engineers and Scientists Association",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20959",
+      "reference": "aesa_atucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Art for Healing at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21048",
+      "reference": "aohatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Ascension Competitive Dance Team",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21160",
+      "reference": "All handles: @ascensionatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Asian and Pacific Islander Student Alliance (APSA)",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21112",
+      "reference": "@apsaatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Asians & Pacific Islanders for the Arts and Humanities (APIAH)",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20932",
+      "reference": "apiahatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "ASL Club at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21380",
+      "reference": "aslclubatucsandiego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "AWS Student Builder Group",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21435",
+      "reference": "awsSBGatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Azerbaijani Student Association at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21656",
+      "reference": "@azsaatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Ballet Folklórico El Arcoíris Del Sur",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21253",
+      "reference": "bf.arcoiris",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Ballet Folklorico la Joya de Mexico",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20994",
+      "reference": "bfljdm_at_ucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Bangladeshi Student Association",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21424",
+      "reference": "bsaatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Beautiful Mind Project @ UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21492",
+      "reference": "@bmpatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Belmont Buddies @ UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21804",
+      "reference": "@belmontbuddiesclub",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Beta Rho Chi",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21267",
+      "reference": "@bpxatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Betty Boarders",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21684",
+      "reference": "@bettyboarders",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Bioengineering Graduate Society",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21379",
+      "reference": "@BEGS_at_UCSD",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Biology Undergraduate and Master's Mentorship Program",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21197",
+      "reference": "bummp_atucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Bird Club at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21383",
+      "reference": "birdatucsandiego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Black Girls Rock Fitness Club",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21028",
+      "reference": "instagram: @bgratucsd, tiktok: @bgratucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Black Pre-Medical Society at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21706",
+      "reference": "bpmsatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Blind Snakes Disabled Students Empowerment Group",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21626",
+      "reference": "@blindsnakescoop",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Boardgames and Boba @ UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21487",
+      "reference": "Boardgamesnboba_atucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Brain Exercise Initiative, The",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20912",
+      "reference": "Instagram: @beiatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Brain Hub",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21081",
+      "reference": "@brainhubatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "BRASA",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21532",
+      "reference": "@brasaatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Brazilian Jiu-jitsu at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20916",
+      "reference": "bjj_atucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Breaking Bread",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21365",
+      "reference": "breakingbreadatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Bridging the Gap",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21055",
+      "reference": "meds.at.ucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "BURSA(Burmese Students Association)",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21665",
+      "reference": "bursaatucsandiego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "CALPIRG at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21649",
+      "reference": "calpirgatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Calvary EM",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21078",
+      "reference": "Instagram: @sdckcem",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Cantonese Culture Club",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21193",
+      "reference": "ccc_at_ucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "CARE at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21746",
+      "reference": "@careatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Careers in Health at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21490",
+      "reference": "Username: careersinhealthatucsd Name:Careers in Health at UC San Diego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Catholic Community - Newman Center Parish",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20981",
+      "reference": "Tritoncatholic",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Challenger Research Journal at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21176",
+      "reference": "@challengerjournal",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Chancellor's Scholars Alliance",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21511",
+      "reference": "csascholarsatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Chemistry Peer Advisory League (ChemPAL) at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21587",
+      "reference": "@ChemPALsatUCSD",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Chess Club at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21171",
+      "reference": "Instagram: chessatucsd Discord: https://discord.gg/fBQYKN8djH",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Chi Delta Theta",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21019",
+      "reference": "sdchidelts",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Chi Omega",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21135",
+      "reference": "IG: chioatucsd, tiktok: chiomegaatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Chicanx/Latinx for Community Medicine",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21180",
+      "reference": "@ccmatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Chinese Dance Association",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21239",
+      "reference": "cdaatucsd - instagram",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Chinese Drama Club",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20949",
+      "reference": "None",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Chinese Engineering Society",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21399",
+      "reference": "Chinese Engineering Society at UC San Diego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Chinese Student Board Game Club",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21693",
+      "reference": "Instagram: boardgameclubforstudents",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Chinese Students and Scholars Association",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21252",
+      "reference": "cssaatucsd1985",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Chinese Union",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20917",
+      "reference": "chineseunionatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Christians at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21165",
+      "reference": "@christiansatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Circle K. International",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21307",
+      "reference": "ckiatucsandiego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Claude Builders Club at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21748",
+      "reference": "cbcatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Climbing Club",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21235",
+      "reference": "climbingclubatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Cognitive Science Student Association",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21432",
+      "reference": "cssaatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "College Republicans at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21514",
+      "reference": "gopatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "ColorStack @ UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21306",
+      "reference": "colorstackatucsandiego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Comfort Tone",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21146",
+      "reference": "Instagram: @comforttone.at.ucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Common Cause at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21314",
+      "reference": "commoncauseatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Company 157",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20909",
+      "reference": "company157",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Computer Science and Engineering Society",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21215",
+      "reference": "cses_at_ucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Connecting Threads",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21462",
+      "reference": "Instagram: connectingthreadsatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Da Real Punjabiz",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20977",
+      "reference": "@darealpunjabiz",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Darkstar",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20965",
+      "reference": "darkstarlibrary",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "DataWorks at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21050",
+      "reference": "dataworksatucsandiego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Daughters of Triton",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20929",
+      "reference": "dotsatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Deejays and Vinylphiles Club",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21550",
+      "reference": "@dvcatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Deen Entrepreneur Network",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21742",
+      "reference": "@denatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Delta Delta Delta",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21168",
+      "reference": "@trideltaatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Delta Gamma",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21255",
+      "reference": "deltagammaatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Dementia Art Therapy Alliance",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21812",
+      "reference": "dataatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Dermatological at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21284",
+      "reference": "@dermatologicalatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Destino at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21445",
+      "reference": "@destinoatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Digital Dentistry at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21683",
+      "reference": "@digitaldentistryatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Doctors Without Borders Chapter @ UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21157",
+      "reference": "friendsofmsf.atucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Dora Mahjong Club at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21406",
+      "reference": "ins: mahjongclubatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "East African Student association",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20962",
+      "reference": "easaatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Eastern European Society @ UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21246",
+      "reference": "eesociety.sd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "ECE Society (ECES)",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21069",
+      "reference": "eces.atucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Ecology, Behavior and Evolution Club at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21571",
+      "reference": "Instagram: @ebeatucsandiego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Education Studies Student Association (EDSSA)",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21312",
+      "reference": "Instagram: edssaatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Effective Altruism at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21529",
+      "reference": "LinkedIn: https://www.linkedin.com/company/1437629",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Egyptian Student Association",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21602",
+      "reference": "Instagram: @esaatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Emergency Medical Services at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21714",
+      "reference": "emsatucsandiego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Empathy in Medicine @ UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20953",
+      "reference": "empathyinmedicine_atucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Engineering World Health",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21551",
+      "reference": "ewh.at.ucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Enhancing Cultural Healthcare Outreach (ECHO) at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21210",
+      "reference": "echo.at.ucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Evangelical Chinese Christian Fellowship (ECCF)",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21410",
+      "reference": "eccf_at_ucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Every Child Plays",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20941",
+      "reference": "everychildplays",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Fellowship of Christian Athletes (FCA)",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21279",
+      "reference": "fcaatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Figma at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21711",
+      "reference": "@figmaatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Figure Skating @ UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21469",
+      "reference": "Instagram: @skateatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "First Generation Student Alliance",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21092",
+      "reference": "Instagram: fgsaatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Flying Sams at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21389",
+      "reference": "flyingsamsatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Following the Light Student Ministry",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21225",
+      "reference": "followingthelight.atucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "FOOSH Improv",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21309",
+      "reference": "@fooshimprov",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Founders Network at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21211",
+      "reference": "IG: foundersnetworkatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Frequency",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20986",
+      "reference": "@frequencyatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "General Store Co-op, The",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21682",
+      "reference": "@gstorecoop",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Gently Hugged Club @ UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21415",
+      "reference": "gentlyhuggedclub",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Girls Who Code @ UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21687",
+      "reference": "@gwcatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Girls Who Run",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21315",
+      "reference": "girlswhorunatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Global Dental Brigades (GDB)/@ UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21699",
+      "reference": "gdb.at.ucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Global Medical Brigades @ UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21601",
+      "reference": "Instagram: gmb.atucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Global Medical Missions Alliance",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20911",
+      "reference": "gmma_atucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Google Developer Group on Campus",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21436",
+      "reference": "gdgatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Graduate Christian Fellowship at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20999",
+      "reference": "gcf.atucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Green New Deal at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21429",
+      "reference": "@gndatucsandiego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Groundwork Books Collective",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21236",
+      "reference": "groundworkbooks",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Half Past 10 Dance Team",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21475",
+      "reference": "hp10dance.atucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Hands of Hope",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21286",
+      "reference": "handsofhopeatucsd (Instagram)",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Health and Anti-Recidivism Project (HAARP)",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21140",
+      "reference": "haarpatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Health and Medical Professions Preparation Program (HMP3)",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21056",
+      "reference": "Insta: @hmp3atucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Health Disparities Initiative",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20978",
+      "reference": "hdiatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Health Impact Hub",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21027",
+      "reference": "healthimpacthubatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Health link",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21299",
+      "reference": "healthlinkatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Healthcare Professions Mentorship Programs",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20942",
+      "reference": "hmp3hpmp",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Healthy Skin Initiative (HSI)",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21084",
+      "reference": "hsiatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Heartfulness at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21280",
+      "reference": "hfnatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Hearts For The Homeless San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20969",
+      "reference": "h4h.atucsandiego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Hermanas Unidas de UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20936",
+      "reference": "@haudeucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Himalayan Student Association",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21583",
+      "reference": "hsa.atucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Hindu YUVA @ UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21733",
+      "reference": "instagram - @hinduyuvaatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "HIVE at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21091",
+      "reference": "hive.atucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Hopkins Sax Jam",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20935",
+      "reference": "@hopsax",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "HOSA-Future Health Professionals",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21141",
+      "reference": "@hosaatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Houselessness Service Club at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20983",
+      "reference": "hsoatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Human Development Student Association",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21641",
+      "reference": "hdsaatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Iaido at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20923",
+      "reference": "iaido_at_uc_san_diego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "IEEE EMBS @ UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21233",
+      "reference": "@embs.at.ucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "In N Out Enthusiasts @ UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21708",
+      "reference": "@innoutenthusiastsatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Insight Pre-Optometry",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21242",
+      "reference": "insightpreoptometry_atucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Interfraternity Council",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21316",
+      "reference": "ifcatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Intergenerational Connections",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21370",
+      "reference": "@igcatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Intermission Orchestra",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21739",
+      "reference": "@tioatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "International Full Gospel Fellowship",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21349",
+      "reference": "IFGFsandiego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "International Health Collective",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21288",
+      "reference": "@internationalhealthcollective",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "International Justice Mission at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21256",
+      "reference": "Instagram: @ijmatucsandiego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "International Student Mentorship Program (ISMP)",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21074",
+      "reference": "@ismp_sandiego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "International Studies Student Association (ISSA) at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20995",
+      "reference": "@issaatucsandiego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "International Women's Health Organization (IWHO)",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21227",
+      "reference": "@iwho_at_ucsandiego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Iraqi Student Association at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21428",
+      "reference": "isaatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Italian Club at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21715",
+      "reference": "Italianclubatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Japanese Student Association",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21624",
+      "reference": "jsa.at.ucsandiego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Kaibigang Pilipino (KP) at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21068",
+      "reference": "@kaibigangpilipino",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Kappa Alpha Theta",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21217",
+      "reference": "@thetaatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Kappa Kappa Gamma",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21425",
+      "reference": "kkgatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Kappa Psi Pharmaceutical Fraternity at UC San Diego SSPPS",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21580",
+      "reference": "kappapsi.deltaphi",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "KDSAP at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21229",
+      "reference": "kdsapatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Kendo Club at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21159",
+      "reference": "kendoatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Keyboard Club at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21504",
+      "reference": "@keebsatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Kidz Next Door",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21263",
+      "reference": "kidznextdoordance",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Kindness Collective",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21222",
+      "reference": "Instagram: kindness.at.ucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "KOJOBS at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21412",
+      "reference": "@kojobs_atucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Kommon Society",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20980",
+      "reference": "kommonsociety_at_ucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Korean American Scientists and Engineers Association - Young Generation",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21177",
+      "reference": "ksea.yg.atucsandiego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Korean American Student Association (KASA)",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21368",
+      "reference": "kasaatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Korean Athletic Network (KAN)",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21694",
+      "reference": "@kantritons",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Korean Student Cultural Association (Ko.SCA)",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21506",
+      "reference": "@kosca_at_ucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "KOTX",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21729",
+      "reference": "kotxatucsd (instagram)",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Kristos Campus Missions",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21129",
+      "reference": "sd.kcm",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Krush",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21386",
+      "reference": "krushatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Lambda Chi Alpha",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21341",
+      "reference": "@lambdachiatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Lambda Theta Nu Sorority, Inc.",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21015",
+      "reference": "lambdas_atucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Lambda Theta Phi Latin Fraternity Incorporated",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21087",
+      "reference": "lambdasatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Law & Tech Circle",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21526",
+      "reference": "lawtechcircle_atucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Lebanese Student Association at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21296",
+      "reference": "lsaatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "LEGO Club at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21076",
+      "reference": "@legoclub_at_ucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Line Dancing Club",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21204",
+      "reference": "@linedancing_at_ucsandiego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Linguistics Undergraduate Association (LINGUA)",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21437",
+      "reference": "@lingua.at.ucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Little HeroLab",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21243",
+      "reference": "@littleherolab",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Little Smiles Initiative",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21332",
+      "reference": "littlesmilesinitiative",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Live Like JoJo at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20937",
+      "reference": "livelikejojoatucsandiego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Lotus Project, The",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21458",
+      "reference": "@lotusprojectatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Lumnus Consulting Junior Enterprise",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21702",
+      "reference": "@lumnusconsulting",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "M.E.M.O. at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20910",
+      "reference": "memo_atucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "MAE Graduate Student Council",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21326",
+      "reference": "@mae_gsc_at_ucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Mahjong at UC San Deigo",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21701",
+      "reference": "mahjong_at_ucsd (instagram)",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Mariachi La Joya del Sur",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21109",
+      "reference": "mariachi_atucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Math Motivators",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21650",
+      "reference": "@MathMotivatorsAtUCSD",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Matsuri",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21627",
+      "reference": "@sdmatsuri",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Maximalist Magazine",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21271",
+      "reference": "@maximalistmag",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "MB(AI)",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21308",
+      "reference": "LinkedIn: linkedin.com/company/mb-ai/",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Medical Emergency Education Project @ UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21630",
+      "reference": "meepatucsandiego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Medical School for Kids Outreach at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21767",
+      "reference": "@mdforkidsatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Medicine & Wellness Collective (MEDWELL)",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21181",
+      "reference": "medwell.at.ucsd (Instagram)",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "MEDLIFE at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21119",
+      "reference": "medlife.atucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "MedLink @ UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21495",
+      "reference": "medlinkatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Men's Club Basketball at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21561",
+      "reference": "@mcbbatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Middle Eastern & North African Student Association",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21174",
+      "reference": "mena_atucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Middle Eastern North African IV Bible Study",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21421",
+      "reference": "menaivatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Middle Eastern Pharmacist Association",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20914",
+      "reference": "mephaatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Mindfulness Club at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21677",
+      "reference": "mindfulnessclubatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Minority Law Association",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21647",
+      "reference": "mlaatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Mixed Student Union",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21524",
+      "reference": "mixed_at_ucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Mock Trial @ UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21005",
+      "reference": "@mocktrialatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Movimiento Estudiantil Chicanx por Activismo (MEChA)",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21318",
+      "reference": "mecha.at.ucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Muir Musical",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21388",
+      "reference": "muirmusical",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Multi-Identity Art Collective",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20931",
+      "reference": "miacatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Muse Dance Company",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21064",
+      "reference": "musedancecompany",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Musicians Club @ UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21474",
+      "reference": "Musiciansclub_atucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Musings",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21489",
+      "reference": "musings_mag",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Muslim Student Association",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21120",
+      "reference": "msaatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Mustard Seed Project, The",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21248",
+      "reference": "@msp_ucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "National Arab American Medical Association (NAAMA) NextGen",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21396",
+      "reference": "naamaatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "National Pan-Hellenic Council",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21259",
+      "reference": "nphc_at_ucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Native American and Indigenous Student Alliance (NAISA)",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21310",
+      "reference": "naisa.at.ucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Network for Collaborative Oncology Development & Advancement (NCODA)",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21582",
+      "reference": "NCODAatUCSD on instagram",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Nueva Herencia de UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21008",
+      "reference": "@nhatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Okinawa Karate Do at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21369",
+      "reference": "karate_at_ucsd on Instagram",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Operation Smile at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21123",
+      "reference": "operationsmileatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Other People Magazine",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21525",
+      "reference": "@otherpeoplesd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Out The Archive",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21275",
+      "reference": "@outhearchive",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Pacific Islander Student Association (PISA at UC San Diego)",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21608",
+      "reference": "pisa.at.ucsandiego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Pakistani Student Association",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21423",
+      "reference": "psaatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Pandora Forum at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21295",
+      "reference": "pandoraforumsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Panhellenic Association",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21034",
+      "reference": "@panhellenicatucsd on instagram",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Paranormal Society",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21026",
+      "reference": "ghosts.in.sd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Peaks and Professors at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21145",
+      "reference": "@peaksandprofessorsatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Pediatric Hope Project at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21444",
+      "reference": "pediatric.hope.project.atucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Persian American Student Association (PASA)",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21057",
+      "reference": "pasa.at.ucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Phi Beta Lambda (FBLA)",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21139",
+      "reference": "@pblatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Phi Gamma Delta",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21520",
+      "reference": "fijiatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Phi Lambda Rho Sorority, Inc.",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21086",
+      "reference": "rhosasatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Phi Sigma Rho",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21545",
+      "reference": "@phisigmarhoatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Photonics Society at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21574",
+      "reference": "Instagram @spie_at_ucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Pi Beta Phi",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21398",
+      "reference": "piphiatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Pi Kappa Phi",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21457",
+      "reference": "pikappatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Pilipino Undergraduate Society for Health",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21676",
+      "reference": "pushatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Pink First @ UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21371",
+      "reference": "@pinkfirstatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "PKC Overflow",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21530",
+      "reference": "@omc_college",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Platypus Affiliated Society at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21810",
+      "reference": "platypus1917sandiego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Play It Forward at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20951",
+      "reference": "pif_atucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Poetry Club",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21330",
+      "reference": "poetryclub_at_ucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Poker Club",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21346",
+      "reference": "pokerclubatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Political Voices for Change At UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21151",
+      "reference": "@politicalvoicesforchange",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Polynesian Dance Club at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21194",
+      "reference": "pdc.atucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Poseidon's Closet Thrift",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21503",
+      "reference": "thriftatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Pre-Dental Outreach Society (PDOS)",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21535",
+      "reference": "pdosatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Pre-health Persians at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21290",
+      "reference": "prehealthpersiansatucsandiego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Pre-Meds Without Borders",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20918",
+      "reference": "@pmwb.at.ucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Pre-Nursing Student Association at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21033",
+      "reference": "@prensaatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Pre-Pharmacy Society @ UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20939",
+      "reference": "Instagram: @prepharmatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Pre-Vet Student Association",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21610",
+      "reference": "prevetatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Project Happiness",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21558",
+      "reference": "projecthappinessatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Project Lux",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21134",
+      "reference": "projectlux.at.ucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Project RISHI",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21040",
+      "reference": "@projectrishiatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Project Sunshine at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21419",
+      "reference": "pschapteratucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Project Venus",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21250",
+      "reference": "ProjectVenusatUCSD",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Prospect - The Journal of International Affairs at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21394",
+      "reference": "prospectjournal_atucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Psi Chi/Psychology Club",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20998",
+      "reference": "psichiatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Public Health Brigades at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21604",
+      "reference": "Instagram: @phbatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Public Health Undergraduate Organization at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21090",
+      "reference": "Instagram: phuoatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Public Transit Enthusiasts at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21427",
+      "reference": "@pte.at.ucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Pushpanjali",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21063",
+      "reference": "pushpanjaliatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Qamar Society at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21581",
+      "reference": "qamarsocietyatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Quiz Bowl Club at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21249",
+      "reference": "@qbatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Roblox + RBXDev at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21481",
+      "reference": "robloxatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Roger's Community Garden",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21221",
+      "reference": "@rcg_atucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Room 264 Chamber Music Club",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21214",
+      "reference": "@room264_at_ucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "ROOT[D at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21358",
+      "reference": "@rootedsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Rooted at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20996",
+      "reference": "Rooted @ UC San Diego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Rotaract Club at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20907",
+      "reference": "instagram: @rotaractatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Rubik's Cube Club",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21132",
+      "reference": "IG: cubingatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Ryze Healthcare Consulting",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21409",
+      "reference": "ryzehcatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Salsa Society",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21264",
+      "reference": "salsasocietyatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Saltman Quarterly",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21291",
+      "reference": "@saltmanquarterly",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "SangamSD",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20979",
+      "reference": "sangamsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Sapphic Club",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21594",
+      "reference": "Instagram: @sapphicclub",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Saudi Students Association @ UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21612",
+      "reference": "Instagram: ssa.sandiego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Science Olympiad @ UCSD",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20934",
+      "reference": "Instagram: scioly.at.ucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Scripps Education Association",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21293",
+      "reference": "@sea_atucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "SDx @ UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21070",
+      "reference": "sdx.at.ucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Sea Sharp",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21287",
+      "reference": "@seasharpatucsd on Instagram",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Seal Society Club at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21576",
+      "reference": "@sealsatucsandiego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Seashore Campus Fellowship",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21343",
+      "reference": "scf_sd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Serotones",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21192",
+      "reference": "@serotonesatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "ShaDjam",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21231",
+      "reference": "@shadjamatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Shift Towards Hope at UC San Diego.",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21189",
+      "reference": "shifttowardshope_atucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Sigma Alpha Epsilon",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21372",
+      "reference": "Instagram- saeatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Sigma Alpha Mu Fraternity",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21440",
+      "reference": "@sammyatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Sigma Pi Alpha National Sorority, Inc.",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21234",
+      "reference": "ellasatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "SISTERS at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21283",
+      "reference": "sistersatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Sitaare",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21083",
+      "reference": "Instagram: sitaareatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Sleepless Collective",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21205",
+      "reference": "sleeplesscollectivedance",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Society of Cosmetic Chemists at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21079",
+      "reference": "sccatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Society of Hispanic Students in Law",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21122",
+      "reference": "sohilatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Soka Gakkai International Buddhist Club",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20982",
+      "reference": "@triton.sgi",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Soluna at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21607",
+      "reference": "soluna.atucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Soon Movement Global",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21089",
+      "reference": "@sd_smg",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "South Asians in Cognitive Science (SAICS) @ UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21186",
+      "reference": "saicsatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Speculative Design Futures at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21674",
+      "reference": "@SDFatUCSD",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Sports Care, Ortho & Pre-health Exploration",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21199",
+      "reference": "scopeatucsandiego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Sports Medicine Association at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21240",
+      "reference": "sportsmedatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Sprout Up @ UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21660",
+      "reference": "@sproutup_atucsd (Instagram)",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "STEMagination @ UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21658",
+      "reference": "stemaginationatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Street Medicine @ UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21516",
+      "reference": "@streetmedicineatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Strides Running Club",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21273",
+      "reference": "@stridesatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "StRIVE",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21148",
+      "reference": "strive.at.ucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Student National Pharmaceutical Association",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21208",
+      "reference": "Instagram: @snpha.at.ucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Students' Civil Liberties Union",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21125",
+      "reference": "@sclu.sd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Students for Global Health",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21032",
+      "reference": "Instagram: @s4ghatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Sun God Archery at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21107",
+      "reference": "sungodarchery",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Sun God Soccer",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21046",
+      "reference": "Sungod Soccer @ UC San Diego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Sunny Angels at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21038",
+      "reference": "@sunnyangelsatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Surfrider Foundation @ UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21816",
+      "reference": "@surfrideratucsd on instagram",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Sustainable Investment Group",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21080",
+      "reference": "@sigatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Symphonic Student Association",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20997",
+      "reference": "ssa_at_ucsandiego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Taekwondo @ UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21043",
+      "reference": "tkd.at.ucsandiego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "TAITA-JR at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21413",
+      "reference": "@taitajr.atucsandiego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "TamashaSD",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21743",
+      "reference": "@tamashasd @sanedosd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Team Handball Club at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21338",
+      "reference": "teamhandball.atucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "TEDx@UCSanDiego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21103",
+      "reference": "IG: tedxucsandiego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Teo-Chew Association",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21268",
+      "reference": "tca_atucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Thai Student Union",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21452",
+      "reference": "Thai Student Union @ UC San Diego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Thrive Project, The",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21484",
+      "reference": "thethriveprojectatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Tijuana Youth Migrant Mentor Network (TYMMN)",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21553",
+      "reference": "tymmnatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Trailblazers at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21347",
+      "reference": "@trailblazersatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Transfer Outreach Society",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21228",
+      "reference": "Instagram: tosatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Transfers in Science",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21491",
+      "reference": "@tis_atucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "TREND",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21230",
+      "reference": "Instagram: @trendatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Triton A Cappella Community",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21106",
+      "reference": "taccatucsd on Instagram",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Triton Actuarial Society",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21154",
+      "reference": "@tritonactuaries (Instagram)",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Triton Autonomous Systems",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21771",
+      "reference": "https://www.linkedin.com/company/triton-autonomous-systems",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Triton Barbell",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20992",
+      "reference": "@tritonbarbell",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Triton Boxing",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21617",
+      "reference": "triton_boxing",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Triton Brain Injury Network",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21012",
+      "reference": "tbinatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Triton Business Society",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21133",
+      "reference": "tritonbusinesssociety",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Triton Democrats",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20921",
+      "reference": "@tritondems",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Triton Fighters",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21595",
+      "reference": "@tritonfighters",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Triton Finance Group",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21531",
+      "reference": "tritonfinancegroup",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Triton Foodie",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21045",
+      "reference": "insta: @triton.foodie",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Triton Gaming",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21464",
+      "reference": "@tritongamingsd on instagram",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Triton Lunabotics",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21572",
+      "reference": "Instagram: tritonlunabotics, LinkedIn: triton-lunabotics, Github: triton-lunabotics",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Triton Melee",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21201",
+      "reference": "@tritonmelee",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Triton Minecraft",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21142",
+      "reference": "tritonminecraftorg",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Triton Motorsports",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21098",
+      "reference": "@triton_motorsports",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Triton Pickleball",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21605",
+      "reference": "triton.pickleball",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Triton Prosthetics Society (TPS)",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21643",
+      "reference": "@tpsatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Triton Riftbound @ UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21434",
+      "reference": "Triton Riftbound @ UC San Diego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Triton Social Media Creators",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21508",
+      "reference": "tritoncreatorssd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Triton Spike",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21009",
+      "reference": "tritonspike.at.ucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Triton Swing Dance",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21289",
+      "reference": "@tritonswingdance",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Triton Tails - Furries at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21534",
+      "reference": "furriesatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Triton Valorant",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21542",
+      "reference": "@triton.valorant (IG)",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Triton XR",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21471",
+      "reference": "Instagram: @txratucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Tritones at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20946",
+      "reference": "@tritones_atucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Tritons Ascend",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21778",
+      "reference": "@tritonsascend",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Tritons for Social Work",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21206",
+      "reference": "@tritonsforsocialwork",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Tritons Roll Out",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21482",
+      "reference": "tritonsrollout",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "TritonThenix",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21590",
+      "reference": "tritonthenix",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Turkish Student Association @ UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21274",
+      "reference": "@tsa.at.ucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Tzu Chi Collegiate Association at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21360",
+      "reference": "tccaatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Undergraduate Feminist Circle (UFC)",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21570",
+      "reference": "Discord: UFC at UC San Diego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Undergraduate History Network",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21183",
+      "reference": "@uhn_atucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Undergraduate Law Review at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21167",
+      "reference": "Instagram: @ulr_atucsd, LinkedIn: Undergraduate Law Review at UC San Diego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Vantage Consulting",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21062",
+      "reference": "Instagram: @vantageatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "VAW Global at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21212",
+      "reference": "@vawglobalatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Venus Rising at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21619",
+      "reference": "venusrisingatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Vietnamese American Pharmacy Student Association",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21161",
+      "reference": "@vapsaatucsd on Instagram",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Vietnamese Student Association",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21500",
+      "reference": "Instagram: @vsaatucsd, @vcnatucsd Tiktok: @vsatatucsd Discord: @vsaatucsd LinkTree: @vsaatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "VocalSynths",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21085",
+      "reference": "vocalsynthsatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "WAV Church",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21075",
+      "reference": "@wav.church",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Waypoint",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21806",
+      "reference": "waypointatucsandiego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Women in Chemical Sciences @ UC San Diego (WiCS)",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21108",
+      "reference": "wics.sandiego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Women in ECE (WeCe)",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21615",
+      "reference": "Instagram: wece_at_ucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Women in Math",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21071",
+      "reference": "wimatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Women in Science Society at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21082",
+      "reference": "wss.at.ucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Women in Tech",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21403",
+      "reference": "@witatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Women's Club Basketball @ UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20943",
+      "reference": "wbballclubatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Women's Club Flag Football @ UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21110",
+      "reference": "Instagram: @wflagfootballatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Women's Health Disparities Organization",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21328",
+      "reference": "@whdiatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Womxn's Outdoor Collective",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21150",
+      "reference": "ggwatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "World Computing Organization",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21143",
+      "reference": "wcoactucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "World Studios",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/20984",
+      "reference": "@worldstudios_atucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Wushu club @ UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21052",
+      "reference": "wushu_at_ucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "XFactor Dance Team at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21584",
+      "reference": "xfactor.dance",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Y.E.S - Youth Empowerment in Science",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21303",
+      "reference": "@yesatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Yalla, Lets Talk! at UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21187",
+      "reference": "@yallaletstalkatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Young Planners' Society",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21117",
+      "reference": "Instagram: @ypsatucsd; Linkedin: Young Planners' Society at UC San Diego",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Youth Movement Against Alzheimers, The",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21011",
+      "reference": "@ymaaatucsd",
+      "status": "needs_identity_and_access_check"
+    },
+    {
+      "organization": "Zines @ UC San Diego",
+      "directory_url": "https://studentorg.ucsd.edu/Home/Details/21416",
+      "reference": "zinesatucsandiego",
+      "status": "needs_identity_and_access_check"
+    }
+  ]
+}

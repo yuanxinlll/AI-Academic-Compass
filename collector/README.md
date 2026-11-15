@@ -40,7 +40,8 @@ maintained queues. Existing --sources commands still work. The registry runner
 uses output/registry/state.json and writes opportunities.json and report.json
 there. Run one worker per state file. A separate scheduler is still needed.
 
-Directories are discovery-only. Group-specific URL ranking skips login/actions,
+Directories are discovery-only. One eligible directory per group rotates between
+runs so the remaining budget can reach child/detail pages. Group-specific URL ranking skips login/actions,
 staff navigation and malformed links; each group gets its own bounded budget.
 New internal links retain their parent URL and discovery group. A successfully
 collected candidate becomes monitorable; source review and human approval remain
@@ -48,10 +49,9 @@ separate. All records retain their content-based category, even if a program was
 found through an internship directory. Reports distinguish actual categories
 from discovery effort; equal budgets do not guarantee equal record counts.
 
-Current fetching still accepts only public HTTPS UCSD-domain URLs. Off-domain
-links are recorded in external_candidates for trust/relevance review, not fetched
-or presented as opportunities. This is a remaining transport policy limit, not
-the definition of UCSD relevance. No login, registration or confirmation actions
+Fetching accepts public HTTPS UCSD URLs and the exact verified student-organization
+website scopes in student_org_sources.json. Other off-domain links remain in
+external_candidates for trust/relevance review, not presented as opportunities. No login, registration or confirmation actions
 are followed. Multi-offering pages must supply separate detail URLs under D's
 current unique-source-url contract. Explicit, evidenced past activity end dates
 can mark records expired without inventing an application deadline; transient
@@ -59,6 +59,36 @@ activity-date extraction fields never enter the public schema.
 
 See [discovery handoff](reviews/DISCOVERY_HANDOFF.md) for the live test, added
 records and remaining category/identity gaps.
+
+## Verified student-organization sources
+
+[Student organization source review](reviews/STUDENT_ORG_SOURCES.md) lists the
+14 verified, readable websites and explains Instagram access limits.
+student_org_sources.json holds identity/access evidence and exact URL scopes;
+source_registry.json holds discovery/monitoring state and references that catalog.
+These are A-owned source metadata, not additions to the public opportunity schema.
+
+```powershell
+# Verify source identities before collecting their content.
+python -m collector.student_orgs --limit 628
+python -m collector.org_verification
+
+# Follow one organization's relevant child pages; preserve content-based categories.
+python -m collector.registry --source-family student_orgs --organization IEEE --groups competition --pages-per-group 4 --max-depth 3 --ingest
+```
+
+Directory verification retains organization-level fields only, not principal
+member names or student emails. A linked, accessible website is not a guarantee
+that every post is accurate/current. Each opportunity still requires extraction,
+evidence validation and its own verification status. Unrelated profile/chatter
+pages yield no opportunity. B ranks the resulting records; source affiliation
+does not decide their category or student eligibility.
+
+Instagram links are recorded with institution evidence, but a generic login page
+is not verified public-post access. No Instagram feed or blanket Instagram-domain
+permission is enabled. JavaScript-only, unavailable and suspicious destinations
+remain distinguishable from readable sources. Re-verification disables unavailable
+organization scopes without stopping unrelated collection sources.
 
 ## Collect and discover
 
@@ -75,8 +105,8 @@ python -m collector.main --url https://ugresearch.ucsd.edu/programs/urh-academic
 ```
 
 Use --sources collector/sources.json for the registry-generated seed list. --url can be
-repeated. Only HTTPS UCSD links are eligible. Discovery resolves relative links,
-removes fragments, excludes common assets and external domains, and prioritizes
+repeated. Only HTTPS UCSD or explicitly approved organization URLs are eligible. Discovery resolves relative links,
+removes fragments, excludes common assets and unapproved external domains, and prioritizes
 program detail pages. Depth is capped at 5, pages at 100; defaults are 1 and 5.
 Known URH directory pages are discovery-only, not opportunity records. Remaining
 links are listed in the report; broader search-engine discovery is not included.

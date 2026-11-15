@@ -17,13 +17,13 @@ GROUPS = ('research', 'internship', 'event', 'competition', 'program', 'course')
 PATTERNS = {
     'research': r'research|opportunit|join|opening|laborator|/lab|/all-urh-programs/',
     'internship': r'internship|student-employment|campus-employment|career|/jobs|/aip|/ucdc|/uccs',
-    'event': r'/event/|workshop|seminar|lecture|conference|symposium',
-    'competition': r'compet|challenge|hackathon|accelerate|/programs/|funding',
+    'event': r'/events?(?:/|$)|workshop|seminar|lecture|conference|symposium',
+    'competition': r'compet|challenge|hackathon|accelerate|/programs/|funding|/projects/',
     'program': r'/all-urh-programs/|fellow|summer|scholar|exchange|program',
-    'course': r'carpentr|workshop|training|learning|tutorial|course|instruction',
+    'course': r'carpentr|workshop|training|learning|tutorial|course|instruction|resource',
 }
 SKIP = re.compile(r'login|log-in|sign-in|signup|sign-up|privacy|accessibility|/search|'
-                  r'/archive|past-event|/news/|/giving|/donat|/about|/contact|/confirm|/register|/attend|/save|be-a-mentor', re.I)
+                  r'/archive|past-event|/news/|/giving|/donat|/about|/contact|/confirm|/register|/attend|/save|/board|/dashboard|/sponsor|be-a-mentor', re.I)
 
 
 def load_registry(path):
@@ -32,7 +32,18 @@ def load_registry(path):
         raise ValueError('Invalid source registry')
     seen = set()
     for source in data['sources']:
-        url = canonical_url(source['url'])
+        try:
+            url = canonical_url(source['url'])
+        except ValueError:
+            # Keep revoked organization sources as disabled metadata rather than
+            # failing every other source after a verification refresh.
+            parsed = urlsplit(source['url'])
+            if (source.get('source_family') != 'student_orgs' or source['enabled']
+                    or parsed.scheme != 'https' or not parsed.hostname or parsed.username
+                    or parsed.password or parsed.port not in (None,443)
+                    or len(source['url']) > 2000 or any(c.isspace() for c in source['url'])):
+                raise
+            url = urlunsplit(('https',parsed.hostname,parsed.path or '/',parsed.query,''))
         if source['url'] != url or url in seen:
             raise ValueError('Registry URLs must be unique and canonical')
         seen.add(url)
@@ -79,7 +90,10 @@ class DiscoveryPolicy:
             if (target.scheme not in ('http', 'https') or not host or target.username or
                     target.password or host == 'ucsd.edu' or host.endswith('.ucsd.edu')):
                 continue
-            if any(s in host for s in ('facebook.', 'instagram.', 'twitter.', 'linkedin.', 'google', 'youtube.')):
+            from collector.source_policy import approved_org_url
+            if approved_org_url(urljoin(parent, href)):
+                continue
+            if any(s in host for s in ('facebook.', 'twitter.', 'linkedin.', 'youtube.')):
                 continue
             url = urlunsplit((target.scheme, target.netloc, target.path or '/', target.query, ''))
             if url not in known_external and len(self.data['external_candidates']) < 500:
@@ -90,12 +104,18 @@ class DiscoveryPolicy:
         parent_host = urlsplit(parent).hostname
         def score(url):
             path = urlsplit(url).path
-            if SKIP.search(path) or not re.search(PATTERNS[self.group], path, re.I):
+            from collector.source_policy import approved_org_url
+            organization_child = approved_org_url(url)
+            if SKIP.search(path) or re.search(r'\.(?:ico|webp|woff2?|ttf|map)$',path,re.I):
+                return -1
+            if not organization_child and not re.search(PATTERNS[self.group], path, re.I):
                 return -1
             if self.group == 'competition' and parent_host == 'rady.ucsd.edu':
                 if urlsplit(url).hostname == parent_host and not path.startswith('/why/centers/sullivan/'):
                     return -1
             value = 2 if urlsplit(url).hostname == parent_host else 0
+            if organization_child:
+                value += 3 * bool(re.search(PATTERNS[self.group],path,re.I))
             value -= 1 * bool(self.sources.get(url, {}).get('last_error'))
             if self.group == 'research':
                 value += 6 * ('/all-urh-programs/' in path)
@@ -114,9 +134,15 @@ class DiscoveryPolicy:
         for url in selected:
             self.observed.append(dict(url=url, discovered_from=parent, discovery_group=self.group))
             if url not in self.sources:
-                source = dict(url=url, discovery_groups=[self.group], role='detail', stage='candidate',
+                role = 'directory' if urlsplit(url).path.rstrip('/').split('/')[-1] in ('events','resources','competitions','projects','programs') else 'detail'
+                source = dict(url=url, discovery_groups=[self.group], role=role, stage='candidate',
                               source_type=self.source_type(url), enabled=False, notes='',
                               provenance=[dict(method='internal_link', source_url=parent, observed_at=now)])
+                parent_source = self.sources.get(parent, {})
+                if parent_source.get('source_family') == 'student_orgs':
+                    for field in ('source_family','organization','affiliation_catalog_url'):
+                        if field in parent_source:
+                            source[field] = parent_source[field]
                 self.data['sources'].append(source)
                 self.sources[url] = source
             else:
@@ -129,7 +155,7 @@ class DiscoveryPolicy:
 
 
 def run_registry(data, output_dir, groups=GROUPS, pages_per_group=3, max_depth=1,
-                 database=None, runner=run_collection, mode='discover'):
+                 database=None, runner=run_collection, mode='discover', source_family=None, organization=None):
     if not groups or not set(groups) <= CATEGORIES or not 1 <= pages_per_group <= 100 or not 0 <= max_depth <= 5:
         raise ValueError('Invalid discovery groups or budgets')
     if mode not in ('discover', 'monitor'):
@@ -139,15 +165,27 @@ def run_registry(data, output_dir, groups=GROUPS, pages_per_group=3, max_depth=1
     for group in dict.fromkeys(groups):
         policy = DiscoveryPolicy(data, group)
         seeds = [s['url'] for s in data['sources'] if group in s['discovery_groups'] and s['enabled']
+                 and (source_family is None or s.get('source_family') == source_family)
+                 and (organization is None or organization.casefold() in s.get('organization','').casefold())
                  and (s['role'] == 'directory' and s['stage'] == 'seed' if mode == 'discover'
                       else s['role'] == 'detail' and s['stage'] in ('collected', 'source_reviewed', 'seed'))]
         if not seeds:
             reports[group] = {'coverage_gap': 'no_enabled_sources', 'websites_checked': 0, 'errors': []}
             continue
+        available_seeds = len(seeds)
+        if mode == 'discover':
+            # One directory per group leaves budget for its children; rotate on
+            # subsequent runs instead of spending every request on more roots.
+            cursors = data.setdefault('discovery_cursors', {})
+            cursor_key = (source_family or 'all') + ':' + group
+            cursor = cursors.get(cursor_key, 0)
+            seeds = [seeds[cursor % len(seeds)]]
+            cursors[cursor_key] = cursor + 1
         report = runner(seeds, output_dir/'state.json', output_dir/'opportunities.json',
                         discover=mode == 'discover', max_pages=pages_per_group, max_depth=max_depth,
                         database=database, discovery_policy=policy)
         report['seed_urls'] = seeds
+        report['available_seed_count'] = available_seeds
         report['discovery_provenance'] = policy.observed
         # Count actual extracted categories, never relabel a program as internship
         # simply because its parent was an internship directory.
@@ -192,6 +230,8 @@ def main():
     parser.add_argument('--mode', choices=('discover', 'monitor'), default='discover')
     parser.add_argument('--output-dir', type=Path, default=ROOT/'output/registry')
     parser.add_argument('--ingest', action='store_true')
+    parser.add_argument('--source-family', choices=('all','student_orgs'), default='all')
+    parser.add_argument('--organization', help='Filter registry sources by organization name')
     parser.add_argument('--export-lists', action='store_true', help='Only regenerate legacy flat input lists')
     args = parser.parse_args()
     try:
@@ -208,7 +248,9 @@ def main():
             if not os.environ.get(key):
                 raise ValueError('Missing provider setting')
         store = ApiStore(os.environ.get('COLLECTOR_API_BASE_URL', DEFAULT_BASE)) if args.ingest else None
-        report = run_registry(data, args.output_dir, groups, args.pages_per_group, args.max_depth, store, mode=args.mode)
+        report = run_registry(data, args.output_dir, groups, args.pages_per_group, args.max_depth, store, mode=args.mode,
+                              source_family=None if args.source_family=='all' else args.source_family,
+                              organization=args.organization)
         atomic_json(args.registry, data)
         export_lists(data)
         atomic_json(args.output_dir/'report.json', report)

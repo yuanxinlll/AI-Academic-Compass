@@ -9,10 +9,12 @@ def canonical_url(url):
     if not isinstance(url, str) or len(url) > 2000 or any(c.isspace() or ord(c) < 32 for c in url):
         raise ValueError('Invalid public source URL')
     parsed = urlsplit(url)
+    from collector.source_policy import approved_org_url
+    university_host = parsed.hostname and (parsed.hostname == 'ucsd.edu' or parsed.hostname.endswith('.ucsd.edu'))
     if (parsed.scheme != 'https' or not parsed.hostname
-        or not (parsed.hostname == 'ucsd.edu' or parsed.hostname.endswith('.ucsd.edu'))
-        or parsed.username or parsed.password or parsed.port not in (None, 443)):
-        raise ValueError('Use a public HTTPS UCSD source URL')
+        or parsed.username or parsed.password or parsed.port not in (None, 443)
+        or not (university_host or approved_org_url(url))):
+        raise ValueError('Use a public HTTPS UCSD or explicitly approved organization source URL')
     return urlunsplit(('https', parsed.hostname, parsed.path or '/', parsed.query, ''))
 
 def comparable(text):

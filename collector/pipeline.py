@@ -12,7 +12,7 @@ from collector.main import extract, fetch_page, normalize
 from collector.text import canonical_url, parse_page, is_directory
 
 ROOT = Path(__file__).resolve().parent
-EXTRACTION_VERSION = 'contract-v5-category-neutral'
+EXTRACTION_VERSION = 'contract-v6-student-orgs'
 
 
 def load_env(path):

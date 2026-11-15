@@ -1,6 +1,8 @@
 # Category discovery handoff to B/D
 
-Checked 2026-11-14 Pacific / 2026-11-15 UTC. Internal collector metadata and public
+Checked 2026-11-14 Pacific / 2026-11-15 UTC. Subsequent verified organization
+sources and two additional records are documented in
+[student organization sources](STUDENT_ORG_SOURCES.md). Internal collector metadata and public
 opportunity records only; no private student data or credentials.
 
 ## Implemented and tested
