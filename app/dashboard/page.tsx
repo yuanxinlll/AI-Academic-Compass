@@ -1,171 +1,86 @@
 "use client"
 
-import { Suspense, useState } from "react"
+import { Suspense, useEffect, useState } from "react"
+import Link from "next/link"
 import { useSearchParams } from "next/navigation"
+import {
+  getBookmarks,
+  loadDashboard,
+  removeBookmark,
+  saveBookmark,
+  type ApiError,
+} from "@/lib/client/api"
+import {
+  CATEGORY_LABELS,
+  ELIGIBILITY_STATUS_LABELS,
+  OPPORTUNITY_STATUS_LABELS,
+  type Bookmark,
+  type OpportunityView,
+} from "@/lib/client/types"
 
-const categories = {
-  research: "Research",
-  internship: "Internship",
-  event: "Academic event",
-  competition: "Competition",
-  program: "Academic program",
-  course: "Courses and learning",
-} as const
+const categoryOptions = Object.entries(CATEGORY_LABELS)
+const inputStyle = "rounded-lg border p-3"
+const buttonStyle = "rounded-lg border px-4 py-2 text-sm disabled:opacity-50"
 
-const verificationLabels = {
-  verified: "Verified",
-  needs_verification: "Needs verification",
-} as const
+type ApplicationStatus = Bookmark["application_status"]
+type BookmarkAction = "save" | "remove" | "saved" | "applying"
 
-const eligibilityLabels = {
-  eligible: "Eligible",
-  ineligible: "Ineligible",
-  needs_verification: "Needs confirmation",
-} as const
+function compareDates(
+  first: string | null | undefined,
+  second: string | null | undefined,
+  newestFirst = false,
+) {
+  const firstDate = Date.parse(first ?? "")
+  const secondDate = Date.parse(second ?? "")
 
-type Opportunity = {
-  opportunity_id: string
-  title: string
-  university: string
-  category: keyof typeof categories
-  description: string
-  deadline: string | null
-  published_at: string | null
-  match_score: number | null
-  eligibility: string[]
-  required_skills: string[]
-  application_method: string | null
-  source_url: string | null
-  status: keyof typeof verificationLabels
-  eligibility_status: keyof typeof eligibilityLabels
+  if (Number.isNaN(firstDate)) return Number.isNaN(secondDate) ? 0 : 1
+  if (Number.isNaN(secondDate)) return -1
+
+  return newestFirst ? secondDate - firstDate : firstDate - secondDate
 }
 
-const opportunities: Opportunity[] = [
-  {
-    opportunity_id: "demo-research",
-    title: "Cognitive Science Lab Assistant",
-    university: "UC San Diego",
-    category: "research",
-    description: "Help organize study materials and prepare research sessions.",
-    deadline: null,
-    published_at: "2026-11-05",
-    match_score: 96,
-    eligibility: ["Current undergraduate", "Available 5 hours per week"],
-    required_skills: ["Python"],
-    application_method: "Email a résumé and a short statement of interest.",
-    source_url: null,
-    status: "needs_verification",
-    eligibility_status: "eligible",
-  },
-  {
-    opportunity_id: "demo-internship",
-    title: "Campus Data Intern",
-    university: "UC San Diego",
-    category: "internship",
-    description: "Help a campus team explore and visualize student survey data.",
-    deadline: "2027-01-15",
-    published_at: "2026-11-08",
-    match_score: 88,
-    eligibility: ["Second year or above"],
-    required_skills: ["Spreadsheet analysis"],
-    application_method: "Submit a résumé through the application portal.",
-    source_url: null,
-    status: "verified",
-    eligibility_status: "ineligible",
-  },
-  {
-    opportunity_id: "demo-event",
-    title: "Getting Started in Undergraduate Research",
-    university: "UC San Diego",
-    category: "event",
-    description: "Learn how to find labs and reach out to faculty.",
-    deadline: null,
-    published_at: "2026-11-13",
-    match_score: 76,
-    eligibility: [],
-    required_skills: [],
-    application_method: null,
-    source_url: null,
-    status: "needs_verification",
-    eligibility_status: "needs_verification",
-  },
-  {
-    opportunity_id: "demo-competition",
-    title: "Campus Data Challenge",
-    university: "UC San Diego",
-    category: "competition",
-    description: "Work in a team to explore a campus dataset and present your findings.",
-    deadline: "2027-02-05",
-    published_at: "2026-11-11",
-    match_score: 82,
-    eligibility: ["Current undergraduate"],
-    required_skills: ["Basic data analysis"],
-    application_method: "Register as an individual or a team.",
-    source_url: null,
-    status: "needs_verification",
-    eligibility_status: "needs_verification",
-  },
-  {
-    opportunity_id: "demo-program",
-    title: "Summer Research Exploration Program",
-    university: "UC San Diego",
-    category: "program",
-    description: "Explore undergraduate research through workshops and faculty mentorship.",
-    deadline: "2027-03-01",
-    published_at: "2026-11-03",
-    match_score: 91,
-    eligibility: ["Current undergraduate"],
-    required_skills: [],
-    application_method: "Submit a short statement of interest.",
-    source_url: null,
-    status: "needs_verification",
-    eligibility_status: "needs_verification",
-  },
-  {
-    opportunity_id: "demo-course",
-    title: "Introduction to Research Data Visualization",
-    university: "UC San Diego",
-    category: "course",
-    description: "Practice choosing charts and communicating findings from a sample dataset.",
-    deadline: null,
-    published_at: "2026-11-09",
-    match_score: 70,
-    eligibility: [],
-    required_skills: [],
-    application_method: null,
-    source_url: null,
-    status: "needs_verification",
-    eligibility_status: "needs_verification",
-  },
-]
+function OpportunityCard({
+  opportunity,
+  status,
+  isUpdating,
+  controlsDisabled,
+  onBookmarkAction,
+}: {
+  opportunity: OpportunityView
+  status: ApplicationStatus | undefined
+  isUpdating: boolean
+  controlsDisabled: boolean
+  onBookmarkAction: (action: BookmarkAction) => void
+}) {
+  const match = opportunity.match
+  const score = match?.relevance_score
+  const isSaved = status !== undefined
+  const requirements = opportunity.eligibility
+    .map(({ raw_text }) => raw_text)
+    .filter(Boolean)
+    .join(" · ")
 
-function OpportunityCard({ opportunity }: { opportunity: Opportunity }) {
   const details = [
-    ["Deadline", opportunity.deadline ?? "Not announced"],
-    ["Sample publication date", opportunity.published_at ?? "Not provided"],
+    ["Deadline", opportunity.deadline ?? opportunity.deadline_text ?? "Not announced"],
+    ["Application requirements", requirements || "Not provided"],
+    ["Opportunity verification", OPPORTUNITY_STATUS_LABELS[opportunity.status]],
     [
-      "Sample match score",
-      opportunity.match_score === null
-        ? "Not available"
-        : `${opportunity.match_score} / 100`,
+      "Application eligibility",
+      match ? ELIGIBILITY_STATUS_LABELS[match.eligibility.status] : "Not available",
     ],
-    ["Application requirements", opportunity.eligibility.join(" · ") || "Not provided"],
-    ["Required skills", opportunity.required_skills.join(", ") || "Not provided"],
-    ["How to apply", opportunity.application_method ?? "Not provided"],
-    ["Opportunity verification", verificationLabels[opportunity.status]],
-    ["Application eligibility", eligibilityLabels[opportunity.eligibility_status]],
+    ["Relevance score", score == null ? "Not available" : `${score} / 100`],
   ]
 
   return (
     <article className="space-y-4 rounded-xl border p-5">
       <header className="space-y-1">
         <p className="text-sm">
-          {categories[opportunity.category]} · {opportunity.university}
+          {CATEGORY_LABELS[opportunity.category]} · {opportunity.organization}
         </p>
         <h2 className="text-lg font-semibold">{opportunity.title}</h2>
       </header>
 
-      <p>{opportunity.description}</p>
+      {opportunity.description && <p>{opportunity.description}</p>}
 
       <dl className="space-y-3 text-sm">
         {details.map(([label, value]) => (
@@ -176,87 +91,276 @@ function OpportunityCard({ opportunity }: { opportunity: Opportunity }) {
         ))}
       </dl>
 
-      {opportunity.source_url ? (
-        <a className="text-sm font-medium underline" href={opportunity.source_url}>
-          View original source
-        </a>
-      ) : (
-        <p className="text-sm">Original source unavailable for this sample.</p>
+      {match?.explanation && <p className="text-sm">{match.explanation}</p>}
+
+      <div className="flex flex-wrap items-center gap-3">
+        {opportunity.source_url && (
+          <a
+            className="text-sm font-medium underline"
+            href={opportunity.source_url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View original source
+          </a>
+        )}
+
+        <button
+          type="button"
+          className={buttonStyle}
+          disabled={controlsDisabled}
+          aria-label={`${isSaved ? "Remove saved opportunity" : "Save opportunity"}: ${opportunity.title}`}
+          onClick={() => onBookmarkAction(isSaved ? "remove" : "save")}
+        >
+          {isUpdating ? "Updating…" : isSaved ? "Remove" : "Save"}
+        </button>
+      </div>
+
+      {status !== undefined && (
+        <label className="grid gap-1 text-sm">
+          Application status
+          <select
+            className={inputStyle}
+            value={status}
+            disabled={controlsDisabled}
+            onChange={(event) => {
+              const nextStatus = event.target.value
+              if (nextStatus === "saved" || nextStatus === "applying") {
+                onBookmarkAction(nextStatus)
+              }
+            }}
+          >
+            {status !== "saved" && status !== "applying" && (
+              <option value={status}>{status}</option>
+            )}
+            <option value="saved">Saved</option>
+            <option value="applying">Applying</option>
+          </select>
+        </label>
       )}
     </article>
   )
-}
-
-function compareDates(
-  first: string | null,
-  second: string | null,
-  order: "ascending" | "descending",
-) {
-  if (first === null) return second === null ? 0 : 1
-  if (second === null) return -1
-
-  const difference = Date.parse(first) - Date.parse(second)
-  return order === "ascending" ? difference : -difference
 }
 
 function OpportunityList() {
   const searchParams = useSearchParams()
   const selectedCategories = searchParams
     .getAll("category")
-    .filter((value) => Object.hasOwn(categories, value))
+    .filter((value) => categoryOptions.some(([category]) => category === value))
+
+  const [items, setItems] = useState<OpportunityView[]>([])
+  const [isLoading, setIsLoading] = useState(true)
+  const [loadError, setLoadError] = useState("")
+  const [matchError, setMatchError] = useState<ApiError | null>(null)
+  const [dashboardRequest, setDashboardRequest] = useState(0)
+
+  const [savedStatuses, setSavedStatuses] = useState(
+    () => new Map<string, ApplicationStatus>(),
+  )
+  const [isLoadingBookmarks, setIsLoadingBookmarks] = useState(true)
+  const [bookmarkLoadError, setBookmarkLoadError] = useState("")
+  const [bookmarkActionError, setBookmarkActionError] = useState("")
+  const [bookmarkRequest, setBookmarkRequest] = useState(0)
+  const [updatingId, setUpdatingId] = useState<string | null>(null)
 
   const [query, setQuery] = useState("")
   const [categoryFilter, setCategoryFilter] = useState<string | null>(null)
   const [sortBy, setSortBy] = useState("default")
+  const [savedOnly, setSavedOnly] = useState(false)
 
+  useEffect(() => {
+    let active = true
+
+    loadDashboard({ q: "", sort: "relevance" })
+      .then(({ items, matchError }) => {
+        if (!active) return
+        setItems(items)
+        setMatchError(matchError)
+      })
+      .catch((error: unknown) => {
+        if (!active) return
+        setLoadError(
+          error instanceof Error && error.message
+            ? error.message
+            : "Could not load opportunities.",
+        )
+      })
+      .finally(() => {
+        if (active) setIsLoading(false)
+      })
+
+    return () => {
+      active = false
+    }
+  }, [dashboardRequest])
+
+  useEffect(() => {
+    let active = true
+
+    getBookmarks()
+      .then((bookmarks) => {
+        if (!active) return
+
+        setSavedStatuses(
+          new Map(
+            bookmarks.map(({ opportunity, application_status }) => [
+              opportunity.opportunity_id,
+              application_status,
+            ] as const),
+          ),
+        )
+      })
+      .catch(() => {
+        if (active) setBookmarkLoadError("Could not load your saved opportunities.")
+      })
+      .finally(() => {
+        if (active) setIsLoadingBookmarks(false)
+      })
+
+    return () => {
+      active = false
+    }
+  }, [bookmarkRequest])
+
+  const bookmarksReady = !isLoadingBookmarks && !bookmarkLoadError
+
+  async function changeBookmark(opportunityId: string, action: BookmarkAction) {
+    if (!bookmarksReady || updatingId !== null) return
+
+    const currentStatus = savedStatuses.get(opportunityId)
+    if (action === "save" ? currentStatus !== undefined : currentStatus === undefined) {
+      return
+    }
+    if (action === currentStatus) return
+
+    setUpdatingId(opportunityId)
+    setBookmarkActionError("")
+
+    try {
+      if (action === "remove") {
+        await removeBookmark(opportunityId)
+        setSavedStatuses((current) => {
+          const updated = new Map(current)
+          updated.delete(opportunityId)
+          return updated
+        })
+      } else {
+        const bookmark = await saveBookmark(
+          opportunityId,
+          action === "save" ? "saved" : action,
+        )
+        setSavedStatuses((current) =>
+          new Map(current).set(opportunityId, bookmark.application_status),
+        )
+      }
+    } catch {
+      const messages = {
+        save: "Could not save this opportunity. Please try again.",
+        remove: "Could not remove this saved opportunity. Please try again.",
+        saved: "Could not update the application status. Please try again.",
+        applying: "Could not update the application status. Please try again.",
+      }
+      setBookmarkActionError(messages[action])
+    } finally {
+      setUpdatingId(null)
+    }
+  }
+
+  const preferredFilter = selectedCategories.length > 0 ? "interests" : "all"
   const activeCategory =
-    categoryFilter ?? (selectedCategories.length > 0 ? "interests" : "all")
-  const allowedCategories =
-    activeCategory === "interests" ? selectedCategories : [activeCategory]
+    categoryFilter === "interests" ? preferredFilter : categoryFilter ?? preferredFilter
   const keyword = query.trim().toLowerCase()
 
-  const visibleOpportunities = opportunities.filter((opportunity) => {
+  const visibleOpportunities = items.filter((opportunity) => {
     const matchesCategory =
-      activeCategory === "all" || allowedCategories.includes(opportunity.category)
-    const searchableText =
-      `${opportunity.title} ${opportunity.description}`.toLowerCase()
+      activeCategory === "all" ||
+      (activeCategory === "interests"
+        ? selectedCategories.includes(opportunity.category)
+        : opportunity.category === activeCategory)
 
-    return matchesCategory && searchableText.includes(keyword)
+    const searchableText = [
+      opportunity.title,
+      opportunity.organization,
+      opportunity.description,
+    ].join(" ").toLowerCase()
+
+    return (
+      matchesCategory &&
+      searchableText.includes(keyword) &&
+      (!savedOnly || savedStatuses.has(opportunity.opportunity_id))
+    )
   })
 
   switch (sortBy) {
     case "deadline":
       visibleOpportunities.sort((first, second) =>
-        compareDates(first.deadline, second.deadline, "ascending"),
+        compareDates(first.deadline, second.deadline),
       )
       break
-    case "published":
+    case "collected":
       visibleOpportunities.sort((first, second) =>
-        compareDates(first.published_at, second.published_at, "descending"),
+        compareDates(first.first_collected_at, second.first_collected_at, true),
       )
       break
     case "match":
       visibleOpportunities.sort(
-        (first, second) => (second.match_score ?? -1) - (first.match_score ?? -1),
+        (first, second) =>
+          (second.match?.relevance_score ?? -1) - (first.match?.relevance_score ?? -1),
       )
       break
   }
 
+  if (isLoading) return <p role="status">Loading opportunities…</p>
+
+  if (loadError) {
+    return (
+      <div className="space-y-3">
+        <p role="alert">{loadError}</p>
+        <button
+          type="button"
+          className={buttonStyle}
+          onClick={() => {
+            setLoadError("")
+            setIsLoading(true)
+            setDashboardRequest((current) => current + 1)
+          }}
+        >
+          Try again
+        </button>
+      </div>
+    )
+  }
+
   return (
     <>
+      {matchError && (
+        <p role="status" className="rounded-lg border p-3 text-sm">
+          {matchError.code === "PROFILE_NOT_FOUND" ? (
+            <>
+              <Link className="underline" href="/onboarding">
+                Set up your profile
+              </Link>
+              {" "}to see personalized matches.
+            </>
+          ) : (
+            "Personalized ranking is unavailable right now. You can still browse opportunities."
+          )}
+        </p>
+      )}
+
       <div className="grid gap-3 sm:grid-cols-3">
         <input
           type="search"
           aria-label="Search opportunities"
           placeholder="Search opportunities"
-          className="rounded-lg border p-3"
+          className={inputStyle}
           value={query}
           onChange={(event) => setQuery(event.target.value)}
         />
 
         <select
-          aria-label="Category"
-          className="rounded-lg border p-3"
+          aria-label="Opportunity category"
+          className={inputStyle}
           value={activeCategory}
           onChange={(event) => setCategoryFilter(event.target.value)}
         >
@@ -264,36 +368,81 @@ function OpportunityList() {
             <option value="interests">My selected categories</option>
           )}
           <option value="all">All categories</option>
-          {Object.entries(categories).map(([value, label]) => (
+          {categoryOptions.map(([value, label]) => (
             <option key={value} value={value}>{label}</option>
           ))}
         </select>
 
         <select
           aria-label="Sort opportunities"
-          className="rounded-lg border p-3"
+          className={inputStyle}
           value={sortBy}
           onChange={(event) => setSortBy(event.target.value)}
         >
           <option value="default">Default order</option>
           <option value="deadline">Earliest deadline</option>
-          <option value="published">Newest published</option>
+          <option value="collected">Recently collected</option>
           <option value="match">Best match</option>
         </select>
       </div>
 
-      {visibleOpportunities.length === 0 && (
-        <p>No opportunities match your search.</p>
+      <label className="flex items-center gap-2">
+        <input
+          type="checkbox"
+          checked={savedOnly}
+          disabled={!bookmarksReady}
+          onChange={(event) => setSavedOnly(event.target.checked)}
+        />
+        Saved only
+      </label>
+
+      {isLoadingBookmarks && <p role="status">Loading saved opportunities…</p>}
+
+      {bookmarkLoadError && (
+        <div className="space-y-2">
+          <p role="alert">{bookmarkLoadError}</p>
+          <button
+            type="button"
+            className={buttonStyle}
+            onClick={() => {
+              setBookmarkLoadError("")
+              setIsLoadingBookmarks(true)
+              setBookmarkRequest((current) => current + 1)
+            }}
+          >
+            Retry loading saved opportunities
+          </button>
+        </div>
       )}
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {visibleOpportunities.map((opportunity) => (
-          <OpportunityCard
-            key={opportunity.opportunity_id}
-            opportunity={opportunity}
-          />
-        ))}
-      </div>
+      {bookmarkActionError && <p role="alert">{bookmarkActionError}</p>}
+
+      {visibleOpportunities.length === 0 ? (
+        <p role="status">
+          {savedOnly
+            ? "No saved opportunities match your filters."
+            : items.length === 0
+              ? "No opportunities are available yet."
+              : "No opportunities match your filters."}
+        </p>
+      ) : (
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {visibleOpportunities.map((opportunity) => {
+            const id = opportunity.opportunity_id
+
+            return (
+              <OpportunityCard
+                key={id}
+                opportunity={opportunity}
+                status={savedStatuses.get(id)}
+                isUpdating={updatingId === id}
+                controlsDisabled={!bookmarksReady || updatingId !== null}
+                onBookmarkAction={(action) => void changeBookmark(id, action)}
+              />
+            )
+          })}
+        </div>
+      )}
     </>
   )
 }
@@ -301,8 +450,13 @@ function OpportunityList() {
 export default function DashboardPage() {
   return (
     <main className="mx-auto max-w-5xl space-y-6 px-6 py-10">
-      <h1 className="text-3xl font-bold">Academic Opportunities</h1>
-      <p>Demo opportunities with sample dates, match scores, and eligibility results.</p>
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <h1 className="text-3xl font-bold">Academic Opportunities</h1>
+
+        <Link href="/onboarding" className={buttonStyle}>
+          Edit profile
+        </Link>
+      </div>
 
       <Suspense fallback={<p>Loading opportunities…</p>}>
         <OpportunityList />
