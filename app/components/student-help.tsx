@@ -4,6 +4,7 @@ import { useState } from "react";
 import type { OpportunityView } from "@/lib/client/types";
 import { reportOpportunity, type ReportReason } from "@/lib/client/api";
 import { findTerms, termsIn } from "@/lib/glossary";
+import { speechScript } from "@/lib/speech";
 
 /* ------------------------------------------------------------------ */
 /* Glossary: campus words a first-gen or international student may not */
@@ -295,5 +296,79 @@ export function ReportIssue({ item, signedIn }: { item: OpportunityView; signedI
         </button>
       </div>
     </form>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Read aloud (ElevenLabs). The script is built by fixed rules from    */
+/* the listing (lib/speech.ts); the voice only reads it.               */
+/* ------------------------------------------------------------------ */
+
+export function ListenButton({ item, signedIn }: { item: OpportunityView; signedIn: boolean }) {
+  const [src, setSrc] = useState<string | null>(null);
+  const [state, setState] = useState<"idle" | "busy" | "error">("idle");
+  const [msg, setMsg] = useState<string | null>(null);
+  const [slowNow, setSlowNow] = useState(false);
+  const script = speechScript(item);
+
+  async function play(slow: boolean) {
+    setState("busy");
+    setMsg(null);
+    try {
+      const res = await fetch(`/api/opportunities/${encodeURIComponent(item.opportunity_id)}/speech`, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ slow }),
+        credentials: "same-origin",
+      });
+      if (!res.ok) {
+        const e = (await res.json().catch(() => null)) as { error?: { message?: string } } | null;
+        throw new Error(e?.error?.message ?? "Could not load the audio.");
+      }
+      const url = URL.createObjectURL(await res.blob());
+      setSrc((old) => {
+        if (old) URL.revokeObjectURL(old);
+        return url;
+      });
+      setSlowNow(slow);
+      setState("idle");
+    } catch (e) {
+      setMsg(e instanceof Error ? e.message : "Could not load the audio.");
+      setState("error");
+    }
+  }
+
+  return (
+    <section className="ac-detail-section ac-listen">
+      <div className="ac-listen-row">
+        <h3>Listen</h3>
+        {signedIn ? (
+          <>
+            <button type="button" className="ac-btn ac-btn-sm" onClick={() => play(false)} disabled={state === "busy"}>
+              {state === "busy" ? "Loading…" : "▶ Read it to me"}
+            </button>
+            <button type="button" className="ac-btn ac-btn-ghost ac-btn-sm" onClick={() => play(true)} disabled={state === "busy"}>
+              Slower
+            </button>
+          </>
+        ) : (
+          <span className="ac-muted ac-small">
+            <a href="/login">Sign in</a> to hear this listing read aloud.
+          </span>
+        )}
+      </div>
+      {src ? (
+        <audio className="ac-audio" controls autoPlay src={src} aria-label={`${slowNow ? "Slow " : ""}reading of ${item.title}`} />
+      ) : null}
+      {msg ? <p className="ac-error">{msg}</p> : null}
+      <details className="ac-listen-script">
+        <summary className="ac-small">What you&apos;ll hear</summary>
+        <p className="ac-small">{script}</p>
+      </details>
+      <p className="ac-fineprint">
+        Voice by ElevenLabs. The words are put together by fixed rules from this listing, not written by AI, so you hear exactly what
+        the page shows.
+      </p>
+    </section>
   );
 }

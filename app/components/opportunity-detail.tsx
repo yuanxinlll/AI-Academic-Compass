@@ -7,7 +7,7 @@ import { getOpportunityWithLeads } from "@/lib/client/api";
 import { CATEGORY_LABELS } from "@/lib/client/types";
 import { REQUIREMENT_LABELS, eligibilityBadge, formatDate, relativeTime } from "@/lib/client/labels";
 import { DeadlinePill, EligibilityPill, RelevanceMeter, Star } from "./opportunity-card";
-import { CalendarButtons, Glossary, ReachOutGuide, ReportIssue, TermText } from "./student-help";
+import { CalendarButtons, Glossary, ListenButton, ReachOutGuide, ReportIssue, TermText } from "./student-help";
 import { Provenance } from "./provenance";
 import { assignTerms } from "@/lib/glossary";
 
@@ -156,6 +156,8 @@ export function OpportunityDetail({ item, signedIn, saved, onToggleSave }: Props
         ) : null}
         <CalendarButtons item={item} />
       </div>
+
+      <ListenButton item={item} signedIn={signedIn} />
 
       {item.description ? (
         <section className="ac-detail-section">
