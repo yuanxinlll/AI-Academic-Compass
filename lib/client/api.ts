@@ -220,3 +220,38 @@ export function mergeResumeDraft(
 }
 
 export type { Opportunity };
+
+// ───────── Home stats, single opportunity, admin review (contracts v1.3) ─────────
+export type Stats = {
+  open_total: number;
+  verified_total: number;
+  closing_soon: number;
+  sources_total: number;
+  last_collected_at: string | null;
+  by_category: Partial<Record<Category, number>>;
+};
+
+export function getStats(): Promise<Stats> {
+  return request<Stats>("/api/stats");
+}
+
+export async function getOpportunity(id: string): Promise<Opportunity> {
+  const { opportunity } = await request<{ opportunity: Opportunity }>(`/api/opportunities/${encodeURIComponent(id)}`);
+  return opportunity;
+}
+
+export function getReviewQueue(): Promise<{ items: Opportunity[]; counts: Partial<Record<OpportunityStatus, number>> }> {
+  return request("/api/admin/review-queue");
+}
+
+export async function setOpportunityStatus(id: string, status: OpportunityStatus): Promise<Opportunity> {
+  const data = await request<{ opportunity: Opportunity }>(`/api/admin/opportunities/${encodeURIComponent(id)}`, {
+    method: "PATCH",
+    json: { status },
+  });
+  return data.opportunity;
+}
+
+export async function updateBookmarkStatus(opportunityId: string, status: ApplicationStatus): Promise<Bookmark> {
+  return saveBookmark(opportunityId, status);
+}

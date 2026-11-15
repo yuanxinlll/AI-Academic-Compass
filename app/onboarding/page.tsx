@@ -2,6 +2,7 @@
 
 import { useEffect, useState, type FormEvent } from "react"
 import { useRouter } from "next/navigation"
+import { RequireSignIn } from "@/app/components/session"
 import {
   ApiError,
   getProfile,
@@ -131,7 +132,7 @@ function describeValue(value: unknown): string {
   return String(value)
 }
 
-export default function OnboardingPage() {
+function OnboardingForm() {
   const router = useRouter()
   const [form, setForm] = useState(emptyForm)
   const [isLoading, setIsLoading] = useState(true)
@@ -243,11 +244,8 @@ export default function OnboardingPage() {
     setIsSaving(true)
 
     try {
-      const saved = await saveProfile(profile)
-      const params = new URLSearchParams()
-      saved.selected_modules.forEach((category) => params.append("category", category))
-      const query = params.toString()
-      router.push(query ? `/dashboard?${query}` : "/dashboard")
+      await saveProfile(profile)
+      router.push("/")
     } catch (error: unknown) {
       setErrorField(error instanceof ApiError ? error.field ?? null : null)
       setSaveError(error instanceof Error ? error.message : "Could not save your profile.")
@@ -571,5 +569,15 @@ export default function OnboardingPage() {
         </form>
       )}
     </main>
+  )
+}
+
+export default function OnboardingPage() {
+  return (
+    <RequireSignIn>
+      <div className="legacy">
+        <OnboardingForm />
+      </div>
+    </RequireSignIn>
   )
 }

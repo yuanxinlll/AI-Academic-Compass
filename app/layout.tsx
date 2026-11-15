@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import ThemeToggle from "./components/theme-toggle";
 import OceanBackground from "./components/ocean-background";
+import { SessionProvider } from "./components/session";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -17,7 +18,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Academic Compass",
   description:
-    "Find UC San Diego research positions, internships, and academic events in one place.",
+    "Find UC San Diego research, internships, programs and events in one place — with every requirement quoted from its source.",
 };
 
 export default function RootLayout({
@@ -35,7 +36,9 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <ThemeToggle />
         <OceanBackground />
-        <div className="compass-content">{children}</div>
+        <SessionProvider>
+          <div className="compass-content">{children}</div>
+        </SessionProvider>
       </body>
     </html>
   );
