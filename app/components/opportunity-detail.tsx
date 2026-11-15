@@ -7,6 +7,7 @@ import { getOpportunityWithLeads } from "@/lib/client/api";
 import { CATEGORY_LABELS } from "@/lib/client/types";
 import { REQUIREMENT_LABELS, eligibilityBadge, formatDate, relativeTime } from "@/lib/client/labels";
 import { DeadlinePill, EligibilityPill, RelevanceMeter, Star } from "./opportunity-card";
+import { CalendarButtons, Glossary, ReachOutGuide } from "./student-help";
 
 const CHECK_TEXT: Record<EligibilityCheck["result"], string> = {
   eligible: "You meet this",
@@ -140,6 +141,7 @@ export function OpportunityDetail({ item, signedIn, saved, onToggleSave }: Props
             {saved ? "Saved ✓" : "Save"}
           </button>
         ) : null}
+        <CalendarButtons item={item} />
       </div>
 
       {item.description ? (
@@ -193,6 +195,8 @@ export function OpportunityDetail({ item, signedIn, saved, onToggleSave }: Props
 
       <AccessFacts access={item.access} />
       <Leads id={item.opportunity_id} />
+      <ReachOutGuide item={item} />
+      <Glossary item={item} />
 
       {signedIn && item.match?.relevance_breakdown?.length ? (
         <section className="ac-detail-section">

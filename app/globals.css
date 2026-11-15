@@ -664,3 +664,16 @@ html, body { overflow-x: hidden; }
 .ac-who-label { font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
 .ac-who-note { max-width: 40rem; text-align: center; margin: 0.25rem auto 0; }
 .ac-chip[aria-pressed="true"] .ac-chip-n { color: inherit; opacity: 0.8; }
+
+/* Student help: glossary, reach-out guide */
+.ac-glossary > summary, .ac-reachout > summary { display: flex; align-items: baseline; gap: 0.6rem; flex-wrap: wrap; cursor: pointer; list-style: none; }
+.ac-glossary > summary::-webkit-details-marker, .ac-reachout > summary::-webkit-details-marker { display: none; }
+.ac-glossary > summary h3::before, .ac-reachout > summary h3::before { content: "▸"; display: inline-block; width: 1em; color: var(--muted); transition: transform 0.15s; }
+.ac-glossary[open] > summary h3::before, .ac-reachout[open] > summary h3::before { transform: rotate(90deg); }
+.ac-glossary > summary h3, .ac-reachout > summary h3 { margin: 0; }
+.ac-glossary dl { display: grid; gap: 0.55rem; margin: 0.75rem 0 0; }
+.ac-glossary dt { font-weight: 600; font-size: 0.9rem; }
+.ac-glossary dd { margin: 0.1rem 0 0; color: var(--muted); font-size: 0.9rem; line-height: 1.45; }
+.ac-steps { margin: 0.75rem 0; padding-left: 1.3rem; display: grid; gap: 0.35rem; font-size: 0.92rem; line-height: 1.45; }
+.ac-template { border: 1px solid var(--border); border-radius: 12px; padding: 0.8rem 0.9rem; background: var(--input); }
+.ac-template pre { white-space: pre-wrap; font: inherit; font-size: 0.88rem; line-height: 1.5; margin: 0.4rem 0 0.6rem; }
