@@ -320,3 +320,14 @@ failed/empty pages produce no dummy opportunity or empty API submission.
 This is a bounded ingestion command, not a deployed feed scheduler. D still owns
 the daily 08:00 America/Los_Angeles deployment and token configuration. See
 [validation results](VALIDATION.md) and [Instagram review](reviews/instagram-opportunities-2026-11-15.json).
+
+## Directory-wide Instagram expansion
+
+See [the coverage and human-review handoff](reviews/INSTAGRAM_EXPANSION.md).
+`python -m collector.instagram_campaign` provides resumable plan, download,
+classify, collect and export stages. It separates all-post preliminary screening
+from evidence-validated website records and exports an actual human-review CSV.
+Unambiguous quantitative scalars become JSON numbers; raw_text retains units,
+minimum/preferred qualifiers and ranges. Gemini calls are paced at 12 RPM in one
+process and honor server retry delays. Do not run multiple model-calling
+campaigns concurrently against the configured free-tier quota.

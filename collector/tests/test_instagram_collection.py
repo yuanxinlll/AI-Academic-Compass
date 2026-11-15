@@ -103,6 +103,14 @@ class InstagramCollectionTests(unittest.TestCase):
             self.assertEqual(report['held_for_date_review'],1)
             self.assertFalse(store.calls)
 
+    def test_relative_deadline_without_calendar_date_stays_held(self):
+        item=dict(ITEM,category='internship',deadline_text='Sunday of Week 1 at 11:59PM')
+        with tempfile.TemporaryDirectory() as directory:
+            store=Store()
+            report=self.run_pipeline(directory,rows=[row(caption=CAPTION+' Sunday of Week 1 at 11:59PM')],items=[item],store=store)
+            self.assertEqual(report['held_for_date_review'],1)
+            self.assertFalse(store.calls)
+
     def test_unsupported_eligibility_is_rejected(self):
         item=dict(ITEM,eligibility=[dict(type='gpa',value=4,raw_text='GPA 4.0 required',is_hard_requirement=True)])
         with tempfile.TemporaryDirectory() as directory:

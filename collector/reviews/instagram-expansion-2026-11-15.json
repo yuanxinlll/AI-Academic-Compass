@@ -1,0 +1,3446 @@
+{
+  "checked_at": "2026-11-15T09:52:47.082525+00:00",
+  "directory_records_checked": 628,
+  "account_candidates": 466,
+  "accounts_with_matched_public_posts": 433,
+  "unique_posts": 1226,
+  "caption_classifications": 1226,
+  "caption_dispositions": {
+    "recap": 167,
+    "candidate": 434,
+    "poster_review": 175,
+    "non_opportunity": 450
+  },
+  "website_total": 50,
+  "website_categories": {
+    "program": 10,
+    "competition": 5,
+    "event": 14,
+    "internship": 1,
+    "research": 19,
+    "course": 1
+  },
+  "website_statuses": {
+    "needs_verification": 49,
+    "verified": 1
+  },
+  "baseline_website_total": 30,
+  "campaign_records": [
+    {
+      "title": "TGDC Game Jam",
+      "university": "UCSD",
+      "organization": "TGDC",
+      "description": "Start your journey at our TGDC Game Jam\nDate interpretation (needs verification): activity_end_date 2026-11-13: year inferred from post date under next_occurrence_on_or_after_post_date_v1; source text: 11/13 from 6-9PM",
+      "deadline_text": null,
+      "application_method": null,
+      "category": "competition",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [],
+      "source_url": "https://www.instagram.com/reel/DfnZc5lyv8q/",
+      "source_id": null,
+      "first_collected_at": "2026-11-15T09:28:55.969492+00:00",
+      "last_verified_at": "2026-11-15T09:28:55.979807+00:00",
+      "status": "expired",
+      "human_review": {
+        "status": "pending",
+        "source_url": "https://www.instagram.com/reel/DfnZc5lyv8q/",
+        "directory_url": "https://studentorg.ucsd.edu/Home/Details/21464",
+        "checks": [
+          "Open post and all poster slides",
+          "Confirm title/category and current availability",
+          "Check numerical requirements and units",
+          "Confirm deadline year or retained inference",
+          "Confirm application method and completeness of eligibility"
+        ]
+      },
+      "ingestion": {
+        "skipped": "expired_not_added_to_current_feed"
+      }
+    },
+    {
+      "title": "Triton Valorant Club Team",
+      "university": "UCSD",
+      "organization": "Triton Valorant Club",
+      "description": "Opportunity to join the competitive Valorant club team at UCSD.\nDate interpretation (needs verification): deadline 2026-11-10: year inferred from post date under next_occurrence_on_or_after_post_date_v1; source text: Tuesday, Nov 10th at 11:59 PM",
+      "deadline_text": "Tuesday, Nov 10th at 11:59 PM",
+      "application_method": "via the QR or the link in our bio",
+      "category": "competition",
+      "deadline": "2026-11-10",
+      "required_skills": [],
+      "eligibility": [],
+      "source_url": "https://www.instagram.com/reel/DfdChL5y9Jg/",
+      "source_id": null,
+      "first_collected_at": "2026-11-15T09:28:56.652743+00:00",
+      "last_verified_at": "2026-11-15T09:28:56.653329+00:00",
+      "status": "expired",
+      "human_review": {
+        "status": "pending",
+        "source_url": "https://www.instagram.com/reel/DfdChL5y9Jg/",
+        "directory_url": "https://studentorg.ucsd.edu/Home/Details/21542",
+        "checks": [
+          "Open post and all poster slides",
+          "Confirm title/category and current availability",
+          "Check numerical requirements and units",
+          "Confirm deadline year or retained inference",
+          "Confirm application method and completeness of eligibility"
+        ]
+      },
+      "ingestion": {
+        "skipped": "expired_not_added_to_current_feed"
+      }
+    },
+    {
+      "title": "Ascension Fall Training Open Workshop with Danyel Moulton",
+      "university": "UCSD",
+      "organization": "Ascension",
+      "description": "An open dance training workshop featuring professional dancer and director Danyel Moulton.\nDate interpretation (needs verification): activity_end_date 2026-11-15: year inferred from post date under next_occurrence_on_or_after_post_date_v1; source text: Sunday November 15th",
+      "deadline_text": null,
+      "application_method": "Register ahead of time using the link in our bio, we will also accept walk-ins on the day of!",
+      "category": "event",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [],
+      "source_url": "https://www.instagram.com/p/DfgyV66m6yT/",
+      "source_id": null,
+      "first_collected_at": "2026-11-15T09:28:59.560204+00:00",
+      "last_verified_at": "2026-11-15T09:28:59.560843+00:00",
+      "status": "needs_verification",
+      "human_review": {
+        "status": "pending",
+        "source_url": "https://www.instagram.com/p/DfgyV66m6yT/",
+        "directory_url": "https://studentorg.ucsd.edu/Home/Details/21160",
+        "checks": [
+          "Open post and all poster slides",
+          "Confirm title/category and current availability",
+          "Check numerical requirements and units",
+          "Confirm deadline year or retained inference",
+          "Confirm application method and completeness of eligibility"
+        ]
+      },
+      "opportunity_id": "280e20b5-ddbe-4efa-8e83-f0663d59e496",
+      "ingestion": {
+        "inserted": 1,
+        "updated": 0,
+        "duplicates": 0,
+        "rejected": 0,
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "title": "Triton Game Development Challenge",
+      "university": "UCSD",
+      "organization": "TG x VGDC",
+      "description": "A three-day game jam where participants compete for prizes judged by industry professionals from companies including Playstation, Respawn Entertainment, Bungie, and Activision.",
+      "deadline_text": null,
+      "application_method": null,
+      "category": "competition",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [],
+      "source_url": "https://www.instagram.com/p/DfnTtaqgXxq/",
+      "source_id": null,
+      "first_collected_at": "2026-11-15T09:29:07.917458+00:00",
+      "last_verified_at": "2026-11-15T09:29:07.917528+00:00",
+      "status": "needs_verification",
+      "human_review": {
+        "status": "pending",
+        "source_url": "https://www.instagram.com/p/DfnTtaqgXxq/",
+        "directory_url": "https://studentorg.ucsd.edu/Home/Details/21464",
+        "checks": [
+          "Open post and all poster slides",
+          "Confirm title/category and current availability",
+          "Check numerical requirements and units",
+          "Confirm deadline year or retained inference",
+          "Confirm application method and completeness of eligibility"
+        ]
+      },
+      "opportunity_id": "42d42d5f-a755-4243-946e-76a31cb3061b",
+      "ingestion": {
+        "inserted": 1,
+        "updated": 0,
+        "duplicates": 0,
+        "rejected": 0,
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "title": "UCSD Karate Training & Taco Social",
+      "university": "UCSD",
+      "organization": "UCSD Karate",
+      "description": "Training session at the main gym followed by a club social at Price Center Taco Bell.",
+      "deadline_text": null,
+      "application_method": null,
+      "category": "event",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [],
+      "source_url": "https://www.instagram.com/p/DekzppGI8SE/",
+      "source_id": null,
+      "first_collected_at": "2026-11-15T09:29:28.385089+00:00",
+      "last_verified_at": "2026-11-15T09:29:28.387786+00:00",
+      "status": "expired",
+      "human_review": {
+        "status": "pending",
+        "source_url": "https://www.instagram.com/p/DekzppGI8SE/",
+        "directory_url": "https://studentorg.ucsd.edu/Home/Details/21369",
+        "checks": [
+          "Open post and all poster slides",
+          "Confirm title/category and current availability",
+          "Check numerical requirements and units",
+          "Confirm deadline year or retained inference",
+          "Confirm application method and completeness of eligibility"
+        ]
+      },
+      "ingestion": {
+        "skipped": "expired_not_added_to_current_feed"
+      }
+    },
+    {
+      "title": "TamashaSD x SanedoSD Intern",
+      "university": "UCSD",
+      "organization": "TamashaSD x SanedoSD",
+      "description": "Help run two of the largest dance competitions in sunny San Diego.",
+      "deadline_text": "DUE OCTOBER 14, 2026",
+      "application_method": "link in our bio",
+      "category": "internship",
+      "deadline": "2026-10-14",
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "academic_year",
+          "value": [
+            "Freshman",
+            "Transfer"
+          ],
+          "raw_text": "OPEN TO FRESHMEN & TRANSFERS",
+          "is_hard_requirement": true
+        }
+      ],
+      "source_url": "https://www.instagram.com/p/DeFSHGePkI8/",
+      "source_id": null,
+      "first_collected_at": "2026-11-15T09:29:37.491509+00:00",
+      "last_verified_at": "2026-11-15T09:29:37.498454+00:00",
+      "status": "expired",
+      "human_review": {
+        "status": "pending",
+        "source_url": "https://www.instagram.com/p/DeFSHGePkI8/",
+        "directory_url": "https://studentorg.ucsd.edu/Home/Details/21743",
+        "checks": [
+          "Open post and all poster slides",
+          "Confirm title/category and current availability",
+          "Check numerical requirements and units",
+          "Confirm deadline year or retained inference",
+          "Confirm application method and completeness of eligibility"
+        ]
+      },
+      "ingestion": {
+        "skipped": "expired_not_added_to_current_feed"
+      }
+    },
+    {
+      "title": "Accounting Competition Interest Form",
+      "university": "UCSD",
+      "organization": "United Accounting Society",
+      "description": "Fill out the form to be considered for external accounting competitions that UAS finds. UAS may help form teams and provide funding for transportation or registration fees.",
+      "deadline_text": null,
+      "application_method": "Fill out our interest form",
+      "category": "competition",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "academic_year",
+          "value": [
+            "Freshmen",
+            "sophomores",
+            "juniors",
+            "seniors"
+          ],
+          "raw_text": "ALL YEARS WELCOME\nFreshmen, sophomores, juniors, and seniors are all encouraged to apply!",
+          "is_hard_requirement": true
+        }
+      ],
+      "source_url": "https://www.instagram.com/p/DekS65WyFVj/",
+      "source_id": null,
+      "first_collected_at": "2026-11-15T09:29:37.566002+00:00",
+      "last_verified_at": "2026-11-15T09:29:37.566113+00:00",
+      "status": "needs_verification",
+      "human_review": {
+        "status": "pending",
+        "source_url": "https://www.instagram.com/p/DekS65WyFVj/",
+        "directory_url": "https://studentorg.ucsd.edu/Home/Details/21405",
+        "checks": [
+          "Open post and all poster slides",
+          "Confirm title/category and current availability",
+          "Check numerical requirements and units",
+          "Confirm deadline year or retained inference",
+          "Confirm application method and completeness of eligibility"
+        ]
+      },
+      "opportunity_id": "599a6970-5d9b-4283-9360-f698cee0e656",
+      "ingestion": {
+        "inserted": 1,
+        "updated": 0,
+        "duplicates": 0,
+        "rejected": 0,
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "title": "MCAT Guest Speaker: Mustafa Ali",
+      "university": "UCSD",
+      "organization": "Careers in Health x OPHA",
+      "description": "Mustafa Ali, a UCSD undergrad, will be discussing his experiences studying for the MCAT and will offer his best tips on how to nail the exam.\nDate interpretation (needs verification): activity_end_date 2025-05-28: year inferred from post date under next_occurrence_on_or_after_post_date_v1; source text: Wednesday, May 28th at 6 pm",
+      "deadline_text": null,
+      "application_method": "Join using this link: https://ucsd.zoom.us/j/91333097630",
+      "category": "event",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [],
+      "source_url": "https://www.instagram.com/p/DKIvGtdyG4F/",
+      "source_id": null,
+      "first_collected_at": "2026-11-15T09:30:20.259958+00:00",
+      "last_verified_at": "2026-11-15T09:30:20.260325+00:00",
+      "status": "expired",
+      "human_review": {
+        "status": "pending",
+        "source_url": "https://www.instagram.com/p/DKIvGtdyG4F/",
+        "directory_url": "https://studentorg.ucsd.edu/Home/Details/21490",
+        "checks": [
+          "Open post and all poster slides",
+          "Confirm title/category and current availability",
+          "Check numerical requirements and units",
+          "Confirm deadline year or retained inference",
+          "Confirm application method and completeness of eligibility"
+        ]
+      },
+      "ingestion": {
+        "skipped": "expired_not_added_to_current_feed"
+      }
+    },
+    {
+      "title": "Optics Hour",
+      "university": "UCSD",
+      "organization": "SPIE. Photonics Society at UC San Diego",
+      "description": "An event featuring optics demos including a new Fiber Modes Demo, Gravimeter Demo, and Holograms, along with free pizza and beverages.\nDate interpretation (needs verification): activity_end_date 2025-05-02: year inferred from post date under next_occurrence_on_or_after_post_date_v1; source text: Friday, May 2nd 3:30-4:30 PM",
+      "deadline_text": null,
+      "application_method": "Show up in person at the Henry Booker Conference Room [EBU1 2512]",
+      "category": "event",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "other",
+          "value": null,
+          "raw_text": "Welcome to ALL majors, undergrads of all years, and graduate students too!",
+          "is_hard_requirement": false
+        }
+      ],
+      "source_url": "https://www.instagram.com/p/DJIt4CKxTaE/",
+      "source_id": null,
+      "first_collected_at": "2026-11-15T09:30:24.500700+00:00",
+      "last_verified_at": "2026-11-15T09:30:24.500996+00:00",
+      "status": "expired",
+      "human_review": {
+        "status": "pending",
+        "source_url": "https://www.instagram.com/p/DJIt4CKxTaE/",
+        "directory_url": "https://studentorg.ucsd.edu/Home/Details/21574",
+        "checks": [
+          "Open post and all poster slides",
+          "Confirm title/category and current availability",
+          "Check numerical requirements and units",
+          "Confirm deadline year or retained inference",
+          "Confirm application method and completeness of eligibility"
+        ]
+      },
+      "ingestion": {
+        "skipped": "expired_not_added_to_current_feed"
+      }
+    },
+    {
+      "title": "VCN 30 Acting Auditions",
+      "university": "UCSD",
+      "organization": "Vietnamese Student Association (VSA)",
+      "description": "Auditions for VCN 30 acting roles. Roles are available for various levels of involvement.\nDate interpretation (needs verification): deadline 2026-11-13: year inferred from post date under next_occurrence_on_or_after_post_date_v1; source text: November 13th 11:59 pm",
+      "deadline_text": "November 13th 11:59 pm",
+      "application_method": "Fill out the form at tinyurl.com/vcnactor27auditions",
+      "category": "competition",
+      "deadline": "2026-11-13",
+      "required_skills": [],
+      "eligibility": [],
+      "source_url": "https://www.instagram.com/p/DfiZJS6PTfS/",
+      "source_id": null,
+      "first_collected_at": "2026-11-15T09:30:36.529868+00:00",
+      "last_verified_at": "2026-11-15T09:30:36.530272+00:00",
+      "status": "expired",
+      "human_review": {
+        "status": "pending",
+        "source_url": "https://www.instagram.com/p/DfiZJS6PTfS/",
+        "directory_url": "https://studentorg.ucsd.edu/Home/Details/21500",
+        "checks": [
+          "Open post and all poster slides",
+          "Confirm title/category and current availability",
+          "Check numerical requirements and units",
+          "Confirm deadline year or retained inference",
+          "Confirm application method and completeness of eligibility"
+        ]
+      },
+      "ingestion": {
+        "skipped": "expired_not_added_to_current_feed"
+      }
+    },
+    {
+      "title": "ICE OUT Vigil and Speech Opportunity",
+      "university": "UCSD",
+      "organization": "TYMMN, Nueva Herencia, La Familia, Mecha, Racial Justice Coalition of San Diego, Otay Mesa Detention Collective",
+      "description": "A student-led vigil and event held at the Otay Mesa Detention Center to stand in solidarity with immigrant neighbors. Students are invited to share speeches to amplify student voices regarding the impact of immigration policies.\nDate interpretation (needs verification): activity_end_date 2026-11-22: year inferred from post date under next_occurrence_on_or_after_post_date_v1; source text: Sunday 11/22, from 1:15-3:30",
+      "deadline_text": null,
+      "application_method": "Apply to share a speech via the provided link or information in the post.",
+      "category": "event",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [],
+      "source_url": "https://www.instagram.com/p/DftBZkgEbQ2/",
+      "source_id": null,
+      "first_collected_at": "2026-11-15T09:34:38.652402+00:00",
+      "last_verified_at": "2026-11-15T09:34:38.655776+00:00",
+      "status": "needs_verification",
+      "human_review": {
+        "status": "pending",
+        "source_url": "https://www.instagram.com/p/DftBZkgEbQ2/",
+        "directory_url": "https://studentorg.ucsd.edu/Home/Details/21553",
+        "checks": [
+          "Open post and all poster slides",
+          "Confirm title/category and current availability",
+          "Check numerical requirements and units",
+          "Confirm deadline year or retained inference",
+          "Confirm application method and completeness of eligibility"
+        ]
+      },
+      "opportunity_id": "74c095d0-449a-4931-bdeb-b8e9b3f2ec0c",
+      "ingestion": {
+        "inserted": 1,
+        "updated": 0,
+        "duplicates": 0,
+        "rejected": 0,
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "title": "VR Workshop (Part 2)",
+      "university": "UCSD",
+      "organization": "Triton XR",
+      "description": "A workshop focused on the basics of Unity for VR, where participants can learn to build a 3-D game in VR. Attendees are encouraged to bring a laptop.\nDate interpretation (needs verification): activity_end_date 2026-11-17: year inferred from post date under next_occurrence_on_or_after_post_date_v1; source text: Tuesday 11/17 from 5–6 PM",
+      "deadline_text": null,
+      "application_method": "In-person attendance at Governance Chambers (PC 4th Floor)",
+      "category": "event",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "other",
+          "value": null,
+          "raw_text": "Everyone is welcome",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "skill",
+          "value": null,
+          "raw_text": "No experience needed!",
+          "is_hard_requirement": false
+        }
+      ],
+      "source_url": "https://www.instagram.com/p/DfsaAuZu9q8/",
+      "source_id": null,
+      "first_collected_at": "2026-11-15T09:40:51.386928+00:00",
+      "last_verified_at": "2026-11-15T09:40:51.390303+00:00",
+      "status": "needs_verification",
+      "human_review": {
+        "status": "pending",
+        "source_url": "https://www.instagram.com/p/DfsaAuZu9q8/",
+        "directory_url": "https://studentorg.ucsd.edu/Home/Details/21471",
+        "checks": [
+          "Open post and all poster slides",
+          "Confirm title/category and current availability",
+          "Check numerical requirements and units",
+          "Confirm deadline year or retained inference",
+          "Confirm application method and completeness of eligibility"
+        ]
+      },
+      "opportunity_id": "e4b14798-f132-45f1-ba46-746f1071422b",
+      "ingestion": {
+        "inserted": 1,
+        "updated": 0,
+        "duplicates": 0,
+        "rejected": 0,
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "title": "Personal Statement Writing Workshop",
+      "university": "UCSD",
+      "organization": "ACS-SA and Graphite",
+      "description": "A workshop focused on helping students learn how to highlight unique experiences and craft a compelling personal statement.\nDate interpretation (needs verification): activity_end_date 2026-11-18: year inferred from post date under next_occurrence_on_or_after_post_date_v1; source text: Wednesday, November 18th",
+      "deadline_text": null,
+      "application_method": null,
+      "category": "event",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [],
+      "source_url": "https://www.instagram.com/p/Dfsi_e9m88K/",
+      "source_id": null,
+      "first_collected_at": "2026-11-15T09:41:05.944043+00:00",
+      "last_verified_at": "2026-11-15T09:41:05.944560+00:00",
+      "status": "needs_verification",
+      "human_review": {
+        "status": "pending",
+        "source_url": "https://www.instagram.com/p/Dfsi_e9m88K/",
+        "directory_url": "https://studentorg.ucsd.edu/Home/Details/21361",
+        "checks": [
+          "Open post and all poster slides",
+          "Confirm title/category and current availability",
+          "Check numerical requirements and units",
+          "Confirm deadline year or retained inference",
+          "Confirm application method and completeness of eligibility"
+        ]
+      },
+      "opportunity_id": "cfa1994e-93d9-47ae-85a2-540b29d8f1cc",
+      "ingestion": {
+        "inserted": 1,
+        "updated": 0,
+        "duplicates": 0,
+        "rejected": 0,
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "title": "SCSE Mentor-Mentee Spaghetti and Marshmallow Structures Competition",
+      "university": "UCSD",
+      "organization": "SCSE",
+      "description": "A friendly engineering competition where mentors and mentees build spaghetti and marshmallow structures. Food provided.",
+      "deadline_text": null,
+      "application_method": "RSVP with the QR code above, or with the link in our Linktree",
+      "category": "competition",
+      "deadline": null,
+      "required_skills": [
+        "structural engineering"
+      ],
+      "eligibility": [
+        {
+          "type": "other",
+          "value": null,
+          "raw_text": "CALLING ALL MENTORS AND MENTEES!",
+          "is_hard_requirement": true
+        }
+      ],
+      "source_url": "https://www.instagram.com/p/DfseDrmToT6/",
+      "source_id": null,
+      "first_collected_at": "2026-11-15T09:41:11.267961+00:00",
+      "last_verified_at": "2026-11-15T09:41:11.268112+00:00",
+      "status": "needs_verification",
+      "human_review": {
+        "status": "pending",
+        "source_url": "https://www.instagram.com/p/DfseDrmToT6/",
+        "directory_url": "https://studentorg.ucsd.edu/Home/Details/20947",
+        "checks": [
+          "Open post and all poster slides",
+          "Confirm title/category and current availability",
+          "Check numerical requirements and units",
+          "Confirm deadline year or retained inference",
+          "Confirm application method and completeness of eligibility"
+        ]
+      },
+      "opportunity_id": "0a844c0b-cf75-4a3f-9192-8de95fc0a38f",
+      "ingestion": {
+        "inserted": 1,
+        "updated": 0,
+        "duplicates": 0,
+        "rejected": 0,
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "title": "Triton NeuroTech Journal Club Week 8 Showcase",
+      "university": "UCSD",
+      "organization": "Triton NeuroTech",
+      "description": "Come by Triton NeuroTech’s Journal Club to present or listen to the showcases! The 5 minutes presentation can be on a research, personal projects, club projects, neurotech news, or a neurotech topic you like!\nDate interpretation (needs verification): activity_end_date 2026-11-20: year inferred from post date under next_occurrence_on_or_after_post_date_v1; source text: Friday 11/20 6:30PM",
+      "deadline_text": null,
+      "application_method": "RSVP form in the linktree on our bio",
+      "category": "event",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [],
+      "source_url": "https://www.instagram.com/p/DfqGXBvvcIE/",
+      "source_id": null,
+      "first_collected_at": "2026-11-15T09:42:13.302738+00:00",
+      "last_verified_at": "2026-11-15T09:42:13.303043+00:00",
+      "status": "needs_verification",
+      "human_review": {
+        "status": "pending",
+        "source_url": "https://www.instagram.com/p/DfqGXBvvcIE/",
+        "directory_url": "https://studentorg.ucsd.edu/Home/Details/21598",
+        "checks": [
+          "Open post and all poster slides",
+          "Confirm title/category and current availability",
+          "Check numerical requirements and units",
+          "Confirm deadline year or retained inference",
+          "Confirm application method and completeness of eligibility"
+        ]
+      },
+      "opportunity_id": "fba5bcde-87ec-4cdc-ac22-4b998e8f0599",
+      "ingestion": {
+        "inserted": 1,
+        "updated": 0,
+        "duplicates": 0,
+        "rejected": 0,
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "title": "HITS COLLAB",
+      "university": "UCSD",
+      "organization": "UCRMMA",
+      "description": "UCRMMA is hosting an event where fighters from different schools will participate in different competitions. Whether it’s striking or grappling, different arts will be competing.\nDate interpretation (needs verification): activity_end_date 2026-11-22: year inferred from post date under next_occurrence_on_or_after_post_date_v1; source text: November 22",
+      "deadline_text": null,
+      "application_method": "DM FOR INFO.",
+      "category": "competition",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "other",
+          "value": null,
+          "raw_text": "fighters from different schools",
+          "is_hard_requirement": true
+        }
+      ],
+      "source_url": "https://www.instagram.com/p/Dfntx5YS8Al/",
+      "source_id": null,
+      "first_collected_at": "2026-11-15T09:42:16.068944+00:00",
+      "last_verified_at": "2026-11-15T09:42:16.069355+00:00",
+      "status": "needs_verification",
+      "human_review": {
+        "status": "pending",
+        "source_url": "https://www.instagram.com/p/Dfntx5YS8Al/",
+        "directory_url": "https://studentorg.ucsd.edu/Home/Details/21617",
+        "checks": [
+          "Open post and all poster slides",
+          "Confirm title/category and current availability",
+          "Check numerical requirements and units",
+          "Confirm deadline year or retained inference",
+          "Confirm application method and completeness of eligibility"
+        ]
+      },
+      "opportunity_id": "15e3ced9-0c34-48eb-b674-6c66e17b57ca",
+      "ingestion": {
+        "inserted": 1,
+        "updated": 0,
+        "duplicates": 0,
+        "rejected": 0,
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "title": "BLS Certification Workshop",
+      "university": "UCSD",
+      "organization": "Pilipino Undergraduate Society & Health (PUSH)",
+      "description": "BLS certification workshop led by Nurse Analyn Palma. Fees for the certification go to help fund girls' education in the Philippines.\nDate interpretation (needs verification): activity_end_date 2026-11-20: year inferred from post date under next_occurrence_on_or_after_post_date_v1; source text: Friday, November 20th from 12:00-4:00 pm",
+      "deadline_text": null,
+      "application_method": "Fill out the QR code or in the LinkTree to sign up",
+      "category": "event",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [],
+      "source_url": "https://www.instagram.com/p/DfqvoCdvCkk/",
+      "source_id": null,
+      "first_collected_at": "2026-11-15T09:42:25.293622+00:00",
+      "last_verified_at": "2026-11-15T09:42:25.294304+00:00",
+      "status": "needs_verification",
+      "human_review": {
+        "status": "pending",
+        "source_url": "https://www.instagram.com/p/DfqvoCdvCkk/",
+        "directory_url": "https://studentorg.ucsd.edu/Home/Details/21676",
+        "checks": [
+          "Open post and all poster slides",
+          "Confirm title/category and current availability",
+          "Check numerical requirements and units",
+          "Confirm deadline year or retained inference",
+          "Confirm application method and completeness of eligibility"
+        ]
+      },
+      "opportunity_id": "0d8f1bfd-d549-4522-80b4-0ab48511df87",
+      "ingestion": {
+        "inserted": 1,
+        "updated": 0,
+        "duplicates": 0,
+        "rejected": 0,
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "title": "Dental Hygiene Kit-Making Workshop",
+      "university": "UCSD",
+      "organization": "Flying Samaritans at UCSD",
+      "description": "Join us for our Dental Hygiene Kit-Making Workshop! Come hang out, meet new people, and help us put together dental hygiene kits for our upcoming clinic trip to Ensenada, Mexico!",
+      "deadline_text": null,
+      "application_method": null,
+      "category": "event",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [],
+      "source_url": "https://www.instagram.com/p/Dfil7ZFxY1A/",
+      "source_id": null,
+      "first_collected_at": "2026-11-15T09:43:07.188072+00:00",
+      "last_verified_at": "2026-11-15T09:43:07.188407+00:00",
+      "status": "needs_verification",
+      "human_review": {
+        "status": "pending",
+        "source_url": "https://www.instagram.com/p/Dfil7ZFxY1A/",
+        "directory_url": "https://studentorg.ucsd.edu/Home/Details/21389",
+        "checks": [
+          "Open post and all poster slides",
+          "Confirm title/category and current availability",
+          "Check numerical requirements and units",
+          "Confirm deadline year or retained inference",
+          "Confirm application method and completeness of eligibility"
+        ]
+      },
+      "opportunity_id": "6fd303b4-e422-4a87-866c-55bae7ef223d",
+      "ingestion": {
+        "inserted": 1,
+        "updated": 0,
+        "duplicates": 0,
+        "rejected": 0,
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "title": "Study with ECES: Midterm Prep & Good Vibes",
+      "university": "UCSD",
+      "organization": "ECES",
+      "description": "Come join ECES to study and prepare for midterms and finals! Enjoy FREE boba from HeyTea!\nDate interpretation (needs verification): activity_end_date 2026-11-16: year inferred from post date under next_occurrence_on_or_after_post_date_v1; source text: Monday, November 16 | 5:30 - 7:30 PM",
+      "deadline_text": null,
+      "application_method": "RSVP",
+      "category": "event",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [],
+      "source_url": "https://www.instagram.com/p/DfnUxOIkkvi/",
+      "source_id": null,
+      "first_collected_at": "2026-11-15T09:43:26.546378+00:00",
+      "last_verified_at": "2026-11-15T09:43:26.546842+00:00",
+      "status": "needs_verification",
+      "human_review": {
+        "status": "pending",
+        "source_url": "https://www.instagram.com/p/DfnUxOIkkvi/",
+        "directory_url": "https://studentorg.ucsd.edu/Home/Details/21069",
+        "checks": [
+          "Open post and all poster slides",
+          "Confirm title/category and current availability",
+          "Check numerical requirements and units",
+          "Confirm deadline year or retained inference",
+          "Confirm application method and completeness of eligibility"
+        ]
+      },
+      "opportunity_id": "d157b730-0141-4644-a1cd-da850c2a2a42",
+      "ingestion": {
+        "inserted": 1,
+        "updated": 0,
+        "duplicates": 0,
+        "rejected": 0,
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "title": "STEMagination 2nd General Body Meeting",
+      "university": "UCSD",
+      "organization": "STEMagination",
+      "description": "General body meeting to share progress, discuss upcoming plans, and learn about opportunities.",
+      "deadline_text": null,
+      "application_method": null,
+      "category": "event",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [],
+      "source_url": "https://www.instagram.com/p/DfjRzvqCZRh/",
+      "source_id": null,
+      "first_collected_at": "2026-11-15T09:43:32.294300+00:00",
+      "last_verified_at": "2026-11-15T09:43:32.294590+00:00",
+      "status": "expired",
+      "human_review": {
+        "status": "pending",
+        "source_url": "https://www.instagram.com/p/DfjRzvqCZRh/",
+        "directory_url": "https://studentorg.ucsd.edu/Home/Details/21658",
+        "checks": [
+          "Open post and all poster slides",
+          "Confirm title/category and current availability",
+          "Check numerical requirements and units",
+          "Confirm deadline year or retained inference",
+          "Confirm application method and completeness of eligibility"
+        ]
+      },
+      "ingestion": {
+        "skipped": "expired_not_added_to_current_feed"
+      }
+    },
+    {
+      "title": "DataHacks 2027",
+      "university": "UCSD",
+      "organization": "DataHacks",
+      "description": "The largest hackathon in San Diego. Join hundreds of students at UCSD to build something awesome in just one weekend. Expect workshops, mentors, sponsor networking, late-night snacks, and free swag.\nDate interpretation (needs verification): deadline 2026-11-26: year inferred from post date under next_occurrence_on_or_after_post_date_v1; source text: Priority Deadline: Apply by 11/26",
+      "deadline_text": "Priority Deadline: Apply by 11/26",
+      "application_method": "link in bio",
+      "category": "competition",
+      "deadline": "2026-11-26",
+      "required_skills": [],
+      "eligibility": [],
+      "source_url": "https://www.instagram.com/p/DfijWSKRYCh/",
+      "source_id": null,
+      "first_collected_at": "2026-11-15T09:44:12.394292+00:00",
+      "last_verified_at": "2026-11-15T09:44:12.394684+00:00",
+      "status": "needs_verification",
+      "human_review": {
+        "status": "pending",
+        "source_url": "https://www.instagram.com/p/DfijWSKRYCh/",
+        "directory_url": "https://studentorg.ucsd.edu/Home/Details/21322",
+        "checks": [
+          "Open post and all poster slides",
+          "Confirm title/category and current availability",
+          "Check numerical requirements and units",
+          "Confirm deadline year or retained inference",
+          "Confirm application method and completeness of eligibility"
+        ]
+      },
+      "opportunity_id": "76bd59cd-98bd-4f5b-9314-5a992499c848",
+      "ingestion": {
+        "inserted": 0,
+        "updated": 1,
+        "duplicates": 1,
+        "rejected": 0,
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "title": "BSSA Resume Workshop",
+      "university": "UCSD",
+      "organization": "Biological Sciences Student Association",
+      "description": "A workshop over Zoom to learn about how to start crafting a resume, what to include, and ask for helpful advice for applying to jobs or research positions.\nDate interpretation (needs verification): activity_end_date 2026-11-17: year inferred from post date under next_occurrence_on_or_after_post_date_v1; source text: November 17th from 6:00-7:00 PM",
+      "deadline_text": null,
+      "application_method": "RSVP via http://bit.ly/49cGk5u",
+      "category": "event",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [],
+      "source_url": "https://www.instagram.com/p/Dff9s-nxmzk/",
+      "source_id": null,
+      "first_collected_at": "2026-11-15T09:44:22.534996+00:00",
+      "last_verified_at": "2026-11-15T09:44:22.535339+00:00",
+      "status": "needs_verification",
+      "human_review": {
+        "status": "pending",
+        "source_url": "https://www.instagram.com/p/Dff9s-nxmzk/",
+        "directory_url": "https://studentorg.ucsd.edu/Home/Details/21017",
+        "checks": [
+          "Open post and all poster slides",
+          "Confirm title/category and current availability",
+          "Check numerical requirements and units",
+          "Confirm deadline year or retained inference",
+          "Confirm application method and completeness of eligibility"
+        ]
+      },
+      "opportunity_id": "a89557d8-5fed-466b-a43c-f0a048a91c48",
+      "ingestion": {
+        "inserted": 1,
+        "updated": 0,
+        "duplicates": 0,
+        "rejected": 0,
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "title": "First GBM: Meet the Pediatric Dentist",
+      "university": "UCSD",
+      "organization": "Little Smiles Initiative",
+      "description": "General Body Meeting (GBM) featuring Dr. Brett Parks, a specialist with Rady Children's Hospital, to discuss his career path in pediatric dentistry and answer student questions.\nDate interpretation (needs verification): activity_end_date 2026-11-16: year inferred from post date under next_occurrence_on_or_after_post_date_v1; source text: Nov 16",
+      "deadline_text": null,
+      "application_method": null,
+      "category": "event",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [],
+      "source_url": "https://www.instagram.com/p/DfQBLJiBSHC/",
+      "source_id": null,
+      "first_collected_at": "2026-11-15T09:44:26.113156+00:00",
+      "last_verified_at": "2026-11-15T09:44:26.113394+00:00",
+      "status": "needs_verification",
+      "human_review": {
+        "status": "pending",
+        "source_url": "https://www.instagram.com/p/DfQBLJiBSHC/",
+        "directory_url": "https://studentorg.ucsd.edu/Home/Details/21332",
+        "checks": [
+          "Open post and all poster slides",
+          "Confirm title/category and current availability",
+          "Check numerical requirements and units",
+          "Confirm deadline year or retained inference",
+          "Confirm application method and completeness of eligibility"
+        ]
+      },
+      "opportunity_id": "d5612676-0884-48eb-a2f0-5df8fa719bb6",
+      "ingestion": {
+        "inserted": 1,
+        "updated": 0,
+        "duplicates": 0,
+        "rejected": 0,
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "title": "Black Business Association Financial Literacy Workshop",
+      "university": "UCSD",
+      "organization": "Black Business Association",
+      "description": "Financial literacy workshop focused on money management, setting strong financial goals, and planning for the future.",
+      "deadline_text": null,
+      "application_method": null,
+      "category": "event",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [],
+      "source_url": "https://www.instagram.com/p/DffIs0PFPl7/",
+      "source_id": null,
+      "first_collected_at": "2026-11-15T09:44:26.936123+00:00",
+      "last_verified_at": "2026-11-15T09:44:26.936362+00:00",
+      "status": "needs_verification",
+      "human_review": {
+        "status": "pending",
+        "source_url": "https://www.instagram.com/p/DffIs0PFPl7/",
+        "directory_url": "https://studentorg.ucsd.edu/Home/Details/21510",
+        "checks": [
+          "Open post and all poster slides",
+          "Confirm title/category and current availability",
+          "Check numerical requirements and units",
+          "Confirm deadline year or retained inference",
+          "Confirm application method and completeness of eligibility"
+        ]
+      },
+      "opportunity_id": "e3af8e41-74d3-44bb-a408-ec14e45a2051",
+      "ingestion": {
+        "inserted": 1,
+        "updated": 0,
+        "duplicates": 0,
+        "rejected": 0,
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "title": "MLIS & Library Careers Panel",
+      "university": "UCSD",
+      "organization": "UHN (Undergraduate History Network)",
+      "description": "A career panel featuring UC San Diego librarians and archivists to discuss professional paths in library science and the MLIS degree.\nDate interpretation (needs verification): activity_end_date 2026-11-16: year inferred from post date under next_occurrence_on_or_after_post_date_v1; source text: NOVEMBER 16 @ 2 PM",
+      "deadline_text": null,
+      "application_method": "RSVP via the QR code on the second slide",
+      "category": "event",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [],
+      "source_url": "https://www.instagram.com/p/Dff_kYJmPWx/",
+      "source_id": null,
+      "first_collected_at": "2026-11-15T09:44:42.001213+00:00",
+      "last_verified_at": "2026-11-15T09:44:42.001554+00:00",
+      "status": "needs_verification",
+      "human_review": {
+        "status": "pending",
+        "source_url": "https://www.instagram.com/p/Dff_kYJmPWx/",
+        "directory_url": "https://studentorg.ucsd.edu/Home/Details/21183",
+        "checks": [
+          "Open post and all poster slides",
+          "Confirm title/category and current availability",
+          "Check numerical requirements and units",
+          "Confirm deadline year or retained inference",
+          "Confirm application method and completeness of eligibility"
+        ]
+      },
+      "opportunity_id": "36ace033-4234-4d7b-8c37-7785816d2498",
+      "ingestion": {
+        "inserted": 1,
+        "updated": 0,
+        "duplicates": 0,
+        "rejected": 0,
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "title": "Volunteer Instructor",
+      "university": "UCSD",
+      "organization": "Sprout Up",
+      "description": "Volunteer instructors provide environmental education programs and lessons to underrepresented public elementary schools, teaching children vital concepts in environmental science and sustainability.\nDate interpretation (needs verification): deadline 2025-11-26: year inferred from post date under next_occurrence_on_or_after_post_date_v1; source text: Nov 26th @ 11:59 pm",
+      "deadline_text": "Nov 26th @ 11:59 pm",
+      "application_method": null,
+      "category": "program",
+      "deadline": "2025-11-26",
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "other",
+          "value": null,
+          "raw_text": "love working with kids in classrooms",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": null,
+          "raw_text": "teach fun, hands-on environmental lessons",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": null,
+          "raw_text": "build confidence in public speaking",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": null,
+          "raw_text": "make real impact promoting environmental awareness",
+          "is_hard_requirement": true
+        }
+      ],
+      "source_url": "https://www.instagram.com/p/DRQpR_EiQ2Q/",
+      "source_id": null,
+      "first_collected_at": "2026-11-15T09:46:02.997175+00:00",
+      "last_verified_at": "2026-11-15T09:46:02.997799+00:00",
+      "status": "expired",
+      "human_review": {
+        "status": "pending",
+        "source_url": "https://www.instagram.com/p/DRQpR_EiQ2Q/",
+        "directory_url": "https://studentorg.ucsd.edu/Home/Details/21660",
+        "checks": [
+          "Open post and all poster slides",
+          "Confirm title/category and current availability",
+          "Check numerical requirements and units",
+          "Confirm deadline year or retained inference",
+          "Confirm application method and completeness of eligibility"
+        ]
+      },
+      "ingestion": {
+        "skipped": "expired_not_added_to_current_feed"
+      }
+    },
+    {
+      "title": "MLH Workshops",
+      "university": "UCSD",
+      "organization": "Major League Hacking",
+      "description": "Hackathon workshops including Intro to Google AI Studio and SanD Hacks A-Team with SpaceXSI.\nDate interpretation (needs verification): activity_end_date 2026-11-14: year inferred from post date under next_occurrence_on_or_after_post_date_v1; source text: November 14",
+      "deadline_text": null,
+      "application_method": null,
+      "category": "event",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "other",
+          "value": null,
+          "raw_text": "ANYONE CAN ATTEND",
+          "is_hard_requirement": true
+        }
+      ],
+      "source_url": "https://www.instagram.com/p/DfqxAi-m70U/",
+      "source_id": null,
+      "first_collected_at": "2026-11-15T09:47:32.379842+00:00",
+      "last_verified_at": "2026-11-15T09:47:32.380278+00:00",
+      "status": "expired",
+      "human_review": {
+        "status": "pending",
+        "source_url": "https://www.instagram.com/p/DfqxAi-m70U/",
+        "directory_url": "https://studentorg.ucsd.edu/Home/Details/21215",
+        "checks": [
+          "Open post and all poster slides",
+          "Confirm title/category and current availability",
+          "Check numerical requirements and units",
+          "Confirm deadline year or retained inference",
+          "Confirm application method and completeness of eligibility"
+        ]
+      },
+      "ingestion": {
+        "skipped": "expired_not_added_to_current_feed"
+      }
+    },
+    {
+      "title": "Part-time Instructor",
+      "university": "UCSD",
+      "organization": "Ember Coding Lab",
+      "description": "Part-time instructor position teaching coding, Roblox Studio, Python, and AI to kids age 6-12.",
+      "deadline_text": null,
+      "application_method": "Email your resume to Cecilia at cecilia@coder.build",
+      "category": "internship",
+      "deadline": null,
+      "required_skills": [
+        "experience working with kids"
+      ],
+      "eligibility": [
+        {
+          "type": "other",
+          "value": null,
+          "raw_text": "Must have experience working with kids",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "hours_per_week",
+          "value": null,
+          "raw_text": "Saturdays only",
+          "is_hard_requirement": true
+        }
+      ],
+      "source_url": "https://www.instagram.com/p/DfjJ3V-oXhg/",
+      "source_id": null,
+      "first_collected_at": "2026-11-15T09:48:54.918916+00:00",
+      "last_verified_at": "2026-11-15T09:48:54.919819+00:00",
+      "status": "needs_verification",
+      "human_review": {
+        "status": "pending",
+        "source_url": "https://www.instagram.com/p/DfjJ3V-oXhg/",
+        "directory_url": "https://studentorg.ucsd.edu/Home/Details/21481",
+        "checks": [
+          "Open post and all poster slides",
+          "Confirm title/category and current availability",
+          "Check numerical requirements and units",
+          "Confirm deadline year or retained inference",
+          "Confirm application method and completeness of eligibility"
+        ]
+      },
+      "opportunity_id": "189c6090-e4e1-4309-b2ae-eda15654bb9a",
+      "ingestion": {
+        "inserted": 1,
+        "updated": 0,
+        "duplicates": 0,
+        "rejected": 0,
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "title": "Challenger Research Journal Volume 8 Submission",
+      "university": "UCSD",
+      "organization": "Challenger Research Journal",
+      "description": "Full-length submissions for Volume 8 of the Challenger Research Journal.\nDate interpretation (needs verification): deadline 2026-11-24: year inferred from post date under next_occurrence_on_or_after_post_date_v1; source text: November 24th",
+      "deadline_text": "November 24th",
+      "application_method": "Access the submission form through the link in our bio or this QR code",
+      "category": "program",
+      "deadline": "2026-11-24",
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "other",
+          "value": "All majors",
+          "raw_text": "All majors and research interests welcome!",
+          "is_hard_requirement": false
+        },
+        {
+          "type": "academic_year",
+          "value": "current student or class of 2026",
+          "raw_text": "Be a current student or have graduated as part of the class of 2026",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": "Working with a UCSD professor",
+          "raw_text": "Working with a UCSD professor on your paper",
+          "is_hard_requirement": true
+        }
+      ],
+      "source_url": "https://www.instagram.com/p/DfVgeqGhaTC/",
+      "source_id": null,
+      "first_collected_at": "2026-11-15T09:49:00.450843+00:00",
+      "last_verified_at": "2026-11-15T09:49:00.458484+00:00",
+      "status": "needs_verification",
+      "human_review": {
+        "status": "pending",
+        "source_url": "https://www.instagram.com/p/DfVgeqGhaTC/",
+        "directory_url": "https://studentorg.ucsd.edu/Home/Details/21176",
+        "checks": [
+          "Open post and all poster slides",
+          "Confirm title/category and current availability",
+          "Check numerical requirements and units",
+          "Confirm deadline year or retained inference",
+          "Confirm application method and completeness of eligibility"
+        ]
+      },
+      "opportunity_id": "e2d1cbf0-505c-4756-9076-373e713d02be",
+      "ingestion": {
+        "inserted": 1,
+        "updated": 0,
+        "duplicates": 0,
+        "rejected": 0,
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "title": "Insight Big/Little Program",
+      "university": "UCSD",
+      "organization": "Insight",
+      "description": "Join Insight's big/little program by applying to be a little! Reveal will be sometime during Week 9, and it's mandatory to attend\nDate interpretation (needs verification): deadline 2026-11-20: year inferred from post date under next_occurrence_on_or_after_post_date_v1; source text: Friday, Nov. 20th",
+      "deadline_text": "Friday, Nov. 20th",
+      "application_method": "Fill out the link",
+      "category": "program",
+      "deadline": "2026-11-20",
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "other",
+          "value": null,
+          "raw_text": "mandatory to attend",
+          "is_hard_requirement": true
+        }
+      ],
+      "source_url": "https://www.instagram.com/p/DfqB9oRNL2r/",
+      "source_id": null,
+      "first_collected_at": "2026-11-15T09:49:34.755550+00:00",
+      "last_verified_at": "2026-11-15T09:49:34.801281+00:00",
+      "status": "needs_verification",
+      "human_review": {
+        "status": "pending",
+        "source_url": "https://www.instagram.com/p/DfqB9oRNL2r/",
+        "directory_url": "https://studentorg.ucsd.edu/Home/Details/21242",
+        "checks": [
+          "Open post and all poster slides",
+          "Confirm title/category and current availability",
+          "Check numerical requirements and units",
+          "Confirm deadline year or retained inference",
+          "Confirm application method and completeness of eligibility"
+        ]
+      },
+      "opportunity_id": "b7c63549-1f3a-4821-ab7b-d87ed9f0da67",
+      "ingestion": {
+        "inserted": 1,
+        "updated": 0,
+        "duplicates": 0,
+        "rejected": 0,
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "title": "GBM #4",
+      "university": "UCSD",
+      "organization": null,
+      "description": "General Body Meeting #4 focusing on workshop revisions. Attendance and participation in workshop revision work counts for 2 hours of CCR credit.\nDate interpretation (needs verification): activity_end_date 2026-11-13: year inferred from post date under next_occurrence_on_or_after_post_date_v1; source text: Friday, November 13th",
+      "deadline_text": null,
+      "application_method": "In-person attendance at Student Services Center room 554",
+      "category": "event",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "hours_per_week",
+          "value": 2,
+          "raw_text": "This meeting will count for 2 hours of CCR credit if you help work on workshop revisions!",
+          "is_hard_requirement": true
+        }
+      ],
+      "source_url": "https://www.instagram.com/p/DfqTWicu5ND/",
+      "source_id": null,
+      "first_collected_at": "2026-11-15T09:49:40.319575+00:00",
+      "last_verified_at": "2026-11-15T09:49:40.320091+00:00",
+      "status": "expired",
+      "human_review": {
+        "status": "pending",
+        "source_url": "https://www.instagram.com/p/DfqTWicu5ND/",
+        "directory_url": "https://studentorg.ucsd.edu/Home/Details/21458",
+        "checks": [
+          "Open post and all poster slides",
+          "Confirm title/category and current availability",
+          "Check numerical requirements and units",
+          "Confirm deadline year or retained inference",
+          "Confirm application method and completeness of eligibility"
+        ]
+      },
+      "ingestion": {
+        "skipped": "expired_not_added_to_current_feed"
+      }
+    },
+    {
+      "title": "CALPIRG FREE COOKING CLASS",
+      "university": "UCSD",
+      "organization": "CALPIRG",
+      "description": "Learn how to cook affordable meals ! Vegetarian + Vegan Recipes Included\nDate interpretation (needs verification): activity_end_date 2026-11-15: year inferred from post date under next_occurrence_on_or_after_post_date_v1; source text: Sunday, November 15th @12-2pm",
+      "deadline_text": null,
+      "application_method": "First Come, First Serve",
+      "category": "event",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [],
+      "source_url": "https://www.instagram.com/p/Dfp1MhThknG/",
+      "source_id": null,
+      "first_collected_at": "2026-11-15T09:50:18.683342+00:00",
+      "last_verified_at": "2026-11-15T09:50:18.683638+00:00",
+      "status": "needs_verification",
+      "human_review": {
+        "status": "pending",
+        "source_url": "https://www.instagram.com/p/Dfp1MhThknG/",
+        "directory_url": "https://studentorg.ucsd.edu/Home/Details/21649",
+        "checks": [
+          "Open post and all poster slides",
+          "Confirm title/category and current availability",
+          "Check numerical requirements and units",
+          "Confirm deadline year or retained inference",
+          "Confirm application method and completeness of eligibility"
+        ]
+      },
+      "opportunity_id": "f20333df-c24e-457a-9062-40fa33cd1762",
+      "ingestion": {
+        "inserted": 1,
+        "updated": 0,
+        "duplicates": 0,
+        "rejected": 0,
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "title": "DS3 x AIC - RAG and Vector Databases Workshop",
+      "university": "UCSD",
+      "organization": "Data Science Student Society (DS3) × The AI Collective (AIC)",
+      "description": "A beginner-friendly, hands-on workshop exploring Retrieval-Augmented Generation (RAG) and vector databases, covering core concepts and real-world applications.",
+      "deadline_text": null,
+      "application_method": "RSVP at https://luma.com/3uzfbj3y",
+      "category": "event",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "other",
+          "value": null,
+          "raw_text": "No prior experience needed!",
+          "is_hard_requirement": false
+        }
+      ],
+      "source_url": "https://www.instagram.com/p/DfnuvJZKVE6/",
+      "source_id": null,
+      "first_collected_at": "2026-11-15T09:50:24.937507+00:00",
+      "last_verified_at": "2026-11-15T09:50:24.937747+00:00",
+      "status": "expired",
+      "human_review": {
+        "status": "pending",
+        "source_url": "https://www.instagram.com/p/DfnuvJZKVE6/",
+        "directory_url": "https://studentorg.ucsd.edu/Home/Details/21020",
+        "checks": [
+          "Open post and all poster slides",
+          "Confirm title/category and current availability",
+          "Check numerical requirements and units",
+          "Confirm deadline year or retained inference",
+          "Confirm application method and completeness of eligibility"
+        ]
+      },
+      "ingestion": {
+        "skipped": "expired_not_added_to_current_feed"
+      }
+    },
+    {
+      "title": "Professor Spotlight: Dr. Timothy Brady",
+      "university": "UCSD",
+      "organization": "PCPC (Psychology Club)",
+      "description": "A professor spotlight featuring Dr. Timothy Brady from the UCSD Vision and Memory Lab to discuss his research focuses, offered classes, and lab work.\nDate interpretation (needs verification): activity_end_date 2026-11-12: year inferred from post date under next_occurrence_on_or_after_post_date_v1; source text: THURSDAY, NOVEMBER 12, 7 - 8 PM",
+      "deadline_text": null,
+      "application_method": "In-person at McGill 1350 or via Zoom (ID: 956 2270 6999)",
+      "category": "event",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [],
+      "source_url": "https://www.instagram.com/p/DfoJNA_OSFv/",
+      "source_id": null,
+      "first_collected_at": "2026-11-15T09:50:35.171586+00:00",
+      "last_verified_at": "2026-11-15T09:50:35.171897+00:00",
+      "status": "expired",
+      "human_review": {
+        "status": "pending",
+        "source_url": "https://www.instagram.com/p/DfoJNA_OSFv/",
+        "directory_url": "https://studentorg.ucsd.edu/Home/Details/20998",
+        "checks": [
+          "Open post and all poster slides",
+          "Confirm title/category and current availability",
+          "Check numerical requirements and units",
+          "Confirm deadline year or retained inference",
+          "Confirm application method and completeness of eligibility"
+        ]
+      },
+      "ingestion": {
+        "skipped": "expired_not_added_to_current_feed"
+      }
+    },
+    {
+      "title": "PiB Football Minigame Workshop",
+      "university": "UCSD",
+      "organization": "Project in a Box (PiB)",
+      "description": "A workshop to learn Arduino programming and circuitry while creating a mini football game.\nDate interpretation (needs verification): activity_end_date 2026-11-13: year inferred from post date under next_occurrence_on_or_after_post_date_v1; source text: Friday, Nov 13th 7PM-9PM",
+      "deadline_text": null,
+      "application_method": "Drop-in attendance at Envision (SME 304)",
+      "category": "event",
+      "deadline": null,
+      "required_skills": [],
+      "eligibility": [],
+      "source_url": "https://www.instagram.com/p/DfnhDowh4p8/",
+      "source_id": null,
+      "first_collected_at": "2026-11-15T09:50:39.873334+00:00",
+      "last_verified_at": "2026-11-15T09:50:39.873608+00:00",
+      "status": "expired",
+      "human_review": {
+        "status": "pending",
+        "source_url": "https://www.instagram.com/p/DfnhDowh4p8/",
+        "directory_url": "https://studentorg.ucsd.edu/Home/Details/21407",
+        "checks": [
+          "Open post and all poster slides",
+          "Confirm title/category and current availability",
+          "Check numerical requirements and units",
+          "Confirm deadline year or retained inference",
+          "Confirm application method and completeness of eligibility"
+        ]
+      },
+      "ingestion": {
+        "skipped": "expired_not_added_to_current_feed"
+      }
+    }
+  ],
+  "campaign_readback_matches": 21,
+  "website_records": [
+    {
+      "opportunity_id": "b7c63549-1f3a-4821-ab7b-d87ed9f0da67",
+      "title": "Insight Big/Little Program",
+      "university": "UCSD",
+      "organization": "Insight",
+      "category": "program",
+      "description": "Join Insight's big/little program by applying to be a little! Reveal will be sometime during Week 9, and it's mandatory to attend\nDate interpretation (needs verification): deadline 2026-11-20: year inferred from post date under next_occurrence_on_or_after_post_date_v1; source text: Friday, Nov. 20th",
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "other",
+          "value": null,
+          "raw_text": "mandatory to attend",
+          "is_hard_requirement": true
+        }
+      ],
+      "deadline": "2026-11-20",
+      "deadline_text": "Friday, Nov. 20th",
+      "application_method": "Fill out the link",
+      "source_url": "https://www.instagram.com/p/DfqB9oRNL2r/",
+      "source_id": "858f5511-babb-4298-8458-e561740dbc9a",
+      "first_collected_at": "2026-11-15T09:49:35.792Z",
+      "last_verified_at": "2026-11-15T09:49:35.792Z",
+      "status": "needs_verification",
+      "access": {},
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "02ea51bb-029c-460b-8453-fa1501193f78",
+      "title": "Winter 2027 Psychology PSYC 099/199 Common Application",
+      "university": "UCSD",
+      "organization": "Department of Psychology",
+      "category": "program",
+      "description": "Common application for matching students to psychology labs. PSYC 099 and 199 enrollment criteria are alternative branches.",
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "other",
+          "value": null,
+          "raw_text": "Prerequisites for PSYC-099: Lower division standing, completion of at least 30 units of undergraduate studies at UCSD with a minimum UCSD GPA of 3.0; completed and approvedTriton Enrollment Authorization (TEA) request. May be taken for P/NP credit three times.",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": null,
+          "raw_text": "Prerequisites for PSYC-199: Upper-division standing, completion of at least 90 units of undergraduate studies at UCSD with a minimum UCSD GPA of 2.5; completed and approved Triton Enrollment Authorization (TEA) request. May be taken for P/NP credit nine times.",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": "Possible college-approved exceptions",
+          "raw_text": "Please note: Students who do not meet these minimum University requirements for booking may obtain additional approval from their college.",
+          "is_hard_requirement": false
+        }
+      ],
+      "deadline": "2026-11-20",
+      "deadline_text": "The Winter 2027 PSYC-099/199 Common Application is now live. The deadline to complete the Winter 2027 PSYC-099/199 Common Application is midnight on Friday, November 20, 2026.",
+      "application_method": "Fill out the PSYC 099/199 Common Application or contact individual labs.",
+      "source_url": "https://psychology.ucsd.edu/undergraduate-program/research/index.html",
+      "source_id": "d3b15716-6876-42c5-97e5-98a4f38bb05e",
+      "first_collected_at": "2026-11-14T21:53:15.105Z",
+      "last_verified_at": "2026-11-15T07:04:09.723Z",
+      "status": "needs_verification",
+      "access": {
+        "cost": {
+          "quote": null,
+          "value": "unstated"
+        },
+        "transfer": {
+          "quote": null,
+          "value": "unstated"
+        },
+        "first_gen": {
+          "quote": null,
+          "value": "unstated"
+        },
+        "compensation": {
+          "quote": "You may earn either 2 units (60 hours/quarter) or 4 units (120 hours/quarter) each quarter.",
+          "value": "credit"
+        },
+        "international": {
+          "quote": null,
+          "value": "unstated"
+        }
+      },
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "e2d1cbf0-505c-4756-9076-373e713d02be",
+      "title": "Challenger Research Journal Volume 8 Submission",
+      "university": "UCSD",
+      "organization": "Challenger Research Journal",
+      "category": "program",
+      "description": "Full-length submissions for Volume 8 of the Challenger Research Journal.\nDate interpretation (needs verification): deadline 2026-11-24: year inferred from post date under next_occurrence_on_or_after_post_date_v1; source text: November 24th",
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "other",
+          "value": "All majors",
+          "raw_text": "All majors and research interests welcome!",
+          "is_hard_requirement": false
+        },
+        {
+          "type": "academic_year",
+          "value": "current student or class of 2026",
+          "raw_text": "Be a current student or have graduated as part of the class of 2026",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": "Working with a UCSD professor",
+          "raw_text": "Working with a UCSD professor on your paper",
+          "is_hard_requirement": true
+        }
+      ],
+      "deadline": "2026-11-24",
+      "deadline_text": "November 24th",
+      "application_method": "Access the submission form through the link in our bio or this QR code",
+      "source_url": "https://www.instagram.com/p/DfVgeqGhaTC/",
+      "source_id": "b9f24ce5-9082-4956-bce4-90fadba2f0b3",
+      "first_collected_at": "2026-11-15T09:49:01.056Z",
+      "last_verified_at": "2026-11-15T09:49:01.056Z",
+      "status": "needs_verification",
+      "access": {},
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "76bd59cd-98bd-4f5b-9314-5a992499c848",
+      "title": "DataHacks 2027",
+      "university": "UCSD",
+      "organization": "DataHacks",
+      "category": "competition",
+      "description": "The largest hackathon in San Diego. Join hundreds of students at UCSD to build something awesome in just one weekend. Expect workshops, mentors, sponsor networking, late-night snacks, and free swag.\nDate interpretation (needs verification): deadline 2026-11-26: year inferred from post date under next_occurrence_on_or_after_post_date_v1; source text: Priority Deadline: Apply by 11/26",
+      "required_skills": [],
+      "eligibility": [],
+      "deadline": "2026-11-26",
+      "deadline_text": "Priority Deadline: Apply by 11/26",
+      "application_method": "link in bio",
+      "source_url": "https://www.instagram.com/p/DfijWSKRYCh/",
+      "source_id": "27ac3856-1a06-43ef-aacd-1f388d77aad9",
+      "first_collected_at": "2026-11-15T09:09:43.703Z",
+      "last_verified_at": "2026-11-15T09:44:13.063Z",
+      "status": "needs_verification",
+      "access": {
+        "cost": {
+          "quote": null,
+          "value": "unstated"
+        },
+        "transfer": {
+          "quote": null,
+          "value": "unstated"
+        },
+        "first_gen": {
+          "quote": null,
+          "value": "unstated"
+        },
+        "compensation": {
+          "quote": null,
+          "value": "unstated"
+        },
+        "international": {
+          "quote": null,
+          "value": "unstated"
+        }
+      },
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "7b90bc53-3b76-4767-ac84-aa2df770dd5d",
+      "title": "Faculty Mentor Program (FMP)",
+      "university": "UCSD",
+      "organization": "Undergraduate Research Hub",
+      "category": "program",
+      "description": "A two-quarter program that pairs undergraduate students with UC San Diego faculty mentors to conduct research, develop research skills, and explore post-graduate career paths through workshops and seminars. Students receive independent study course credit and present at a poster symposium.",
+      "required_skills": [
+        "research",
+        "academic writing"
+      ],
+      "eligibility": [
+        {
+          "type": "gpa",
+          "value": 2.7,
+          "raw_text": "Have a minimum GPA of 2.7 at the beginning of the program (Winter Quarter).",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "academic_year",
+          "value": "sophomore or above",
+          "raw_text": "Have sophomore standing (45 completed units) or above by the time the program begins.",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "hours_per_week",
+          "value": 12,
+          "raw_text": "Be able to commit at least 12 hours a week to research-related and professional development activities each quarter of participation.",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "duration",
+          "value": 2,
+          "raw_text": "Be able to commit to both consecutive quarters of the program (Winter and Spring).",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "course",
+          "value": "99/199 Independent Study",
+          "raw_text": "Enroll in a 99 or 199 independent study course for each quarter of participation in the program.",
+          "is_hard_requirement": true
+        }
+      ],
+      "deadline": "2026-12-18",
+      "deadline_text": "12/18/2026*",
+      "application_method": "Apply via the Undergraduate Research Hub Application Portal",
+      "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/fmp/index.html",
+      "source_id": "dc3b3552-8331-455d-a62c-a24488820beb",
+      "first_collected_at": "2026-11-14T20:56:37.539Z",
+      "last_verified_at": "2026-11-15T09:39:31.488Z",
+      "status": "needs_verification",
+      "access": {
+        "cost": {
+          "quote": null,
+          "value": "unstated"
+        },
+        "transfer": {
+          "quote": null,
+          "value": "unstated"
+        },
+        "first_gen": {
+          "quote": null,
+          "value": "unstated"
+        },
+        "compensation": {
+          "quote": "Academic credit: Get 4 units of 99 or 199 Independent Study credit for each quarter you participate in FMP.",
+          "value": "credit"
+        },
+        "international": {
+          "quote": "International, undocumented, visiting, and transfer students are all eligible as long as they fulfill the above requirements.",
+          "value": "open"
+        }
+      },
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "f20333df-c24e-457a-9062-40fa33cd1762",
+      "title": "CALPIRG FREE COOKING CLASS",
+      "university": "UCSD",
+      "organization": "CALPIRG",
+      "category": "event",
+      "description": "Learn how to cook affordable meals ! Vegetarian + Vegan Recipes Included\nDate interpretation (needs verification): activity_end_date 2026-11-15: year inferred from post date under next_occurrence_on_or_after_post_date_v1; source text: Sunday, November 15th @12-2pm",
+      "required_skills": [],
+      "eligibility": [],
+      "deadline": null,
+      "deadline_text": null,
+      "application_method": "First Come, First Serve",
+      "source_url": "https://www.instagram.com/p/Dfp1MhThknG/",
+      "source_id": "16c6166e-fc4d-4a2f-aa14-071369d73910",
+      "first_collected_at": "2026-11-15T09:50:19.284Z",
+      "last_verified_at": "2026-11-15T09:50:19.284Z",
+      "status": "needs_verification",
+      "access": {},
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "189c6090-e4e1-4309-b2ae-eda15654bb9a",
+      "title": "Part-time Instructor",
+      "university": "UCSD",
+      "organization": "Ember Coding Lab",
+      "category": "internship",
+      "description": "Part-time instructor position teaching coding, Roblox Studio, Python, and AI to kids age 6-12.",
+      "required_skills": [
+        "experience working with kids"
+      ],
+      "eligibility": [
+        {
+          "type": "other",
+          "value": null,
+          "raw_text": "Must have experience working with kids",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "hours_per_week",
+          "value": null,
+          "raw_text": "Saturdays only",
+          "is_hard_requirement": true
+        }
+      ],
+      "deadline": null,
+      "deadline_text": null,
+      "application_method": "Email your resume to Cecilia at cecilia@coder.build",
+      "source_url": "https://www.instagram.com/p/DfjJ3V-oXhg/",
+      "source_id": "15aab81a-2653-4c73-82a9-d49ec2b9e219",
+      "first_collected_at": "2026-11-15T09:48:55.558Z",
+      "last_verified_at": "2026-11-15T09:48:55.558Z",
+      "status": "needs_verification",
+      "access": {},
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "36ace033-4234-4d7b-8c37-7785816d2498",
+      "title": "MLIS & Library Careers Panel",
+      "university": "UCSD",
+      "organization": "UHN (Undergraduate History Network)",
+      "category": "event",
+      "description": "A career panel featuring UC San Diego librarians and archivists to discuss professional paths in library science and the MLIS degree.\nDate interpretation (needs verification): activity_end_date 2026-11-16: year inferred from post date under next_occurrence_on_or_after_post_date_v1; source text: NOVEMBER 16 @ 2 PM",
+      "required_skills": [],
+      "eligibility": [],
+      "deadline": null,
+      "deadline_text": null,
+      "application_method": "RSVP via the QR code on the second slide",
+      "source_url": "https://www.instagram.com/p/Dff_kYJmPWx/",
+      "source_id": "53944e7a-c78e-4020-8f49-66b999f75d1d",
+      "first_collected_at": "2026-11-15T09:44:42.545Z",
+      "last_verified_at": "2026-11-15T09:44:42.545Z",
+      "status": "needs_verification",
+      "access": {},
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "e3af8e41-74d3-44bb-a408-ec14e45a2051",
+      "title": "Black Business Association Financial Literacy Workshop",
+      "university": "UCSD",
+      "organization": "Black Business Association",
+      "category": "event",
+      "description": "Financial literacy workshop focused on money management, setting strong financial goals, and planning for the future.",
+      "required_skills": [],
+      "eligibility": [],
+      "deadline": null,
+      "deadline_text": null,
+      "application_method": null,
+      "source_url": "https://www.instagram.com/p/DffIs0PFPl7/",
+      "source_id": "fbcf470a-7b0d-4ebc-9ae6-1e75213a1444",
+      "first_collected_at": "2026-11-15T09:44:27.513Z",
+      "last_verified_at": "2026-11-15T09:44:27.513Z",
+      "status": "needs_verification",
+      "access": {},
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "d5612676-0884-48eb-a2f0-5df8fa719bb6",
+      "title": "First GBM: Meet the Pediatric Dentist",
+      "university": "UCSD",
+      "organization": "Little Smiles Initiative",
+      "category": "event",
+      "description": "General Body Meeting (GBM) featuring Dr. Brett Parks, a specialist with Rady Children's Hospital, to discuss his career path in pediatric dentistry and answer student questions.\nDate interpretation (needs verification): activity_end_date 2026-11-16: year inferred from post date under next_occurrence_on_or_after_post_date_v1; source text: Nov 16",
+      "required_skills": [],
+      "eligibility": [],
+      "deadline": null,
+      "deadline_text": null,
+      "application_method": null,
+      "source_url": "https://www.instagram.com/p/DfQBLJiBSHC/",
+      "source_id": "ec45f7b9-3929-4ab3-a439-5cc3049ce7c5",
+      "first_collected_at": "2026-11-15T09:44:26.715Z",
+      "last_verified_at": "2026-11-15T09:44:26.715Z",
+      "status": "needs_verification",
+      "access": {},
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "a89557d8-5fed-466b-a43c-f0a048a91c48",
+      "title": "BSSA Resume Workshop",
+      "university": "UCSD",
+      "organization": "Biological Sciences Student Association",
+      "category": "event",
+      "description": "A workshop over Zoom to learn about how to start crafting a resume, what to include, and ask for helpful advice for applying to jobs or research positions.\nDate interpretation (needs verification): activity_end_date 2026-11-17: year inferred from post date under next_occurrence_on_or_after_post_date_v1; source text: November 17th from 6:00-7:00 PM",
+      "required_skills": [],
+      "eligibility": [],
+      "deadline": null,
+      "deadline_text": null,
+      "application_method": "RSVP via http://bit.ly/49cGk5u",
+      "source_url": "https://www.instagram.com/p/Dff9s-nxmzk/",
+      "source_id": "c9d1a0a8-bc96-483f-afbd-d3860a0b46a1",
+      "first_collected_at": "2026-11-15T09:44:23.121Z",
+      "last_verified_at": "2026-11-15T09:44:23.121Z",
+      "status": "needs_verification",
+      "access": {},
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "d157b730-0141-4644-a1cd-da850c2a2a42",
+      "title": "Study with ECES: Midterm Prep & Good Vibes",
+      "university": "UCSD",
+      "organization": "ECES",
+      "category": "event",
+      "description": "Come join ECES to study and prepare for midterms and finals! Enjoy FREE boba from HeyTea!\nDate interpretation (needs verification): activity_end_date 2026-11-16: year inferred from post date under next_occurrence_on_or_after_post_date_v1; source text: Monday, November 16 | 5:30 - 7:30 PM",
+      "required_skills": [],
+      "eligibility": [],
+      "deadline": null,
+      "deadline_text": null,
+      "application_method": "RSVP",
+      "source_url": "https://www.instagram.com/p/DfnUxOIkkvi/",
+      "source_id": "e0f95c4b-a3a7-4af0-97be-6711ae373c3c",
+      "first_collected_at": "2026-11-15T09:43:27.112Z",
+      "last_verified_at": "2026-11-15T09:43:27.112Z",
+      "status": "needs_verification",
+      "access": {},
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "6fd303b4-e422-4a87-866c-55bae7ef223d",
+      "title": "Dental Hygiene Kit-Making Workshop",
+      "university": "UCSD",
+      "organization": "Flying Samaritans at UCSD",
+      "category": "event",
+      "description": "Join us for our Dental Hygiene Kit-Making Workshop! Come hang out, meet new people, and help us put together dental hygiene kits for our upcoming clinic trip to Ensenada, Mexico!",
+      "required_skills": [],
+      "eligibility": [],
+      "deadline": null,
+      "deadline_text": null,
+      "application_method": null,
+      "source_url": "https://www.instagram.com/p/Dfil7ZFxY1A/",
+      "source_id": "a6328307-5708-4019-909b-9ec33a2a100b",
+      "first_collected_at": "2026-11-15T09:43:07.751Z",
+      "last_verified_at": "2026-11-15T09:43:07.751Z",
+      "status": "needs_verification",
+      "access": {},
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "0d8f1bfd-d549-4522-80b4-0ab48511df87",
+      "title": "BLS Certification Workshop",
+      "university": "UCSD",
+      "organization": "Pilipino Undergraduate Society & Health (PUSH)",
+      "category": "event",
+      "description": "BLS certification workshop led by Nurse Analyn Palma. Fees for the certification go to help fund girls' education in the Philippines.\nDate interpretation (needs verification): activity_end_date 2026-11-20: year inferred from post date under next_occurrence_on_or_after_post_date_v1; source text: Friday, November 20th from 12:00-4:00 pm",
+      "required_skills": [],
+      "eligibility": [],
+      "deadline": null,
+      "deadline_text": null,
+      "application_method": "Fill out the QR code or in the LinkTree to sign up",
+      "source_url": "https://www.instagram.com/p/DfqvoCdvCkk/",
+      "source_id": "1d2d1ab4-53b0-4844-a4b3-d3572ad7e8cd",
+      "first_collected_at": "2026-11-15T09:42:25.891Z",
+      "last_verified_at": "2026-11-15T09:42:25.891Z",
+      "status": "needs_verification",
+      "access": {},
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "15e3ced9-0c34-48eb-b674-6c66e17b57ca",
+      "title": "HITS COLLAB",
+      "university": "UCSD",
+      "organization": "UCRMMA",
+      "category": "competition",
+      "description": "UCRMMA is hosting an event where fighters from different schools will participate in different competitions. Whether it’s striking or grappling, different arts will be competing.\nDate interpretation (needs verification): activity_end_date 2026-11-22: year inferred from post date under next_occurrence_on_or_after_post_date_v1; source text: November 22",
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "other",
+          "value": null,
+          "raw_text": "fighters from different schools",
+          "is_hard_requirement": true
+        }
+      ],
+      "deadline": null,
+      "deadline_text": null,
+      "application_method": "DM FOR INFO.",
+      "source_url": "https://www.instagram.com/p/Dfntx5YS8Al/",
+      "source_id": "d8d40a72-d70e-456b-b5ea-444e86c72160",
+      "first_collected_at": "2026-11-15T09:42:16.642Z",
+      "last_verified_at": "2026-11-15T09:42:16.642Z",
+      "status": "needs_verification",
+      "access": {},
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "fba5bcde-87ec-4cdc-ac22-4b998e8f0599",
+      "title": "Triton NeuroTech Journal Club Week 8 Showcase",
+      "university": "UCSD",
+      "organization": "Triton NeuroTech",
+      "category": "event",
+      "description": "Come by Triton NeuroTech’s Journal Club to present or listen to the showcases! The 5 minutes presentation can be on a research, personal projects, club projects, neurotech news, or a neurotech topic you like!\nDate interpretation (needs verification): activity_end_date 2026-11-20: year inferred from post date under next_occurrence_on_or_after_post_date_v1; source text: Friday 11/20 6:30PM",
+      "required_skills": [],
+      "eligibility": [],
+      "deadline": null,
+      "deadline_text": null,
+      "application_method": "RSVP form in the linktree on our bio",
+      "source_url": "https://www.instagram.com/p/DfqGXBvvcIE/",
+      "source_id": "df825635-4e69-461a-aa89-4f5392190e69",
+      "first_collected_at": "2026-11-15T09:42:13.913Z",
+      "last_verified_at": "2026-11-15T09:42:13.913Z",
+      "status": "needs_verification",
+      "access": {},
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "0a844c0b-cf75-4a3f-9192-8de95fc0a38f",
+      "title": "SCSE Mentor-Mentee Spaghetti and Marshmallow Structures Competition",
+      "university": "UCSD",
+      "organization": "SCSE",
+      "category": "competition",
+      "description": "A friendly engineering competition where mentors and mentees build spaghetti and marshmallow structures. Food provided.",
+      "required_skills": [
+        "structural engineering"
+      ],
+      "eligibility": [
+        {
+          "type": "other",
+          "value": null,
+          "raw_text": "CALLING ALL MENTORS AND MENTEES!",
+          "is_hard_requirement": true
+        }
+      ],
+      "deadline": null,
+      "deadline_text": null,
+      "application_method": "RSVP with the QR code above, or with the link in our Linktree",
+      "source_url": "https://www.instagram.com/p/DfseDrmToT6/",
+      "source_id": "7822ceb8-f72e-4681-b84e-c09fa9f36767",
+      "first_collected_at": "2026-11-15T09:41:11.858Z",
+      "last_verified_at": "2026-11-15T09:41:11.858Z",
+      "status": "needs_verification",
+      "access": {
+        "cost": {
+          "quote": null,
+          "value": "unstated"
+        },
+        "transfer": {
+          "quote": null,
+          "value": "unstated"
+        },
+        "first_gen": {
+          "quote": null,
+          "value": "unstated"
+        },
+        "compensation": {
+          "quote": null,
+          "value": "unstated"
+        },
+        "international": {
+          "quote": null,
+          "value": "unstated"
+        }
+      },
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "cfa1994e-93d9-47ae-85a2-540b29d8f1cc",
+      "title": "Personal Statement Writing Workshop",
+      "university": "UCSD",
+      "organization": "ACS-SA and Graphite",
+      "category": "event",
+      "description": "A workshop focused on helping students learn how to highlight unique experiences and craft a compelling personal statement.\nDate interpretation (needs verification): activity_end_date 2026-11-18: year inferred from post date under next_occurrence_on_or_after_post_date_v1; source text: Wednesday, November 18th",
+      "required_skills": [],
+      "eligibility": [],
+      "deadline": null,
+      "deadline_text": null,
+      "application_method": null,
+      "source_url": "https://www.instagram.com/p/Dfsi_e9m88K/",
+      "source_id": "f99b13ff-45af-4193-bf1b-963c27265b3b",
+      "first_collected_at": "2026-11-15T09:41:06.518Z",
+      "last_verified_at": "2026-11-15T09:41:06.518Z",
+      "status": "needs_verification",
+      "access": {
+        "cost": {
+          "quote": null,
+          "value": "unstated"
+        },
+        "transfer": {
+          "quote": null,
+          "value": "unstated"
+        },
+        "first_gen": {
+          "quote": null,
+          "value": "unstated"
+        },
+        "compensation": {
+          "quote": null,
+          "value": "unstated"
+        },
+        "international": {
+          "quote": null,
+          "value": "unstated"
+        }
+      },
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "e4b14798-f132-45f1-ba46-746f1071422b",
+      "title": "VR Workshop (Part 2)",
+      "university": "UCSD",
+      "organization": "Triton XR",
+      "category": "event",
+      "description": "A workshop focused on the basics of Unity for VR, where participants can learn to build a 3-D game in VR. Attendees are encouraged to bring a laptop.\nDate interpretation (needs verification): activity_end_date 2026-11-17: year inferred from post date under next_occurrence_on_or_after_post_date_v1; source text: Tuesday 11/17 from 5–6 PM",
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "other",
+          "value": null,
+          "raw_text": "Everyone is welcome",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "skill",
+          "value": null,
+          "raw_text": "No experience needed!",
+          "is_hard_requirement": false
+        }
+      ],
+      "deadline": null,
+      "deadline_text": null,
+      "application_method": "In-person attendance at Governance Chambers (PC 4th Floor)",
+      "source_url": "https://www.instagram.com/p/DfsaAuZu9q8/",
+      "source_id": "834d1bcd-8c73-4a4d-b754-37c17001148d",
+      "first_collected_at": "2026-11-15T09:40:52.014Z",
+      "last_verified_at": "2026-11-15T09:40:52.014Z",
+      "status": "needs_verification",
+      "access": {
+        "cost": {
+          "quote": null,
+          "value": "unstated"
+        },
+        "transfer": {
+          "quote": null,
+          "value": "unstated"
+        },
+        "first_gen": {
+          "quote": null,
+          "value": "unstated"
+        },
+        "compensation": {
+          "quote": null,
+          "value": "unstated"
+        },
+        "international": {
+          "quote": null,
+          "value": "unstated"
+        }
+      },
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "74c095d0-449a-4931-bdeb-b8e9b3f2ec0c",
+      "title": "ICE OUT Vigil and Speech Opportunity",
+      "university": "UCSD",
+      "organization": "TYMMN, Nueva Herencia, La Familia, Mecha, Racial Justice Coalition of San Diego, Otay Mesa Detention Collective",
+      "category": "event",
+      "description": "A student-led vigil and event held at the Otay Mesa Detention Center to stand in solidarity with immigrant neighbors. Students are invited to share speeches to amplify student voices regarding the impact of immigration policies.\nDate interpretation (needs verification): activity_end_date 2026-11-22: year inferred from post date under next_occurrence_on_or_after_post_date_v1; source text: Sunday 11/22, from 1:15-3:30",
+      "required_skills": [],
+      "eligibility": [],
+      "deadline": null,
+      "deadline_text": null,
+      "application_method": "Apply to share a speech via the provided link or information in the post.",
+      "source_url": "https://www.instagram.com/p/DftBZkgEbQ2/",
+      "source_id": "88291317-733f-41fe-911f-5e473224c3c2",
+      "first_collected_at": "2026-11-15T09:34:39.287Z",
+      "last_verified_at": "2026-11-15T09:34:39.287Z",
+      "status": "needs_verification",
+      "access": {
+        "cost": {
+          "quote": null,
+          "value": "unstated"
+        },
+        "transfer": {
+          "quote": null,
+          "value": "unstated"
+        },
+        "first_gen": {
+          "quote": null,
+          "value": "unstated"
+        },
+        "compensation": {
+          "quote": null,
+          "value": "unstated"
+        },
+        "international": {
+          "quote": null,
+          "value": "unstated"
+        }
+      },
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "599a6970-5d9b-4283-9360-f698cee0e656",
+      "title": "Accounting Competition Interest Form",
+      "university": "UCSD",
+      "organization": "United Accounting Society",
+      "category": "competition",
+      "description": "Fill out the form to be considered for external accounting competitions that UAS finds. UAS may help form teams and provide funding for transportation or registration fees.",
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "academic_year",
+          "value": [
+            "Freshmen",
+            "sophomores",
+            "juniors",
+            "seniors"
+          ],
+          "raw_text": "ALL YEARS WELCOME\nFreshmen, sophomores, juniors, and seniors are all encouraged to apply!",
+          "is_hard_requirement": true
+        }
+      ],
+      "deadline": null,
+      "deadline_text": null,
+      "application_method": "Fill out our interest form",
+      "source_url": "https://www.instagram.com/p/DekS65WyFVj/",
+      "source_id": "c40091f6-59a1-42f0-b343-86ed2b981f85",
+      "first_collected_at": "2026-11-15T09:29:38.127Z",
+      "last_verified_at": "2026-11-15T09:29:38.127Z",
+      "status": "needs_verification",
+      "access": {
+        "cost": {
+          "quote": null,
+          "value": "unstated"
+        },
+        "transfer": {
+          "quote": null,
+          "value": "unstated"
+        },
+        "first_gen": {
+          "quote": null,
+          "value": "unstated"
+        },
+        "compensation": {
+          "quote": null,
+          "value": "unstated"
+        },
+        "international": {
+          "quote": null,
+          "value": "unstated"
+        }
+      },
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "42d42d5f-a755-4243-946e-76a31cb3061b",
+      "title": "Triton Game Development Challenge",
+      "university": "UCSD",
+      "organization": "TG x VGDC",
+      "category": "competition",
+      "description": "A three-day game jam where participants compete for prizes judged by industry professionals from companies including Playstation, Respawn Entertainment, Bungie, and Activision.",
+      "required_skills": [],
+      "eligibility": [],
+      "deadline": null,
+      "deadline_text": null,
+      "application_method": null,
+      "source_url": "https://www.instagram.com/p/DfnTtaqgXxq/",
+      "source_id": "b06b88a0-9881-42fb-a8a7-8c5316ee0f40",
+      "first_collected_at": "2026-11-15T09:29:08.498Z",
+      "last_verified_at": "2026-11-15T09:29:08.498Z",
+      "status": "needs_verification",
+      "access": {
+        "cost": {
+          "quote": null,
+          "value": "unstated"
+        },
+        "transfer": {
+          "quote": null,
+          "value": "unstated"
+        },
+        "first_gen": {
+          "quote": null,
+          "value": "unstated"
+        },
+        "compensation": {
+          "quote": null,
+          "value": "unstated"
+        },
+        "international": {
+          "quote": null,
+          "value": "unstated"
+        }
+      },
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "280e20b5-ddbe-4efa-8e83-f0663d59e496",
+      "title": "Ascension Fall Training Open Workshop with Danyel Moulton",
+      "university": "UCSD",
+      "organization": "Ascension",
+      "category": "event",
+      "description": "An open dance training workshop featuring professional dancer and director Danyel Moulton.\nDate interpretation (needs verification): activity_end_date 2026-11-15: year inferred from post date under next_occurrence_on_or_after_post_date_v1; source text: Sunday November 15th",
+      "required_skills": [],
+      "eligibility": [],
+      "deadline": null,
+      "deadline_text": null,
+      "application_method": "Register ahead of time using the link in our bio, we will also accept walk-ins on the day of!",
+      "source_url": "https://www.instagram.com/p/DfgyV66m6yT/",
+      "source_id": "ea0194ec-aa82-4d56-b0d9-21f17479e311",
+      "first_collected_at": "2026-11-15T09:29:00.291Z",
+      "last_verified_at": "2026-11-15T09:29:00.291Z",
+      "status": "needs_verification",
+      "access": {
+        "cost": {
+          "quote": "We accept Venmo, Zelle, or Cash for the $18 admission.",
+          "value": "fee"
+        },
+        "transfer": {
+          "quote": null,
+          "value": "unstated"
+        },
+        "first_gen": {
+          "quote": null,
+          "value": "unstated"
+        },
+        "compensation": {
+          "quote": null,
+          "value": "unstated"
+        },
+        "international": {
+          "quote": null,
+          "value": "unstated"
+        }
+      },
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "4d9b57cc-3fa0-4cfd-bc23-da16026ed078",
+      "title": "Quarterly Projects",
+      "university": "UCSD",
+      "organization": "IEEE at UC San Diego",
+      "category": "program",
+      "description": "IEEE's Quarterly Projects aims to provide students with project experience in a span of 10 weeks. Students are put into teams of 5 to develop a hardware project, receive mentorship, and showcase their work at the end of the quarter.",
+      "required_skills": [],
+      "eligibility": [],
+      "deadline": null,
+      "deadline_text": null,
+      "application_method": "Fill out QP interest form found on the bottom of the page or via links to this quarter's application forms provided via IEEE discord or Instagram.",
+      "source_url": "https://ieeeatucsd.org/projects/quarterly",
+      "source_id": "c207e774-f43b-465b-8d75-38d3c5b900b2",
+      "first_collected_at": "2026-11-15T02:32:58.078Z",
+      "last_verified_at": "2026-11-15T02:32:58.078Z",
+      "status": "needs_verification",
+      "access": {
+        "cost": {
+          "quote": null,
+          "value": "unstated"
+        },
+        "transfer": {
+          "quote": null,
+          "value": "unstated"
+        },
+        "first_gen": {
+          "quote": null,
+          "value": "unstated"
+        },
+        "compensation": {
+          "quote": null,
+          "value": "unstated"
+        },
+        "international": {
+          "quote": null,
+          "value": "unstated"
+        }
+      },
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "0ed4d64b-e8aa-4fe1-b1e1-defe4b3b0451",
+      "title": "Basement Affiliate Student Organization Program",
+      "university": "UCSD",
+      "organization": "The Basement",
+      "category": "program",
+      "description": "The Basement Affiliate Student Organization Program is designed to foster meaningful partnerships with student organizations that are passionate about entrepreneurship, innovation, and design knowledge.",
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "other",
+          "value": "registered with UC San Diego’s Center for Student Involvement",
+          "raw_text": "The organization must be registered and in good standing with UC San Diego’s Center for Student Involvement (CSI).",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": "active member base",
+          "raw_text": "The organization should have an active member base and demonstrate consistent engagement throughout the academic year.",
+          "is_hard_requirement": true
+        }
+      ],
+      "deadline": null,
+      "deadline_text": null,
+      "application_method": "Complete the Affiliate Agreement Form, signed by all Executive Board",
+      "source_url": "https://thebasement.ucsd.edu/programs/affiliates.html",
+      "source_id": "ee5db5c0-db68-4ac6-9b8a-b7cf54085c1f",
+      "first_collected_at": "2026-11-15T01:34:25.512Z",
+      "last_verified_at": "2026-11-15T01:37:58.799Z",
+      "status": "needs_verification",
+      "access": {},
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "bb5f6a56-13ae-465f-bee3-bd4db9f788a4",
+      "title": "AIP Enrollment Workshop",
+      "university": "UCSD",
+      "organization": "Experiential Learning, Teaching and Learning Commons",
+      "category": "event",
+      "description": "Learn about your internship course options offered through Academic Internship Program and get support with enrollment ahead of AIP's deadlines.",
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "other",
+          "value": "All students",
+          "raw_text": "Audience: All students",
+          "is_hard_requirement": true
+        }
+      ],
+      "deadline": null,
+      "deadline_text": null,
+      "application_method": "RSVP HERE!",
+      "source_url": "https://calendar.ucsd.edu/event/copy-of-aip-summer-enrollment-workshop",
+      "source_id": "adb2b90d-00de-437a-ae5e-0ce9c19bfcd9",
+      "first_collected_at": "2026-11-15T01:34:13.387Z",
+      "last_verified_at": "2026-11-15T01:37:48.862Z",
+      "status": "needs_verification",
+      "access": {},
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "75e81591-570b-4f57-b330-70ee928eed64",
+      "title": "McNair Scholars 2026-2027 Research Program",
+      "university": "UCSD",
+      "organization": null,
+      "category": "program",
+      "description": "Faculty-mentored winter, spring and summer research with independent-study credit and graduate-school preparation.",
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "other",
+          "value": "UCSD undergraduate",
+          "raw_text": "Are a UC San Diego undergraduate student",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": "90 units by program start",
+          "raw_text": "Have at least 90 units by the time the program starts (this includes any transfer/AP units)",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "gpa",
+          "value": null,
+          "raw_text": "Have at least a 3.0 grade point average",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": null,
+          "raw_text": "GPA requirement can be achieved by the end of the spring quarter in which you are in the program.",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": "Faculty mentor before program start",
+          "raw_text": "Prior to the start of the program, find a faculty mentor.",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": "Full-time UCSD enrollment",
+          "raw_text": "Be enrolled full-time at UC San Diego",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": "No other concurrent research program",
+          "raw_text": "Exclusion: not participate in another research program",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": null,
+          "raw_text": "Exclusion: During the summer quarter, students cannot work, take classes (other than program required 199), or participate in any other summer research program.",
+          "is_hard_requirement": true
+        }
+      ],
+      "deadline": null,
+      "deadline_text": null,
+      "application_method": "Use the official McNair application link, with statement, recommendation and transcripts.",
+      "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/mcnair/index.html",
+      "source_id": "493dfdfb-8469-419a-b891-d1928908febf",
+      "first_collected_at": "2026-11-14T22:06:20.855Z",
+      "last_verified_at": "2026-11-14T22:06:20.864Z",
+      "status": "needs_verification",
+      "access": {},
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "586dcc27-ed62-4ff6-b6f7-f5e78f83d2b9",
+      "title": "Scripps Tectonorockphysics Lab - Undergraduate Research Routes",
+      "university": "UCSD",
+      "organization": "Scripps Tectonorockphysics Lab",
+      "category": "research",
+      "description": "Paid Handshake jobs, work-study arrangements or SIO 199 credit; the lab does not accept unpaid volunteers.",
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "academic_year",
+          "value": [
+            "freshman",
+            "sophomore",
+            "junior",
+            "senior"
+          ],
+          "raw_text": "Prospective Undergraduate Researchers",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": null,
+          "raw_text": "If you already have a UCSD work-study award and would like to work with us, then please email PI-Wright with a short introduction to yourself, your CV/resume, and a description of the work you would like to do. It is okay to not know what type of work you'd like to do. If this is the case, then please let PI-Wright know which topics you feel you'd have the most fun working on. If you would like to do research with us to fulfill the SIO 199 course credit, then please follow the instructions in this bullet point.",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": "No unpaid volunteer route",
+          "raw_text": "We do not allow volunteers in the lab.",
+          "is_hard_requirement": true
+        }
+      ],
+      "deadline": null,
+      "deadline_text": null,
+      "application_method": "For paid positions, check UCSD's Handshake. For work-study or SIO 199 course credit, email PI-Wright with an introduction, CV/resume, and a description of desired work.",
+      "source_url": "https://stripplelab.ucsd.edu/join-us/",
+      "source_id": "d43c7114-c383-4651-820f-4d13107e7887",
+      "first_collected_at": "2026-11-14T21:59:58.981Z",
+      "last_verified_at": "2026-11-14T22:06:20.864Z",
+      "status": "needs_verification",
+      "access": {},
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "a52b6546-e49b-4848-a300-40f2ba6f4e79",
+      "title": "Wasserman Lab - Undergraduate Research Opportunities",
+      "university": "UCSD",
+      "organization": "Wasserman Lab",
+      "category": "research",
+      "description": "Biological research with potential independent projects; review upper-level coursework expectations with the lab.",
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "gpa",
+          "value": 3.3,
+          "raw_text": "The ideal applicant has a GPA of 3.3 or higher in their basic coursework.",
+          "is_hard_requirement": false
+        },
+        {
+          "type": "course",
+          "value": [
+            "BICD 100",
+            "BIMM 100",
+            "BIMM 181",
+            "BIBC 110"
+          ],
+          "raw_text": "Applicants should also have taken one or more upper level classes, such as Genetics (BICD 100), Molecular Biology (BIMM 100), Molecular Sequence Analysis (BIMM 181), Physical Biochemistry (BIBC 110).",
+          "is_hard_requirement": true
+        }
+      ],
+      "deadline": null,
+      "deadline_text": null,
+      "application_method": "Please E-mail Dr. Wasserman directly to discuss opportunities.",
+      "source_url": "https://labs.biology.ucsd.edu/wasserman/undergrads/undergrad_research.html",
+      "source_id": "98fc0711-2346-43ab-bf0f-0bb622ac520f",
+      "first_collected_at": "2026-11-14T21:59:52.768Z",
+      "last_verified_at": "2026-11-14T22:06:20.864Z",
+      "status": "needs_verification",
+      "access": {},
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "f5b3c98c-a311-4c70-878b-94bf4bfb506c",
+      "title": "Comparative Cognition Lab - Undergraduate Research Assistant",
+      "university": "UCSD",
+      "organization": "Comparative Cognition Lab",
+      "category": "research",
+      "description": "Research with children/adults and primates; one year and ten hours weekly are required.",
+      "required_skills": [
+        "independent work",
+        "time management"
+      ],
+      "eligibility": [
+        {
+          "type": "skill",
+          "value": "independent work",
+          "raw_text": "comfortable working independently",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "skill",
+          "value": "time management",
+          "raw_text": "good time management skills",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": "Professional commitment",
+          "raw_text": "will treat position in the lab as seriously as a job",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "hours_per_week",
+          "value": 10,
+          "raw_text": "a one year commitment (10 hours a week) is required for research assistants.",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "duration",
+          "value": 1,
+          "raw_text": "a one year commitment (10 hours a week) is required for research assistants.",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "course",
+          "value": "COGS 14A",
+          "raw_text": "have taken COGS 14A or an equivalent research methods class",
+          "is_hard_requirement": false
+        },
+        {
+          "type": "other",
+          "value": "Experience with children/animals",
+          "raw_text": "prior experience working with children/animals",
+          "is_hard_requirement": false
+        },
+        {
+          "type": "other",
+          "value": "Research experience",
+          "raw_text": "prior experience working in a research lab",
+          "is_hard_requirement": false
+        }
+      ],
+      "deadline": null,
+      "deadline_text": null,
+      "application_method": "Interested students will USUALLY need to attend lab meetings. Once you have attended one or more lab meetings, you may apply using the button below. Be prepared to include a PDF 1 page resume or CV.",
+      "source_url": "https://cclab.ucsd.edu/for-undergrads/",
+      "source_id": "7ef39d09-0695-49a6-910b-80865d73732c",
+      "first_collected_at": "2026-11-14T21:59:49.934Z",
+      "last_verified_at": "2026-11-15T09:39:31.494Z",
+      "status": "needs_verification",
+      "access": {},
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "6cfc5446-775a-48cb-b719-c8271f989ca5",
+      "title": "Cognitive Development Lab - COGS 160 Research Practicum",
+      "university": "UCSD",
+      "organization": "Cognitive Development Lab",
+      "category": "course",
+      "description": "A three-quarter practicum/seminar in early-childhood research, with supervised projects, journal discussion and reports.",
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "other",
+          "value": "UCSD enrollment",
+          "raw_text": "UCSD students can enroll in COGS 160, upon permission.",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "course",
+          "value": null,
+          "raw_text": "Upper-division coursework in Cognitive Science, Human Developmental Science, Linguistics, Neurobiology, and/or Psychology, including two or more UD course on cognition, cognitive development, cognitive ethnography, neuroscience, and/or linguistics",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "gpa",
+          "value": 3.3,
+          "raw_text": "GPA of 3.3 or better",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "duration",
+          "value": 3,
+          "raw_text": "Commitment to a 3-quarter COGS 160 sequence",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": "Instructor permission after interview",
+          "raw_text": "Permission of instructor based on interview and availability.",
+          "is_hard_requirement": true
+        }
+      ],
+      "deadline": null,
+      "deadline_text": null,
+      "application_method": "Email gdeak@ucsd.edu with a current resume and transcript PDF.",
+      "source_url": "https://cogdevlab.ucsd.edu/contact-us/join-us",
+      "source_id": "d7aa04bb-cf85-45f0-bd7b-0bc1996a4f76",
+      "first_collected_at": "2026-11-14T21:59:46.058Z",
+      "last_verified_at": "2026-11-15T09:39:31.499Z",
+      "status": "needs_verification",
+      "access": {},
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "8d1a244b-75f1-475e-adc2-a5034da4c41f",
+      "title": "Chen Lab - Undergraduate Student Researchers",
+      "university": "UCSD",
+      "organization": "Chen Lab",
+      "category": "research",
+      "description": "Research in bioengineering, materials, biology, 3D bioprinting and AI/ML; apply by emailing a CV.",
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "academic_year",
+          "value": [
+            "freshman",
+            "sophomore",
+            "junior",
+            "senior"
+          ],
+          "raw_text": "We always welcome outstanding undergraduate researchers to join our lab.",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": null,
+          "raw_text": "We are looking for undergraduate researchers in:",
+          "is_hard_requirement": true
+        }
+      ],
+      "deadline": null,
+      "deadline_text": null,
+      "application_method": "e-mail your CV to Prof. Chen at: shc064@ucsd.edu",
+      "source_url": "https://schen.ucsd.edu/lab/positions.html",
+      "source_id": "6373b91a-9081-40e7-b80b-ae0aa316ad0c",
+      "first_collected_at": "2026-11-14T21:59:42.581Z",
+      "last_verified_at": "2026-11-14T22:06:20.863Z",
+      "status": "needs_verification",
+      "access": {},
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "7dae6a62-3b77-4b08-a87e-66f1135b08fe",
+      "title": "Biering Lab - Undergraduate Research Inquiries",
+      "university": "UCSD",
+      "organization": "Biering Lab",
+      "category": "research",
+      "description": "UCSD undergraduate molecular-biology research; contact the lab to confirm available positions.",
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "academic_year",
+          "value": [
+            "freshman",
+            "sophomore",
+            "junior",
+            "senior"
+          ],
+          "raw_text": "If you are a UCSD undergraduate student looking for research experience",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": "UCSD enrollment",
+          "raw_text": "If you are a UCSD undergraduate student looking for research experience",
+          "is_hard_requirement": true
+        }
+      ],
+      "deadline": null,
+      "deadline_text": null,
+      "application_method": "please reach out to Scott and inquire about open positions.",
+      "source_url": "https://bieringlab.biosci.ucsd.edu/people/",
+      "source_id": "5e6cf20c-f72c-4c96-923b-45bbf616d099",
+      "first_collected_at": "2026-11-14T21:59:39.220Z",
+      "last_verified_at": "2026-11-14T22:06:20.863Z",
+      "status": "needs_verification",
+      "access": {},
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "52b14e9e-6600-4ffe-b842-174dcdc738b8",
+      "title": "Griffith Lab - Undergraduate Research Positions",
+      "university": "UCSD",
+      "organization": "Griffith Lab",
+      "category": "research",
+      "description": "Apply by emailing a cover letter about interests, availability and background, plus a CV, to Professor Griffith.",
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "academic_year",
+          "value": [
+            "freshman",
+            "sophomore",
+            "junior",
+            "senior"
+          ],
+          "raw_text": "Undergraduate research positions:",
+          "is_hard_requirement": true
+        }
+      ],
+      "deadline": null,
+      "deadline_text": null,
+      "application_method": "Email Professor Griffith at k3griffith@ucsd.edu with a cover letter and CV.",
+      "source_url": "https://griffithlab.ucsd.edu/team",
+      "source_id": "a2d59b5c-f56c-4a14-ab78-02b9fa84baa6",
+      "first_collected_at": "2026-11-14T21:59:35.376Z",
+      "last_verified_at": "2026-11-15T07:42:46.434Z",
+      "status": "verified",
+      "access": {},
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "1ae64e02-9522-4971-934c-dddf2adc59dc",
+      "title": "Mind and Development Lab - Undergraduate Researcher",
+      "university": "UCSD",
+      "organization": "Mind and Development Lab",
+      "category": "research",
+      "description": "Developmental research with a three-quarter, twelve-hour weekly commitment, including lab and mentor meetings.",
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "academic_year",
+          "value": [
+            "freshman",
+            "sophomore",
+            "junior",
+            "senior"
+          ],
+          "raw_text": "Undergraduate researchers play a crucial role in our research",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "duration",
+          "value": 3,
+          "raw_text": "We require a three quarter minimum commitment",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "hours_per_week",
+          "value": 12,
+          "raw_text": "of at least 12 hours a week.",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": "Weekly lab and mentor/group meetings",
+          "raw_text": "We require a three quarter minimum commitment of at least 12 hours a week. This includes attendance at our weekly lab meeting, as well as a smaller meeting with your mentor or research group. For most research projects in the lab, experience working with children and families is a big plus.",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": "Experience with children/families",
+          "raw_text": "experience working with children and families is a big plus.",
+          "is_hard_requirement": false
+        }
+      ],
+      "deadline": null,
+      "deadline_text": null,
+      "application_method": "Complete our online application at: goo.gl/pz3Q9x. We also sometimes post positions on the UCSD REAL portal, and we look at applications sent via the UCSD Psychology Common Application as well.",
+      "source_url": "https://madlab.ucsd.edu/join",
+      "source_id": "ed485dad-950b-4503-b266-55eaab27d5f7",
+      "first_collected_at": "2026-11-14T21:59:31.777Z",
+      "last_verified_at": "2026-11-15T09:39:31.503Z",
+      "status": "needs_verification",
+      "access": {},
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "3d1e6859-f9fd-450b-8bb3-6a47b34bf874",
+      "title": "Poulikakos Lab - Undergraduate Research Projects",
+      "university": "UCSD",
+      "organization": "Poulikakos Lab",
+      "category": "research",
+      "description": "Undergraduate research during the academic year or summer; contact the lab about projects and fit.",
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "academic_year",
+          "value": [
+            "freshman",
+            "sophomore",
+            "junior",
+            "senior"
+          ],
+          "raw_text": "We welcome undergraduate students to participate in research projects in the Poulikakos Lab",
+          "is_hard_requirement": true
+        }
+      ],
+      "deadline": null,
+      "deadline_text": null,
+      "application_method": "Please visit our Research page and email Prof. Poulikakos to learn about current projects.",
+      "source_url": "https://poulikakos.ucsd.edu/join-us/",
+      "source_id": "a9b2db41-34c0-4df9-b6d4-f2057449a539",
+      "first_collected_at": "2026-11-14T21:59:28.134Z",
+      "last_verified_at": "2026-11-14T22:06:20.863Z",
+      "status": "needs_verification",
+      "access": {},
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "5623a489-7e43-40a7-a9fa-4f8d639accce",
+      "title": "Chu Laboratory - Undergraduate Research Opportunities",
+      "university": "UCSD",
+      "organization": "Chu Laboratory",
+      "category": "research",
+      "description": "Undergraduate research; joining by sophomore year is preferred but all candidates are considered.",
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "academic_year",
+          "value": [
+            "freshman",
+            "sophomore",
+            "junior",
+            "senior"
+          ],
+          "raw_text": "Outstanding and inquisitive undergraduate students are welcome in the lab.",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "academic_year",
+          "value": [
+            "freshman",
+            "sophomore"
+          ],
+          "raw_text": "Undergraduate students: Outstanding and inquisitive undergraduate students are welcome in the lab. Ideally, students interested in research should join the lab no later than their sophomore year, but all candidates will be considered. Please contact Hiu with your prior experience, relevant coursework, and an estimate of how much time you plan to spend in lab (hours/week).",
+          "is_hard_requirement": false
+        }
+      ],
+      "deadline": null,
+      "deadline_text": null,
+      "application_method": "Please contact Hiu with your prior experience, relevant coursework, and an estimate of how much time you plan to spend in lab (hours/week).",
+      "source_url": "https://chulab.ucsd.edu/join/",
+      "source_id": "a7fcf956-fbc6-463b-9aed-eb8507835aa8",
+      "first_collected_at": "2026-11-14T21:59:16.349Z",
+      "last_verified_at": "2026-11-14T22:06:20.863Z",
+      "status": "needs_verification",
+      "access": {},
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "db6f0a87-c45b-406f-86fe-186c8312b059",
+      "title": "Winzeler Lab - Undergraduate Research Assistant Inquiries",
+      "university": "UCSD",
+      "organization": "Winzeler Lab",
+      "category": "research",
+      "description": "Drug-discovery research; check Handshake for currently advertised undergraduate vacancies.",
+      "required_skills": [],
+      "eligibility": [],
+      "deadline": null,
+      "deadline_text": null,
+      "application_method": "Available positions will be posted on handshake.",
+      "source_url": "https://winzeler.ucsd.edu/jobs/",
+      "source_id": "e964407f-feb1-42be-bc57-1a4c4d92fdb4",
+      "first_collected_at": "2026-11-14T21:55:33.527Z",
+      "last_verified_at": "2026-11-14T22:06:20.857Z",
+      "status": "needs_verification",
+      "access": {},
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "7bb1fefc-656c-4db6-9f7b-8129eb9ce5d4",
+      "title": "Cherqui Lab - Spring 2027 Undergraduate/Postbacc Research Volunteer Interest",
+      "university": "UCSD",
+      "organization": "Cherqui Lab",
+      "category": "research",
+      "description": "Spring 2027 volunteer interest registration; Fall 2026 applications are closed.",
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "other",
+          "value": "undergraduate or postbacc",
+          "raw_text": "Undergraduate/Postbacc Research Volunteer Application",
+          "is_hard_requirement": true
+        }
+      ],
+      "deadline": null,
+      "deadline_text": null,
+      "application_method": "Complete the interest form for Spring 2027.",
+      "source_url": "https://pediatrics.ucsd.edu/research/faculty-labs/cherqui-lab/career.html",
+      "source_id": "4534d165-e5ab-42ae-aa63-bf884c1ec1d3",
+      "first_collected_at": "2026-11-14T21:55:28.527Z",
+      "last_verified_at": "2026-11-14T22:06:20.857Z",
+      "status": "needs_verification",
+      "access": {},
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "cae0895f-27ab-4e97-a08f-6a3e69cf0a57",
+      "title": "ProtoLab - Undergraduate Research Collaborator Applications",
+      "university": "UCSD",
+      "organization": "ProtoLab",
+      "category": "research",
+      "description": "Rolling applications across software, design, data-science, writing and user-research roles; requirements depend on the chosen role.",
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "other",
+          "value": null,
+          "raw_text": "Apply to the lab! Protolab frequently recruits undergraduates or master’s students to support research projects with roles for developers, UI designers, visual designers, data scientists, and user researchers. We review applications on a rolling basis. If interested, apply here.",
+          "is_hard_requirement": true
+        }
+      ],
+      "deadline": null,
+      "deadline_text": null,
+      "application_method": "Use the Apply here link on the official source; provide the resume/portfolio for the chosen role.",
+      "source_url": "https://protolab.ucsd.edu/get-involved/",
+      "source_id": "a16d2b58-2359-4a28-b11e-4248b8e8632d",
+      "first_collected_at": "2026-11-14T21:54:18.147Z",
+      "last_verified_at": "2026-11-14T22:06:20.862Z",
+      "status": "needs_verification",
+      "access": {},
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "512822c4-3c1d-4472-b400-1a3b84db3322",
+      "title": "STARTneuro Transfer Neuroscience Research Program",
+      "university": "UCSD",
+      "organization": "School of Biological Sciences and the Undergraduate Research Hub",
+      "category": "program",
+      "description": "Neuroscience research training for incoming UCSD transfer students; initial application has no minimum GPA or research-experience requirement.",
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "other",
+          "value": "Incoming UCSD transfer pursuing neuroscience",
+          "raw_text": "Must be an incoming transfer UC San Diego student who is interested in pursuing neuroscience research as a career path.",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "work_authorization",
+          "value": "US citizen or permanent resident",
+          "raw_text": "Must be a US Citizen or a permanent resident.",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": "Summer training",
+          "raw_text": "Participate in the summer research training program",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": "Annual ENDURE meeting",
+          "raw_text": "Attend annual ENDURE meeting with scholars from across the country",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": "Program meetings",
+          "raw_text": "Attend 1-2 per quarter STARTneuro meetings and workshops during the school year",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": "Quarterly mentoring",
+          "raw_text": "Meet quarterly with their mentoring pod",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": "Neuroscience laboratory research",
+          "raw_text": "Conduct research in a neuroscience lab",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": "No concurrent structured academic-year research program",
+          "raw_text": "Exclusion: Do not participate in another structured research program during the academic year",
+          "is_hard_requirement": true
+        }
+      ],
+      "deadline": null,
+      "deadline_text": null,
+      "application_method": "General Application and Undergraduate Application via UCSD SSO, followed by the STARTneuro application and a reference questionnaire.",
+      "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/start-neuro/index.html",
+      "source_id": "4dbaa828-f7cf-4507-951f-d7971bc9e37a",
+      "first_collected_at": "2026-11-14T21:53:29.233Z",
+      "last_verified_at": "2026-11-14T22:06:20.862Z",
+      "status": "needs_verification",
+      "access": {},
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "e9b41422-3a7f-447f-9bf2-ee5df72c5a40",
+      "title": "Regents Scholars Research Initiative (RSRI)",
+      "university": "UCSD",
+      "organization": null,
+      "category": "program",
+      "description": "Research matching for incoming UCSD Regents Scholars, with participation for up to three quarters.",
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "other",
+          "value": "Incoming UCSD Regents Scholar",
+          "raw_text": "Only Regents Scholars are eligible for this program during their incoming year at UC San Diego.",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "hours_per_week",
+          "value": 3,
+          "raw_text": "Commit to research activities for at least 3 hours/week during the quarters in which you are in the program",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": "Quarterly mentor plan and 99H enrollment",
+          "raw_text": "Register for 99H class (either for your department or your college).",
+          "is_hard_requirement": true
+        }
+      ],
+      "deadline": null,
+      "deadline_text": null,
+      "application_method": "Incoming Regents Scholars are emailed an application link in June-July prior to enrolling at UC San Diego.",
+      "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/rsri/index.html",
+      "source_id": "c8d53bee-b27c-4efd-b3e2-3145107a177c",
+      "first_collected_at": "2026-11-14T21:53:26.130Z",
+      "last_verified_at": "2026-11-14T22:06:20.861Z",
+      "status": "needs_verification",
+      "access": {},
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "0514e67e-0d2e-4e0c-afd7-91b0d6e2fa08",
+      "title": "Biology Summer 2027 Research for Academic Credit",
+      "university": "UCSD",
+      "organization": "School of Biological Sciences",
+      "category": "research",
+      "description": "Summer research credit with session-dependent work hours and TEA approvals.",
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "other",
+          "value": null,
+          "raw_text": "All approvals must be completed, and the application must be submitted to the Registrar by Friday of Week 1, which is the campus summer session add deadline. Students are encouraged to submit their applications by the deadlines listed below to allow sufficient time for processing.",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": null,
+          "raw_text": "Students may participate in any one Session (I, II or Special) or in both Session I and II. Students may NOT participate in Special Session and Session I or Session II.",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": null,
+          "raw_text": "4 units = 120 hours of work; average of 24 hours per week",
+          "is_hard_requirement": true
+        }
+      ],
+      "deadline": null,
+      "deadline_text": "The recommended application submission deadline for Summer 2027 participation is Friday, June 4, 2027. A separate application must be completed for each session in which you intend to receive academic credit.",
+      "application_method": "Beginning Fall 2026, special studies applications will be submitted through Triton Enrollment Authorization (TEA) tool in Triton Student System (TSS).",
+      "source_url": "https://biology.ucsd.edu/education/undergrad/research/research-acad-cred/summer.html",
+      "source_id": "f8ee767e-183c-43eb-8b7a-9fffec010545",
+      "first_collected_at": "2026-11-14T21:53:18.158Z",
+      "last_verified_at": "2026-11-14T22:06:20.861Z",
+      "status": "needs_verification",
+      "access": {},
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "6049a3cf-8be8-48e9-83a3-a49818cd6e9c",
+      "title": "Xiong Group - Undergraduate Research Opportunities",
+      "university": "UCSD",
+      "organization": "Xiong Group",
+      "category": "research",
+      "description": "Undergraduate research training in spectroscopy and ultrafast optics; MATLAB/LabVIEW are tools to be learned, not stated prerequisites.",
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "academic_year",
+          "value": [
+            "freshman",
+            "sophomore",
+            "junior",
+            "senior"
+          ],
+          "raw_text": "The Xiong group welcome motivated postdoc researchers, graduate and undergraduate students to join the group.",
+          "is_hard_requirement": true
+        }
+      ],
+      "deadline": null,
+      "deadline_text": null,
+      "application_method": "Contact Dr. Xiong at w2xiong@ucsd.edu for undergraduate research inquiries.",
+      "source_url": "https://ultrafast.ucsd.edu/jobs/",
+      "source_id": "9cd4c3b2-cd2f-4c82-ac18-0528270b0819",
+      "first_collected_at": "2026-11-14T21:53:11.642Z",
+      "last_verified_at": "2026-11-14T22:06:20.857Z",
+      "status": "needs_verification",
+      "access": {},
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "422310d9-03ed-48c6-a1a3-48debe8c9a50",
+      "title": "HXI Lab - Undergraduate Research Participation",
+      "university": "UCSD",
+      "organization": "HXI Lab",
+      "category": "research",
+      "description": "Undergraduate participation in human-centered computing projects through volunteering or optional course credit.",
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "academic_year",
+          "value": [
+            "freshman",
+            "sophomore",
+            "junior",
+            "senior"
+          ],
+          "raw_text": "Undergraduate students can typically join the HXI Lab:",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "duration",
+          "value": "2-3 quarters or more",
+          "raw_text": "We encourage undergraduate students who fit within the scope of the HXI lab to extend their engagement to 2-3 quarters or more.",
+          "is_hard_requirement": false
+        },
+        {
+          "type": "other",
+          "value": "Project fit and course approval where applicable",
+          "raw_text": "After having discussed fit and specifics of the project, including the number of units (2 for engagement < 10hr/week, or 4 for ≥ 10hr/week), undergraduate students interested in engaging in 198/199 courses should submit a request for a 199 independent research project or a 198 directed study group via EASy. Submitted requests will be reviewed and if approved by Prof. Weibel and the Department, the registrar will create a new 199 or 198 section and students will be able to enroll.",
+          "is_hard_requirement": true
+        }
+      ],
+      "deadline": null,
+      "deadline_text": null,
+      "application_method": "Look at current projects and engage with the students or postdocs working on projects of interest. For 198/199 credits, submit a request via EASy.",
+      "source_url": "https://hxi.ucsd.edu/faq/join-us/",
+      "source_id": "b7358b83-eacc-4511-9d94-e169a8f8824b",
+      "first_collected_at": "2026-11-14T21:53:02.444Z",
+      "last_verified_at": "2026-11-14T22:06:20.857Z",
+      "status": "needs_verification",
+      "access": {},
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "faf9d67d-0d68-4844-b61b-39baeeed8a71",
+      "title": "Eating Disorders Center - Volunteer Research Assistant",
+      "university": "UCSD",
+      "organization": "Eating Disorders Center for Treatment and Research",
+      "category": "research",
+      "description": "In-person undergraduate research volunteering in participant recruitment, study visits and data collection.",
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "academic_year",
+          "value": [
+            "freshman",
+            "sophomore",
+            "junior",
+            "senior"
+          ],
+          "raw_text": "We are seeking undergraduate students to join our research volunteer team.",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": "Local to San Diego and available beyond summer",
+          "raw_text": "PSYC 199 course credit is available for UC San Diego undergraduate students. Non-UC San Diego undergraduates local to San Diego are also encouraged to apply. Please note that most of our work takes place in-person, and we are typically unable to accept research assistants who are not local to San Diego and/or are only in San Diego during the summer. Ideal candidates are able to commit to at least one year as an RA in the lab.",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "duration",
+          "value": 1,
+          "raw_text": "Ideal candidates are able to commit to at least one year as an RA in the lab.",
+          "is_hard_requirement": false
+        }
+      ],
+      "deadline": null,
+      "deadline_text": null,
+      "application_method": "Complete the Volunteer Form linked on the source; contact edresearch@health.ucsd.edu for recruitment questions.",
+      "source_url": "https://eatingdisorders.ucsd.edu/node/121",
+      "source_id": "8364947f-fcfd-4b32-92c2-6dbea7383a9e",
+      "first_collected_at": "2026-11-14T21:51:54.026Z",
+      "last_verified_at": "2026-11-15T09:39:31.507Z",
+      "status": "needs_verification",
+      "access": {},
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "82246069-b3e5-4546-bed2-6d46f2478d8a",
+      "title": "Rickard Lab - Undergraduate Research Assistant",
+      "university": "UCSD",
+      "organization": "Cognition and Cognitive Neuroscience Laboratory",
+      "category": "research",
+      "description": "Cognition and memory research including participant testing and data coding. Confirm the next opening with the lab.",
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "gpa",
+          "value": 3,
+          "raw_text": "Minimum GPA of 3.0",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "hours_per_week",
+          "value": 12,
+          "raw_text": "12 hours per week, 2 quarters minimum commitment",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "duration",
+          "value": 2,
+          "raw_text": "2 quarters minimum",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "academic_year",
+          "value": ">= 1 year remaining",
+          "raw_text": "Should be UCSD undergrad, ≥ 1 academic yr remaining",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": null,
+          "raw_text": "Flexible hours and schedule preferred",
+          "is_hard_requirement": false
+        }
+      ],
+      "deadline": null,
+      "deadline_text": null,
+      "application_method": "fill out the google form",
+      "source_url": "https://rickardlab.ucsd.edu/join.html",
+      "source_id": "98356d43-3043-4c2e-b6f6-251c3416dd3f",
+      "first_collected_at": "2026-11-14T21:51:50.746Z",
+      "last_verified_at": "2026-11-15T09:39:31.511Z",
+      "status": "needs_verification",
+      "access": {},
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "824c6a54-15a8-4778-81b3-1c7126d57309",
+      "title": "Winkielman Lab - Undergraduate/Volunteer Research Assistant",
+      "university": "UCSD",
+      "organization": "Winkielman Lab",
+      "category": "research",
+      "description": "Social and cognitive psychology research; volunteer or optional PSYC 199 credit.",
+      "required_skills": [
+        "communication skills"
+      ],
+      "eligibility": [
+        {
+          "type": "hours_per_week",
+          "value": 6,
+          "raw_text": "A minimum of 6hr/wk commitment to lab work",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "skill",
+          "value": "communication skills",
+          "raw_text": "Excellent communication skills",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": "Prior laboratory experience",
+          "raw_text": "Prior lab experience is preferred but not required",
+          "is_hard_requirement": false
+        }
+      ],
+      "deadline": null,
+      "deadline_text": null,
+      "application_method": "forward your application to Zaiyao Zhang <zazhang@ucsd.edu>. Please include information about: – You current year, major, and GPA – Your availability for future quarters – A screenshot of your academic history (the page which shows your GPA and classes taken). – Your interest and focus. – Resume and cover letter are preferred but not required.",
+      "source_url": "https://winkielmanlab.ucsd.edu/joinus/",
+      "source_id": "87bba243-0dac-4091-b3d1-733f8fc98adc",
+      "first_collected_at": "2026-11-14T21:51:47.565Z",
+      "last_verified_at": "2026-11-14T22:06:20.857Z",
+      "status": "needs_verification",
+      "access": {},
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "fa39cdf0-c11c-4b79-85e6-324c4890e985",
+      "title": "Pelham Lab - Undergraduate Research Assistant",
+      "university": "UCSD",
+      "organization": "Pelham Lab",
+      "category": "research",
+      "description": "Unpaid research training for UCSD undergraduates of all years, with no prior lab experience required.",
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "academic_year",
+          "value": [
+            "freshman",
+            "sophomore",
+            "junior",
+            "senior"
+          ],
+          "raw_text": "undergraduates at UCSD",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": "UCSD enrollment",
+          "raw_text": "undergraduates at UCSD",
+          "is_hard_requirement": true
+        }
+      ],
+      "deadline": null,
+      "deadline_text": null,
+      "application_method": "fill out this google form: https://forms.gle/LcM1bGZDAvucLUaY9",
+      "source_url": "https://pelham-lab.ucsd.edu/join-the-team/undergraduates",
+      "source_id": "948bc636-7b4c-42c8-8d60-dc7823c56c65",
+      "first_collected_at": "2026-11-14T21:51:37.726Z",
+      "last_verified_at": "2026-11-14T22:06:20.857Z",
+      "status": "needs_verification",
+      "access": {},
+      "source_kind": "webpage"
+    },
+    {
+      "opportunity_id": "bb0985e5-a376-4cf2-b65a-48b930452920",
+      "title": "EMPOWER Scholars",
+      "university": "UCSD",
+      "organization": "National Science Foundation, Jacobs School of Engineering, Triton Transfer Hub, Undergraduate Research Hub",
+      "category": "program",
+      "description": "The EMPOWER Scholars program provides transfer engineering students with scholarship, mentorship, and academic resources. It includes support for transfer students, a summer research opportunity, and a summer internship prep program.",
+      "required_skills": [],
+      "eligibility": [
+        {
+          "type": "other",
+          "value": "community college transfer student",
+          "raw_text": "Are a community college transfer student (will be enrolled full-time during each academic quarter)",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "major",
+          "value": "engineering",
+          "raw_text": "Have a declared engineering major",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "work_authorization",
+          "value": "U.S. citizen, permanent resident",
+          "raw_text": "Are a U.S. citizen, permanent resident",
+          "is_hard_requirement": true
+        },
+        {
+          "type": "other",
+          "value": "Pell grant eligible",
+          "raw_text": "Low-income (Pell grant eligible)",
+          "is_hard_requirement": true
+        }
+      ],
+      "deadline": null,
+      "deadline_text": "The current application cycle is open and will close Sunday, September 28th at 11:59 PM (deadline extended 9/24/2025).",
+      "application_method": "Apply via General Application and Undergraduate Application, then choose to complete the EMPOWER application.",
+      "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/empower/index.html",
+      "source_id": "d668a44c-5c63-4b7c-bfa6-43d0c6fd6351",
+      "first_collected_at": "2026-11-14T20:59:05.828Z",
+      "last_verified_at": "2026-11-15T01:38:05.805Z",
+      "status": "needs_verification",
+      "access": {},
+      "source_kind": "webpage"
+    }
+  ],
+  "human_review_status": "Pending actual human checks. Automated evidence checks and source affiliation are not human approval.",
+  "numeric_normalization": {
+    "checked_at": "2026-11-15T09:39:31.632696+00:00",
+    "updated": 6,
+    "changes": [
+      {
+        "source_url": "https://ugresearch.ucsd.edu/programs/all-urh-programs/fmp/index.html",
+        "opportunity_id": "7b90bc53-3b76-4767-ac84-aa2df770dd5d",
+        "changes": [
+          {
+            "type": "duration",
+            "before": "two consecutive quarters",
+            "after": 2,
+            "raw_text": "Be able to commit to both consecutive quarters of the program (Winter and Spring)."
+          }
+        ]
+      },
+      {
+        "source_url": "https://cclab.ucsd.edu/for-undergrads/",
+        "opportunity_id": "f5b3c98c-a311-4c70-878b-94bf4bfb506c",
+        "changes": [
+          {
+            "type": "duration",
+            "before": "1 year",
+            "after": 1,
+            "raw_text": "a one year commitment (10 hours a week) is required for research assistants."
+          }
+        ]
+      },
+      {
+        "source_url": "https://cogdevlab.ucsd.edu/contact-us/join-us",
+        "opportunity_id": "6cfc5446-775a-48cb-b719-c8271f989ca5",
+        "changes": [
+          {
+            "type": "duration",
+            "before": "3 quarters",
+            "after": 3,
+            "raw_text": "Commitment to a 3-quarter COGS 160 sequence"
+          }
+        ]
+      },
+      {
+        "source_url": "https://madlab.ucsd.edu/join",
+        "opportunity_id": "1ae64e02-9522-4971-934c-dddf2adc59dc",
+        "changes": [
+          {
+            "type": "duration",
+            "before": "3 quarters",
+            "after": 3,
+            "raw_text": "We require a three quarter minimum commitment"
+          }
+        ]
+      },
+      {
+        "source_url": "https://eatingdisorders.ucsd.edu/node/121",
+        "opportunity_id": "faf9d67d-0d68-4844-b61b-39baeeed8a71",
+        "changes": [
+          {
+            "type": "duration",
+            "before": "at least one year",
+            "after": 1,
+            "raw_text": "Ideal candidates are able to commit to at least one year as an RA in the lab."
+          }
+        ]
+      },
+      {
+        "source_url": "https://rickardlab.ucsd.edu/join.html",
+        "opportunity_id": "82246069-b3e5-4546-bed2-6d46f2478d8a",
+        "changes": [
+          {
+            "type": "duration",
+            "before": "2 quarters",
+            "after": 2,
+            "raw_text": "2 quarters minimum"
+          }
+        ]
+      }
+    ],
+    "source_metadata_preserved": true,
+    "public_readback_matches": true
+  },
+  "limits": [
+    "At most 3 recent public posts per candidate account; not complete post history.",
+    "Missing/ambiguous account references and private/unavailable profiles remain unresolved.",
+    "Caption screening is preliminary; poster_review entries are not validated opportunities.",
+    "Only selected candidates received complete poster/evidence validation and ingestion.",
+    "Date year inference follows user-authorized posting-date policy; warnings are preserved.",
+    "No daily scheduler deployment is claimed."
+  ]
+}

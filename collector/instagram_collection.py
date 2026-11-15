@@ -201,7 +201,9 @@ def run_posts(rows,handle,folder,*,catalog=None,store=None,extractor=extract,
                 ended=datetime.fromisoformat(support['event']['endDate'].replace('Z','+00:00'))
                 if ended<datetime.now(timezone.utc):
                     for record in records:record['status']='expired'
-            elif any(record['category']=='event' for record in records) and not end_dates:
+            elif (any(record['category']=='event' for record in records) and not end_dates) or any(
+                    record['deadline'] is None and re.search(r'(?i)tonight|tomorrow|week\s*\d|next week|this (?:monday|tuesday|wednesday|thursday|friday|saturday|sunday)',record.get('deadline_text') or '')
+                    for record in records):
                 entry['outcome']='held_for_date_review';report['held_for_date_review']+=1
                 state['posts'][url]=dict(cache_key=cache_key,records=[],candidate_records=records,source_text=source_text,images=images,activity_end_dates=end_dates,date_interpretations=entry.get('date_interpretations',[]))
                 report['posts'].append(entry);atomic_json(state_path,state);continue

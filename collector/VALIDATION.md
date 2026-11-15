@@ -8,6 +8,40 @@
 The collector implementation remains scoped to collector/. Shared contracts,
 Next.js routes, database schema, and other members' code were not changed.
 
+## Directory-wide expansion - 2026-11-15 UTC
+
+- Considered all 628 directory records; submitted 466 candidate handles in six
+  bounded batches, at most three recent public posts each. 433 returned matching
+  authorship, with 1,319 raw rows becoming 1,226 unique public posts.
+- All 1,226 posts completed caption screening: 434 candidates, 167 recaps,
+  450 non-opportunities, 175 poster/uncertainty reviews. No final screening
+  batch failures after retry. These preliminary labels are not validated openings.
+- Full caption/poster validation attempted 105 unique posts (132 attempts across
+  resumptions). Retained 35 structured opportunities locally: 21 non-expired
+  records matched API readback, including one existing baseline record; 14
+  expired records were excluded from the current-feed additions.
+- Website increased from 30 to 50 non-expired records: research 19, event 14,
+  program 10, competition 5, internship 1, course 1. The 20 additions include a
+  paid coding-instructor position, skills/academic workshops, competitions,
+  mentorship and a research-journal submission call. Unknown availability still
+  requires review; non-expired does not mean confirmed currently open.
+- Six existing records had unambiguous quantitative values normalized through
+  the existing admin API. Units/constraints in raw_text, source metadata, IDs
+  and first collection timestamps were preserved; public readback matched.
+- Initial parallel requests encountered the configured model's 15 RPM limit.
+  Model calls now pace at 12 RPM within one process and honor retry delays.
+  No account/model/dependency setting was changed. Interrupted/error attempts
+  remain in ignored runtime telemetry; selected saved rows passed validation.
+- 96 offline tests passed, including cap/resume behavior, directory coverage,
+  source authorship, numeric values, provider pacing and relative-date holds.
+- The completed campaign resumes with no further analysis or inserts. Full
+  public readback verified all 21 collected current records and backend source IDs.
+- [Team handoff](reviews/INSTAGRAM_EXPANSION.md),
+  [structured snapshot](reviews/instagram-expansion-2026-11-15.json), and
+  [human review CSV](reviews/HUMAN_REVIEW_2026-11-15.csv).
+  Human approval is pending; no new row was marked verified by this run.
+  Scope remains collector/; no shared schema, dependency or other member code changed.
+
 ## Authorized missing-year refinement - 2026-11-15 UTC
 
 The user explicitly replaced the earlier missing-year refusal for Instagram posts.
