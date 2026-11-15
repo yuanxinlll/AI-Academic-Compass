@@ -40,6 +40,7 @@ export default function NavBar() {
     { href: "/search", label: "Explore" },
     { href: "/access", label: "Access Gap" },
     { href: "/glossary", label: "Campus words" },
+    { href: "/method", label: "How we check" },
     ...(user ? [{ href: "/me", label: "Saved" }] : []),
     ...(user?.role === "student" ? [{ href: "/calendar", label: "Calendar" }] : []),
     ...(user?.role === "admin"
