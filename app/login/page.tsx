@@ -25,6 +25,10 @@ function LoginInner() {
       if (!me.disclaimer_accepted_at) router.push(`/welcome?next=${encodeURIComponent(dest)}`);
       else if (me.role === "admin" && dest === "/") router.push("/admin");
       else router.push(dest);
+      // Next.js keeps visited pages alive (state is preserved), so reset for the next visit.
+      setBusy(null);
+      setPassword("");
+      setNeedPassword(false);
     } catch (err) {
       if (err instanceof ApiError && err.field === "password") {
         setNeedPassword(true);

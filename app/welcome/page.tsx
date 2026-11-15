@@ -45,6 +45,8 @@ function WelcomeInner() {
       if (me?.role === "student" && !me.has_profile) router.push("/onboarding");
       else if (me?.role === "admin" && dest === "/") router.push("/admin");
       else router.push(dest);
+      setBusy(false);
+      setAgreed(false);
     } catch {
       setBusy(false);
     }
